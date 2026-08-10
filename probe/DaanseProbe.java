@@ -11,6 +11,7 @@
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.nio.file.Path;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.List;
@@ -23,6 +24,8 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
+import org.eclipse.daanse.olap.core.BasicContextGroup;
+import org.eclipse.daanse.olap.xmla.connector.EmbeddedXmla;
 import org.eclipse.daanse.xmla.api.SimpleSessionHandler;
 import org.eclipse.daanse.xmla.api.XmlaConnector;
 import org.eclipse.daanse.xmla.api.XmlaRequest;
@@ -93,12 +96,28 @@ public final class DaanseProbe {
         // that lets a client probe before it logs in - is the project's own.
         int securePort = args.length > 2 ? Integer.parseInt(args[2]) : port + 1;
 
+        // The backend: a csv next to this file, in an H2 database this process
+        // owns, described by a ROLAP mapping built from the csv's own columns.
+        Path csv = Path.of(System.getProperty("probe.csv",
+                Path.of(System.getProperty("user.dir"), "probe", "data", "sales.csv").toString()));
+        CsvDatabase database = CsvDatabase.load(csv, "probe", "SALES");
+        CsvContext context = new CsvContext(database.dataSource(),
+                new CsvCatalogSupplier(database, "Daanse Probe", "Sales"));
+
+        BasicContextGroup contexts = new BasicContextGroup();
+        contexts.activate(null, Map.of());
+        contexts.bindContext(context);
+        XmlaConnector connector = EmbeddedXmla.connector(contexts);
+
+        System.out.println("loaded " + database.rowCount() + " row(s) from " + csv);
+        System.out.println("  columns: " + database.columns());
+
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         // SimpleSessionHandler leaves its policy hooks abstract on purpose; a
         // probe takes the permissive answer to each.
         SimpleSessionHandler sessions = new SimpleSessionHandler() {
         };
-        EmfXmlaAdapter adapter = new EmfXmlaAdapter(new StandInConnector(), sessions, null,
+        EmfXmlaAdapter adapter = new EmfXmlaAdapter(connector, sessions, null,
                 // Open, because this is a probe and not a deployment. What the
                 // client needs to exercise here is the protocol, not the policy.
                 AccessPolicy.OPEN);
@@ -113,7 +132,7 @@ public final class DaanseProbe {
         HttpServer secure = HttpServer.create(new InetSocketAddress(securePort), 0);
         AuthenticationChain chain = new AuthenticationChain();
         chain.add(new StandInBasicAuthenticator(), Map.of());
-        EmfXmlaAdapter guarded = new EmfXmlaAdapter(new StandInConnector(), new SimpleSessionHandler() {
+        EmfXmlaAdapter guarded = new EmfXmlaAdapter(connector, new SimpleSessionHandler() {
         }, null,
                 // A principal is required, except for the two rowsets a client
                 // probes with before it has one. That is not a nicety: Excel and
@@ -281,162 +300,6 @@ public final class DaanseProbe {
         }
     }
 
-    /**
-     * A backend with just enough in it to be worth asking.
-     * <p>
-     * One rowset is derived from the model and therefore real;
-     * the other two carry a couple of rows so the client has something with
-     * values in it to read, and one of them is deliberately left with a NULL
-     * column so the distinction between absent and empty is exercised end to
-     * end.
-     */
-    private static final class StandInConnector implements XmlaConnector {
-
-        @Override
-        public List<EObject> discover(Discover request, XmlaRequest context) {
-            String requestType = request.getRequestType().getLiteral();
-
-            if ("DISCOVER_SCHEMA_ROWSETS".equals(requestType)) {
-                // Not invented: the model's own account of every rowset it
-                // describes, which is what the real server answers here too.
-                return RowsetCatalog.schemaRowsets();
-            }
-            // The row class comes from the catalogue rather than from a
-            // generated getter, for the same reason everything else here does:
-            // the model is the description, and naming a class by hand would be
-            // one more thing that can fall behind it.
-            EClass rowClass = RowsetCatalog.forRequestType(requestType).orElse(null);
-            if (rowClass == null) {
-                throw new IllegalArgumentException("no rowset called " + requestType);
-            }
-
-            if ("DISCOVER_DATASOURCES".equals(requestType)) {
-                return List.of(row(rowClass, "dataSourceName", "Daanse Probe", "dataSourceInfo", "Provider=Daanse",
-                        "providerName", "Daanse", "url", "http://localhost:8090/xmla"));
-            }
-            if ("DBSCHEMA_CATALOGS".equals(requestType)) {
-                return List.of(
-                        row(rowClass, "catalogName", "Probe Catalog", "description", "a catalog with a description"),
-                        // The second leaves DESCRIPTION unset, which is how NULL
-                        // is said - the client has to tell that from "".
-                        row(rowClass, "catalogName", "Silent Catalog"));
-            }
-            // A rowset the model knows and this backend has no data for. An
-            // empty list is a legitimate answer; failure would be an exception.
-            return List.of();
-        }
-
-        /**
-         * A small but complete MDX result.
-         * <p>
-         * Two measures across two months, with one cell deliberately left out so
-         * a client has to place cells by their ordinal rather than by counting -
-         * a result is sparse, and a reader that assumes otherwise puts values in
-         * the wrong squares.
-         * <p>
-         * Only the numbers are made up. The shape - OlapInfo, the axes, the
-         * tuples, the cell properties - and everything that turns it into XML is
-         * the project's own.
-         */
-        @Override
-        public EObject execute(Execute request, XmlaRequest context) {
-            if (request.getCommand() == null) {
-                // BeginSession and EndSession carry an empty Statement and
-                // produce nothing, which is the specification's empty result.
-                return null;
-            }
-            MdDatasetFactory factory = MdDatasetFactory.eINSTANCE;
-
-            MdDataset dataset = factory.createMdDataset();
-            OlapInfo info = factory.createOlapInfo();
-            CubeInfo cubes = factory.createCubeInfo();
-            OlapInfoCube cube = factory.createOlapInfoCube();
-            cube.setCubeName("Probe");
-            cubes.getCube().add(cube);
-            info.setCubeInfo(cubes);
-            info.setAxesInfo(factory.createAxesInfo());
-            info.setCellInfo(factory.createCellInfo());
-            dataset.setOlapInfo(info);
-
-            Axes axes = factory.createAxes();
-            axes.getAxis().add(axis(factory, "Axis0", new String[][] {
-                { "[Measures]", "[Measures].[Amount]", "Amount" },
-                { "[Measures]", "[Measures].[Count]", "Count" } }));
-            axes.getAxis().add(axis(factory, "Axis1", new String[][] {
-                { "[Time]", "[Time].[2026].[January]", "January" },
-                { "[Time]", "[Time].[2026].[February]", "February" } }));
-            axes.getAxis().add(axis(factory, "SlicerAxis", new String[][] {
-                { "[Region]", "[Region].[All]", "All Regions" } }));
-            dataset.setAxes(axes);
-
-            CellData data = factory.createCellData();
-            // Axis 0 varies fastest: ordinal 0 is (Amount, January), 1 is
-            // (Count, January), 2 is (Amount, February).
-            data.getCell().add(cell(factory, 0, "1234.5", "xsd:double", "$1,234.50"));
-            data.getCell().add(cell(factory, 1, "17", "xsd:int", "17"));
-            data.getCell().add(cell(factory, 2, "987.25", "xsd:double", "$987.25"));
-            // Ordinal 3 is absent on purpose: no value, no cell.
-            dataset.setCellData(data);
-
-            return dataset;
-        }
-
-        private static Axis axis(MdDatasetFactory factory, String name, String[][] members) {
-            Axis axis = factory.createAxis();
-            axis.setName(name);
-            TuplesType tuples = factory.createTuplesType();
-            for (String[] member : members) {
-                TupleType tuple = factory.createTupleType();
-                tuple.getMember().add(member(factory, member[0], member[1], member[2]));
-                tuples.getTuple().add(tuple);
-            }
-            axis.getSetType().add(tuples);
-            return axis;
-        }
-
-        private static MemberType member(MdDatasetFactory factory, String hierarchy, String uniqueName,
-                String caption) {
-            MemberType member = factory.createMemberType();
-            member.setHierarchy(hierarchy);
-            member.getAny().add(property(factory, "UName", uniqueName));
-            member.getAny().add(property(factory, "Caption", caption));
-            member.getAny().add(property(factory, "LName", hierarchy + ".[Level]"));
-            member.getAny().add(property(factory, "LNum", "0"));
-            return member;
-        }
-
-        private static CellType cell(MdDatasetFactory factory, long ordinal, String value, String type,
-                String formatted) {
-            CellType cell = factory.createCellType();
-            cell.setCellOrdinal(ordinal);
-            CellTypeValue held = factory.createCellTypeValue();
-            held.setValue(value);
-            held.setType(type);
-            cell.setValue(held);
-            cell.getAny().add(property(factory, "FmtValue", formatted));
-            return cell;
-        }
-
-        private static CellProperty property(MdDatasetFactory factory, String tagName, String value) {
-            CellProperty property = factory.createCellProperty();
-            property.setTagName(tagName);
-            property.setValue(value);
-            return property;
-        }
-
-        /** A row of {@code eClass}, from feature-name and value pairs. */
-        private static EObject row(EClass eClass, String... nameThenValue) {
-            EObject row = EcoreUtil.create(eClass);
-            for (int i = 0; i + 1 < nameThenValue.length; i += 2) {
-                org.eclipse.emf.ecore.EStructuralFeature feature = eClass.getEStructuralFeature(nameThenValue[i]);
-                if (feature == null) {
-                    throw new IllegalStateException(eClass.getName() + " has no " + nameThenValue[i]);
-                }
-                row.eSet(feature, nameThenValue[i + 1]);
-            }
-            return row;
-        }
-    }
 
     static {
         // A generated EPackage registers itself when its class initialises.
