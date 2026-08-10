@@ -7,7 +7,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EcoreXmlReader, EventKind, Unknown, XmlCursor } from '@daanse/emf-xml';
+import { EcoreXmlReader, EventKind, Unknown } from '@daanse/emf-xml';
 import { failIfFault, SoapEnvelopeCodec, writeDiscover, writeExecute } from '@daanse/xmla-io';
 import type { RestrictionEntry } from '@daanse/xmla-io';
 import { RowsetCatalog, XMLA_NAMESPACES } from '@daanse/xmla-model';
@@ -211,7 +211,11 @@ export class XmlaClient {
         } else if (depth === 0 && cursor.namespaceURI === XMLA_NAMESPACES.XSD) {
           // Kept rather than skipped: it is what the dynamic path builds an
           // EClass from, and asking for it twice would mean a second request.
-          inlineSchema = schemaOf(cursor);
+          // The element itself, not just its children: a rebuilt start tag
+          // would drop the targetNamespace and the sql prefix the schema
+          // declares on itself, and a schema without those describes something
+          // else.
+          inlineSchema = cursor.rawElement();
         } else {
           depth += 1;
         }
@@ -225,13 +229,6 @@ export class XmlaClient {
     }
     return { rows, inlineSchema };
   }
-}
-
-/** The inline `<xsd:schema>` as text, with the cursor left on its end. */
-function schemaOf(cursor: XmlCursor): string {
-  const prefix = cursor.prefix === '' ? '' : `${cursor.prefix}:`;
-  const inner = cursor.rawSubtree();
-  return `<${prefix}schema xmlns${prefix === '' ? '' : `:${cursor.prefix}`}="${XMLA_NAMESPACES.XSD}">${inner}</${prefix}schema>`;
 }
 
 function authHeaders(credentials: Credentials): Record<string, string> {
