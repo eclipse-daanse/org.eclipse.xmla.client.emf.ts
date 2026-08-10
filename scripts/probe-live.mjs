@@ -25,6 +25,7 @@ import { RowsetCatalog } from '../packages/xmla-model/dist/catalog.js';
 import { bootstrapFromDisk } from '../packages/xmla-model/dist/node.js';
 import { RowsetResolver } from '../packages/xmla-dynamic/dist/resolver.js';
 import { wireNameOf } from '../packages/emf-xml/dist/emd.js';
+import { WorkbenchXmlaClient } from '../packages/xmla-workbench-adapter/dist/workbench-client.js';
 
 const url = process.argv[2] ?? process.env['XMLA_URL'] ?? 'http://localhost:8090/xmla';
 const user = process.env['XMLA_USER'];
@@ -231,6 +232,38 @@ check('a session survives authentication', async () => {
   const rows = await opened.discover('DBSCHEMA_CATALOGS');
   await opened.endSession();
   return `session ${opened.sessionId}, ${rows.rows.length} row(s) inside it`;
+});
+
+check('an MDX statement answers a cellset with values in it', async () => {
+  // Nothing had run a statement live: the probe used to answer Execute with
+  // nothing, so the whole cellset path was checked only against recordings.
+  const workbench = new WorkbenchXmlaClient({ url, transport: new FetchTransport(), models, credentials });
+  const cellset = await workbench.execute('SELECT [Measures].MEMBERS ON 0, [Time].MEMBERS ON 1 FROM [Probe]');
+
+  if (cellset.axes.length !== 2) {
+    throw new Error(`${cellset.axes.length} axes, expected 2 with the slicer kept apart`);
+  }
+  if ((cellset.slicer ?? []).length === 0) {
+    throw new Error('the WHERE clause did not come back');
+  }
+  const captions = cellset.axes.map((axis) => axis.tuples.map((tuple) => tuple[0].caption).join('/'));
+  const values = cellset.cells.map((cell) => `${cell.ordinal}:${cell.value}`).join(' ');
+
+  // Sparse on purpose: three cells for four positions, so a reader that counts
+  // instead of reading the ordinal would put a value in the wrong square.
+  if (cellset.cells.length !== 3) {
+    throw new Error(`${cellset.cells.length} cells, expected 3 - the fourth is absent on purpose`);
+  }
+  if (cellset.cells.some((cell) => cell.ordinal === 3)) {
+    throw new Error('a cell arrived that the server never sent');
+  }
+  if (cellset.cells[0].formattedValue !== '$1,234.50') {
+    throw new Error(`the formatted value is ${JSON.stringify(cellset.cells[0].formattedValue)}`);
+  }
+  if (typeof cellset.cells[0].value !== 'number') {
+    throw new Error('the raw value did not come back as a number');
+  }
+  return `axes [${captions.join('] [')}], cells ${values}, slicer ${cellset.slicer[0].caption}`;
 });
 
 check('what the server describes matches what the model says', async () => {
