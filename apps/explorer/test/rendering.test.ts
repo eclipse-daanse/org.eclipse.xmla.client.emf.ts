@@ -154,10 +154,11 @@ describe('a restrictions form, rendered', () => {
 
 describe('every restriction the catalogue has', () => {
   it('has a widget registered for its type', () => {
-    // Measured rather than assumed: 75 of the 435 restriction features are not
-    // String, and the registry's own editors are keyed on Ecore's data types
-    // rather than on the XMLType ones the models use. One restriction in six
-    // would otherwise be unfillable, silently.
+    // Measured rather than assumed: 287 of the 808 restriction features are not
+    // String, over nine data types, and the registry's own editors are keyed on
+    // Ecore's data types rather than on the XMLType ones the models use. One
+    // restriction in three would otherwise be unfillable, silently. The tabular
+    // rowsets brought the widest of them: 99 features typed UnsignedLong.
     const missing = new Set<string>();
     let total = 0;
     for (const requestType of catalog.requestTypes()) {
@@ -174,7 +175,7 @@ describe('every restriction the catalogue has', () => {
         }
       }
     }
-    expect(total).toBe(435);
+    expect(total).toBe(808);
     expect([...missing], 'types with no editor').toEqual([]);
   });
 

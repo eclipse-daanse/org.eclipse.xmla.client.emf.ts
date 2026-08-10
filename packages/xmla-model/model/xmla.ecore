@@ -418,6 +418,40 @@
     <eLiterals name="DBSCHEMA_VIEWS" value="100" literal="DBSCHEMA_VIEWS"/>
     <eLiterals name="DBSCHEMA_VIEW_COLUMN_USAGE" value="101" literal="DBSCHEMA_VIEW_COLUMN_USAGE"/>
     <eLiterals name="DBSCHEMA_VIEW_TABLE_USAGE" value="102" literal="DBSCHEMA_VIEW_TABLE_USAGE"/>
+    <eLiterals name="DISCOVER_MODEL_SECURITY" value="103" literal="DISCOVER_MODEL_SECURITY"/>
+    <eLiterals name="DISCOVER_RESOURCE_POOLS" value="104" literal="DISCOVER_RESOURCE_POOLS"/>
+    <eLiterals name="TMSCHEMA_MODEL" value="105" literal="TMSCHEMA_MODEL"/>
+    <eLiterals name="TMSCHEMA_DATA_SOURCES" value="106" literal="TMSCHEMA_DATA_SOURCES"/>
+    <eLiterals name="TMSCHEMA_TABLES" value="107" literal="TMSCHEMA_TABLES"/>
+    <eLiterals name="TMSCHEMA_COLUMNS" value="108" literal="TMSCHEMA_COLUMNS"/>
+    <eLiterals name="TMSCHEMA_ATTRIBUTE_HIERARCHIES" value="109" literal="TMSCHEMA_ATTRIBUTE_HIERARCHIES"/>
+    <eLiterals name="TMSCHEMA_PARTITIONS" value="110" literal="TMSCHEMA_PARTITIONS"/>
+    <eLiterals name="TMSCHEMA_RELATIONSHIPS" value="111" literal="TMSCHEMA_RELATIONSHIPS"/>
+    <eLiterals name="TMSCHEMA_MEASURES" value="112" literal="TMSCHEMA_MEASURES"/>
+    <eLiterals name="TMSCHEMA_HIERARCHIES" value="113" literal="TMSCHEMA_HIERARCHIES"/>
+    <eLiterals name="TMSCHEMA_LEVELS" value="114" literal="TMSCHEMA_LEVELS"/>
+    <eLiterals name="TMSCHEMA_ANNOTATIONS" value="115" literal="TMSCHEMA_ANNOTATIONS"/>
+    <eLiterals name="TMSCHEMA_KPIS" value="116" literal="TMSCHEMA_KPIS"/>
+    <eLiterals name="TMSCHEMA_CULTURES" value="117" literal="TMSCHEMA_CULTURES"/>
+    <eLiterals name="TMSCHEMA_OBJECT_TRANSLATIONS" value="118" literal="TMSCHEMA_OBJECT_TRANSLATIONS"/>
+    <eLiterals name="TMSCHEMA_LINGUISTIC_METADATA" value="119" literal="TMSCHEMA_LINGUISTIC_METADATA"/>
+    <eLiterals name="TMSCHEMA_PERSPECTIVES" value="120" literal="TMSCHEMA_PERSPECTIVES"/>
+    <eLiterals name="TMSCHEMA_PERSPECTIVE_TABLES" value="121" literal="TMSCHEMA_PERSPECTIVE_TABLES"/>
+    <eLiterals name="TMSCHEMA_PERSPECTIVE_COLUMNS" value="122" literal="TMSCHEMA_PERSPECTIVE_COLUMNS"/>
+    <eLiterals name="TMSCHEMA_PERSPECTIVE_HIERARCHIES" value="123" literal="TMSCHEMA_PERSPECTIVE_HIERARCHIES"/>
+    <eLiterals name="TMSCHEMA_PERSPECTIVE_MEASURES" value="124" literal="TMSCHEMA_PERSPECTIVE_MEASURES"/>
+    <eLiterals name="TMSCHEMA_ROLES" value="125" literal="TMSCHEMA_ROLES"/>
+    <eLiterals name="TMSCHEMA_ROLE_MEMBERSHIPS" value="126" literal="TMSCHEMA_ROLE_MEMBERSHIPS"/>
+    <eLiterals name="TMSCHEMA_TABLE_PERMISSIONS" value="127" literal="TMSCHEMA_TABLE_PERMISSIONS"/>
+    <eLiterals name="TMSCHEMA_VARIATIONS" value="128" literal="TMSCHEMA_VARIATIONS"/>
+    <eLiterals name="TMSCHEMA_EXTENDED_PROPERTIES" value="129" literal="TMSCHEMA_EXTENDED_PROPERTIES"/>
+    <eLiterals name="TMSCHEMA_EXPRESSIONS" value="130" literal="TMSCHEMA_EXPRESSIONS"/>
+    <eLiterals name="TMSCHEMA_COLUMN_PERMISSIONS" value="131" literal="TMSCHEMA_COLUMN_PERMISSIONS"/>
+    <eLiterals name="TMSCHEMA_DETAIL_ROWS_DEFINITIONS" value="132" literal="TMSCHEMA_DETAIL_ROWS_DEFINITIONS"/>
+    <eLiterals name="TMSCHEMA_CALCULATION_GROUPS" value="133" literal="TMSCHEMA_CALCULATION_GROUPS"/>
+    <eLiterals name="TMSCHEMA_CALCULATION_ITEMS" value="134" literal="TMSCHEMA_CALCULATION_ITEMS"/>
+    <eLiterals name="TMSCHEMA_FORMAT_STRING_DEFINITIONS" value="135" literal="TMSCHEMA_FORMAT_STRING_DEFINITIONS"/>
+    <eLiterals name="TMSCHEMA_QUERY_GROUPS" value="136" literal="TMSCHEMA_QUERY_GROUPS"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FormatEnum">
     <eLiterals name="Tabular" literal="Tabular"/>

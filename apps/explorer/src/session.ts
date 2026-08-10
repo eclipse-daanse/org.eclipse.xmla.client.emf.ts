@@ -108,7 +108,7 @@ export class ExplorerSession {
         const name = String(read(row, 'schemaName') ?? '');
         if (name !== '' && !known.has(name)) {
           // The server says it can answer this and the model has never heard of
-          // it. SSAS 13 declares DISCOVER_RESOURCE_POOLS, for one.
+          // it. Power BI serves DISCOVER_M_EXPRESSIONS, for one.
           known.set(name, { requestType: name, origin: 'unknown', guid: null, source: 'declared by the server' });
         }
       }

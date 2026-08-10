@@ -1,0 +1,89 @@
+{
+  "host": "syncfusion",
+  "rowsets": {
+    "DISCOVER_DATASOURCES": {
+      "answered": true,
+      "rows": 1,
+      "keptRows": 1,
+      "trimmed": false,
+      "bytes": 2921,
+      "rowsAtCapture": 1
+    },
+    "DISCOVER_JOB_PROGRESS": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_MODEL_SECURITY": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_M_EXPRESSIONS": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_POWERBI_DATASOURCES": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_POWERBI_ROLES": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_RESOURCE_POOLS": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DMSCHEMA_MINING_FUNCTIONS": {
+      "answered": true,
+      "rows": 200,
+      "keptRows": 200,
+      "trimmed": false,
+      "bytes": 79479,
+      "rowsAtCapture": 277
+    },
+    "DMSCHEMA_MINING_MODELS": {
+      "answered": true,
+      "rows": 9,
+      "keptRows": 9,
+      "trimmed": false,
+      "bytes": 11796,
+      "rowsAtCapture": 9
+    },
+    "DMSCHEMA_MINING_SERVICES": {
+      "answered": true,
+      "rows": 9,
+      "keptRows": 9,
+      "trimmed": false,
+      "bytes": 20317,
+      "rowsAtCapture": 9
+    },
+    "DMSCHEMA_MINING_STRUCTURES": {
+      "answered": true,
+      "rows": 5,
+      "keptRows": 5,
+      "trimmed": false,
+      "bytes": 6120,
+      "rowsAtCapture": 5
+    },
+    "TMSCHEMA_COLUMNS": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "TMSCHEMA_MEASURES": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "TMSCHEMA_MODEL": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "TMSCHEMA_RELATIONSHIPS": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "TMSCHEMA_TABLES": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    }
+  }
+}

@@ -33,6 +33,11 @@ import type { DynamicRowset } from './schema-import.js';
  */
 const PRIVATE_PREFIX = 'https://www.daanse.org/spec/xmla/rowset/dynamic';
 
+/** The nsURI of each static rowset package, which a dynamic one must never be. */
+const STATIC_ROWSET_NAMESPACES = ['relational', 'multidimensional', 'mining', 'server', 'tabular'].map(
+  (kind) => `${XMLA_NAMESPACES.ROWSET}:${kind}`,
+);
+
 export class DynamicModelRegistry {
   private readonly serverKey: string;
   private readonly byRequestType = new Map<string, DynamicRowset>();
@@ -96,11 +101,14 @@ export class DynamicModelRegistry {
    * static model would still answer, just wrongly, and no error would say so.
    */
   assertNotGlobal(): void {
-    const rowset = EPackageRegistry.INSTANCE.getEPackage(XMLA_NAMESPACES.ROWSET);
+    // Once there was one static rowset package and it could be found by the wire
+    // namespace. There are now five, none of which carries that namespace as its
+    // nsURI - the specification gives all rowsets one namespace and an EPackage
+    // cannot be one of several sharing it - so each is checked by its own.
     for (const each of this.byRequestType.values()) {
-      if (rowset === each.ePackage) {
+      if (STATIC_ROWSET_NAMESPACES.some((nsURI) => EPackageRegistry.INSTANCE.getEPackage(nsURI) === each.ePackage)) {
         throw new Error(
-          'a dynamically built package has replaced the static rowset model in the global registry',
+          'a dynamically built package has replaced a static rowset model in the global registry',
         );
       }
       const registered = EPackageRegistry.INSTANCE.getEPackage(each.ePackage.getNsURI()!);

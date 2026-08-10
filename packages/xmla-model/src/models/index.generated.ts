@@ -22,8 +22,17 @@ import { extEcore } from './ext.generated.js';
 import { mddatasetEcore } from './mddataset.generated.js';
 import { msxmlaEcore } from './msxmla.generated.js';
 import { multipleresultsEcore } from './multipleresults.generated.js';
-import { rowsetRestrictionsEcore } from './rowset-restrictions.generated.js';
-import { rowsetEcore } from './rowset.generated.js';
+import { rowsetCommonEcore } from './rowset-common.generated.js';
+import { rowsetRelationalRestrictionsEcore } from './rowset-relational-restrictions.generated.js';
+import { rowsetRelationalEcore } from './rowset-relational.generated.js';
+import { rowsetMultidimensionalRestrictionsEcore } from './rowset-multidimensional-restrictions.generated.js';
+import { rowsetMultidimensionalEcore } from './rowset-multidimensional.generated.js';
+import { rowsetMiningRestrictionsEcore } from './rowset-mining-restrictions.generated.js';
+import { rowsetMiningEcore } from './rowset-mining.generated.js';
+import { rowsetServerRestrictionsEcore } from './rowset-server-restrictions.generated.js';
+import { rowsetServerEcore } from './rowset-server.generated.js';
+import { rowsetTabularRestrictionsEcore } from './rowset-tabular-restrictions.generated.js';
+import { rowsetTabularEcore } from './rowset-tabular.generated.js';
 import { soapEcore } from './soap.generated.js';
 import { xmlaEcore } from './xmla.generated.js';
 
@@ -49,8 +58,17 @@ export const MODEL_TEXT: Readonly<Record<string, string>> = {
   "mddataset": mddatasetEcore,
   "msxmla": msxmlaEcore,
   "multipleresults": multipleresultsEcore,
-  "rowset-restrictions": rowsetRestrictionsEcore,
-  "rowset": rowsetEcore,
+  "rowset-common": rowsetCommonEcore,
+  "rowset-relational-restrictions": rowsetRelationalRestrictionsEcore,
+  "rowset-relational": rowsetRelationalEcore,
+  "rowset-multidimensional-restrictions": rowsetMultidimensionalRestrictionsEcore,
+  "rowset-multidimensional": rowsetMultidimensionalEcore,
+  "rowset-mining-restrictions": rowsetMiningRestrictionsEcore,
+  "rowset-mining": rowsetMiningEcore,
+  "rowset-server-restrictions": rowsetServerRestrictionsEcore,
+  "rowset-server": rowsetServerEcore,
+  "rowset-tabular-restrictions": rowsetTabularRestrictionsEcore,
+  "rowset-tabular": rowsetTabularEcore,
   "soap": soapEcore,
   "xmla": xmlaEcore,
 };

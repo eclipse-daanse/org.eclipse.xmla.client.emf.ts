@@ -146,7 +146,7 @@ describe('what the swap buys', () => {
     // built from the schema the response carried.
     const transport = FixtureTransport.answering(responseFor('DBSCHEMA_CATALOGS'));
 
-    const rows = await clientOver(transport).discover('DISCOVER_RESOURCE_POOLS');
+    const rows = await clientOver(transport).discover('DISCOVER_M_EXPRESSIONS');
 
     expect(rows.length).toBeGreaterThan(0);
     expect(Object.keys(rows[0]!)).toContain('CATALOG_NAME');

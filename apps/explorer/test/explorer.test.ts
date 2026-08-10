@@ -188,7 +188,7 @@ describe('running a rowset the model has never seen', () => {
     // where the class came from; origin is a badge, not a switch.
     const { session } = sessionAnswering(responseFor('DBSCHEMA_CATALOGS'));
 
-    const result = await session.run('DISCOVER_RESOURCE_POOLS', null);
+    const result = await session.run('DISCOVER_M_EXPRESSIONS', null);
 
     expect(result.origin).toBe('dynamic');
     expect(result.rows.length).toBeGreaterThan(0);
@@ -201,7 +201,7 @@ describe('running a rowset the model has never seen', () => {
     const unknown = sessionAnswering(responseFor('DISCOVER_SCHEMA_ROWSETS'));
 
     const fromModel = await known.session.run('DISCOVER_SCHEMA_ROWSETS', null);
-    const fromServer = await unknown.session.run('DISCOVER_RESOURCE_POOLS', null);
+    const fromServer = await unknown.session.run('DISCOVER_M_EXPRESSIONS', null);
 
     expect(fromModel.origin).toBe('static');
     expect(fromServer.origin).toBe('dynamic');

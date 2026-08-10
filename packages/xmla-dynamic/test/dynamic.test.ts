@@ -232,12 +232,13 @@ describe('resolving a rowset', () => {
   });
 
   it('falls back to the schema for a rowset the model never described', () => {
-    // DISCOVER_RESOURCE_POOLS is declared by SSAS 13 and has no static class.
-    // Without this path it would simply be unreachable.
+    // DISCOVER_M_EXPRESSIONS is served by Power BI's endpoint and no
+    // specification describes it, so it has no static class. Without this path
+    // it would simply be unreachable.
     const resolver = new RowsetResolver(catalog, 'http://server/xmla');
-    expect(catalog.forRequestType('DISCOVER_RESOURCE_POOLS')).toBeNull();
+    expect(catalog.forRequestType('DISCOVER_M_EXPRESSIONS')).toBeNull();
 
-    const resolved = resolver.resolve('DISCOVER_RESOURCE_POOLS', CASES[0]!.schema);
+    const resolved = resolver.resolve('DISCOVER_M_EXPRESSIONS', CASES[0]!.schema);
 
     expect(resolved.origin).toBe('dynamic');
     expect(resolved.rowClass.getEAllStructuralFeatures().length).toBeGreaterThan(0);
@@ -246,7 +247,7 @@ describe('resolving a rowset', () => {
   it('says so rather than guessing when there is neither a class nor a schema', () => {
     const resolver = new RowsetResolver(catalog, 'http://server/xmla');
 
-    expect(() => resolver.resolve('DISCOVER_RESOURCE_POOLS', null)).toThrow(/nothing to read it as/);
+    expect(() => resolver.resolve('DISCOVER_M_EXPRESSIONS', null)).toThrow(/nothing to read it as/);
   });
 
   it('describes columns the same way whichever path produced them', () => {
