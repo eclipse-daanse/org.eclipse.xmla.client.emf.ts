@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmlns:xmi="http://www.omg.org/XMI" xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uimodel" nsURI="http://uimodel/1.0" nsPrefix="uimodel">
+  <eClassifiers xsi:type="ecore:EClass" name="UIModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="name"/>
+    <!-- Welche EClassen dieses UIModel bedient.
+         Leer = gilt für alle EClassen (kein Filter). -->
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1"
+        eType="http://www.eclipse.org/emf/2002/Ecore#//EClass" name="targetClasses"/>
+    <!-- Priorisierung bei mehreren passenden UIModels. Höher = bevorzugt. Default: 0. -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="priority"
+        defaultValueLiteral="0"/>
+    <!-- Optionaler Feinfilter auf Instanzebene (OCL/AQL/JS → Boolean).
+         Kontext: das zu prüfende EObject.
+         Nicht gesetzt = alle Instanzen der targetClasses werden durchgelassen.
+         Beispiel OCL: "self.status = Status::ACTIVE" -->
+    <eStructuralFeatures xsi:type="ecore:EReference"
+        eType="http://uimodel/1.0#//Expression" name="filterExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1" eType="http://uimodel/1.0#//BaseStyle" name="styles" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" eType="http://uimodel/1.0#//Component" name="components" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noCircularSharing"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="name"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1" eType="http://www.eclipse.org/emf/2002/Ecore#//EClass" name="targetClasses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1" eType="http://uimodel/1.0#//BaseStyle" name="styles"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1" eType="http://uimodel/1.0#//Component" name="children"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormView">
+    <eSuperTypes href="http://uimodel/1.0#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1"
+        eType="http://uimodel/1.0#//WidgetComponent" name="fields" containment="true"/>
+    <!-- Cross-Field-Validierungen; Kontext: das EObject (kann auf alle Features zugreifen)
+         Beispiel: "self.password = self.passwordConfirm" -->
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1"
+        eType="http://uimodel/1.0#//ValidationExpression" name="validations" containment="true"/>
+    <!-- Form-weite Mapper; greifen nach den Feld-Mappern (konfigurierbar via mapperOrder) -->
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1"
+        eType="http://uimodel/1.0#//ValidationMessageMapper" name="validationMappers" containment="true"/>
+    <!-- Bestimmt ob Feld-Mapper oder Form-Mapper zuerst ausgeführt werden.
+         Default: FIELD_THEN_FORM -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://uimodel/1.0#//MapperExecutionOrder" name="mapperOrder"
+        defaultValueLiteral="FIELD_THEN_FORM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableView">
+    <eSuperTypes href="http://uimodel/1.0#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" eType="http://uimodel/1.0#//TableStyle" name="tableStyle" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionView">
+    <eSuperTypes href="http://uimodel/1.0#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" eType="http://uimodel/1.0#//FormView" name="sections" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabView">
+    <eSuperTypes href="http://uimodel/1.0#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" eType="http://uimodel/1.0#//Component" name="tabs" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SummaryView">
+    <eSuperTypes href="http://uimodel/1.0#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" eType="http://uimodel/1.0#//WidgetComponent" name="summaryFields" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MasterDetail">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="masterDetailTypesCompatible"/>
+    </eAnnotations>
+    <eSuperTypes href="http://uimodel/1.0#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" eType="http://uimodel/1.0#//TableView" name="master" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" eType="http://uimodel/1.0#//Component" name="detail" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WidgetComponent" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="featureBelongsToTargetClasses"/>
+    </eAnnotations>
+    <eSuperTypes href="http://uimodel/1.0#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" eType="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature" name="feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="label"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="placeholder"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="readOnly"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="required"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://uimodel/1.0#//Expression" name="visibilityCondition" containment="true"/>
+    <!-- Feld-Validierungen; Kontext: das EObject der besitzenden Component -->
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1"
+        eType="http://uimodel/1.0#//ValidationExpression" name="validations" containment="true"/>
+    <!-- Feld-Mapper; werden nach Feld-Validierung und vor Form-Mappern angewendet
+         (sofern mapperOrder=FIELD_THEN_FORM, was der Default ist) -->
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1"
+        eType="http://uimodel/1.0#//ValidationMessageMapper" name="validationMappers" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="maxLength"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="value"/>
+    <!-- true → rendert als Passwortfeld (Eingabe maskiert, kein Wert-Readback) -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="password"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextAreaWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" defaultValueLiteral="4" eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="rows"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="maxLength"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="value"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EDouble" name="min"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EDouble" name="max"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" defaultValueLiteral="1" eType="http://www.eclipse.org/emf/2002/Ecore#//EDouble" name="step"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="value"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckboxWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="asToggle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="value"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="withTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" defaultValueLiteral="DD.MM.YYYY" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="format"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://uimodel/1.0#//Expression" name="constrains"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EDate" name="value"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComboboxWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://uimodel/1.0#//Expression" name="optionLabel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" defaultValueLiteral="2" eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="minSearchLength"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="multiSelect"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://uimodel/1.0#//Expression" name="optionLabel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="multiSelect"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="asButtonGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="values"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceLinkWidget">
+    <eSuperTypes href="http://uimodel/1.0#//WidgetComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://uimodel/1.0#//Expression" name="displayExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="targetRoute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Style" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="name"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="group"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseStyle" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noCircularExtension uniqueNameInCatalog"/>
+    </eAnnotations>
+    <eSuperTypes href="http://uimodel/1.0#//Style"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://uimodel/1.0#//BaseStyle" name="extends"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="css"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="vueComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://uimodel/1.0#//Expression" name="visibilityCondition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LayoutStyle">
+    <eSuperTypes href="http://uimodel/1.0#//BaseStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://uimodel/1.0#//LayoutType" name="layout"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="order"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WidgetStyle">
+    <eSuperTypes href="http://uimodel/1.0#//BaseStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature" name="feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://uimodel/1.0#//WidgetType" name="widgetType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="label"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EBoolean" name="readOnly"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="order"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableStyle">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="onlyForManyFeatures columnFeaturesBelongToElementType"/>
+    </eAnnotations>
+    <eSuperTypes href="http://uimodel/1.0#//WidgetStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" eType="http://uimodel/1.0#//WidgetStyle" name="columns" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validLanguage"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" defaultValueLiteral="OCL" lowerBound="1" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="language"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="body"/>
+  </eClassifiers>
+  <!-- Validierungsausdruck: wertet zu einem ValidationResult aus (valid oder invalid+Nachrichten).
+       body liefert:
+         true / null  → gültig
+         false        → ungültig; defaultMessage + severity werden verwendet
+         strukturiertes Objekt (sprachabhängig) → eigene Nachrichten -->
+  <eClassifiers xsi:type="ecore:EClass" name="ValidationExpression"
+      eSuperTypes="http://uimodel/1.0#//Expression">
+    <!-- Fallback-Nachrichtentext wenn body false liefert und keine eigenen Nachrichten enthält -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="defaultMessage"/>
+    <!-- Standard-Schwere für defaultMessage; default ERROR -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://uimodel/1.0#//Severity" name="severity"
+        defaultValueLiteral="ERROR"/>
+  </eClassifiers>
+
+  <!-- Transformiert eingehende ValidationMessages.
+       Alle gesetzten match*-Felder müssen zutreffen (AND-Verknüpfung).
+       Alle treffenden Mapper werden kaskadierend angewendet.
+       Reihenfolge innerhalb einer Liste via order (aufsteigend). -->
+  <eClassifiers xsi:type="ecore:EClass" name="ValidationMessageMapper">
+    <!-- Ausführungsreihenfolge innerhalb der Mapper-Liste (aufsteigend) -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://www.eclipse.org/emf/2002/Ecore#//EInt" name="order"/>
+    <!-- Match-Kriterien (AND): nur gesetzte Felder werden geprüft -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="matchCode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://uimodel/1.0#//Severity" name="matchSeverity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference"
+        eType="http://uimodel/1.0#//Expression" name="matchExpression" containment="true"/>
+    <!-- Transformation: nur gesetzte Felder werden überschrieben -->
+    <!-- Statischer Ersatztext (hat Vorrang vor mappedTextExpression wenn beide gesetzt) -->
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://www.eclipse.org/emf/2002/Ecore#//EString" name="mappedText"/>
+    <!-- Dynamischer Ersatztext via Expression; Kontext: die originale ValidationMessage -->
+    <eStructuralFeatures xsi:type="ecore:EReference"
+        eType="http://uimodel/1.0#//Expression" name="mappedTextExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute"
+        eType="http://uimodel/1.0#//Severity" name="mappedSeverity"/>
+  </eClassifiers>
+
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+    <eLiterals name="INFO"    value="0"/>
+    <eLiterals name="WARNING" value="1"/>
+    <eLiterals name="ERROR"   value="2"/>
+    <eLiterals name="FATAL"   value="3"/>
+  </eClassifiers>
+
+  <eClassifiers xsi:type="ecore:EEnum" name="MapperExecutionOrder">
+    <!-- Feld-Mapper werden vor Form-Mappern ausgeführt (Default) -->
+    <eLiterals name="FIELD_THEN_FORM" value="0"/>
+    <!-- Form-Mapper werden vor Feld-Mappern ausgeführt -->
+    <eLiterals name="FORM_THEN_FIELD" value="1"/>
+  </eClassifiers>
+
+  <eClassifiers xsi:type="ecore:EEnum" name="WidgetType">
+    <eLiterals name="TEXT"/>
+    <eLiterals name="TEXTAREA" value="1"/>
+    <eLiterals name="COMBO" value="2"/>
+    <eLiterals name="CHECKBOX" value="3"/>
+    <eLiterals name="DATE" value="4"/>
+    <eLiterals name="NUMBER" value="5"/>
+    <eLiterals name="REFERENCE_LINK" value="6"/>
+    <eLiterals name="TABLE" value="7"/>
+    <eLiterals name="CUSTOM" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LayoutType">
+    <eLiterals name="VERTICAL"/>
+    <eLiterals name="HORIZONTAL" value="1"/>
+    <eLiterals name="GRID" value="2"/>
+    <eLiterals name="TAB_FOLDER" value="3"/>
+    <eLiterals name="SECTION" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+    <eLiterals name="TEXT"/>
+    <eLiterals name="EMAIL" value="1"/>
+    <eLiterals name="URL" value="2"/>
+    <eLiterals name="PASSWORD" value="3"/>
+    <eLiterals name="SEARCH" value="4"/>
+    <eLiterals name="PHONE" value="5"/>
+  </eClassifiers>
+</ecore:EPackage>

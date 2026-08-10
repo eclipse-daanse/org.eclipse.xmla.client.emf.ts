@@ -11,9 +11,11 @@
 import type { EObject } from '@emfts/core';
 import { ref, shallowRef } from 'vue';
 
+import { UIModelComposer } from '@daanse/vendor-uimodel-composer';
+
 import RowsetTable from './RowsetTable.vue';
 import type { ExplorerSession, RowsetEntry, RunResult } from './session.js';
-import type { FieldModel, FormModel } from './ui-model.js';
+import type { BuiltForm } from './ui-model.js';
 
 /**
  * The screens: pick a rowset, fill in its restrictions, see the rows.
@@ -26,7 +28,7 @@ const props = defineProps<{ session: ExplorerSession }>();
 
 const rowsets = shallowRef<RowsetEntry[]>([]);
 const selected = ref<string | null>(null);
-const form = shallowRef<FormModel | null>(null);
+const form = shallowRef<BuiltForm | null>(null);
 const restrictions = shallowRef<EObject | null>(null);
 const result = shallowRef<RunResult | null>(null);
 const schema = ref<string | null>(null);
@@ -74,29 +76,6 @@ async function run(): Promise<void> {
   }
 }
 
-function valueOf(field: FieldModel): string {
-  const holder = restrictions.value;
-  if (holder === null || !holder.eIsSet(field.feature)) {
-    return '';
-  }
-  const value = holder.eGet(field.feature);
-  return value === null || value === undefined ? '' : String(value);
-}
-
-function setValue(field: FieldModel, raw: string): void {
-  const holder = restrictions.value;
-  if (holder === null) {
-    return;
-  }
-  if (raw === '') {
-    // Cleared means unset, not empty - a restriction set to the empty string is
-    // a filter for the empty string, which is not what an empty box means.
-    holder.eUnset(field.feature);
-    return;
-  }
-  holder.eSet(field.feature, field.widget === 'number' ? Number(raw) : raw);
-}
-
 function message(caught: unknown): string {
   return caught instanceof Error ? caught.message : String(caught);
 }
@@ -136,23 +115,18 @@ function message(caught: unknown): string {
         <template v-if="selected">
           <h2>{{ selected }}</h2>
 
-          <form v-if="form" class="restrictions" @submit.prevent="run">
+          <div v-if="form" class="restrictions">
             <p class="hint">
               In the order the mask is defined over - which is the order the server states,
               not the order the specification's table lists.
             </p>
-            <label v-for="field in form.fields" :key="field.label" :title="field.documentation ?? ''">
-              <span>
-                {{ field.label }}
-                <em v-if="field.required" class="required">required</em>
-              </span>
-              <input
-                :type="field.widget === 'number' ? 'number' : 'text'"
-                :value="valueOf(field)"
-                @input="setValue(field, ($event.target as HTMLInputElement).value)"
-              />
-            </label>
-          </form>
+            <!--
+              The form is a UIModel: an Ecore instance the composer renders, with
+              one widget per restriction and the EStructuralFeature itself behind
+              each. Nothing here names a rowset or a column.
+            -->
+            <UIModelComposer :ui-model="form.uiModel" :model="form.instance" />
+          </div>
           <p v-else class="hint">This rowset takes no restrictions.</p>
 
           <button type="button" :disabled="busy" @click="run">

@@ -118,15 +118,25 @@ The trade it makes: nothing is parsed until something is asked for, so a
 document that is not well formed reports itself while being read rather than
 when it is handed over. It still reports itself, which is what matters.
 
+## The UI is a model
+
+The forms come from `@emfts/uimodel-composer`, which renders a UI that is itself
+an Ecore instance: a `FormView` with one widget per restriction, and the
+`EStructuralFeature` **itself** behind each one rather than its name. That last
+part is what makes a class the server described a moment ago editable at all -
+nobody could have written its column names down in advance.
+
+The package is not published, so it is vendored in
+`packages/vendor-uimodel-composer` with `vega` and OpenLayers trimmed out. See
+its `VENDOR.md`; `npm run check:vendor` compares the tree against the snapshot
+and fails on anything VENDOR.md does not account for.
+
 ## What is not done yet
 
-**The UI does not use `@emfts/uimodel-composer`.** That package is what should
-generate the forms and grids - a UI that is itself an Ecore model - but it is
-not published: `npm view` answers 404, and the snapshot is 239 files that would
-have to be vendored and trimmed. So `apps/explorer/src/ui-model.ts` builds the
-same *description* by hand, behind the seam the composer would fill. It is still
-model-driven - the widget for a feature is chosen from the model and nothing in
-the screens knows a rowset by name - but it is not the composer.
+**The grid is this project's, not the composer's.** `TableViewComposer` renders
+rows as flat values, and a nested rowset has to fold into an inner table rather
+than a JSON blob - which is the reason EObjects are carried as far as the UI.
+The form is the composer's.
 
 ## License
 

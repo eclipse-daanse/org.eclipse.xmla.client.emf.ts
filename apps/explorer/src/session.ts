@@ -16,7 +16,7 @@ import type { XmlaModels } from '@daanse/xmla-model';
 import type { EObject } from '@emfts/core';
 
 import { formViewForEClass, tableViewForEClass } from './ui-model.js';
-import type { FormModel, TableModel } from './ui-model.js';
+import type { BuiltForm, BuiltTable } from './ui-model.js';
 
 /**
  * One connection, and everything the screens ask of it.
@@ -36,13 +36,14 @@ export interface RowsetEntry {
 export interface RunResult {
   readonly requestType: string;
   readonly origin: Origin;
-  readonly table: TableModel;
+  readonly table: BuiltTable;
   readonly rows: readonly EObject[];
   readonly inlineSchema: string | null;
 }
 
 export interface RestrictionsForm {
-  readonly form: FormModel | null;
+  /** The UIModel the composer renders, or null where the rowset takes none. */
+  readonly form: BuiltForm | null;
   readonly instance: EObject | null;
   readonly required: readonly string[];
 }
@@ -125,11 +126,8 @@ export class ExplorerSession {
       return { form: null, instance: null, required: [] };
     }
     const required = this.catalog.requiredRestrictionsOf(requestType);
-    return {
-      form: formViewForEClass(eClass, required),
-      instance: eClass.getEPackage()!.getEFactoryInstance().create(eClass),
-      required,
-    };
+    const built = formViewForEClass(eClass, required);
+    return { form: built, instance: built.instance, required };
   }
 
   /**
