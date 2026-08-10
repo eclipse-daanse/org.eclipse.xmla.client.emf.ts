@@ -24,6 +24,8 @@ import { XmlaClient, FetchTransport } from '../packages/xmla-client/dist/index.j
 import { RowsetCatalog } from '../packages/xmla-model/dist/catalog.js';
 import { bootstrapFromDisk } from '../packages/xmla-model/dist/node.js';
 import { RowsetResolver } from '../packages/xmla-dynamic/dist/resolver.js';
+import { readFileSync } from 'node:fs';
+
 import { wireNameOf } from '../packages/emf-xml/dist/emd.js';
 import { WorkbenchXmlaClient } from '../packages/xmla-workbench-adapter/dist/workbench-client.js';
 
@@ -234,36 +236,72 @@ check('a session survives authentication', async () => {
   return `session ${opened.sessionId}, ${rows.rows.length} row(s) inside it`;
 });
 
-check('an MDX statement answers a cellset with values in it', async () => {
-  // Nothing had run a statement live: the probe used to answer Execute with
-  // nothing, so the whole cellset path was checked only against recordings.
-  const workbench = new WorkbenchXmlaClient({ url, transport: new FetchTransport(), models, credentials });
-  const cellset = await workbench.execute('SELECT [Measures].MEMBERS ON 0, [Time].MEMBERS ON 1 FROM [Probe]');
+check('an MDX statement is computed from the rows in the database', async () => {
+  // The probe's backend is the ROLAP engine over an H2 database filled from
+  // probe/data/sales.csv, so this is parsed, compiled, turned into SQL, run and
+  // aggregated - not written down somewhere and handed back.
+  const workbench = new WorkbenchXmlaClient({
+    url,
+    transport: new FetchTransport(),
+    models,
+    credentials,
+    catalog: 'Daanse Probe',
+  });
+  const cellset = await workbench.execute(
+    'SELECT {[Measures].[Amount], [Measures].[Quantity]} ON COLUMNS, [Region].[Region].Members ON ROWS FROM [Sales]',
+  );
 
   if (cellset.axes.length !== 2) {
-    throw new Error(`${cellset.axes.length} axes, expected 2 with the slicer kept apart`);
+    throw new Error(`${cellset.axes.length} axes, expected 2`);
   }
-  if ((cellset.slicer ?? []).length === 0) {
-    throw new Error('the WHERE clause did not come back');
-  }
-  const captions = cellset.axes.map((axis) => axis.tuples.map((tuple) => tuple[0].caption).join('/'));
-  const values = cellset.cells.map((cell) => `${cell.ordinal}:${cell.value}`).join(' ');
+  const columns = cellset.axes[0].tuples.map((tuple) => tuple[0].caption);
+  const rows = cellset.axes[1].tuples.map((tuple) => tuple[0].caption);
+  const at = (row, column) => {
+    const cell = cellset.cells.find((each) => each.ordinal === row * columns.length + column);
+    return cell === undefined ? null : cell.value;
+  };
 
-  // Sparse on purpose: three cells for four positions, so a reader that counts
-  // instead of reading the ordinal would put a value in the wrong square.
-  if (cellset.cells.length !== 3) {
-    throw new Error(`${cellset.cells.length} cells, expected 3 - the fourth is absent on purpose`);
+  // The sums the csv actually holds. Computed here from the file so that
+  // changing the data changes both sides at once, and a wrong total cannot
+  // agree with a wrong expectation.
+  const csv = readFileSync(new URL('../probe/data/sales.csv', import.meta.url), 'utf8')
+    .trim()
+    .split('\n')
+    .slice(1)
+    .map((line) => line.split(',').map((cell) => cell.trim()));
+  const expected = new Map();
+  for (const [region, , , amount, quantity] of csv) {
+    const held = expected.get(region) ?? { amount: 0, quantity: 0 };
+    expected.set(region, { amount: held.amount + Number(amount), quantity: held.quantity + Number(quantity) });
   }
-  if (cellset.cells.some((cell) => cell.ordinal === 3)) {
-    throw new Error('a cell arrived that the server never sent');
+  const total = [...expected.values()].reduce(
+    (sum, each) => ({ amount: sum.amount + each.amount, quantity: sum.quantity + each.quantity }),
+    { amount: 0, quantity: 0 },
+  );
+
+  const wrong = [];
+  rows.forEach((caption, index) => {
+    const want = caption.startsWith('All') ? total : expected.get(caption);
+    if (want === undefined) {
+      wrong.push(`${caption}: not a region the csv has`);
+      return;
+    }
+    if (at(index, 0) !== want.amount) {
+      wrong.push(`${caption} Amount ${at(index, 0)} != ${want.amount}`);
+    }
+    if (at(index, 1) !== want.quantity) {
+      wrong.push(`${caption} Quantity ${at(index, 1)} != ${want.quantity}`);
+    }
+  });
+  if (wrong.length > 0) {
+    throw new Error(wrong.join('; '));
   }
-  if (cellset.cells[0].formattedValue !== '$1,234.50') {
-    throw new Error(`the formatted value is ${JSON.stringify(cellset.cells[0].formattedValue)}`);
+  if (rows.length !== expected.size + 1) {
+    throw new Error(`${rows.length} rows for ${expected.size} regions plus the All member`);
   }
-  if (typeof cellset.cells[0].value !== 'number') {
-    throw new Error('the raw value did not come back as a number');
-  }
-  return `axes [${captions.join('] [')}], cells ${values}, slicer ${cellset.slicer[0].caption}`;
+
+  return `${rows.length} rows x ${columns.length} measures, every total matches the csv`
+    + ` (all regions: ${total.amount} / ${total.quantity})`;
 });
 
 check('what the server describes matches what the model says', async () => {

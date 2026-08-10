@@ -82,15 +82,17 @@ npm run probe        # a real Daanse XMLA server on 8090, and a guarded one on 8
 npm run probe:live   # the client against both, over HTTP
 ```
 
-Thirteen checks: rows, a real session, the dynamic path, an MDX statement, and
-authentication - that the two rowsets a client probes with are served
+Thirteen checks: rows, a real session, the dynamic path, an MDX query computed
+from the database, and authentication - that the two rowsets a client probes with are served
 anonymously, that anything else is refused with a 401 **carrying its
 challenge**, that Basic gets through and the wrong password does not, and that a
 session survives all of it.
 
-The statement answers a small result on purpose: two measures across two months
-with **one cell left out**, so a reader that counts positions instead of reading
-the ordinal puts a value in the wrong square and the check says so.
+One thing the probe does not answer: `MDSCHEMA_MEMBERS` comes back empty, while
+`MDSCHEMA_LEVELS` and `MDSCHEMA_HIERARCHIES` answer from the same catalogue over
+the same client path and MDX resolves the members perfectly well. That points at
+the server rather than at this client, and it is written down here rather than
+worked around.
 
 ## And against servers nobody here built
 
@@ -118,14 +120,26 @@ recorded. And across both, every divergence strict mode found runs one way: the
 models carry columns an older server does not send, and nothing a server sends
 is missing from the models.
 
-The probe is the project's own Java server - its envelope, its sessions, its
-inline schema, its rowset serialisation - with only the backend stood in for,
-because standing up ROLAP with a catalog and a data source is a different stack
-in a different repository. It needs the Java repository built once:
+The probe is the project's own Java server, backed by the real ROLAP engine: an
+H2 database this process fills from `probe/data/sales.csv`, described by a
+mapping built from that csv's own columns. A text column becomes a dimension, a
+numeric one becomes a measure, and editing the file changes what the cubes
+answer. An MDX query against it is parsed, compiled, turned into SQL, run and
+aggregated - so what comes back was computed, not written down. The live check
+sums the csv itself and compares, which means a wrong total cannot agree with a
+wrong expectation.
+
+It needs the Java repositories built once:
 
 ```bash
+# in org.eclipse.daanse.xmla
 mvn -pl server/jdk.httpserver -am -DskipTests -Deditorconfig.skip=true install
 ```
+
+The Daanse jars are built with Java 25, and an older `javac` refuses them with
+*wrong version 69.0, should be 65.0* - a message that names no JDK. The launcher
+therefore picks a Java 25 itself rather than trusting `JAVA_HOME`;
+`PROBE_JAVA_HOME` overrides it.
 
 It has already earned its keep. `beginSession` was sending an `<Execute>` with
 an empty `<Command>`, and a server that checks refuses that: *the Execute
