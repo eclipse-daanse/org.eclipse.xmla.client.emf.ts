@@ -77,10 +77,25 @@ it has.
 Everything else here is checked against recordings of one server family. This is
 the only thing that says a byte ever left the process.
 
+There are two servers to run against, and the checks adapt to whichever they
+find: what a server does not have is reported as not applicable rather than
+failed.
+
+**The assembled Daanse probe** is the real deployment - the OSGi application in
+`org.eclipse.daanse.server/application/probe`, with three tutorial catalogs
+loaded from CSV by the project's own importer. Build it once with
+`mvn -pl application/probe install`, then `./start` in that directory. It serves
+XMLA on **8090** (8080 is the Jetty side, not XMLA).
+
+**The csv probe here** needs no other repository checked out and holds one small
+dataset:
+
 ```bash
-npm run probe        # a real Daanse XMLA server on 8090, and a guarded one on 8091
-npm run probe:live   # the client against both, over HTTP
+npm run probe        # XMLA on 8090, and a guarded endpoint on 8091
+npm run probe:live   # the client against it, over HTTP
 ```
+
+Point the checks anywhere with `node scripts/probe-live.mjs <url>`.
 
 Thirteen checks: rows, a real session, the dynamic path, an MDX query computed
 from the database, and authentication - that the two rowsets a client probes with are served
@@ -88,10 +103,11 @@ anonymously, that anything else is refused with a 401 **carrying its
 challenge**, that Basic gets through and the wrong password does not, and that a
 session survives all of it.
 
-One thing the probe does not answer: `MDSCHEMA_MEMBERS` comes back empty, while
+One thing neither probe answers: **`MDSCHEMA_MEMBERS` comes back empty**, while
 `MDSCHEMA_LEVELS` and `MDSCHEMA_HIERARCHIES` answer from the same catalogue over
-the same client path and MDX resolves the members perfectly well. That points at
-the server rather than at this client, and it is written down here rather than
+the same client path, and MDX resolves the members perfectly well. It is empty
+on the csv probe and on the assembled one with its tutorial catalogs, so it is
+reproducible and it is the server's, not this client's. Written down rather than
 worked around.
 
 ## And against servers nobody here built
@@ -120,8 +136,8 @@ recorded. And across both, every divergence strict mode found runs one way: the
 models carry columns an older server does not send, and nothing a server sends
 is missing from the models.
 
-The probe is the project's own Java server, backed by the real ROLAP engine: an
-H2 database this process fills from `probe/data/sales.csv`, described by a
+The csv probe is the project's own Java server, backed by the real ROLAP engine:
+an H2 database this process fills from `probe/data/sales.csv`, described by a
 mapping built from that csv's own columns. A text column becomes a dimension, a
 numeric one becomes a measure, and editing the file changes what the cubes
 answer. An MDX query against it is parsed, compiled, turned into SQL, run and
