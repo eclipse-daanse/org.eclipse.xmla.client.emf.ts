@@ -90,14 +90,14 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="StructureModifiedTime"/>
@@ -243,7 +243,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -340,14 +340,14 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="StructureModifiedTime"/>
@@ -598,21 +598,21 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="StructureModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="RefreshedTime"/>
@@ -709,14 +709,14 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="RefreshedTime"/>
@@ -813,14 +813,14 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="RefreshedTime"/>
@@ -987,14 +987,14 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="RefreshedTime"/>
@@ -1084,14 +1084,14 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="StructureModifiedTime"/>
@@ -1202,21 +1202,21 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="StructureModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="RefreshedTime"/>
@@ -1292,7 +1292,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1347,7 +1347,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1451,7 +1451,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1499,14 +1499,14 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureModifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="StructureModifiedTime"/>
@@ -1568,7 +1568,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1609,7 +1609,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1664,7 +1664,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1712,7 +1712,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1753,7 +1753,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1794,7 +1794,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1835,7 +1835,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1890,7 +1890,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -1952,7 +1952,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2000,7 +2000,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2152,7 +2152,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2214,7 +2214,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2262,7 +2262,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2317,7 +2317,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2372,7 +2372,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2434,7 +2434,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>
@@ -2510,7 +2510,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedTime" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="ModifiedTime"/>

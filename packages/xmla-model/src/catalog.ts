@@ -13,7 +13,7 @@ import type { EClass, EClassifier, EPackage, EStructuralFeature } from '@emfts/c
 import type { XmlaModels } from './bootstrap.js';
 
 /** The kinds of rowset, which is one model each - see docs/rowsets-tabular-vs-multidimensional.md. */
-const KINDS = ['relational', 'multidimensional', 'mining', 'server', 'tabular'] as const;
+const KINDS = ['core', 'relational', 'multidimensional', 'mining', 'server', 'tabular'] as const;
 
 const ROWSET_MODELS = KINDS.map((kind) => `rowset-${kind}`);
 const RESTRICTION_MODELS = KINDS.map((kind) => `rowset-${kind}-restrictions`);

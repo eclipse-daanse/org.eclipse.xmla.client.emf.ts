@@ -307,85 +307,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiscoverDatasourcesRestrictions">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="What a DISCOVER_DATASOURCES request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DiscoverDatasourcesRestrictions"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
-      <details key="requestType" value="DISCOVER_DATASOURCES"/>
-      <details key="role" value="restrictions"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSourceName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the data source."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="DataSourceName"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The unique path of the data source."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="URL"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the provider for the data source."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="ProviderName"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerType" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This array specifies the types of data supported by the server. It can include one or more of the following types:MDP: multidimensional data provider.TDP: tabular data provider.DMP: data mining provider (implements the OLE for DB for Data Mining specification).&lt;311>"/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="ProviderType"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticationMode" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string that specifies what type of security mode the data source uses. Values can be one of the following:Unauthenticated: No user ID or password has to be sent.Authenticated: User ID and password MUST be included in the information required to connect to the data source.Integrated: The data source uses the underlying security to determine authorization.&lt;312>"/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="AuthenticationMode"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSourceDescription"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String" unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The description of the data source."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="DataSourceDescription"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverDbConnectionsRestrictions">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="What a DISCOVER_DB_CONNECTIONS request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
@@ -519,30 +440,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiscoverEnumeratorsRestrictions">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="What a DISCOVER_ENUMERATORS request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DiscoverEnumeratorsRestrictions"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
-      <details key="requestType" value="DISCOVER_ENUMERATORS"/>
-      <details key="role" value="restrictions"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the enumerator that contains a set of values."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="EnumName"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverInstancesRestrictions">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="What a DISCOVER_INSTANCES request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
@@ -632,54 +529,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiscoverKeywordsRestrictions">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="What a DISCOVER_KEYWORDS request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DiscoverKeywordsRestrictions"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
-      <details key="requestType" value="DISCOVER_KEYWORDS"/>
-      <details key="role" value="restrictions"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The keyword string."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="Keyword"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiscoverLiteralsRestrictions">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="What a DISCOVER_LITERALS request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DiscoverLiteralsRestrictions"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
-      <details key="requestType" value="DISCOVER_LITERALS"/>
-      <details key="role" value="restrictions"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the literal."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="LiteralName"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverLocationsRestrictions">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="What a DISCOVER_LOCATIONS request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
@@ -738,7 +587,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lockTransactionId" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lockTransactionId" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The unique identifier of the transaction, as a GUID."/>
@@ -1128,30 +977,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiscoverPropertiesRestrictions">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="What a DISCOVER_PROPERTIES request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DiscoverPropertiesRestrictions"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
-      <details key="requestType" value="DISCOVER_PROPERTIES"/>
-      <details key="role" value="restrictions"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the property."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="PropertyName"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverResourcePoolsRestrictions">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="What a DISCOVER_RESOURCE_POOLS request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type. Taken from the DISCOVER_SCHEMA_ROWSETS rows of three recordings, which agree on this one restriction and a mask of 1."/>
@@ -1190,30 +1015,6 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="XESessionName"/>
-        <details key="namespace" value="##targetNamespace"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiscoverSchemaRowsetsRestrictions">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="What a DISCOVER_SCHEMA_ROWSETS request may be restricted by. The feature order is the order the RestrictionsMask bitmask is defined over; the restriction name on the wire is the ExtendedMetaData name; the type is the feature type."/>
-    </eAnnotations>
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DiscoverSchemaRowsetsRestrictions"/>
-      <details key="kind" value="elementOnly"/>
-    </eAnnotations>
-    <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
-      <details key="requestType" value="DISCOVER_SCHEMA_ROWSETS"/>
-      <details key="role" value="restrictions"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schemaName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        unsettable="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the Discover request."/>
-      </eAnnotations>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-        <details key="name" value="SchemaName"/>
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -1340,7 +1141,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requestActivityId" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requestActivityId" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The unique identifier of the request activity."/>
@@ -1351,7 +1152,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clientActivityId" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clientActivityId" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The unique identifier of the client activity."/>
@@ -1725,7 +1526,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid" unsettable="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The unique identifier of the XEvent package, as a GUID."/>
       </eAnnotations>
@@ -2014,7 +1815,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedAfter" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiedAfter" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime"
         unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
