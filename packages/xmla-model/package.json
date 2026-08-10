@@ -10,9 +10,16 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
     }
   },
-  "files": ["dist", "model"],
+  "files": [
+    "dist",
+    "model"
+  ],
   "scripts": {
     "build": "tsc --build",
     "test": "vitest run"
