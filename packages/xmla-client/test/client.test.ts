@@ -162,6 +162,38 @@ describe('when the server refuses', () => {
 
     await expect(clientOver(transport).discover('MDSCHEMA_CUBES')).rejects.toThrow(XmlaHttpError);
   });
+
+  it('carries the challenge of a 401, because a refusal alone cannot be acted on', async () => {
+    // WWW-Authenticate says which mechanisms the server accepts. Dropping it
+    // turns "you may authenticate with Basic" into "no".
+    const transport = new FixtureTransport([]);
+    transport.send = () =>
+      Promise.resolve({
+        status: 401,
+        body: '',
+        headers: { 'www-authenticate': 'Basic realm="Daanse"' },
+      });
+
+    try {
+      await clientOver(transport).discover('MDSCHEMA_CUBES');
+      expect.unreachable('should have raised');
+    } catch (error) {
+      expect((error as XmlaHttpError).status).toBe(401);
+      expect((error as XmlaHttpError).challenge).toBe('Basic realm="Daanse"');
+    }
+  });
+
+  it('answers null for a challenge when the server offered none', async () => {
+    const transport = new FixtureTransport([]);
+    transport.send = () => Promise.resolve({ status: 401, body: '', headers: {} });
+
+    try {
+      await clientOver(transport).discover('MDSCHEMA_CUBES');
+      expect.unreachable('should have raised');
+    } catch (error) {
+      expect((error as XmlaHttpError).challenge).toBeNull();
+    }
+  });
 });
 
 describe('sessions', () => {

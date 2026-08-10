@@ -11,7 +11,11 @@
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.xml.stream.XMLStreamException;
 
@@ -22,7 +26,9 @@ import com.sun.net.httpserver.HttpServer;
 import org.eclipse.daanse.xmla.api.SimpleSessionHandler;
 import org.eclipse.daanse.xmla.api.XmlaConnector;
 import org.eclipse.daanse.xmla.api.XmlaRequest;
+import org.eclipse.daanse.xmla.api.auth.AuthenticatedIdentity;
 import org.eclipse.daanse.xmla.api.auth.AuthenticationChain;
+import org.eclipse.daanse.xmla.api.auth.XmlaAuthenticator;
 import org.eclipse.daanse.xmla.model.io.RowsetCatalog;
 import org.eclipse.daanse.xmla.model.io.XmlaMessageCodec;
 import org.eclipse.daanse.xmla.model.rowset.RowsetFactory;
@@ -68,6 +74,10 @@ public final class DaanseProbe {
     public static void main(String[] args) throws Exception {
         int port = args.length > 0 ? Integer.parseInt(args[0]) : 8090;
         String contextPath = args.length > 1 ? args[1] : "/xmla";
+        // A second endpoint that insists on knowing who is asking. Everything
+        // about how it insists - the chain, the challenge, the 401, the policy
+        // that lets a client probe before it logs in - is the project's own.
+        int securePort = args.length > 2 ? Integer.parseInt(args[2]) : port + 1;
 
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         // SimpleSessionHandler leaves its policy hooks abstract on purpose; a
@@ -86,10 +96,88 @@ public final class DaanseProbe {
         server.setExecutor(java.util.concurrent.Executors.newFixedThreadPool(4));
         server.start();
 
+        HttpServer secure = HttpServer.create(new InetSocketAddress(securePort), 0);
+        AuthenticationChain chain = new AuthenticationChain();
+        chain.add(new StandInBasicAuthenticator(), Map.of());
+        EmfXmlaAdapter guarded = new EmfXmlaAdapter(new StandInConnector(), new SimpleSessionHandler() {
+        }, null,
+                // A principal is required, except for the two rowsets a client
+                // probes with before it has one. That is not a nicety: Excel and
+                // SSMS both ask those two before they authenticate, and a server
+                // that challenges them refuses the connection outright.
+                new AccessPolicy(true, Set.of("DISCOVER_PROPERTIES", "DISCOVER_DATASOURCES")));
+        secure.createContext(contextPath, new EmfXmlaHttpHandler(guarded, null, () -> chain, "*"));
+        secure.setExecutor(java.util.concurrent.Executors.newFixedThreadPool(2));
+        secure.start();
+
         System.out.println("probe listening on http://localhost:" + port + contextPath);
+        System.out.println("guarded probe on http://localhost:" + securePort + contextPath
+                + " (Basic " + USER + "/" + PASSWORD + ")");
         System.out.flush();
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> server.stop(0)));
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            server.stop(0);
+            secure.stop(0);
+        }));
         Thread.currentThread().join();
+    }
+
+    static final String USER = "aladdin";
+    static final String PASSWORD = "open sesame";
+
+    /**
+     * Basic, checked against one hard-coded pair.
+     * <p>
+     * Only the check is stood in for. The chain that calls this, the ordering,
+     * the {@code WWW-Authenticate} challenge and the 401 that carries it are all
+     * the project's own code, and they are what the client has to get right.
+     */
+    private static final class StandInBasicAuthenticator implements XmlaAuthenticator {
+
+        @Override
+        public String scheme() {
+            return "Basic";
+        }
+
+        @Override
+        public String challenge() {
+            return "Basic realm=\"Daanse Probe\"";
+        }
+
+        @Override
+        public Result authenticate(XmlaRequest request) {
+            String header = firstHeader(request, "authorization");
+            if (header == null || !header.regionMatches(true, 0, "Basic ", 0, 6)) {
+                // Not ours: the chain moves on, and a request nobody claims is
+                // not challenged here but where the backend refuses it.
+                return new Result.NotMine();
+            }
+            String decoded;
+            try {
+                decoded = new String(Base64.getDecoder().decode(header.substring(6).trim()),
+                        StandardCharsets.UTF_8);
+            } catch (IllegalArgumentException notBase64) {
+                return new Result.Refused("the credentials are not base64");
+            }
+            int colon = decoded.indexOf(':');
+            if (colon < 0) {
+                return new Result.Refused("the credentials carry no colon");
+            }
+            String user = decoded.substring(0, colon);
+            String password = decoded.substring(colon + 1);
+            if (!USER.equals(user) || !PASSWORD.equals(password)) {
+                return new Result.Refused("wrong user or password");
+            }
+            return Result.Authenticated.of(AuthenticatedIdentity.of(() -> user));
+        }
+
+        private static String firstHeader(XmlaRequest request, String name) {
+            for (Map.Entry<String, List<String>> entry : request.headers().entrySet()) {
+                if (entry.getKey().equalsIgnoreCase(name) && !entry.getValue().isEmpty()) {
+                    return entry.getValue().get(0);
+                }
+            }
+            return null;
+        }
     }
 
     /**

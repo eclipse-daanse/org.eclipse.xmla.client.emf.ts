@@ -147,6 +147,92 @@ check('a rowset the model does not describe is still readable', async () => {
   return `${columns.length} columns built from the response, ${rows.length} rows; first: ${values.join(' ')}`;
 });
 
+const guardedUrl = process.env['XMLA_GUARDED_URL'] ?? url.replace(/:(\d+)/, (_, port) => `:${Number(port) + 1}`);
+
+check('a rowset a client probes with is served without credentials', async () => {
+  // Excel and SSMS both ask DISCOVER_PROPERTIES and DISCOVER_DATASOURCES before
+  // they authenticate. A server that challenges those refuses the connection
+  // outright, so a client must be able to get them anonymously.
+  const anonymous = new XmlaClient({
+    url: guardedUrl,
+    transport: new FetchTransport(),
+    models,
+    credentials: { kind: 'none' },
+  });
+  const result = await anonymous.discover('DISCOVER_DATASOURCES');
+  return `${result.rows.length} row(s) without so much as a header`;
+});
+
+check('a guarded rowset is refused without credentials, and says how to ask', async () => {
+  const anonymous = new XmlaClient({
+    url: guardedUrl,
+    transport: new FetchTransport(),
+    models,
+    credentials: { kind: 'none' },
+  });
+  try {
+    await anonymous.discover('DBSCHEMA_CATALOGS');
+  } catch (error) {
+    const status = error.status;
+    if (status !== 401) {
+      // A fault would also be a refusal, but a client cannot log in from one.
+      throw new Error(`refused with ${status ?? error.name}, not 401`);
+    }
+    if (error.challenge === null || error.challenge === undefined) {
+      // A 401 with no challenge tells a client it may not in, and nothing about
+      // how it might.
+      throw new Error('a 401 that carries no WWW-Authenticate');
+    }
+    return `HTTP 401, ${error.challenge}`;
+  }
+  throw new Error('the guarded endpoint served an anonymous request');
+});
+
+check('Basic credentials get through', async () => {
+  const authenticated = new XmlaClient({
+    url: guardedUrl,
+    transport: new FetchTransport(),
+    models,
+    credentials: { kind: 'basic', username: 'aladdin', password: 'open sesame' },
+  });
+  const result = await authenticated.discover('DBSCHEMA_CATALOGS');
+  if (result.rows.length === 0) {
+    throw new Error('authenticated but no rows');
+  }
+  return `${result.rows.length} row(s) as aladdin`;
+});
+
+check('the wrong password does not', async () => {
+  const wrong = new XmlaClient({
+    url: guardedUrl,
+    transport: new FetchTransport(),
+    models,
+    credentials: { kind: 'basic', username: 'aladdin', password: 'not it' },
+  });
+  try {
+    await wrong.discover('DBSCHEMA_CATALOGS');
+  } catch (error) {
+    return `refused: ${error.message}`;
+  }
+  throw new Error('the wrong password was accepted');
+});
+
+check('a session survives authentication', async () => {
+  const authenticated = new XmlaClient({
+    url: guardedUrl,
+    transport: new FetchTransport(),
+    models,
+    credentials: { kind: 'basic', username: 'aladdin', password: 'open sesame' },
+  });
+  const opened = await authenticated.beginSession();
+  if (opened.sessionId === null) {
+    throw new Error('no session opened on the guarded endpoint');
+  }
+  const rows = await opened.discover('DBSCHEMA_CATALOGS');
+  await opened.endSession();
+  return `session ${opened.sessionId}, ${rows.rows.length} row(s) inside it`;
+});
+
 check('what the server describes matches what the model says', async () => {
   // Strict mode as a conformance run against a server nobody recorded.
   const resolver = new RowsetResolver(catalog, url, { strict: true });

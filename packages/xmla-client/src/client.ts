@@ -228,7 +228,7 @@ export class XmlaClient {
       // A fault often arrives with a 500, and its text says far more than the
       // status does - so it is preferred where there is one.
       failIfFault(response.body);
-      throw new XmlaHttpError(response.status, response.body);
+      throw new XmlaHttpError(response.status, response.body, response.headers);
     }
     // Before parsing, not after: a fault has no <root> and the parse error it
     // would cause would replace the server's own explanation with ours.

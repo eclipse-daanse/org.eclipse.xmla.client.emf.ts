@@ -78,9 +78,14 @@ Everything else here is checked against recordings of one server family. This is
 the only thing that says a byte ever left the process.
 
 ```bash
-npm run probe        # builds and starts a real Daanse XMLA server on 8090
-npm run probe:live   # the client against it, over HTTP
+npm run probe        # a real Daanse XMLA server on 8090, and a guarded one on 8091
+npm run probe:live   # the client against both, over HTTP
 ```
+
+Twelve checks: rows, a real session, the dynamic path, and authentication -
+that the two rowsets a client probes with are served anonymously, that anything
+else is refused with a 401 **carrying its challenge**, that Basic gets through
+and the wrong password does not, and that a session survives all of it.
 
 The probe is the project's own Java server - its envelope, its sessions, its
 inline schema, its rowset serialisation - with only the backend stood in for,
