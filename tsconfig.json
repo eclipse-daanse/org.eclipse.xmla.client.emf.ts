@@ -12,6 +12,9 @@
       "path": "./packages/xmla-io"
     },
     {
+      "path": "./packages/xmla-dynamic"
+    },
+    {
       "path": "./packages/xmla-client"
     },
     {

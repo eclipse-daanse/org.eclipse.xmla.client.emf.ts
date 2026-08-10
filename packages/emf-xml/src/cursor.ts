@@ -206,6 +206,22 @@ export class XmlCursor {
    * it is first used.
    */
   rawSubtree(): string {
+    return this.raw(false);
+  }
+
+  /**
+   * The element the cursor is on, its own start tag included.
+   *
+   * The difference from `rawSubtree` matters more than it looks. Rebuilding a
+   * start tag by hand loses whatever the element itself declared - an inline
+   * `<xsd:schema>` carries its `targetNamespace` and its `xmlns:sql` there, and
+   * a schema that arrives without them describes a different thing.
+   */
+  rawElement(): string {
+    return this.raw(true);
+  }
+
+  private raw(includeSelf: boolean): string {
     const parts: string[] = [];
     const scopes: Array<Map<string, string>> = [];
     let depth = 0;
@@ -223,11 +239,25 @@ export class XmlCursor {
       return false;
     };
 
+    let ownTag = '';
+    if (includeSelf) {
+      const scope = new Map<string, string>();
+      scopes.push(scope);
+      ownTag = qualify(this.current.prefix, this.localName);
+      parts.push(this.startTag(scope, covers, true));
+      if (this.current.selfClosing) {
+        // Nothing inside it, so the cursor's own END is all that is left.
+        this.next();
+        return `${parts.join('')}/>`;
+      }
+      parts.push('>');
+    }
+
     let kind = this.next();
     while (kind !== null) {
       if (kind === EventKind.END) {
         if (depth === 0) {
-          return parts.join('');
+          return includeSelf ? `${parts.join('')}</${ownTag}>` : parts.join('');
         }
         depth -= 1;
         scopes.pop();
