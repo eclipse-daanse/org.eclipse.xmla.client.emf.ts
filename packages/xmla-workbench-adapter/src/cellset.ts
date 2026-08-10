@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: EPL-2.0
  */
 import { EcoreXmlReader, EventKind, Unknown, wireNameOf, XmlCodecError, XmlCursor } from '@daanse/emf-xml';
+import { DynamicModelRegistry } from '@daanse/xmla-dynamic';
 import { XMLA_NAMESPACES } from '@daanse/xmla-model';
 import type { XmlaModels } from '@daanse/xmla-model';
 import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
@@ -67,8 +68,10 @@ export class UnsupportedResponseShapeError extends Error {
 export class CellsetReader {
   private readonly mdDatasetClass: EClass;
   private readonly reader = new EcoreXmlReader({ unknown: Unknown.SKIP });
+  private readonly dynamic: DynamicModelRegistry;
 
   constructor(models: XmlaModels) {
+    this.dynamic = new DynamicModelRegistry('cellset');
     const mddataset = models.named('mddataset');
     if (mddataset === null) {
       throw new Error('the mddataset model is not loaded');
@@ -88,6 +91,13 @@ export class CellsetReader {
     const cursor = XmlCursor.parse(xml);
     if (!moveTo(cursor, 'root')) {
       throw new Error('the response carries no <root>');
+    }
+    if (cursor.namespaceURI === XMLA_NAMESPACES.ROWSET) {
+      // A DMV or a DRILLTHROUGH: the server answers a rowset rather than an
+      // mddataset. Which one came back is read off the namespace of <root>
+      // rather than guessed from the statement text - the server has already
+      // decided, and reading the answer beats parsing the question.
+      return tabularCellset(xml, this.dynamic);
     }
     const dataset = this.reader.read(cursor, this.mdDatasetClass);
     return toCellset(dataset);
@@ -262,6 +272,98 @@ function coerce(value: unknown): number | string | null {
   const text = String(value);
   const asNumber = Number(text);
   return text.trim() !== '' && !Number.isNaN(asNumber) ? asNumber : text;
+}
+
+/**
+ * A tabular answer as a cellset.
+ *
+ * The columns become one axis and the values become the cells, which is what
+ * lets a DMV result land in the same grid as an MDX one. The column class is
+ * built from the schema the response carried, because a DMV rowset is not in
+ * any model - `$SYSTEM.DISCOVER_CONNECTIONS` is whatever that server has.
+ */
+function tabularCellset(xml: string, registry: DynamicModelRegistry): XmlaCellset {
+  const schemaCursor = XmlCursor.parse(xml);
+  let kind = schemaCursor.next();
+  let schema: string | null = null;
+  while (kind !== null) {
+    if (kind === EventKind.START && schemaCursor.namespaceURI === XMLA_NAMESPACES.XSD
+      && schemaCursor.localName === 'schema') {
+      schema = schemaCursor.rawElement();
+      break;
+    }
+    kind = schemaCursor.next();
+  }
+  if (schema === null) {
+    throw new Error('a tabular response with no inline schema, so its columns are unknown');
+  }
+
+  const rowClass = registry.learn(`tabular:${hash(schema)}`, schema).rowClass;
+  const reader = new EcoreXmlReader({ unknown: Unknown.SKIP });
+  const rows: EObject[] = [];
+
+  const cursor = XmlCursor.parse(xml);
+  if (!moveTo(cursor, 'root')) {
+    return { axes: [], cells: [], cellCount: 0 };
+  }
+  let depth = 0;
+  kind = cursor.next();
+  while (kind !== null) {
+    if (kind === EventKind.START) {
+      if (depth === 0 && cursor.localName === 'row') {
+        rows.push(reader.read(cursor, rowClass));
+      } else if (depth === 0 && cursor.namespaceURI === XMLA_NAMESPACES.XSD) {
+        cursor.skipSubtree();
+      } else {
+        depth += 1;
+      }
+    } else if (kind === EventKind.END) {
+      if (depth === 0) {
+        break;
+      }
+      depth -= 1;
+    }
+    kind = cursor.next();
+  }
+
+  const columns = [...(rowClass.getEAllStructuralFeatures() as unknown as EStructuralFeature[])];
+  const cells: XmlaCell[] = [];
+  rows.forEach((row, rowIndex) => {
+    columns.forEach((feature, columnIndex) => {
+      if (!row.eIsSet(feature)) {
+        return;
+      }
+      const value = row.eGet(feature);
+      cells.push({
+        // Axis 0 varies fastest, as everywhere else in a cellset.
+        ordinal: rowIndex * columns.length + columnIndex,
+        value: coerce(value),
+        formattedValue: value === null || value === undefined ? '' : String(value),
+      });
+    });
+  });
+
+  return {
+    axes: [
+      {
+        name: 'Axis0',
+        ordinal: 0,
+        tuples: columns.map((feature) => [{ uniqueName: wireNameOf(feature), caption: wireNameOf(feature) }]),
+      },
+      { name: 'Axis1', ordinal: 1, tuples: rows.map((_, index) => [{ uniqueName: `Row${index}`, caption: `${index}` }]) },
+    ],
+    cells,
+    cellCount: cells.length,
+  };
+}
+
+/** Enough to tell two schemas apart within one connection. */
+function hash(text: string): string {
+  let value = 0;
+  for (let i = 0; i < text.length; i++) {
+    value = (value * 31 + text.charCodeAt(i)) | 0;
+  }
+  return String(value >>> 0);
 }
 
 function moveTo(cursor: XmlCursor, localName: string): boolean {

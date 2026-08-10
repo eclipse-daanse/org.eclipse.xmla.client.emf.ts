@@ -151,6 +151,19 @@ model:
   models actually use, and a test mounts every form in the catalogue to check
   none is blank.
 
+## Swapping mdx-workbench's client
+
+`@daanse/xmla-workbench-adapter` exposes `WorkbenchXmlaClient`, which mirrors
+`XmlaSoapClient` method for method - `connect`, `discover`, `execute`,
+`endSession`, `setCatalog`, `currentSessionId` - and answers the same plain
+shapes. The tests assert that surface rather than assume it lines up.
+
+What changes underneath: rows are read against the models instead of out of a
+DOM, a rowset the models never described is read from the schema its own
+response carried, a nested rowset arrives as a nested record rather than as
+`[object Object]`, and a DMV answer becomes a cellset by reading the namespace
+of `<root>` rather than by guessing from the statement text.
+
 ## What is not done yet
 
 ## License

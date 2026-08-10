@@ -20,3 +20,5 @@ export { CellsetReader, toCellset, UnsupportedResponseShapeError } from './cells
 export type { XmlaCell, XmlaCellset, XmlaCellsetAxis, XmlaCellsetMember } from './cellset.js';
 export { rowToRecord, toParsedRowset } from './records.js';
 export type { ParsedRowset } from './records.js';
+export { WorkbenchXmlaClient } from './workbench-client.js';
+export type { WorkbenchClientOptions } from './workbench-client.js';
