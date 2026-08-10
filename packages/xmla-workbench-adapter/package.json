@@ -1,0 +1,19 @@
+{
+  "name": "@daanse/xmla-workbench-adapter",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "EPL-2.0",
+  "description": "Plain records and cellsets over the EObject client, so mdx-workbench can swap its SOAP client for one line.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist"],
+  "scripts": { "build": "tsc --build", "test": "vitest run" },
+  "dependencies": {
+    "@daanse/emf-xml": "0.0.1",
+    "@daanse/xmla-client": "0.0.1",
+    "@daanse/xmla-dynamic": "0.0.1",
+    "@daanse/xmla-model": "0.0.1",
+    "@emfts/core": "0.1.1-next.16"
+  }
+}
