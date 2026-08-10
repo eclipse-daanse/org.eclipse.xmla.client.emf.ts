@@ -57,11 +57,24 @@ export class EcoreXmlWriter {
       // server does.
       out.setDefaultNamespace(this.namespace);
     }
-    out.writeStartElement(this.namespace, elementName);
+    // An object with only attributes is written in the short form. Every
+    // recorded client writes <Session SessionId="..."/> rather than spelling out
+    // a closing tag around nothing, and matching what they send costs nothing.
+    const empty = !hasContent(object);
+    if (empty) {
+      out.writeEmptyElement(this.namespace, elementName);
+    } else {
+      out.writeStartElement(this.namespace, elementName);
+    }
     if (declare) {
       out.writeDefaultNamespace(this.namespace);
     }
-    this.writeContent(out, object);
+    this.writeAttributes(out, object);
+    if (empty) {
+      return;
+    }
+    this.writeSimpleContent(out, object);
+    this.writeElements(out, object);
     out.writeEndElement();
   }
 
@@ -209,6 +222,38 @@ function isElementName(feature: EStructuralFeature): boolean {
     return false;
   }
   return elementNameFrom(owner) === feature.getName();
+}
+
+/**
+ * Whether anything at all goes inside this object's element.
+ *
+ * Asked before the element is opened, so a header block that carries only
+ * attributes can be written as `<X .../>`. Uses eIsSet only - touching eGet
+ * would materialise every many-valued feature's list and make it count as set.
+ */
+function hasContent(object: EObject): boolean {
+  for (const feature of allFeatures(object)) {
+    if (!object.eIsSet(feature)) {
+      continue;
+    }
+    if (isAttribute(feature)) {
+      continue;
+    }
+    if (isSimpleContent(feature)) {
+      return true;
+    }
+    if (feature.isMany()) {
+      if ([...iterate(object.eGet(feature) as Iterable<unknown>)].length > 0) {
+        return true;
+      }
+      continue;
+    }
+    const value = object.eGet(feature);
+    if (value !== null && value !== undefined) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function isXmlDocument(feature: EStructuralFeature): boolean {

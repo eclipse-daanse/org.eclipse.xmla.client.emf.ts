@@ -10,6 +10,12 @@
     },
     {
       "path": "./packages/xmla-io"
+    },
+    {
+      "path": "./packages/xmla-client"
+    },
+    {
+      "path": "./packages/testkit"
     }
   ]
 }
