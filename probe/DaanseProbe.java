@@ -48,8 +48,7 @@ import org.eclipse.daanse.xmla.model.mddataset.TupleType;
 import org.eclipse.daanse.xmla.model.mddataset.TuplesType;
 import org.eclipse.daanse.xmla.model.io.RowsetCatalog;
 import org.eclipse.daanse.xmla.model.io.XmlaMessageCodec;
-import org.eclipse.daanse.xmla.model.rowset.RowsetFactory;
-import org.eclipse.daanse.xmla.model.rowset.RowsetPackage;
+import org.eclipse.daanse.xmla.model.rowset.registry.RowsetPackages;
 import org.eclipse.daanse.xmla.model.xmla.Discover;
 import org.eclipse.daanse.xmla.model.xmla.Execute;
 import org.eclipse.daanse.xmla.server.adapter.emf.AccessPolicy;
@@ -302,7 +301,10 @@ public final class DaanseProbe {
 
 
     static {
-        // A generated EPackage registers itself when its class initialises.
-        RowsetFactory.eINSTANCE.getClass();
+        // The rowsets live in five packages now, and the catalogue is told which
+        // rather than naming any itself. This both registers the EPackages - a
+        // generated one registers itself when its class initialises - and gives the
+        // catalogue the model it refuses to work without.
+        RowsetCatalog.use(RowsetPackages.all());
     }
 }

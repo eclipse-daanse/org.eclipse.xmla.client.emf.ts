@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*********************************************************************
+* Copyright (c) 2026 Contributors to the Eclipse Foundation.
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which is available at https://www.eclipse.org/legal/epl-2.0/
+*
+* SPDX-License-Identifier: EPL-2.0
+**********************************************************************/
+-->
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="common"
+    nsURI="https://www.daanse.org/spec/xmla/rowset/common/1.0" nsPrefix="rsc">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="The datatypes every rowset package needs, in one place.&#xA;&#xA;XMLA rowsets are described by four packages - the ones an Analysis Services server serves, the OLE DB relational ones, the tabular TMSCHEMA_ family, and the restrictions beside them. Each of them has columns typed uuid, dateTime or an embedded XML document, and before this package existed each declared its own: DateTime was written out four times over.&#xA;&#xA;They are declared once here and referenced by nsURI. Nothing in this package is an EClass, so nothing it holds can appear on the wire; a datatype has no element of its own, which is what makes moving them a change to the models and not to the protocol.&#xA;&#xA;This package is also the one thing model/io depends on. It reads the Uuid pattern from here rather than repeating it, and knows no other rowset package - see docs/rowsets-tabular-vs-multidimensional.md."/>
+    <details key="oSGiCompatible" value="true"/>
+    <details key="basePackage" value="org.eclipse.daanse.xmla.model.rowset"/>
+    <details key="prefix" value="RowsetCommon"/>
+    <details key="fileExtensions" value="xmlarsc"/>
+    <details key="resource" value="XML"/>
+    <details key="literalsInterface" value="true"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EDataType" name="Uuid" instanceClassName="java.lang.String">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A GUID as XMLA writes them, which is a string of a fixed shape rather than a type of its own. The pattern is stated here and nowhere else: RowsetSchemaWriter reads it from this annotation when it writes the inline schema, so the advertised schema and the model cannot disagree about what a GUID looks like."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="uuid"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      <details key="pattern" value="[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="XmlDocument" instanceClassName="java.lang.String">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A column whose value is itself an XML document - the mining model content and the CSDL and XML metadata rowsets carry them. It is held as the text it arrived as, because parsing it would be this model claiming to know a schema it does not have."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="xmlDocument"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="DateTime" instanceClassName="java.time.LocalDateTime">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A timestamp without a zone, as XMLA writes them. Not the XMLType dateTime, because that maps to a String here and would lose the fact that the value is a point in time."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="dateTime"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#dateTime"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

@@ -111,8 +111,8 @@ describe('reading a response', () => {
   it('refuses a request type it has no class for, rather than answering nothing', async () => {
     const transport = FixtureTransport.answering(responseAfter('ssms-connect', 'DISCOVER_DATASOURCES'));
 
-    await expect(clientOver(transport).discover('DISCOVER_RESOURCE_POOLS')).rejects.toThrow(
-      /no row class for DISCOVER_RESOURCE_POOLS/,
+    await expect(clientOver(transport).discover('DISCOVER_M_EXPRESSIONS')).rejects.toThrow(
+      /no row class for DISCOVER_M_EXPRESSIONS/,
     );
   });
 });

@@ -1,0 +1,98 @@
+{
+  "host": "flexmonster",
+  "rowsets": {
+    "DISCOVER_DATASOURCES": {
+      "answered": true,
+      "rows": 1,
+      "keptRows": 1,
+      "trimmed": false,
+      "bytes": 3237,
+      "rowsAtCapture": 1
+    },
+    "DISCOVER_JOB_PROGRESS": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_MODEL_SECURITY": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_M_EXPRESSIONS": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_POWERBI_DATASOURCES": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_POWERBI_ROLES": {
+      "answered": false,
+      "note": "the server refused this rowset; the fault is the capture"
+    },
+    "DISCOVER_RESOURCE_POOLS": {
+      "answered": true,
+      "rows": 2,
+      "keptRows": 2,
+      "trimmed": false,
+      "bytes": 5124,
+      "rowsAtCapture": 2
+    },
+    "DMSCHEMA_MINING_FUNCTIONS": {
+      "answered": true,
+      "rows": 200,
+      "keptRows": 200,
+      "trimmed": false,
+      "bytes": 79803,
+      "rowsAtCapture": 277
+    },
+    "DMSCHEMA_MINING_MODELS": {
+      "answered": true,
+      "rows": 9,
+      "keptRows": 9,
+      "trimmed": false,
+      "bytes": 12350,
+      "rowsAtCapture": 9
+    },
+    "DMSCHEMA_MINING_SERVICES": {
+      "answered": true,
+      "rows": 9,
+      "keptRows": 9,
+      "trimmed": false,
+      "bytes": 20641,
+      "rowsAtCapture": 9
+    },
+    "DMSCHEMA_MINING_STRUCTURES": {
+      "answered": true,
+      "rows": 5,
+      "keptRows": 5,
+      "trimmed": false,
+      "bytes": 6568,
+      "rowsAtCapture": 5
+    },
+    "TMSCHEMA_COLUMNS": {
+      "answered": true,
+      "rows": 0,
+      "rowsAtCapture": 0
+    },
+    "TMSCHEMA_MEASURES": {
+      "answered": true,
+      "rows": 0,
+      "rowsAtCapture": 0
+    },
+    "TMSCHEMA_MODEL": {
+      "answered": true,
+      "rows": 0,
+      "rowsAtCapture": 0
+    },
+    "TMSCHEMA_RELATIONSHIPS": {
+      "answered": true,
+      "rows": 0,
+      "rowsAtCapture": 0
+    },
+    "TMSCHEMA_TABLES": {
+      "answered": true,
+      "rows": 0,
+      "rowsAtCapture": 0
+    }
+  }
+}

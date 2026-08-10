@@ -12,6 +12,12 @@ import type { EClass, EClassifier, EPackage, EStructuralFeature } from '@emfts/c
 
 import type { XmlaModels } from './bootstrap.js';
 
+/** The kinds of rowset, which is one model each - see docs/rowsets-tabular-vs-multidimensional.md. */
+const KINDS = ['relational', 'multidimensional', 'mining', 'server', 'tabular'] as const;
+
+const ROWSET_MODELS = KINDS.map((kind) => `rowset-${kind}`);
+const RESTRICTION_MODELS = KINDS.map((kind) => `rowset-${kind}-restrictions`);
+
 /** The annotation carrying the XMLA and OLE DB facts EMF has no idiom for. */
 export const ROWSET_ANNOTATION = 'https://www.daanse.org/spec/xmla/rowset/1.0';
 
@@ -35,20 +41,25 @@ export class RowsetCatalog {
   private readonly restrictionsByRequestType = new Map<string, EClass>();
 
   constructor(models: XmlaModels) {
-    const rowset = required(models, 'rowset');
-    for (const eClass of classesOf(rowset)) {
-      const requestType = detail(eClass, 'requestType');
-      if (requestType !== null) {
-        this.byRequestType.set(requestType, eClass);
-        this.requestTypeByClass.set(eClass, requestType);
+    // One package per kind of rowset - relational, multidimensional, mining, the
+    // server's own DISCOVER_*, and the tabular TMSCHEMA_* family. A request type
+    // belongs to exactly one of them, and which one it is says what it describes.
+    for (const name of ROWSET_MODELS) {
+      for (const eClass of classesOf(required(models, name))) {
+        const requestType = detail(eClass, 'requestType');
+        if (requestType !== null) {
+          this.byRequestType.set(requestType, eClass);
+          this.requestTypeByClass.set(eClass, requestType);
+        }
       }
     }
 
-    const restrictions = required(models, 'rowset-restrictions');
-    for (const eClass of classesOf(restrictions)) {
-      const requestType = detail(eClass, 'requestType');
-      if (requestType !== null && detail(eClass, 'role') === 'restrictions') {
-        this.restrictionsByRequestType.set(requestType, eClass);
+    for (const name of RESTRICTION_MODELS) {
+      for (const eClass of classesOf(required(models, name))) {
+        const requestType = detail(eClass, 'requestType');
+        if (requestType !== null && detail(eClass, 'role') === 'restrictions') {
+          this.restrictionsByRequestType.set(requestType, eClass);
+        }
       }
     }
   }

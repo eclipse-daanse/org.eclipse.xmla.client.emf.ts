@@ -1,5 +1,14 @@
 # The rowsets we do not have
 
+> **Status, after this was acted on.** 34 of the 67 are now modelled: the 32
+> `TMSCHEMA_*` that [MS-SSAS-T] specifies, and 2 of the 6 operational
+> `DISCOVER_*`. The models here describe **137** request types, not 103. Two
+> claims in the original text were wrong and are corrected in place, marked where
+> they occur. The analysis of how the rowsets should now be divided between
+> packages is in the Java repository's `docs/rowsets-tabular-vs-multidimensional.md`
+> — and has since been carried out: the rowsets are split into one package per
+> kind (relational, multidimensional, mining, server, tabular).
+
 Three tools that talk to Analysis Services were read to find out what a real
 client asks for that this project's models do not describe. They were chosen
 because none of them is documentation: each is a working tool's own list, so a
@@ -22,7 +31,14 @@ Power BI tool has any use for.
 
 ## What is missing, and what it is for
 
-### The Tabular Object Model — 60 rowsets, and the whole reason for the gap
+### The Tabular Object Model — 60 named by the tools, 32 specified
+
+**Correction.** The 60 below is what the three tool inventories name between them.
+[MS-SSAS-T] v20210406 specifies **32**, and those 32 are what could be modelled
+from a source; they are now `model/rowset.tabular` in the Java repository. The
+difference is almost exactly the storage group described further down - the
+VertiPaq `_STORAGES`, `_SEGMENT_*` and `_DICTIONARY_*` diagnostics appear in no
+specification, only in tools that read them.
 
 `TMSCHEMA_MODEL`, `TMSCHEMA_TABLES`, `TMSCHEMA_COLUMNS`, `TMSCHEMA_MEASURES`,
 `TMSCHEMA_RELATIONSHIPS`, `TMSCHEMA_PARTITIONS`, `TMSCHEMA_ROLES`,
@@ -52,21 +68,28 @@ Within the family, three groups do different work:
 
 ### Six `DISCOVER_*`, all operational
 
-The subclass ids are from the SSMS trace definition, which is where a server
-reports what it was asked.
+A server reports what it was asked as a trace event subclass, and **the two
+sources number those subclasses differently**. The SSMS trace definition and the
+AMO `TraceEventSubclass` enumeration disagree on every one of the six, so both are
+given rather than one being presented as the id:
 
-| rowset | id | what it answers |
-|---|---|---|
-| `DISCOVER_RESOURCE_POOLS` | 56 | the memory and CPU pools the instance divides work between |
-| `DISCOVER_JOB_PROGRESS` | 15 | how far a running process or refresh has got |
-| `DISCOVER_M_EXPRESSIONS` | 110 | the Power Query (M) expressions behind a tabular model's tables |
-| `DISCOVER_MODEL_SECURITY` | 116 | the row-level security a model applies |
-| `DISCOVER_POWERBI_DATASOURCES` | 107 | the data sources a Power BI dataset was built from |
-| `DISCOVER_POWERBI_ROLES` | — | the roles a Power BI dataset defines; in `pbix_doc` but not in the SSMS definition, so newer than it |
+| rowset | SSMS | AMO | what it answers |
+|---|---|---|---|
+| `DISCOVER_RESOURCE_POOLS` | 56 | 239 | the memory and CPU pools the instance divides work between |
+| `DISCOVER_JOB_PROGRESS` | 15 | 72 | how far a running process or refresh has got |
+| `DISCOVER_M_EXPRESSIONS` | 110 | 312 | the Power Query (M) expressions behind a tabular model's tables |
+| `DISCOVER_MODEL_SECURITY` | 116 | 322 | the row-level security a model applies |
+| `DISCOVER_POWERBI_DATASOURCES` | 107 | 310 | the data sources a Power BI dataset was built from |
+| `DISCOVER_POWERBI_ROLES` | — | 313 | the roles a Power BI dataset defines; absent from the SSMS definition, so newer than it |
+
+The AMO column is from `spec/sources/.amo-cache/…traceeventsubclass.html`, which
+lists 342 subclasses. Neither number is a rowset identifier - a subclass id says
+what a *trace* calls the request, not what the protocol calls it - so nothing in
+the models depends on either.
 
 `DISCOVER_RESOURCE_POOLS` is the one already met: the public Flexmonster server
-declares it, and it is what the dynamic path reads live in
-`scripts/probe-public.mjs`.
+declares it, and it is what the dynamic path read live in
+`scripts/probe-public.mjs` before the model described it.
 
 ### One `MDSCHEMA`
 
@@ -105,19 +128,50 @@ Every one of these 67 is already reachable. A server that offers
 the response, on a rowset no model here describes. The gap costs typed access
 and documentation, not access.
 
-**2. The six `DISCOVER_*` and `MDSCHEMA_COMMANDS` are worth modelling.**
+**2. Two of the six `DISCOVER_*` have been modelled. Four cannot be. — done**
 
-Seven rowsets, each small, each with a fixed column list [MS-SSAS] specifies.
-They belong in the Java repository's `rowset.ecore`, where the other 103 live —
-not here, because this project *copies* those models rather than authoring them.
-Modelling them buys named columns, documentation, and typed restrictions.
+This section previously claimed the six each have "a fixed column list [MS-SSAS]
+specifies". **That was wrong.** None of the six appears in [MS-SSAS], and none
+appears in [MS-SSAS-T] either; five do not occur in the specification text at all.
+There was no column list to transcribe.
 
-**3. `TMSCHEMA_*` is a decision, not a task.**
+What there is instead is what a server answers, and asking settled it. All four
+public servers were asked for all six (`spec/capture_ssas_fixtures.py`):
 
-Sixty rowsets describing a model this project does not have. Daanse is
-multidimensional: it has cubes and dimensions, not tables and DAX measures. A
-Daanse server would answer every one of them empty, and a client would have
-learned nothing.
+| rowset | outcome |
+|---|---|
+| `DISCOVER_RESOURCE_POOLS` | Flexmonster answered, 15 columns, 2 rows — modelled |
+| `DISCOVER_MODEL_SECURITY` | Telerik answered, 3 columns, 0 rows; the inline schema is the column list — modelled |
+| the other four | refused by all four, "an error occurred while parsing the RequestType element" — **not** modelled |
+
+Both modelled ones carry `source="OBSERVED"` and an `observedFrom` naming the
+recording, because an observation is weaker than a specification and the model
+should say so. The four refusals are kept as `.fault.xml` so the absence is a
+recorded fact. They went into the multidimensional package, not the tabular one:
+both servers that answered are multidimensional, and what these rowsets describe
+is the server rather than a model.
+
+`MDSCHEMA_COMMANDS` is still unmodelled and still worth it.
+
+**3. `TMSCHEMA_*` has been modelled — 32 of them, not 60. — done**
+
+The count here was taken from tool inventories. [MS-SSAS-T] v20210406 specifies
+**32**, each with a column table, an embedded XSD giving the types, and an
+Additional Restrictions section. They are now in the Java repository as
+`model/rowset.tabular` (305 columns, 372 restrictions), generated by
+`spec/bootstrap_tabular_rowset_ecore.py` rather than typed.
+
+The reservation above still stands and is worth keeping: a Daanse server has cubes
+and dimensions, not tables and DAX measures, and would answer every one of them
+empty. What modelling them buys is the *client* side — this project talks to
+Power BI and to tabular SSAS, and now reads their metadata with named, typed
+columns instead of through the dynamic path. Note also that no server advertises
+them: all three recorded sessions list 70 rowsets and not one `TMSCHEMA_`, so a
+client cannot discover them and has to know them. That is precisely what a model
+is for.
+
+How the rowsets should be divided between packages from here is analysed in the
+Java repository's `docs/rowsets-tabular-vs-multidimensional.md`.
 
 They matter in one case only: **reading somebody else's tabular server** - a
 Power BI dataset, an Analysis Services instance in tabular mode. If that is a

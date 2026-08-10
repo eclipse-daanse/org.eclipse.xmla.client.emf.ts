@@ -20,9 +20,18 @@
     "mddataset.ecore": "7e97dfc3c2d2ce86ee6642d3a9fdad3d7e1cfb8dd8364c9458fd404826931259",
     "msxmla.ecore": "395d461feb4a9e7a300db517dd520aa909991fe310a23fa11d33365892f96961",
     "multipleresults.ecore": "0c1e49da868eb1af0829eb3a7d146f48d7d5b083f2c4921efb41b0b24f93b35e",
-    "rowset-restrictions.ecore": "551146f05cdf232c5b66ca16de07c1540d43c3ef4ac0ee8f257b815e561bd66a",
-    "rowset.ecore": "47b321dd90a2caa263c6891d173563fc202ef6e841015c122b43a39e64e316a8",
+    "rowset-common.ecore": "13633ca162017e69c0f0c50982360bcb27404575fff1546a77292d560bde8ff2",
+    "rowset-mining-restrictions.ecore": "a40425153ae6a71b4e103142c22db8b5712a6e03ba7bc1676cf1f4a6c1b1572c",
+    "rowset-mining.ecore": "14481e196f9eebf4d3485c6a2b4ddd7119896ee5bcadd88c2aec0257c5358899",
+    "rowset-multidimensional-restrictions.ecore": "5626b3b3d22c5ab469d990f1462d5ae1d7e5fea4ceeb4942829e9e6449bdde66",
+    "rowset-multidimensional.ecore": "02cb85315de6ce59cb4423748abd6afd05a930e2c23c427a2db90541b67b76d2",
+    "rowset-relational-restrictions.ecore": "2f1d0514d2e746b48f7b2d168381e758e31c3060e90a95d1c7e31d4f4ba8badc",
+    "rowset-relational.ecore": "4810d73723a50c4580269fe360edfe7294443aa4031034b46467465fff0ac83d",
+    "rowset-server-restrictions.ecore": "fda73a2e3a435fa74aa0d0449c0adb7ce5f7b9c76c76675e236aefba7c6f442b",
+    "rowset-server.ecore": "882640cb3f29a7c362f11a773d2d9ff74639f0990d28fb958d5f6b373d221d41",
+    "rowset-tabular-restrictions.ecore": "17801e4c254900f27a368244e7cfc326e79b5576c893f8baf14446da71d4597c",
+    "rowset-tabular.ecore": "6ae2aa288031135545a59c60352c551e0bcccbfa8ac16c9309898753ae3b7d2a",
     "soap.ecore": "56760e8d6c305beeb6d79c248219d96d26aace0e14b53a31a063a437672d8000",
-    "xmla.ecore": "1e4c98b3ce1486925e6542b613dd255453c30f787b5b175d9c012cc02978f58c"
+    "xmla.ecore": "57eff35af2ad5e8e02314480ae880061f939dbc5bd9f6c913cfae61233b6bc74"
   }
 }

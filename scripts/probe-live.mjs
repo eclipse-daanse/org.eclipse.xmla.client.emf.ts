@@ -138,7 +138,10 @@ check('a rowset the model does not describe is still readable', async () => {
   // in no .ecore anywhere - so nothing the client knows could have told it the
   // shape.
   const foreign = new XmlaClient({ url: `${url}-foreign`, transport: new FetchTransport(), models, credentials });
-  const requestType = 'DISCOVER_RESOURCE_POOLS';
+  // Not DISCOVER_RESOURCE_POOLS any more: the model describes it since a live
+  // server was asked and answered. This has to be a request type still described
+  // nowhere, or the check silently proves nothing - which is what it reported.
+  const requestType = 'DISCOVER_M_EXPRESSIONS';
 
   let xml;
   try {
