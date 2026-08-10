@@ -14,7 +14,9 @@ import { ref, shallowRef } from 'vue';
 import { UIModelComposer } from '@daanse/vendor-uimodel-composer';
 
 import RowsetTable from './RowsetTable.vue';
+import TableViewRenderer from './TableViewRenderer.vue';
 import type { ExplorerSession, RowsetEntry, RunResult } from './session.js';
+import { composerRegistry } from './ui-model.js';
 import type { BuiltForm } from './ui-model.js';
 
 /**
@@ -25,6 +27,13 @@ import type { BuiltForm } from './ui-model.js';
  * it.
  */
 const props = defineProps<{ session: ExplorerSession }>();
+
+/**
+ * Built once. Passing a registry replaces the composer's defaults wholesale,
+ * so this is the one place that lists every key it dispatches on - including
+ * TableViewRenderer, without which a TableView renders a silent placeholder.
+ */
+const registry = composerRegistry(TableViewRenderer);
 
 const rowsets = shallowRef<RowsetEntry[]>([]);
 const selected = ref<string | null>(null);
@@ -125,7 +134,11 @@ function message(caught: unknown): string {
               one widget per restriction and the EStructuralFeature itself behind
               each. Nothing here names a rowset or a column.
             -->
-            <UIModelComposer :ui-model="form.uiModel" :model="form.instance" />
+            <UIModelComposer
+              :ui-model="form.uiModel"
+              :model="form.instance"
+              :composer-registry="registry"
+            />
           </div>
           <p v-else class="hint">This rowset takes no restrictions.</p>
 
@@ -138,7 +151,7 @@ function message(caught: unknown): string {
               Rows
               <span class="badge" :class="result.origin">{{ result.origin }}</span>
             </h3>
-            <RowsetTable :table="result.table" :rows="result.rows" />
+            <RowsetTable :columns="result.table.columns" :rows="result.rows" />
 
             <details v-if="schema">
               <summary>The schema the server sent, beside the class built from it</summary>

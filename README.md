@@ -131,12 +131,22 @@ The package is not published, so it is vendored in
 its `VENDOR.md`; `npm run check:vendor` compares the tree against the snapshot
 and fails on anything VENDOR.md does not account for.
 
-## What is not done yet
+Two things the composer leaves to the application, and both are silent when
+left undone - which is why the tests mount a DOM rather than inspecting the
+model:
 
-**The grid is this project's, not the composer's.** `TableViewComposer` renders
-rows as flat values, and a nested rowset has to fold into an inner table rather
-than a JSON blob - which is the reason EObjects are carried as far as the UI.
-The form is the composer's.
+- `TableViewComposer` renders **nothing** of its own. It looks up
+  `TableViewRenderer` in the registry and delegates, and an unregistered key
+  gives an empty placeholder. `RowsetTable` is registered under it, so the grid
+  goes through the composer rather than beside it.
+- `WidgetComposer` finds its inputs in `@emfts/vue-registry`, whose editors are
+  keyed on **Ecore's** data types. The XMLA models are built on XMLType, so 75
+  of the 435 restriction features in the catalogue - one in six - matched
+  nothing and rendered blank. `src/widgets.ts` registers for the names the
+  models actually use, and a test mounts every form in the catalogue to check
+  none is blank.
+
+## What is not done yet
 
 ## License
 

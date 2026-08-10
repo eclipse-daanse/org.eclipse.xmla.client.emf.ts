@@ -7,10 +7,21 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { UimodelFactory, UimodelPackage } from '@daanse/vendor-uimodel-composer';
+import {
+  createComposerRegistry,
+  FormViewComposer,
+  MasterDetailComposer,
+  SectionViewComposer,
+  SummaryViewComposer,
+  TabViewComposer,
+  TableViewComposer,
+  UimodelFactory,
+  UimodelPackage,
+} from '@daanse/vendor-uimodel-composer';
 import { wireNameOf } from '@daanse/emf-xml';
 import type { WidgetComponent } from '@daanse/vendor-uimodel-composer';
 import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
+import type { InjectionKey } from 'vue';
 
 /**
  * Building a UI that is itself an Ecore model.
@@ -30,6 +41,15 @@ import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
  * no Resource, so saving one would write `href`s that resolve to nothing.
  */
 const GENMODEL = 'http://www.eclipse.org/emf/2002/GenModel';
+
+/**
+ * The rows a TableView is rendering, handed down rather than passed through.
+ *
+ * The composer gives a renderer one `model` EObject, and a rowset is a list of
+ * them - so the list travels beside the model rather than being squeezed into
+ * it.
+ */
+export const ROWS_KEY: InjectionKey<() => readonly EObject[]> = Symbol('xmla-rows');
 
 /** The widget kinds this generator chooses between. */
 export type WidgetKind = 'input' | 'number' | 'checkbox' | 'date' | 'textArea';
@@ -104,6 +124,10 @@ export function tableViewForEClass(eClass: EClass): BuiltTable {
   const table = factory.createTableView();
   table.name = eClass.getName() ?? 'Rows';
   table.tableStyle = factory.createTableStyle();
+  // On the TableView itself, not only on the UIModel: the renderer the composer
+  // delegates to is handed the component, and that is where it has to find out
+  // what it is rendering.
+  table.targetClasses.push(eClass);
 
   const uiModel = factory.createUIModel();
   uiModel.name = `${eClass.getName()} rows`;
@@ -112,8 +136,13 @@ export function tableViewForEClass(eClass: EClass): BuiltTable {
 
   return {
     uiModel: uiModel as unknown as EObject,
-    columns: allFeatures(eClass).map((feature) => columnFor(feature)),
+    columns: columnsForEClass(eClass),
   };
+}
+
+/** The columns of a row class, without building a UIModel to get at them. */
+export function columnsForEClass(eClass: EClass): ColumnModel[] {
+  return allFeatures(eClass).map((feature) => columnFor(feature));
 }
 
 function columnFor(feature: EStructuralFeature): ColumnModel {
@@ -198,6 +227,29 @@ function documentationOf(feature: EStructuralFeature): string | null {
   }
   const text = annotation.getDetails().getByKey('documentation');
   return text === undefined || text === null || text === '' ? null : text;
+}
+
+/**
+ * The registry the composer is given: its own composers, plus our grid.
+ *
+ * Passing a registry replaces the composer's defaults wholesale rather than
+ * adding to them, so every key it dispatches on has to be listed here. Leaving
+ * one out is silent - `ComponentDispatcher` renders nothing and warns to the
+ * console - which is why this is in one place with a test that mounts it.
+ *
+ * `TableViewRenderer` is the seam `TableViewComposer` delegates to. Without it
+ * a TableView renders an empty placeholder.
+ */
+export function composerRegistry(tableRenderer: unknown) {
+  return createComposerRegistry({
+    FormView: FormViewComposer,
+    SectionView: SectionViewComposer,
+    TabView: TabViewComposer,
+    SummaryView: SummaryViewComposer,
+    TableView: TableViewComposer,
+    MasterDetail: MasterDetailComposer,
+    TableViewRenderer: tableRenderer as never,
+  });
 }
 
 /** The UIModel package, so a caller can register it before rendering. */
