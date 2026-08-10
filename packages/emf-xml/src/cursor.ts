@@ -62,38 +62,45 @@ interface XmlEvent {
 const NO_ATTRIBUTES: readonly XmlAttribute[] = [];
 
 export class XmlCursor {
-  private readonly events: readonly XmlEvent[];
-  private index = -1;
+  private readonly source: Source;
+  private position: XmlEvent | null = null;
+  private seen = 0;
 
-  private constructor(events: readonly XmlEvent[]) {
-    this.events = events;
+  private constructor(source: Source) {
+    this.source = source;
   }
 
-  static parse(xml: string): XmlCursor {
-    return new XmlCursor(collect(xml));
+  static parse(xml: string, options: { chunkSize?: number } = {}): XmlCursor {
+    return new XmlCursor(new Source(xml, options.chunkSize ?? DEFAULT_CHUNK));
   }
 
-  /** How many events the document produced. Reported by the streaming tests. */
+  /**
+   * How many events have gone past so far.
+   *
+   * Not how many the document holds: nothing here has read to the end, and
+   * asking would mean doing so.
+   */
   get eventCount(): number {
-    return this.events.length;
+    return this.seen;
   }
 
   /** Advances one event, or returns null at the end of the document. */
   next(): EventKind | null {
-    if (this.index + 1 >= this.events.length) {
-      this.index = this.events.length;
+    const event = this.source.take();
+    if (event === null) {
+      this.position = null;
       return null;
     }
-    this.index += 1;
-    return this.events[this.index]!.kind;
+    this.position = event;
+    this.seen += 1;
+    return event.kind;
   }
 
   private get current(): XmlEvent {
-    const event = this.events[this.index];
-    if (event === undefined) {
+    if (this.position === null) {
       throw new XmlCodecError('the cursor is not positioned on an event');
     }
-    return event;
+    return this.position;
   }
 
   get kind(): EventKind {
@@ -133,8 +140,9 @@ export class XmlCursor {
   }
 
   get location(): { line: number; column: number } {
-    const event = this.events[Math.min(this.index, this.events.length - 1)];
-    return event ? { line: event.line, column: event.column } : { line: 0, column: 0 };
+    return this.position === null
+      ? this.source.location
+      : { line: this.position.line, column: this.position.column };
   }
 
   /**
@@ -331,91 +339,157 @@ function escapeAttribute(text: string): string {
 }
 
 /**
- * Runs the parser once and keeps what it produced.
+ * The parser, fed a piece at a time, with only what a piece produced in hand.
  *
- * Whitespace-only text is kept. A type with simple content owns the element's
- * own text, and `<FmtValue> </FmtValue>` means a single space - discarding it
- * because it looks like formatting would change the value.
+ * This is what keeps a large response from becoming a large object graph. `sax`
+ * pushes, so the events a chunk produces are queued and handed out one by one;
+ * the next chunk is only fed once the queue runs dry. Memory is therefore
+ * bounded by the chunk, not by the document - the difference between a few
+ * hundred event objects and the 49 000 the largest recorded response holds.
+ *
+ * The chunk size is a trade: smaller means less held at once and more calls
+ * into the parser. 64 KB was measured against the 4.3 MB response as the point
+ * where making it smaller stopped buying anything.
  */
-function collect(xml: string): XmlEvent[] {
-  const events: XmlEvent[] = [];
-  // The elements currently open, so an END knows its own name in constant time.
-  const open: XmlEvent[] = [];
-  const parser = sax.parser(true, { xmlns: true, position: true });
+const DEFAULT_CHUNK = 64 * 1024;
 
-  parser.onerror = (error: Error) => {
-    throw new XmlCodecError(`the document is not well formed: ${error.message}`, {
-      line: parser.line + 1,
-      column: parser.column,
-    });
-  };
+class Source {
+  private readonly xml: string;
+  private readonly chunkSize: number;
+  private readonly parser: sax.SAXParser;
+  private readonly queue: XmlEvent[] = [];
+  /**
+   * Where the queue is being read from.
+   *
+   * An index rather than `shift`, because `shift` is linear in the array's
+   * length: with the whole document fed as one chunk the queue holds every
+   * event, and draining it that way took six times as long as reading the same
+   * document in pieces. Chunking makes that unlikely, but a data structure
+   * should not depend on a setting to stay fast.
+   */
+  private head = 0;
+  /** The elements currently open, so an END knows its own name in constant time. */
+  private readonly open: XmlEvent[] = [];
+  private offset = 0;
+  private closed = false;
 
-  parser.onopentag = (node) => {
-    const tag = node as sax.QualifiedTag;
-    const attributes: XmlAttribute[] = [];
-    for (const attribute of Object.values(tag.attributes)) {
-      // sax reports the namespace declarations themselves as attributes. They
-      // are structure, not data, and are rebuilt from scratch when a fragment is
-      // cut out, so they must not travel as attributes too.
-      if (attribute.prefix === 'xmlns' || attribute.name === 'xmlns') {
+  constructor(xml: string, chunkSize: number) {
+    this.xml = xml;
+    this.chunkSize = Math.max(1, chunkSize);
+    this.parser = sax.parser(true, { xmlns: true, position: true });
+    this.wire();
+  }
+
+  get location(): { line: number; column: number } {
+    return { line: this.parser.line + 1, column: this.parser.column };
+  }
+
+  /** The next event, or null once the document is exhausted. */
+  take(): XmlEvent | null {
+    while (this.head >= this.queue.length) {
+      if (this.offset < this.xml.length) {
+        const end = Math.min(this.offset + this.chunkSize, this.xml.length);
+        const chunk = this.xml.slice(this.offset, end);
+        this.offset = end;
+        this.parser.write(chunk);
         continue;
       }
-      attributes.push({
-        localName: attribute.local,
-        prefix: attribute.prefix,
-        namespaceURI: attribute.uri,
-        value: attribute.value,
-      });
+      if (!this.closed) {
+        this.closed = true;
+        // Closing reports an unterminated document, which is the one error that
+        // cannot be seen until the input runs out.
+        this.parser.close();
+        continue;
+      }
+      return null;
     }
-    const start: XmlEvent = {
-      kind: EventKind.START,
-      localName: tag.local,
-      prefix: tag.prefix,
-      namespaceURI: tag.uri,
-      text: '',
-      attributes: attributes.length === 0 ? NO_ATTRIBUTES : attributes,
-      declaredNamespaces: tag.ns ?? null,
-      selfClosing: (node as { isSelfClosing?: boolean }).isSelfClosing === true,
-      line: parser.line + 1,
-      column: parser.column,
+    const event = this.queue[this.head]!;
+    this.head += 1;
+    if (this.head === this.queue.length) {
+      // Drained: let the events go rather than keeping the whole run of them.
+      this.queue.length = 0;
+      this.head = 0;
+    }
+    return event;
+  }
+
+  private wire(): void {
+    const parser = this.parser;
+
+    parser.onerror = (error: Error) => {
+      throw new XmlCodecError(`the document is not well formed: ${error.message}`, {
+        line: parser.line + 1,
+        column: parser.column,
+      });
     };
-    events.push(start);
-    open.push(start);
-  };
 
-  parser.onclosetag = () => {
-    const start = open.pop();
-    events.push({
-      kind: EventKind.END,
-      localName: start?.localName ?? '',
-      prefix: start?.prefix ?? '',
-      namespaceURI: start?.namespaceURI ?? '',
-      text: '',
-      attributes: NO_ATTRIBUTES,
-      declaredNamespaces: null,
-      selfClosing: start?.selfClosing ?? false,
-      line: parser.line + 1,
-      column: parser.column,
-    });
-  };
+    parser.onopentag = (node) => {
+      const tag = node as sax.QualifiedTag;
+      const attributes: XmlAttribute[] = [];
+      for (const attribute of Object.values(tag.attributes)) {
+        // sax reports the namespace declarations themselves as attributes. They
+        // are structure, not data, and are rebuilt from scratch when a fragment
+        // is cut out, so they must not travel as attributes too.
+        if (attribute.prefix === 'xmlns' || attribute.name === 'xmlns') {
+          continue;
+        }
+        attributes.push({
+          localName: attribute.local,
+          prefix: attribute.prefix,
+          namespaceURI: attribute.uri,
+          value: attribute.value,
+        });
+      }
+      const start: XmlEvent = {
+        kind: EventKind.START,
+        localName: tag.local,
+        prefix: tag.prefix,
+        namespaceURI: tag.uri,
+        text: '',
+        attributes: attributes.length === 0 ? NO_ATTRIBUTES : attributes,
+        declaredNamespaces: tag.ns ?? null,
+        selfClosing: (node as { isSelfClosing?: boolean }).isSelfClosing === true,
+        line: parser.line + 1,
+        column: parser.column,
+      };
+      this.queue.push(start);
+      this.open.push(start);
+    };
 
-  const onText = (text: string): void => {
-    events.push({
-      kind: EventKind.TEXT,
-      localName: '',
-      prefix: '',
-      namespaceURI: '',
-      text,
-      attributes: NO_ATTRIBUTES,
-      declaredNamespaces: null,
-      selfClosing: false,
-      line: parser.line + 1,
-      column: parser.column,
-    });
-  };
-  parser.ontext = onText;
-  parser.oncdata = onText;
+    parser.onclosetag = () => {
+      const start = this.open.pop();
+      this.queue.push({
+        kind: EventKind.END,
+        localName: start?.localName ?? '',
+        prefix: start?.prefix ?? '',
+        namespaceURI: start?.namespaceURI ?? '',
+        text: '',
+        attributes: NO_ATTRIBUTES,
+        declaredNamespaces: null,
+        selfClosing: start?.selfClosing ?? false,
+        line: parser.line + 1,
+        column: parser.column,
+      });
+    };
 
-  parser.write(xml).close();
-  return events;
+    const onText = (text: string): void => {
+      // Whitespace-only text is kept. A type with simple content owns the
+      // element's own text, and <FmtValue> </FmtValue> means a single space -
+      // discarding it because it looks like formatting would change the value.
+      this.queue.push({
+        kind: EventKind.TEXT,
+        localName: '',
+        prefix: '',
+        namespaceURI: '',
+        text,
+        attributes: NO_ATTRIBUTES,
+        declaredNamespaces: null,
+        selfClosing: false,
+        line: parser.line + 1,
+        column: parser.column,
+      });
+    };
+    parser.ontext = onText;
+    parser.oncdata = onText;
+  }
 }

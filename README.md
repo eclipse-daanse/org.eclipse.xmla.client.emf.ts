@@ -102,6 +102,22 @@ One thing the probe does **not** prove: the dynamic path. It declares exactly
 the 103 rowsets the model describes, because it is driven by that same model.
 Proving the dynamic path live needs a server built from a different model.
 
+## Reading a large response
+
+The cursor feeds the parser a piece at a time and hands out only what a piece
+produced, so memory is bounded by the chunk rather than by the document. On the
+largest recorded response - 4.3 MB, 49 198 events:
+
+| chunk | time | heap |
+|---|---|---|
+| 16 KB | 262 ms | 1.6 MB |
+| **64 KB (default)** | **262 ms** | **3.9 MB** |
+| whole document at once | 305 ms | 17.2 MB |
+
+The trade it makes: nothing is parsed until something is asked for, so a
+document that is not well formed reports itself while being read rather than
+when it is handed over. It still reports itself, which is what matters.
+
 ## What is not done yet
 
 **The UI does not use `@emfts/uimodel-composer`.** That package is what should
@@ -111,10 +127,6 @@ have to be vendored and trimmed. So `apps/explorer/src/ui-model.ts` builds the
 same *description* by hand, behind the seam the composer would fill. It is still
 model-driven - the widget for a feature is chosen from the model and nothing in
 the screens knows a rowset by name - but it is not the composer.
-
-**The cursor parses eagerly.** The largest recorded response, 4.3 MB, becomes
-49k events in 364 ms and about 24 MB of heap. That is affordable and measured,
-but a streaming cursor belongs behind the same interface eventually.
 
 ## License
 

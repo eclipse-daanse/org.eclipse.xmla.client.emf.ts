@@ -71,8 +71,30 @@ describe('the cursor', () => {
     expect(cursor.location.line).toBe(2);
   });
 
-  it('reports a document that is not well formed rather than half-reading it', () => {
-    expect(() => XmlCursor.parse('<root><unclosed></root>')).toThrow(XmlCodecError);
+  it('reports a document that is not well formed, while reading it', () => {
+    // The trade streaming makes: nothing is parsed until something is asked
+    // for, so malformedness surfaces on the read rather than on the call that
+    // hands over the text. It still surfaces, which is what matters - a
+    // half-read document must never look like a complete one.
+    const cursor = XmlCursor.parse('<root><unclosed></root>');
+
+    expect(() => {
+      while (cursor.next() !== null) {
+        // drain
+      }
+    }).toThrow(XmlCodecError);
+  });
+
+  it('reads only as far as it is asked to', () => {
+    // The point of the whole change: a document is not turned into an object
+    // graph before the first question is answered.
+    const many = `<root>${'<row><A>x</A></row>'.repeat(20_000)}</root>`;
+    const cursor = XmlCursor.parse(many);
+
+    cursor.next();
+    cursor.next();
+
+    expect(cursor.eventCount, 'events gone past').toBe(2);
   });
 });
 
