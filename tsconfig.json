@@ -18,6 +18,9 @@
       "path": "./packages/xmla-client"
     },
     {
+      "path": "./packages/xmla-workbench-adapter"
+    },
+    {
       "path": "./packages/testkit"
     }
   ]
