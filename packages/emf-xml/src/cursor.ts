@@ -48,6 +48,13 @@ interface XmlEvent {
   readonly attributes: readonly XmlAttribute[];
   /** Prefixes this element declares itself, needed when cutting out a fragment. */
   readonly declaredNamespaces: Readonly<Record<string, string>> | null;
+  /**
+   * Whether the document wrote this as `<X/>` rather than `<X></X>`.
+   *
+   * The two are the same to a parser, but a stored document has to come back out
+   * the way it went in, and SSAS uses both forms in the same response.
+   */
+  readonly selfClosing: boolean;
   readonly line: number;
   readonly column: number;
 }
@@ -99,6 +106,22 @@ export class XmlCursor {
 
   get namespaceURI(): string {
     return this.current.namespaceURI;
+  }
+
+  /**
+   * The prefix the document itself used, `''` for the default namespace.
+   *
+   * Carried because copying a fragment has to reproduce it. A prefix means
+   * nothing to a parser, but a recorded response is compared against what the
+   * server wrote, and minting fresh prefixes would differ from it everywhere.
+   */
+  get prefix(): string {
+    return this.current.prefix;
+  }
+
+  /** Whether the source wrote this element as `<X/>`. */
+  get selfClosing(): boolean {
+    return this.current.selfClosing;
   }
 
   get text(): string {
@@ -186,6 +209,9 @@ export class XmlCursor {
     const parts: string[] = [];
     const scopes: Array<Map<string, string>> = [];
     let depth = 0;
+    // A self-closing tag is left unterminated until we know nothing follows it
+    // inside, so `<X/>` can be written as `<X/>` rather than `<X></X>`.
+    let selfClosed = false;
 
     const covers = (prefix: string, namespace: string): boolean => {
       for (let i = scopes.length - 1; i >= 0; i--) {
@@ -205,13 +231,28 @@ export class XmlCursor {
         }
         depth -= 1;
         scopes.pop();
-        parts.push(`</${qualify(this.current.prefix, this.localName)}>`);
+        if (selfClosed) {
+          selfClosed = false;
+          parts.push('/>');
+        } else {
+          parts.push(`</${qualify(this.current.prefix, this.localName)}>`);
+        }
       } else if (kind === EventKind.START) {
+        if (selfClosed) {
+          // The previous tag was self-closing, so its END is still to come.
+          selfClosed = false;
+          parts.push('>');
+        }
         depth += 1;
         const scope = new Map<string, string>();
         scopes.push(scope);
-        parts.push(this.startTag(scope, covers));
+        parts.push(this.startTag(scope, covers, true));
+        selfClosed = this.current.selfClosing;
       } else {
+        if (selfClosed) {
+          selfClosed = false;
+          parts.push('>');
+        }
         parts.push(escapeText(this.text));
       }
       kind = this.next();
@@ -219,7 +260,11 @@ export class XmlCursor {
     return parts.join('');
   }
 
-  private startTag(scope: Map<string, string>, covers: (prefix: string, ns: string) => boolean): string {
+  private startTag(
+    scope: Map<string, string>,
+    covers: (prefix: string, ns: string) => boolean,
+    leaveOpen = false,
+  ): string {
     const event = this.current;
     const declare = (prefix: string, namespace: string): string => {
       if (namespace === '' || covers(prefix, namespace) || scope.get(prefix) === namespace) {
@@ -239,7 +284,7 @@ export class XmlCursor {
       }
       tag += ` ${qualify(attribute.prefix, attribute.localName)}="${escapeAttribute(attribute.value)}"`;
     }
-    return `${tag}>`;
+    return leaveOpen && this.current.selfClosing ? tag : `${tag}>`;
   }
 }
 
@@ -300,6 +345,7 @@ function collect(xml: string): XmlEvent[] {
       text: '',
       attributes: attributes.length === 0 ? NO_ATTRIBUTES : attributes,
       declaredNamespaces: tag.ns ?? null,
+      selfClosing: (node as { isSelfClosing?: boolean }).isSelfClosing === true,
       line: parser.line + 1,
       column: parser.column,
     };
@@ -317,6 +363,7 @@ function collect(xml: string): XmlEvent[] {
       text: '',
       attributes: NO_ATTRIBUTES,
       declaredNamespaces: null,
+      selfClosing: start?.selfClosing ?? false,
       line: parser.line + 1,
       column: parser.column,
     });
@@ -331,6 +378,7 @@ function collect(xml: string): XmlEvent[] {
       text,
       attributes: NO_ATTRIBUTES,
       declaredNamespaces: null,
+      selfClosing: false,
       line: parser.line + 1,
       column: parser.column,
     });
