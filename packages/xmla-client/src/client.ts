@@ -134,6 +134,35 @@ export class XmlaClient {
     return { requestType, ...this.readRoot(response.body, target) };
   }
 
+  /**
+   * A Discover whose response comes back unread.
+   *
+   * For a rowset the model does not describe: the schema needed to build a
+   * class for it travels in the response, so the body is handed over whole and
+   * `readRows` is called again once there is something to read it with. One
+   * round trip, not two.
+   */
+  async discoverRaw(
+    requestType: string,
+    restrictions: readonly RestrictionEntry[] = [],
+    properties: EObject | null = null,
+  ): Promise<string> {
+    const body = this.codec.write(this.soapHeaders(), (out) => {
+      writeDiscover(out, { requestType, restrictions, properties });
+    });
+    return (await this.post(body, XMLA_NAMESPACES.SOAP_ACTION_DISCOVER)).body;
+  }
+
+  /** The rows and the inline schema of a response already fetched. */
+  readRows(xml: string, rowClass: EClass): { rows: EObject[]; inlineSchema: string | null } {
+    return this.readRoot(xml, rowClass);
+  }
+
+  /** The inline schema of a response, without reading a single row. */
+  schemaOf(xml: string): string | null {
+    return this.readRoot(xml, null).inlineSchema;
+  }
+
   /** An Execute, with the response body handed back unparsed. */
   async execute(command: EObject | null, properties: EObject | null = null): Promise<string> {
     const body = this.codec.write(this.soapHeaders(), (out) => {
@@ -186,8 +215,13 @@ export class XmlaClient {
     return response;
   }
 
-  /** Reads `<root>`: its rows, and the inline schema it carried. */
-  private readRoot(xml: string, rowClass: EClass): { rows: EObject[]; inlineSchema: string | null } {
+  /**
+   * Reads `<root>`: its rows, and the inline schema it carried.
+   *
+   * A null `rowClass` means the caller wants the schema and nothing else, which
+   * is the first half of reading a rowset the model has never seen.
+   */
+  private readRoot(xml: string, rowClass: EClass | null): { rows: EObject[]; inlineSchema: string | null } {
     const envelope = this.codec.read(xml);
     const cursor = envelope.cursor;
     const rows: EObject[] = [];
@@ -207,7 +241,11 @@ export class XmlaClient {
     while (kind !== null) {
       if (kind === EventKind.START) {
         if (depth === 0 && cursor.localName === 'row') {
-          rows.push(this.reader.read(cursor, rowClass));
+          if (rowClass === null) {
+            cursor.skipSubtree();
+          } else {
+            rows.push(this.reader.read(cursor, rowClass));
+          }
         } else if (depth === 0 && cursor.namespaceURI === XMLA_NAMESPACES.XSD) {
           // Kept rather than skipped: it is what the dynamic path builds an
           // EClass from, and asking for it twice would mean a second request.
