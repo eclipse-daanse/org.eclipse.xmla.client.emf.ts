@@ -29,6 +29,20 @@ import org.eclipse.daanse.xmla.api.XmlaRequest;
 import org.eclipse.daanse.xmla.api.auth.AuthenticatedIdentity;
 import org.eclipse.daanse.xmla.api.auth.AuthenticationChain;
 import org.eclipse.daanse.xmla.api.auth.XmlaAuthenticator;
+import org.eclipse.daanse.xmla.model.mddataset.Axes;
+import org.eclipse.daanse.xmla.model.mddataset.Axis;
+import org.eclipse.daanse.xmla.model.mddataset.CellData;
+import org.eclipse.daanse.xmla.model.mddataset.CellProperty;
+import org.eclipse.daanse.xmla.model.mddataset.CellType;
+import org.eclipse.daanse.xmla.model.mddataset.CellTypeValue;
+import org.eclipse.daanse.xmla.model.mddataset.CubeInfo;
+import org.eclipse.daanse.xmla.model.mddataset.MdDataset;
+import org.eclipse.daanse.xmla.model.mddataset.MdDatasetFactory;
+import org.eclipse.daanse.xmla.model.mddataset.MemberType;
+import org.eclipse.daanse.xmla.model.mddataset.OlapInfo;
+import org.eclipse.daanse.xmla.model.mddataset.OlapInfoCube;
+import org.eclipse.daanse.xmla.model.mddataset.TupleType;
+import org.eclipse.daanse.xmla.model.mddataset.TuplesType;
 import org.eclipse.daanse.xmla.model.io.RowsetCatalog;
 import org.eclipse.daanse.xmla.model.io.XmlaMessageCodec;
 import org.eclipse.daanse.xmla.model.rowset.RowsetFactory;
@@ -312,12 +326,102 @@ public final class DaanseProbe {
             return List.of();
         }
 
+        /**
+         * A small but complete MDX result.
+         * <p>
+         * Two measures across two months, with one cell deliberately left out so
+         * a client has to place cells by their ordinal rather than by counting -
+         * a result is sparse, and a reader that assumes otherwise puts values in
+         * the wrong squares.
+         * <p>
+         * Only the numbers are made up. The shape - OlapInfo, the axes, the
+         * tuples, the cell properties - and everything that turns it into XML is
+         * the project's own.
+         */
         @Override
         public EObject execute(Execute request, XmlaRequest context) {
-            // Statements are outside what this probe answers; sessions and the
-            // envelope are what it is here for, and those go through Execute
-            // with no command at all.
-            return null;
+            if (request.getCommand() == null) {
+                // BeginSession and EndSession carry an empty Statement and
+                // produce nothing, which is the specification's empty result.
+                return null;
+            }
+            MdDatasetFactory factory = MdDatasetFactory.eINSTANCE;
+
+            MdDataset dataset = factory.createMdDataset();
+            OlapInfo info = factory.createOlapInfo();
+            CubeInfo cubes = factory.createCubeInfo();
+            OlapInfoCube cube = factory.createOlapInfoCube();
+            cube.setCubeName("Probe");
+            cubes.getCube().add(cube);
+            info.setCubeInfo(cubes);
+            info.setAxesInfo(factory.createAxesInfo());
+            info.setCellInfo(factory.createCellInfo());
+            dataset.setOlapInfo(info);
+
+            Axes axes = factory.createAxes();
+            axes.getAxis().add(axis(factory, "Axis0", new String[][] {
+                { "[Measures]", "[Measures].[Amount]", "Amount" },
+                { "[Measures]", "[Measures].[Count]", "Count" } }));
+            axes.getAxis().add(axis(factory, "Axis1", new String[][] {
+                { "[Time]", "[Time].[2026].[January]", "January" },
+                { "[Time]", "[Time].[2026].[February]", "February" } }));
+            axes.getAxis().add(axis(factory, "SlicerAxis", new String[][] {
+                { "[Region]", "[Region].[All]", "All Regions" } }));
+            dataset.setAxes(axes);
+
+            CellData data = factory.createCellData();
+            // Axis 0 varies fastest: ordinal 0 is (Amount, January), 1 is
+            // (Count, January), 2 is (Amount, February).
+            data.getCell().add(cell(factory, 0, "1234.5", "xsd:double", "$1,234.50"));
+            data.getCell().add(cell(factory, 1, "17", "xsd:int", "17"));
+            data.getCell().add(cell(factory, 2, "987.25", "xsd:double", "$987.25"));
+            // Ordinal 3 is absent on purpose: no value, no cell.
+            dataset.setCellData(data);
+
+            return dataset;
+        }
+
+        private static Axis axis(MdDatasetFactory factory, String name, String[][] members) {
+            Axis axis = factory.createAxis();
+            axis.setName(name);
+            TuplesType tuples = factory.createTuplesType();
+            for (String[] member : members) {
+                TupleType tuple = factory.createTupleType();
+                tuple.getMember().add(member(factory, member[0], member[1], member[2]));
+                tuples.getTuple().add(tuple);
+            }
+            axis.getSetType().add(tuples);
+            return axis;
+        }
+
+        private static MemberType member(MdDatasetFactory factory, String hierarchy, String uniqueName,
+                String caption) {
+            MemberType member = factory.createMemberType();
+            member.setHierarchy(hierarchy);
+            member.getAny().add(property(factory, "UName", uniqueName));
+            member.getAny().add(property(factory, "Caption", caption));
+            member.getAny().add(property(factory, "LName", hierarchy + ".[Level]"));
+            member.getAny().add(property(factory, "LNum", "0"));
+            return member;
+        }
+
+        private static CellType cell(MdDatasetFactory factory, long ordinal, String value, String type,
+                String formatted) {
+            CellType cell = factory.createCellType();
+            cell.setCellOrdinal(ordinal);
+            CellTypeValue held = factory.createCellTypeValue();
+            held.setValue(value);
+            held.setType(type);
+            cell.setValue(held);
+            cell.getAny().add(property(factory, "FmtValue", formatted));
+            return cell;
+        }
+
+        private static CellProperty property(MdDatasetFactory factory, String tagName, String value) {
+            CellProperty property = factory.createCellProperty();
+            property.setTagName(tagName);
+            property.setValue(value);
+            return property;
         }
 
         /** A row of {@code eClass}, from feature-name and value pairs. */

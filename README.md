@@ -82,10 +82,41 @@ npm run probe        # a real Daanse XMLA server on 8090, and a guarded one on 8
 npm run probe:live   # the client against both, over HTTP
 ```
 
-Twelve checks: rows, a real session, the dynamic path, and authentication -
-that the two rowsets a client probes with are served anonymously, that anything
-else is refused with a 401 **carrying its challenge**, that Basic gets through
-and the wrong password does not, and that a session survives all of it.
+Thirteen checks: rows, a real session, the dynamic path, an MDX statement, and
+authentication - that the two rowsets a client probes with are served
+anonymously, that anything else is refused with a 401 **carrying its
+challenge**, that Basic gets through and the wrong password does not, and that a
+session survives all of it.
+
+The statement answers a small result on purpose: two measures across two months
+with **one cell left out**, so a reader that counts positions instead of reading
+the ordinal puts a value in the wrong square and the check says so.
+
+## And against servers nobody here built
+
+```bash
+npm run probe:public
+```
+
+The probe is driven by the same models the client uses, so agreement between
+them proves they agree - not that either is right. These are public demo
+endpoints run by other people:
+
+| | |
+|---|---|
+| Flexmonster | 70 rowsets declared, 133 properties, 7 cubes |
+| Syncfusion | 64 rowsets declared, 123 properties, 7 cubes |
+| eMondrian | unreachable at the time of writing - the host itself does not answer |
+
+Read-only and deliberately small: a handful of Discover calls, in sequence. They
+are somebody else's servers, and one being down does not fail the run.
+
+Two things came out of it. Flexmonster declares **DISCOVER_RESOURCE_POOLS**,
+which no model here describes, and the dynamic path read it into 15 columns
+built from the response - the necessity of that path, on a server nobody
+recorded. And across both, every divergence strict mode found runs one way: the
+models carry columns an older server does not send, and nothing a server sends
+is missing from the models.
 
 The probe is the project's own Java server - its envelope, its sessions, its
 inline schema, its rowset serialisation - with only the backend stood in for,
