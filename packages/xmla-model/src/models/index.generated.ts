@@ -22,7 +22,8 @@ import { extEcore } from './ext.generated.js';
 import { mddatasetEcore } from './mddataset.generated.js';
 import { msxmlaEcore } from './msxmla.generated.js';
 import { multipleresultsEcore } from './multipleresults.generated.js';
-import { rowsetCommonEcore } from './rowset-common.generated.js';
+import { rowsetCoreEcore } from './rowset-core.generated.js';
+import { rowsetCoreRestrictionsEcore } from './rowset-core-restrictions.generated.js';
 import { rowsetRelationalRestrictionsEcore } from './rowset-relational-restrictions.generated.js';
 import { rowsetRelationalEcore } from './rowset-relational.generated.js';
 import { rowsetMultidimensionalRestrictionsEcore } from './rowset-multidimensional-restrictions.generated.js';
@@ -58,7 +59,8 @@ export const MODEL_TEXT: Readonly<Record<string, string>> = {
   "mddataset": mddatasetEcore,
   "msxmla": msxmlaEcore,
   "multipleresults": multipleresultsEcore,
-  "rowset-common": rowsetCommonEcore,
+  "rowset-core": rowsetCoreEcore,
+  "rowset-core-restrictions": rowsetCoreRestrictionsEcore,
   "rowset-relational-restrictions": rowsetRelationalRestrictionsEcore,
   "rowset-relational": rowsetRelationalEcore,
   "rowset-multidimensional-restrictions": rowsetMultidimensionalRestrictionsEcore,

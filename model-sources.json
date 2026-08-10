@@ -126,17 +126,25 @@
       "dependsOn": []
     },
     {
-      "name": "rowset-common",
-      "file": "model/rowset.common/model/rowset-common.ecore",
-      "nsURI": "https://www.daanse.org/spec/xmla/rowset/common/1.0",
+      "name": "rowset-core",
+      "file": "model/rowset.core/model/rowset-core.ecore",
+      "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:core",
       "dependsOn": []
+    },
+    {
+      "name": "rowset-core-restrictions",
+      "file": "model/rowset.core/model/rowset-core-restrictions.ecore",
+      "nsURI": "https://www.daanse.org/spec/xmla/rowset/core/restrictions/1.0",
+      "dependsOn": [
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
+      ]
     },
     {
       "name": "rowset-relational-restrictions",
       "file": "model/rowset.relational/model/rowset-relational-restrictions.ecore",
       "nsURI": "https://www.daanse.org/spec/xmla/rowset/relational/restrictions/1.0",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -144,7 +152,7 @@
       "file": "model/rowset.relational/model/rowset-relational.ecore",
       "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:relational",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -152,7 +160,7 @@
       "file": "model/rowset.multidimensional/model/rowset-multidimensional-restrictions.ecore",
       "nsURI": "https://www.daanse.org/spec/xmla/rowset/multidimensional/restrictions/1.0",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -160,7 +168,7 @@
       "file": "model/rowset.multidimensional/model/rowset-multidimensional.ecore",
       "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:multidimensional",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -168,7 +176,7 @@
       "file": "model/rowset.mining/model/rowset-mining-restrictions.ecore",
       "nsURI": "https://www.daanse.org/spec/xmla/rowset/mining/restrictions/1.0",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -176,7 +184,7 @@
       "file": "model/rowset.mining/model/rowset-mining.ecore",
       "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:mining",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -184,7 +192,7 @@
       "file": "model/rowset.server/model/rowset-server-restrictions.ecore",
       "nsURI": "https://www.daanse.org/spec/xmla/rowset/server/restrictions/1.0",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -192,7 +200,7 @@
       "file": "model/rowset.server/model/rowset-server.ecore",
       "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:server",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -200,7 +208,7 @@
       "file": "model/rowset.tabular/model/rowset-tabular-restrictions.ecore",
       "nsURI": "https://www.daanse.org/spec/xmla/rowset/tabular/restrictions/1.0",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {
@@ -208,7 +216,7 @@
       "file": "model/rowset.tabular/model/rowset-tabular.ecore",
       "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:tabular",
       "dependsOn": [
-        "https://www.daanse.org/spec/xmla/rowset/common/1.0"
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
     },
     {

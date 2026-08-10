@@ -63,7 +63,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="COLUMN_GUID"/>
@@ -141,7 +141,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The GUID of the column's data type."/>
       </eAnnotations>
@@ -581,7 +581,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The GUID of the model."/>
       </eAnnotations>
@@ -611,7 +611,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateCreated" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateCreated" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The date on which the model was created."/>
       </eAnnotations>
@@ -621,7 +621,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateModified" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateModified" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The date on which the model definition was last modified."/>
       </eAnnotations>
@@ -704,7 +704,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastProcessed" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastProcessed" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The date when the model was last processed."/>
       </eAnnotations>
@@ -822,7 +822,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The node GUID.&lt;279>"/>
       </eAnnotations>
@@ -1010,7 +1010,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The GUID that identifies the model. Servers that do not use GUIDs to identify tables return NULL."/>
       </eAnnotations>
@@ -1020,7 +1020,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelPmml" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//XmlDocument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelPmml" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//XmlDocument">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An XML representation of the model's content in PMML format."/>
       </eAnnotations>
@@ -1095,7 +1095,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The GUID that identifies the model."/>
       </eAnnotations>
@@ -1105,7 +1105,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelPmml" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//XmlDocument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelPmml" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//XmlDocument">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An XML representation of the model's content in PMML format."/>
       </eAnnotations>
@@ -1181,7 +1181,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The GUID for the algorithm."/>
       </eAnnotations>
@@ -1591,7 +1591,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A GUID that uniquely identifies the structure."/>
       </eAnnotations>
@@ -1621,7 +1621,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateCreated" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateCreated" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The date when the structure was created. NULL if not available from the server."/>
       </eAnnotations>
@@ -1631,7 +1631,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateModified" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateModified" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The date when the structure was last modified. NULL if not available from the server."/>
       </eAnnotations>
@@ -1662,7 +1662,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastProcessed" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//DateTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastProcessed" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//DateTime">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The date when the structure was last processed. NULL if not available from the server."/>
       </eAnnotations>
@@ -1766,7 +1766,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The column GUID."/>
       </eAnnotations>
@@ -1850,7 +1850,7 @@
         <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:rowset"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeGuid" eType="ecore:EDataType https://www.daanse.org/spec/xmla/rowset/common/1.0#//Uuid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeGuid" eType="ecore:EDataType urn:schemas-microsoft-com:xml-analysis:rowset:core#//Uuid">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The GUID of the column's data type. Servers that do not use GUIDs to identify data types are to return NULL in this column."/>
       </eAnnotations>
