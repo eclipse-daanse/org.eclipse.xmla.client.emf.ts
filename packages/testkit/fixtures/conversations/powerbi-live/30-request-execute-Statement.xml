@@ -1,0 +1,30 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="E7714953-EAE9-416D-A364-B5B37C28732F" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement>select [MEASURE_CAPTION] from $system.mdschema_measures where [CUBE_NAME] = @CubeName and [MEASURE_IS_VISIBLE]</Statement>
+      </Command>
+      <Properties>
+        <PropertyList>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <SspropInitAppName>Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592</SspropInitAppName>
+          <ClientProcessID>5596</ClientProcessID>
+          <Format>Tabular</Format>
+          <Content>SchemaData</Content>
+          <DbpropMsmdActivityID>2b7783d6-0aed-4b96-a8c3-6c75243b3376</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>0b0ca541-11d5-4f96-9236-d3dfd27c2de0</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>7f9ed51d-bb1d-4e1f-949b-d166ab393d16</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+      <Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Parameter>
+          <Name>CubeName</Name>
+          <Value xsi:type="xsd:string">Adventure Works</Value>
+        </Parameter>
+      </Parameters>
+    </Execute>
+  </Body>
+</Envelope>

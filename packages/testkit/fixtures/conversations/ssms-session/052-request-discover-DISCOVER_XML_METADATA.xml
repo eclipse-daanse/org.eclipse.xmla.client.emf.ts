@@ -1,0 +1,26 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="CD5F33A6-90CC-4DFF-B176-BAB5712E8764" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_XML_METADATA</RequestType>
+      <Restrictions>
+        <RestrictionList>
+          <ObjectExpansion>ExpandObject</ObjectExpansion>
+        </RestrictionList>
+      </Restrictions>
+      <Properties>
+        <PropertyList>
+          <Timeout>0</Timeout>
+          <SspropInitAppName>Среда Microsoft SQL Server Management Studio - запрос</SspropInitAppName>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <ClientProcessID>6232</ClientProcessID>
+          <DbpropMsmdActivityID>7e02afd3-cfb8-4fc2-8247-366218fe4c9a</DbpropMsmdActivityID>
+          <DbpropMsmdRequestID>31fe232c-90e4-4292-b29c-0542f9407645</DbpropMsmdRequestID>
+          <DbpropMsmdCurrentActivityID>7e02afd3-cfb8-4fc2-8247-366218fe4c9a</DbpropMsmdCurrentActivityID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

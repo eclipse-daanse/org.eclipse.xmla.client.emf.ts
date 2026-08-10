@@ -1,0 +1,22 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <BeginSession soap:mustUnderstand="1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:schemas-microsoft-com:xml-analysis" />
+    <Version Sequence="926" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine/2" /><NamespaceCompatibility xmlns="http://schemas.microsoft.com/analysisservices/2003/xmla" mustUnderstand="0"/></Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement />
+      </Command>
+      <Properties>
+        <PropertyList>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <SspropInitAppName>Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592</SspropInitAppName>
+          <ClientProcessID>5596</ClientProcessID>
+          <DbpropMsmdActivityID>2b7783d6-0aed-4b96-a8c3-6c75243b3376</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>0b0ca541-11d5-4f96-9236-d3dfd27c2de0</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>1a5f3614-b1c2-4144-8bd3-492275aa7c9a</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

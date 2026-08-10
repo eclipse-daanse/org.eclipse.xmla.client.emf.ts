@@ -1,0 +1,21 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="6B7DB918-D510-49B2-9AAE-8D5F7DF31005" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Cancel xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" />
+      </Command>
+      <Properties>
+        <PropertyList>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <DbpropMsmdActivityID>c4eca755-0603-4d25-a4a1-ee3670521c31</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>c4eca755-0603-4d25-a4a1-ee3670521c31</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>bcd50add-b4aa-4aaf-8492-4771bafa5f78</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

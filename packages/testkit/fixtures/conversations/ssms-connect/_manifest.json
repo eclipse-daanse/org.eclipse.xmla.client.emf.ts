@@ -1,0 +1,500 @@
+{
+ "recording": "spec/recordings/soapMMS_connect.txt",
+ "messages": [
+  {
+   "position": 0,
+   "file": "00-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 739,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   }
+  },
+  {
+   "position": 1,
+   "file": "01-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35273,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133
+  },
+  {
+   "position": 2,
+   "file": "02-request-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "request",
+   "bytes": 1103,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_DATASOURCES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdCurrentActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdRequestID": "2606e721-6db0-4611-a1e9-646433fffda7"
+   }
+  },
+  {
+   "position": 3,
+   "file": "03-response-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "response",
+   "bytes": 3237,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1
+  },
+  {
+   "position": 4,
+   "file": "04-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1256,
+   "headers": [
+    "BeginSession",
+    "Version",
+    "NamespaceCompatibility"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2",
+    "http://schemas.microsoft.com/analysisservices/2003/xmla"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdCurrentActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdRequestID": "ee30f378-ff43-4d46-84b5-7e81274da492"
+   }
+  },
+  {
+   "position": 5,
+   "file": "05-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "DA6F03FD-B741-44DF-A35D-24088E629104",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0
+  },
+  {
+   "position": 6,
+   "file": "06-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1328,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "DA6F03FD-B741-44DF-A35D-24088E629104",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "ProviderVersion"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdCurrentActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdRequestID": "2c8f3f58-c4b0-48b0-a978-9f5672efb530"
+   }
+  },
+  {
+   "position": 7,
+   "file": "07-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3050,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1
+  },
+  {
+   "position": 8,
+   "file": "08-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1099,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "DA6F03FD-B741-44DF-A35D-24088E629104",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdCurrentActivityID": "0ab57212-93d9-4e85-84ca-07a0fd44dfc1",
+    "DbpropMsmdRequestID": "12ab6ab2-c9f5-400d-b35a-2411495c8389"
+   }
+  },
+  {
+   "position": 9,
+   "file": "09-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0
+  },
+  {
+   "position": 10,
+   "file": "10-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 863,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   }
+  },
+  {
+   "position": 11,
+   "file": "11-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "73425B23-D0D1-4DA1-BFF7-825B2CEB53ED",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0
+  },
+  {
+   "position": 12,
+   "file": "12-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 837,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "73425B23-D0D1-4DA1-BFF7-825B2CEB53ED",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   }
+  },
+  {
+   "position": 13,
+   "file": "13-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35277,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133
+  },
+  {
+   "position": 14,
+   "file": "14-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 1258,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "73425B23-D0D1-4DA1-BFF7-825B2CEB53ED",
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "d913abaf-c627-4cad-991e-d8356141b904",
+    "DbpropMsmdRequestID": "7b5ab531-6a65-4127-97a0-02fd59c8634f",
+    "DbpropMsmdCurrentActivityID": "d913abaf-c627-4cad-991e-d8356141b904"
+   }
+  },
+  {
+   "position": 15,
+   "file": "15-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1
+  },
+  {
+   "position": 16,
+   "file": "16-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1099,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "73425B23-D0D1-4DA1-BFF7-825B2CEB53ED",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "d913abaf-c627-4cad-991e-d8356141b904",
+    "DbpropMsmdRequestID": "88fbe8de-ac2b-4869-a58f-4759d5203ccf",
+    "DbpropMsmdCurrentActivityID": "d913abaf-c627-4cad-991e-d8356141b904"
+   }
+  },
+  {
+   "position": 17,
+   "file": "09-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "sameAs": "09-response-execute-EndSession.xml"
+  },
+  {
+   "position": 18,
+   "file": "18-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 501,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {}
+  },
+  {
+   "position": 19,
+   "file": "15-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "sameAs": "15-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 20,
+   "file": "10-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 863,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "sameAs": "10-request-execute-BeginSession.xml"
+  },
+  {
+   "position": 21,
+   "file": "21-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C84FEDF8-8986-412D-9827-D2B496976D5C",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0
+  },
+  {
+   "position": 22,
+   "file": "22-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 837,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C84FEDF8-8986-412D-9827-D2B496976D5C",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   }
+  },
+  {
+   "position": 23,
+   "file": "13-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35277,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "sameAs": "13-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 24,
+   "file": "24-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 1258,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C84FEDF8-8986-412D-9827-D2B496976D5C",
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "6bffa97e-4e37-4a79-9bc6-9067a2f03b55",
+    "DbpropMsmdRequestID": "176c1ae9-84b1-4927-b24c-e0a93315f1fb",
+    "DbpropMsmdCurrentActivityID": "6bffa97e-4e37-4a79-9bc6-9067a2f03b55"
+   }
+  },
+  {
+   "position": 25,
+   "file": "15-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "sameAs": "15-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 26,
+   "file": "26-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1099,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C84FEDF8-8986-412D-9827-D2B496976D5C",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "6bffa97e-4e37-4a79-9bc6-9067a2f03b55",
+    "DbpropMsmdRequestID": "9d57df79-84d5-4c58-a318-7f05a9a19ad5",
+    "DbpropMsmdCurrentActivityID": "6bffa97e-4e37-4a79-9bc6-9067a2f03b55"
+   }
+  },
+  {
+   "position": 27,
+   "file": "09-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "sameAs": "09-response-execute-EndSession.xml"
+  }
+ ]
+}

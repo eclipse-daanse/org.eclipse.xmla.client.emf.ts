@@ -1,0 +1,27 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="61491ABA-40CE-4B66-B925-4C93532E4AC2" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_PROPERTIES</RequestType>
+      <Restrictions>
+        <RestrictionList>
+          <PropertyName>ProviderVersion</PropertyName>
+        </RestrictionList>
+      </Restrictions>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>9e03669c-4c85-40b3-acbb-9b7d294d0292</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>9e03669c-4c85-40b3-acbb-9b7d294d0292</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>015b42d9-9d06-41d3-8968-b74ca6ff005d</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

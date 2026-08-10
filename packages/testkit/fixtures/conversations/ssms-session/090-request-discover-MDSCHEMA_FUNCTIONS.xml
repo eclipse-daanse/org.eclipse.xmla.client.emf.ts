@@ -1,0 +1,25 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="C61C2EC0-7963-4D04-B41F-6B51F3E80518" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>MDSCHEMA_FUNCTIONS</RequestType>
+      <Restrictions />
+      <Properties>
+        <PropertyList>
+          <Timeout>0</Timeout>
+          <SspropInitAppName>Среда Microsoft SQL Server Management Studio - запрос</SspropInitAppName>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <ClientProcessID>6232</ClientProcessID>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>3cf94bdd-993b-4d16-b052-7da3d95d17fa</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>3cf94bdd-993b-4d16-b052-7da3d95d17fa</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>0056980c-68cc-4998-9423-fed0cfcdba00</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

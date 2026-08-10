@@ -1,0 +1,30 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="1850C7E1-344B-45CD-820F-930D16692B77" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement>select [MEASURE_UNIQUE_NAME], [MEASURE_CAPTION], [DATA_TYPE], [MEASUREGROUP_NAME], [MEASURE_DISPLAY_FOLDER] from $system.mdschema_measures where [CUBE_NAME] = @CubeName and [MEASURE_IS_VISIBLE]</Statement>
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Format>Tabular</Format>
+          <Content>SchemaData</Content>
+          <DbpropMsmdActivityID>fbcf3653-7822-4763-80bf-114337f82ea3</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>fbcf3653-7822-4763-80bf-114337f82ea3</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>ea405529-688f-428b-9519-9e54ddbcb127</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+      <Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Parameter>
+          <Name>CubeName</Name>
+          <Value xsi:type="xsd:string">Adventure Works</Value>
+        </Parameter>
+      </Parameters>
+    </Execute>
+  </Body>
+</Envelope>

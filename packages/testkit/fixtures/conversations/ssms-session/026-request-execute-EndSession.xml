@@ -1,0 +1,24 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <EndSession soap:mustUnderstand="1" SessionId="EAC31F9A-968E-46D9-A9C1-0661A17DFF97" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement />
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <Timeout>0</Timeout>
+          <SspropInitAppName>Microsoft SQL Server Management Studio</SspropInitAppName>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <ClientProcessID>6232</ClientProcessID>
+          <DbpropMsmdActivityID>7d3d71fe-cba0-402d-870b-f47f2b20af8e</DbpropMsmdActivityID>
+          <DbpropMsmdRequestID>9f6832a1-eeac-4ee4-be6b-675701c1660a</DbpropMsmdRequestID>
+          <DbpropMsmdCurrentActivityID>7d3d71fe-cba0-402d-870b-f47f2b20af8e</DbpropMsmdCurrentActivityID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

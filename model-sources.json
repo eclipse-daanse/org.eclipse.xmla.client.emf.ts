@@ -1,0 +1,155 @@
+{
+  "$comment": [
+    "Where the Ecore models come from, and in which order they may be loaded.",
+    "",
+    "The models are copied into packages/xmla-model/model/ and committed, so this",
+    "repository builds without a Java toolchain and without a 100 MB checkout. The",
+    "copies are guarded by a sha256 manifest: `npm run check:sync` fails when they",
+    "drift from the source. That turns drift into a red build instead of a silent",
+    "difference nobody notices until a rowset reads wrong.",
+    "",
+    "`sourceRoot` may be overridden with the XMLA_MODEL_SOURCE environment variable.",
+    "",
+    "`models` is in topological order, computed from the eType cross-references",
+    "(`eType=\"ecore:EClass <nsURI>#//Name\"`). Cross-model types resolve through the",
+    "package registry by nsURI, so every dependency has to be registered first.",
+    "The graph is acyclic; `dependsOn` records it so the order stays checkable"
+  ],
+  "sourceRoot": "/home/stbischof/git/daanse/org.eclipse.daanse.xmla",
+  "models": [
+    {
+      "name": "an",
+      "file": "model/csdl/v2/an/model/an.ecore",
+      "nsURI": "http://schemas.microsoft.com/ado/2009/02/edm/annotation",
+      "dependsOn": []
+    },
+    {
+      "name": "bi",
+      "file": "model/csdl/v2/bi/model/bi.ecore",
+      "nsURI": "http://schemas.microsoft.com/sqlbi/2010/10/edm/extensions",
+      "dependsOn": []
+    },
+    {
+      "name": "cg",
+      "file": "model/csdl/v2/cg/model/cg.ecore",
+      "nsURI": "http://schemas.microsoft.com/ado/2006/04/codegeneration",
+      "dependsOn": []
+    },
+    {
+      "name": "edm",
+      "file": "model/csdl/v2/edm/model/edm.ecore",
+      "nsURI": "http://schemas.microsoft.com/ado/2008/09/edm",
+      "dependsOn": [
+        "http://schemas.microsoft.com/ado/2009/02/edm/annotation",
+        "http://schemas.microsoft.com/ado/2006/04/codegeneration",
+        "http://schemas.microsoft.com/sqlbi/2010/10/edm/extensions"
+      ]
+    },
+    {
+      "name": "empty",
+      "file": "model/empty/model/empty.ecore",
+      "nsURI": "urn:schemas-microsoft-com:xml-analysis:empty",
+      "dependsOn": []
+    },
+    {
+      "name": "engine300",
+      "file": "model/engine300/model/engine300.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2011/engine/300",
+      "dependsOn": []
+    },
+    {
+      "name": "engine300_300",
+      "file": "model/engine300_300/model/engine300_300.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2011/engine/300/300",
+      "dependsOn": ["http://schemas.microsoft.com/analysisservices/2011/engine/300"]
+    },
+    {
+      "$comment": "868 KB, the largest model by far. Only xmla.ecore needs it, for ObjectDefinition. Whether leaving it out damages the rest of xmla.ecore is what M1 measures - until then it is loaded.",
+      "name": "engine",
+      "file": "model/engine/model/engine.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2003/engine",
+      "dependsOn": [
+        "http://schemas.microsoft.com/analysisservices/2011/engine/300",
+        "http://schemas.microsoft.com/analysisservices/2011/engine/300/300"
+      ],
+      "optional": true
+    },
+    {
+      "name": "engine200",
+      "file": "model/engine200/model/engine200.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2010/engine/200",
+      "dependsOn": []
+    },
+    {
+      "name": "engine200_200",
+      "file": "model/engine200_200/model/engine200_200.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2010/engine/200/200",
+      "dependsOn": []
+    },
+    {
+      "name": "exception",
+      "file": "model/exception/model/exception.ecore",
+      "nsURI": "urn:schemas-microsoft-com:xml-analysis:exception",
+      "dependsOn": ["http://schemas.microsoft.com/analysisservices/2010/engine/200"]
+    },
+    {
+      "name": "ext",
+      "file": "model/ext/model/ext.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2003/ext",
+      "dependsOn": []
+    },
+    {
+      "name": "mddataset",
+      "file": "model/mddataset/model/mddataset.ecore",
+      "nsURI": "urn:schemas-microsoft-com:xml-analysis:mddataset",
+      "dependsOn": ["urn:schemas-microsoft-com:xml-analysis:exception"]
+    },
+    {
+      "$comment": "Carries NormTupleSet, which resolves into mddataset's SetType group by element name.",
+      "name": "msxmla",
+      "file": "model/msxmla/model/msxmla.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2003/xmla",
+      "dependsOn": ["urn:schemas-microsoft-com:xml-analysis:mddataset"]
+    },
+    {
+      "name": "multipleresults",
+      "file": "model/multipleresults/model/multipleresults.ecore",
+      "nsURI": "http://schemas.microsoft.com/analysisservices/2003/xmla-multipleresults",
+      "dependsOn": []
+    },
+    {
+      "name": "rowset-restrictions",
+      "file": "model/rowset/model/rowset-restrictions.ecore",
+      "nsURI": "https://www.daanse.org/spec/xmla/rowset/restrictions/1.0",
+      "dependsOn": []
+    },
+    {
+      "name": "rowset",
+      "file": "model/rowset/model/rowset.ecore",
+      "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset",
+      "dependsOn": []
+    },
+    {
+      "name": "soap",
+      "file": "model/soap/model/soap.ecore",
+      "nsURI": "http://schemas.xmlsoap.org/soap/envelope/",
+      "dependsOn": []
+    },
+    {
+      "name": "xmla",
+      "file": "model/xmla/model/xmla.ecore",
+      "nsURI": "urn:schemas-microsoft-com:xml-analysis",
+      "dependsOn": ["http://schemas.microsoft.com/analysisservices/2003/engine"]
+    }
+  ],
+  "fixtures": {
+    "$comment": [
+      "704 recorded messages across five conversations with SSAS 13, captured by the",
+      "Java server's EMF adapter. Each conversation carries a _manifest.json holding",
+      "ground truth we did not compute ourselves - headers, request types,",
+      "restrictions, properties, row counts. That makes them the gate for this port."
+    ],
+    "file": "server/adapter.emf/src/test/resources/org/eclipse/daanse/xmla/server/adapter/emf/fixtures",
+    "conversations": ["excel-pivot", "powerbi-import", "powerbi-live", "ssms-connect", "ssms-session"]
+  }
+}

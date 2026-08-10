@@ -1,0 +1,23 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="6B7DB918-D510-49B2-9AAE-8D5F7DF31005" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement>select [CATALOG_NAME] from $system.DBSCHEMA_CATALOGS</Statement>
+      </Command>
+      <Properties>
+        <PropertyList>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Format>Tabular</Format>
+          <Content>SchemaData</Content>
+          <DbpropMsmdActivityID>3b9fc858-1c7c-4578-80b8-c121876f0c94</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>3b9fc858-1c7c-4578-80b8-c121876f0c94</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>cbc7885d-7e4a-4308-b5a3-01c1fafa0682</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

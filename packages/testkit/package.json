@@ -1,0 +1,12 @@
+{
+  "name": "@daanse/xmla-testkit",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "license": "EPL-2.0",
+  "description": "Recorded XMLA conversations and a transport that replays them. Test scaffolding, never published.",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "vitest run"
+  }
+}

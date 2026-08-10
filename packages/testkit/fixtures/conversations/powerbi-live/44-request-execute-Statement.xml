@@ -1,0 +1,26 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="2FD0EDA8-214C-4170-86CC-BBDD6A955D2B" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement>select [CUBE_NAME] from $system.MDSCHEMA_CUBES where [CUBE_SOURCE] = 1</Statement>
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <Cube>Adventure Works</Cube>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <SspropInitAppName>Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592</SspropInitAppName>
+          <ClientProcessID>5596</ClientProcessID>
+          <Format>Tabular</Format>
+          <Content>SchemaData</Content>
+          <DbpropMsmdActivityID>107685e7-a018-4f7f-85df-16df1609f26b</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>5769b70a-46ea-4b45-94c7-e3d23d064237</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>31b7ba6a-b440-4e58-82e5-3c531927489f</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

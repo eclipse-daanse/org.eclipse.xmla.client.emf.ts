@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><Session xmlns="urn:schemas-microsoft-com:xml-analysis" SessionId="4092C468-E668-4380-8AFC-F27CF9B17CD7"/></soap:Header><soap:Body><Execute xmlns="urn:schemas-microsoft-com:xml-analysis"><Command><Statement>EVALUATE&#xD;
+	ROW(&#xD;
+		"Average_Rate", 'Exchange Rates'[Average Rate],&#xD;
+		"Average_Rate_FormatString", 'Exchange Rates'[Average Rate.FormatString],&#xD;
+		"Average_Rate_ApplyCulture", 'Exchange Rates'[Average Rate.ApplyCulture],&#xD;
+		"End_of_Day_Rate", 'Exchange Rates'[End of Day Rate],&#xD;
+		"End_of_Day_Rate_FormatString", 'Exchange Rates'[End of Day Rate.FormatString],&#xD;
+		"End_of_Day_Rate_ApplyCulture", 'Exchange Rates'[End of Day Rate.ApplyCulture]&#xD;
+	)</Statement></Command><Properties><PropertyList><Catalog>Adventure Works DW Standard Edition</Catalog><Timeout>600</Timeout><Format>Native</Format><MaximumRows>-1</MaximumRows><DbpropMsmdFlattened2>false</DbpropMsmdFlattened2><SspropInitAppName>Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592</SspropInitAppName><ClientProcessID>5596</ClientProcessID><Cube>Adventure Works</Cube><DbpropMsmdOptimizeResponse>9</DbpropMsmdOptimizeResponse><DbpropMsmdActivityID>79B22F01-4D66-4B94-B0B6-B0DEFA673B26</DbpropMsmdActivityID><DbpropMsmdRequestID>C06F4608-927E-455F-AB4D-B6EC47D290AB</DbpropMsmdRequestID><DbpropMsmdCurrentActivityID>79B22F01-4D66-4B94-B0B6-B0DEFA673B26</DbpropMsmdCurrentActivityID><DbpropMsmdRequestMemoryLimit>1048576</DbpropMsmdRequestMemoryLimit><LocaleIdentifier>1033</LocaleIdentifier></PropertyList></Properties></Execute></soap:Body></soap:Envelope>

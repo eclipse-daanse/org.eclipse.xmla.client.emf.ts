@@ -1,0 +1,2371 @@
+{
+ "recording": "spec/recordings/excel_final.txt",
+ "messages": [
+  {
+   "position": 0,
+   "file": "00-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 664,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "664",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 1,
+   "file": "01-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3806,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 4,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:42 GMT",
+    "Content-Length": "3806"
+   }
+  },
+  {
+   "position": 2,
+   "file": "02-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 877,
+   "headers": [
+    "BeginGetSessionToken",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "BeginGetSessionToken",
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "command": "Statement",
+   "properties": {
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "084AC0BC-8746-4D3B-A055-57B582F61B08",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-GetSessionToken": "true",
+    "X-AS-RequestID": "084AC0BC-8746-4D3B-A055-57B582F61B08",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "Content-Length": "877",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 3,
+   "file": "03-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:42 GMT",
+    "Content-Length": "268"
+   }
+  },
+  {
+   "position": 4,
+   "file": "04-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 845,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "command": "Statement",
+   "properties": {
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "084AC0BC-8746-4D3B-A055-57B582F61B08",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-RequestID": "084AC0BC-8746-4D3B-A055-57B582F61B08",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "Content-Length": "845",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 5,
+   "file": "05-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:42 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 6,
+   "file": "06-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 864,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "3318F68A-49E2-4B78-8C48-3DA06480FE0E",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-SessionID": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+    "X-AS-RequestID": "3318F68A-49E2-4B78-8C48-3DA06480FE0E",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "864",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 7,
+   "file": "07-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:42 GMT",
+    "Content-Length": "3063"
+   }
+  },
+  {
+   "position": 8,
+   "file": "08-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1108,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "2C3056E3-8834-4EBE-A747-1DBC1203FD1E",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-SessionID": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+    "X-AS-RequestID": "2C3056E3-8834-4EBE-A747-1DBC1203FD1E",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1108",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 9,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 4284,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 6,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:42 GMT",
+    "Content-Length": "4284"
+   }
+  },
+  {
+   "position": 10,
+   "file": "10-request-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "request",
+   "bytes": 869,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "requestType": "DISCOVER_SCHEMA_ROWSETS",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "D6213E86-57AA-492F-AB91-EEE4D01F7B67",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-SessionID": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+    "X-AS-RequestID": "D6213E86-57AA-492F-AB91-EEE4D01F7B67",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "869",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 11,
+   "file": "11-response-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "response",
+   "bytes": 37112,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 70,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:42 GMT",
+    "Content-Length": "37112"
+   }
+  },
+  {
+   "position": 12,
+   "file": "12-request-discover-DBSCHEMA_CATALOGS.xml",
+   "direction": "request",
+   "bytes": 863,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "requestType": "DBSCHEMA_CATALOGS",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "ED94F0F4-E60C-4011-BF78-90EBE16454BE",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-SessionID": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+    "X-AS-RequestID": "ED94F0F4-E60C-4011-BF78-90EBE16454BE",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "863",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 13,
+   "file": "13-response-discover-DBSCHEMA_CATALOGS.xml",
+   "direction": "response",
+   "bytes": 3549,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:43 GMT",
+    "Content-Length": "3549"
+   }
+  },
+  {
+   "position": 14,
+   "file": "14-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 860,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "FB51623D-7A47-43CB-AA01-08C72F5F24FA",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-SessionID": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+    "X-AS-RequestID": "FB51623D-7A47-43CB-AA01-08C72F5F24FA",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "860",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 15,
+   "file": "15-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 8302,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 7,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:43 GMT",
+    "Content-Length": "8302"
+   }
+  },
+  {
+   "position": 16,
+   "file": "16-request-discover-DBSCHEMA_TABLES.xml",
+   "direction": "request",
+   "bytes": 861,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "requestType": "DBSCHEMA_TABLES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "DbpropMsmdRequestID": "68655E33-DE0B-423A-B42F-0496316D818B",
+    "DbpropMsmdCurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-SessionID": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+    "X-AS-RequestID": "68655E33-DE0B-423A-B42F-0496316D818B",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "861",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 17,
+   "file": "17-response-discover-DBSCHEMA_TABLES.xml",
+   "direction": "response",
+   "bytes": 76149,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:43 GMT",
+    "Content-Length": "110253"
+   },
+   "rowsAtCapture": 318,
+   "trimmed": true
+  },
+  {
+   "position": 18,
+   "file": "18-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 402,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+   "command": "Statement",
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "X-AS-SessionID": "38224965-5C40-4252-9B13-6DD5B9B9F8BB",
+    "X-AS-RequestID": "68655E33-DE0B-423A-B42F-0496316D818B",
+    "X-AS-CurrentActivityID": "95960BEF-F4D9-4FB1-A3B2-73F76468BF27",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "Content-Length": "402",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 19,
+   "file": "03-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:47 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "03-response-execute-Statement.xml"
+  },
+  {
+   "position": 20,
+   "file": "00-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 664,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "664",
+    "Host": "olap.flexmonster.com"
+   },
+   "sameAs": "00-request-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 21,
+   "file": "01-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3806,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 4,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:49 GMT",
+    "Content-Length": "3806"
+   },
+   "sameAs": "01-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 22,
+   "file": "22-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1063,
+   "headers": [
+    "BeginGetSessionToken",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "BeginGetSessionToken",
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "command": "Statement",
+   "properties": {
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "DbpropMsmdRequestID": "E1358965-4CCF-4804-9085-9314DD978AAF",
+    "DbpropMsmdCurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "X-AS-GetSessionToken": "true",
+    "X-AS-RequestID": "E1358965-4CCF-4804-9085-9314DD978AAF",
+    "X-AS-CurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "Content-Length": "1063",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 23,
+   "file": "03-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:49 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "03-response-execute-Statement.xml"
+  },
+  {
+   "position": 24,
+   "file": "24-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1031,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "command": "Statement",
+   "properties": {
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "DbpropMsmdRequestID": "E1358965-4CCF-4804-9085-9314DD978AAF",
+    "DbpropMsmdCurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "X-AS-RequestID": "E1358965-4CCF-4804-9085-9314DD978AAF",
+    "X-AS-CurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "Content-Length": "1031",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 25,
+   "file": "25-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:49 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 26,
+   "file": "26-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1104,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "DbpropMsmdRequestID": "7662852A-2D54-4F88-B632-8BE2C596ED83",
+    "DbpropMsmdCurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "7662852A-2D54-4F88-B632-8BE2C596ED83",
+    "X-AS-CurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1104",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 27,
+   "file": "07-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:49 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "07-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 28,
+   "file": "28-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1294,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "DbpropMsmdRequestID": "726B8CCE-BE76-4C61-926F-25AB65E2B1C4",
+    "DbpropMsmdCurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "726B8CCE-BE76-4C61-926F-25AB65E2B1C4",
+    "X-AS-CurrentActivityID": "3BB8B568-DA1C-4935-BEBB-9A149AD502ED",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1294",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 29,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 4284,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 6,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:49 GMT",
+    "Content-Length": "4284"
+   },
+   "sameAs": "09-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 30,
+   "file": "30-request-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "request",
+   "bytes": 1055,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "DISCOVER_SCHEMA_ROWSETS",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "77DDD608-064A-4DA1-8378-1F73C1E29EC0",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "77DDD608-064A-4DA1-8378-1F73C1E29EC0",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1055",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 31,
+   "file": "11-response-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "response",
+   "bytes": 37112,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 70,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:49 GMT",
+    "Content-Length": "37112"
+   },
+   "sameAs": "11-response-discover-DISCOVER_SCHEMA_ROWSETS.xml"
+  },
+  {
+   "position": 32,
+   "file": "32-request-discover-MDSCHEMA_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1100,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_PROPERTIES",
+   "restrictions": {
+    "PROPERTY_TYPE": "2"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "3718E9AB-EDB8-4917-92DE-3911EA878FE6",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "3718E9AB-EDB8-4917-92DE-3911EA878FE6",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1100",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 33,
+   "file": "33-response-discover-MDSCHEMA_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 6570,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 12,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:50 GMT",
+    "Content-Length": "6570"
+   }
+  },
+  {
+   "position": 34,
+   "file": "34-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1101,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "8C057DE4-A562-454A-A232-B463CBCDDB77",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "8C057DE4-A562-454A-A232-B463CBCDDB77",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1101",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 35,
+   "file": "35-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 4650,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:50 GMT",
+    "Content-Length": "4650"
+   }
+  },
+  {
+   "position": 36,
+   "file": "36-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1101,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "9CF7E4B0-D49F-43DF-ADBB-90DE5EBD33C0",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "9CF7E4B0-D49F-43DF-ADBB-90DE5EBD33C0",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1101",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 37,
+   "file": "35-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 4650,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:50 GMT",
+    "Content-Length": "4650"
+   },
+   "sameAs": "35-response-discover-MDSCHEMA_CUBES.xml"
+  },
+  {
+   "position": 38,
+   "file": "38-request-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "request",
+   "bytes": 1117,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "DISCOVER_SCHEMA_ROWSETS",
+   "restrictions": {
+    "SchemaName": "MDSCHEMA_HIERARCHIES"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "3971833D-2501-4187-A147-F8CB821040A9",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "3971833D-2501-4187-A147-F8CB821040A9",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1117",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 39,
+   "file": "39-response-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "response",
+   "bytes": 3842,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:50 GMT",
+    "Content-Length": "3842"
+   }
+  },
+  {
+   "position": 40,
+   "file": "40-request-discover-MDSCHEMA_HIERARCHIES.xml",
+   "direction": "request",
+   "bytes": 1153,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_HIERARCHIES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "HIERARCHY_VISIBILITY": "3"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "4BD5C360-4848-4CE2-A0DB-57F6B87E92B4",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "4BD5C360-4848-4CE2-A0DB-57F6B87E92B4",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1153",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 41,
+   "file": "41-response-discover-MDSCHEMA_HIERARCHIES.xml",
+   "direction": "response",
+   "bytes": 229537,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:50 GMT",
+    "Content-Length": "232977"
+   },
+   "rowsAtCapture": 203,
+   "trimmed": true
+  },
+  {
+   "position": 42,
+   "file": "42-request-discover-MDSCHEMA_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1225,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_PROPERTIES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "PROPERTY_NAME": "MEMBER_VALUE",
+    "PROPERTY_TYPE": "5",
+    "PROPERTY_VISIBILITY": "3"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "D217F532-9E2B-442F-BB93-BE11C9A584E9",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "D217F532-9E2B-442F-BB93-BE11C9A584E9",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1225",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 43,
+   "file": "43-response-discover-MDSCHEMA_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 115608,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:50 GMT",
+    "Content-Length": "266700"
+   },
+   "rowsAtCapture": 468,
+   "trimmed": true
+  },
+  {
+   "position": 44,
+   "file": "44-request-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "request",
+   "bytes": 1114,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "DISCOVER_SCHEMA_ROWSETS",
+   "restrictions": {
+    "SchemaName": "MDSCHEMA_MEASURES"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "8B79D180-3261-4D03-89AE-965A72D1C80E",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "8B79D180-3261-4D03-89AE-965A72D1C80E",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1114",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 45,
+   "file": "45-response-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "response",
+   "bytes": 3741,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:51 GMT",
+    "Content-Length": "3741"
+   }
+  },
+  {
+   "position": 46,
+   "file": "46-request-discover-MDSCHEMA_MEASURES.xml",
+   "direction": "request",
+   "bytes": 1146,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_MEASURES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "MEASURE_VISIBILITY": "3"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "4C6E1FCC-952F-45B4-96BC-314000E37CDD",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "4C6E1FCC-952F-45B4-96BC-314000E37CDD",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1146",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 47,
+   "file": "47-response-discover-MDSCHEMA_MEASURES.xml",
+   "direction": "response",
+   "bytes": 123545,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 115,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:51 GMT",
+    "Content-Length": "123545"
+   }
+  },
+  {
+   "position": 48,
+   "file": "48-request-discover-DISCOVER_LITERALS.xml",
+   "direction": "request",
+   "bytes": 731,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "DISCOVER_LITERALS",
+   "restrictions": {},
+   "properties": {
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "727CC703-C290-4E22-8D3C-EE4F4672CE48",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "727CC703-C290-4E22-8D3C-EE4F4672CE48",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "731",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 49,
+   "file": "49-response-discover-DISCOVER_LITERALS.xml",
+   "direction": "response",
+   "bytes": 7773,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 19,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:51 GMT",
+    "Content-Length": "7773"
+   }
+  },
+  {
+   "position": 50,
+   "file": "50-request-discover-MDSCHEMA_SETS.xml",
+   "direction": "request",
+   "bytes": 1100,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_SETS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "D3D09996-18C5-4567-934C-C3101CEE1A5E",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "D3D09996-18C5-4567-934C-C3101CEE1A5E",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1100",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 51,
+   "file": "51-response-discover-MDSCHEMA_SETS.xml",
+   "direction": "response",
+   "bytes": 10196,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 11,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:51 GMT",
+    "Content-Length": "10196"
+   }
+  },
+  {
+   "position": 52,
+   "file": "52-request-discover-MDSCHEMA_KPIS.xml",
+   "direction": "request",
+   "bytes": 1100,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_KPIS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "168E9ED9-619E-4F01-8425-2DCFD642DCA5",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "168E9ED9-619E-4F01-8425-2DCFD642DCA5",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1100",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 53,
+   "file": "53-response-discover-MDSCHEMA_KPIS.xml",
+   "direction": "response",
+   "bytes": 15663,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 14,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:51 GMT",
+    "Content-Length": "15663"
+   }
+  },
+  {
+   "position": 54,
+   "file": "54-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1165,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition",
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "C89C3487-4E28-4685-ACF7-C0D01834A108",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "C89C3487-4E28-4685-ACF7-C0D01834A108",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1165",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 55,
+   "file": "35-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 4650,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:51 GMT",
+    "Content-Length": "4650"
+   },
+   "sameAs": "35-response-discover-MDSCHEMA_CUBES.xml"
+  },
+  {
+   "position": 56,
+   "file": "56-request-discover-MDSCHEMA_DIMENSIONS.xml",
+   "direction": "request",
+   "bytes": 1170,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_DIMENSIONS",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition",
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "3CCB4233-19D3-459F-A5D7-E9F1F5448F09",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "3CCB4233-19D3-459F-A5D7-E9F1F5448F09",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1170",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 57,
+   "file": "57-response-discover-MDSCHEMA_DIMENSIONS.xml",
+   "direction": "response",
+   "bytes": 19530,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 22,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:51 GMT",
+    "Content-Length": "19530"
+   }
+  },
+  {
+   "position": 58,
+   "file": "58-request-discover-MDSCHEMA_HIERARCHIES.xml",
+   "direction": "request",
+   "bytes": 1171,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_HIERARCHIES",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition",
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "5C6AD25F-F721-4FF0-AF00-317D47C3A7BD",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "5C6AD25F-F721-4FF0-AF00-317D47C3A7BD",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1171",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 59,
+   "file": "59-response-discover-MDSCHEMA_HIERARCHIES.xml",
+   "direction": "response",
+   "bytes": 197667,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 172,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:52 GMT",
+    "Content-Length": "197667"
+   }
+  },
+  {
+   "position": 60,
+   "file": "60-request-discover-MDSCHEMA_LEVELS.xml",
+   "direction": "request",
+   "bytes": 1166,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_LEVELS",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition",
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "942FD10E-C40E-461C-A991-A915801AC2D7",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "942FD10E-C40E-461C-A991-A915801AC2D7",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1166",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 61,
+   "file": "61-response-discover-MDSCHEMA_LEVELS.xml",
+   "direction": "response",
+   "bytes": 212402,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:52 GMT",
+    "Content-Length": "427549"
+   },
+   "rowsAtCapture": 406,
+   "trimmed": true
+  },
+  {
+   "position": 62,
+   "file": "62-request-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "request",
+   "bytes": 1109,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_MEASUREGROUPS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "FDB7A906-A994-4FBD-8881-278F41354B55",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "FDB7A906-A994-4FBD-8881-278F41354B55",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1109",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 63,
+   "file": "63-response-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "response",
+   "bytes": 6039,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 11,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:52 GMT",
+    "Content-Length": "6039"
+   }
+  },
+  {
+   "position": 64,
+   "file": "64-request-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "request",
+   "bytes": 1119,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_MEASUREGROUP_DIMENSIONS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "F57D016D-CBB4-46F5-82A6-1902429A06E4",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "F57D016D-CBB4-46F5-82A6-1902429A06E4",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1119",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 65,
+   "file": "65-response-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "response",
+   "bytes": 49361,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 86,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:52 GMT",
+    "Content-Length": "49361"
+   }
+  },
+  {
+   "position": 66,
+   "file": "66-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1165,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition",
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "DbpropMsmdRequestID": "C6C39D15-BCD3-4E6F-93EE-FF7718699AC1",
+    "DbpropMsmdCurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "C6C39D15-BCD3-4E6F-93EE-FF7718699AC1",
+    "X-AS-CurrentActivityID": "7E3F1D07-0D5D-4261-84FE-52CC2A648281",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1165",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 67,
+   "file": "35-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 4650,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:55 GMT",
+    "Content-Length": "4650"
+   },
+   "sameAs": "35-response-discover-MDSCHEMA_CUBES.xml"
+  },
+  {
+   "position": 68,
+   "file": "68-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1335,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "Content": "SchemaData",
+    "Format": "Multidimensional",
+    "AxisFormat": "TupleFormat",
+    "DbpropMsmdFlattened2": "false",
+    "SafetyOptions": "2",
+    "Dialect": "MDX",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "DbpropMsmdRequestID": "81BE29B4-10E1-455F-A6FE-3D9599022C73",
+    "DbpropMsmdCurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "81BE29B4-10E1-455F-A6FE-3D9599022C73",
+    "X-AS-CurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "Content-Length": "1335",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 69,
+   "file": "69-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 153486,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:55 GMT",
+    "Content-Length": "153486"
+   }
+  },
+  {
+   "position": 70,
+   "file": "70-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1101,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "DbpropMsmdRequestID": "5FC93086-6C86-48EC-BE46-8625833BE204",
+    "DbpropMsmdCurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "5FC93086-6C86-48EC-BE46-8625833BE204",
+    "X-AS-CurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1101",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 71,
+   "file": "35-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 4650,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:55 GMT",
+    "Content-Length": "4650"
+   },
+   "sameAs": "35-response-discover-MDSCHEMA_CUBES.xml"
+  },
+  {
+   "position": 72,
+   "file": "72-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1101,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "DbpropMsmdRequestID": "B7E27D2F-2C45-40BC-80BA-8E3697D14B86",
+    "DbpropMsmdCurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "B7E27D2F-2C45-40BC-80BA-8E3697D14B86",
+    "X-AS-CurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1101",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 73,
+   "file": "35-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 4650,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:55 GMT",
+    "Content-Length": "4650"
+   },
+   "sameAs": "35-response-discover-MDSCHEMA_CUBES.xml"
+  },
+  {
+   "position": 74,
+   "file": "74-request-discover-DBSCHEMA_CATALOGS.xml",
+   "direction": "request",
+   "bytes": 1130,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+   "requestType": "DBSCHEMA_CATALOGS",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SafetyOptions": "2",
+    "MdxMissingMemberMode": "Error",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "DbpropMsmdRequestID": "217CB535-D7A3-4013-B9B6-C598E266F2F5",
+    "DbpropMsmdCurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "LocaleIdentifier": "1049",
+    "DbpropMsmdMDXCompatibility": "1",
+    "DbpropMsmdSubqueries": "2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 16.0 Client",
+    "X-AS-ActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "X-AS-SessionID": "C552DB91-58E8-4308-A924-E63829A6AD9B",
+    "X-AS-RequestID": "217CB535-D7A3-4013-B9B6-C598E266F2F5",
+    "X-AS-CurrentActivityID": "740E0B81-2F33-4769-AA92-A5349C3DD094",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "Content-Length": "1130",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 75,
+   "file": "13-response-discover-DBSCHEMA_CATALOGS.xml",
+   "direction": "response",
+   "bytes": 3549,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:24:55 GMT",
+    "Content-Length": "3549"
+   },
+   "sameAs": "13-response-discover-DBSCHEMA_CATALOGS.xml"
+  }
+ ]
+}
