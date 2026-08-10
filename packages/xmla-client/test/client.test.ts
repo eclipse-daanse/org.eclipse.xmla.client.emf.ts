@@ -236,6 +236,28 @@ describe('sessions', () => {
     expect(sent, 'the block the caller asked for').toContain('<Version');
   });
 
+  it('opens a session with an empty <Statement>, as every recorded client does', async () => {
+    // Found by talking to a real server, not by reading recordings. An empty
+    // <Command> with nothing inside is refused by a server that checks - the
+    // Daanse one answers "the Execute request carries no command" - and a
+    // recording of what a client sends never says what a server would refuse.
+    const each = conversation('excel-pivot');
+    const recorded = each.messages.find((message) => message.file.includes('request-execute-BeginSession'));
+    expect(recorded, 'the corpus has a real BeginSession request').toBeTruthy();
+    expect(each.text(recorded!.file), 'what Excel sends').toContain('<Command><Statement');
+
+    const transport = FixtureTransport.answering(
+      conversation('ssms-session').text(
+        conversation('ssms-session').messages.find(
+          (message) => message.direction === 'response' && message.file.includes('BeginSession'),
+        )!.file,
+      ),
+    );
+    await clientOver(transport).beginSession();
+
+    expect(transport.sent[0]!.body, 'what we send').toContain('<Command><Statement/></Command>');
+  });
+
   it('says so when the server opens no session', async () => {
     const transport = FixtureTransport.answering(responseAfter('ssms-connect', 'DISCOVER_DATASOURCES'));
 

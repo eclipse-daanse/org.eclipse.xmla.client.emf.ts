@@ -4,3 +4,7 @@ dist/
 coverage/
 .vitest/
 spike/
+probe/classes/
+probe/classpath.txt
+probe/deps.txt
+apps/explorer/browsercheck/dist/

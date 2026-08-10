@@ -84,7 +84,7 @@ export class XmlaClient {
   /** Opens a session and returns a client that carries it. */
   async beginSession(): Promise<XmlaClient> {
     const body = this.codec.write([this.sessions.beginSession()], (out) => {
-      writeExecute(out, { command: null });
+      writeExecute(out, { command: this.emptyStatement() });
     });
     const response = await this.post(body, XMLA_NAMESPACES.SOAP_ACTION_EXECUTE);
 
@@ -102,7 +102,7 @@ export class XmlaClient {
       return this;
     }
     const body = this.codec.write([this.sessions.endSession(sessionId)], (out) => {
-      writeExecute(out, { command: null });
+      writeExecute(out, { command: this.emptyStatement() });
     });
     await this.post(body, XMLA_NAMESPACES.SOAP_ACTION_EXECUTE);
     return this.withSession(null);
@@ -170,6 +170,27 @@ export class XmlaClient {
     });
     const response = await this.post(body, XMLA_NAMESPACES.SOAP_ACTION_EXECUTE);
     return response.body;
+  }
+
+  /**
+   * The empty `<Statement/>` that opens and closes a session.
+   *
+   * Not an empty `<Command>`: every recorded client writes
+   * `<Command><Statement/></Command>`, and a server that checks - the Daanse one
+   * does - answers "the Execute request carries no command" to the other. That
+   * was found by talking to a real server, because a recording of what a client
+   * sends never says what a server would have refused.
+   */
+  private emptyStatement(): EObject {
+    const xmla = this.options.models.named('xmla');
+    if (xmla === null) {
+      throw new Error('the xmla model is not loaded');
+    }
+    const statement = xmla.getEClassifier('Statement') as EClass | null;
+    if (statement === null || statement === undefined) {
+      throw new Error('the xmla model has no Statement');
+    }
+    return xmla.getEFactoryInstance().create(statement);
   }
 
   /**

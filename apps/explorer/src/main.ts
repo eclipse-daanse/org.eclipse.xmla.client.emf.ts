@@ -7,8 +7,28 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
+import { FetchTransport } from '@daanse/xmla-client';
+import { bootstrapInBrowser } from '@daanse/xmla-model/browser';
 import { createApp } from 'vue';
 
 import App from './App.vue';
+import { ExplorerSession } from './session.js';
 
-createApp(App).mount('#app');
+/**
+ * The app against a live server.
+ *
+ * The endpoint comes from the query string so this needs no build to point
+ * somewhere else: `?url=http://localhost:8090/xmla`. Credentials are left to
+ * the browser, which is why the transport is asked to send what it already
+ * holds.
+ */
+const parameters = new URLSearchParams(globalThis.location.search);
+const url = parameters.get('url') ?? '/xmla';
+
+const session = new ExplorerSession({
+  url,
+  transport: new FetchTransport({ withCredentials: parameters.get('credentials') === 'include' }),
+  models: bootstrapInBrowser(),
+});
+
+createApp(App, { session }).mount('#app');

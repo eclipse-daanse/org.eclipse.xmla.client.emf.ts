@@ -72,6 +72,36 @@ empty list, and `eIsSet` is true from then on. So the writer asks `eIsSet` befor
 it ever touches `eGet`, or a freshly created row emits every collection wrapper
 it has.
 
+## Talking to a real server
+
+Everything else here is checked against recordings of one server family. This is
+the only thing that says a byte ever left the process.
+
+```bash
+npm run probe        # builds and starts a real Daanse XMLA server on 8090
+npm run probe:live   # the client against it, over HTTP
+```
+
+The probe is the project's own Java server - its envelope, its sessions, its
+inline schema, its rowset serialisation - with only the backend stood in for,
+because standing up ROLAP with a catalog and a data source is a different stack
+in a different repository. It needs the Java repository built once:
+
+```bash
+mvn -pl server/jdk.httpserver -am -DskipTests -Deditorconfig.skip=true install
+```
+
+It has already earned its keep. `beginSession` was sending an `<Execute>` with
+an empty `<Command>`, and a server that checks refuses that: *the Execute
+request carries no command*. Every recorded client sends
+`<Command><Statement/></Command>`, but a recording of what a client sends never
+says what a server would have refused. There is now a test against the
+recording so it cannot come back.
+
+One thing the probe does **not** prove: the dynamic path. It declares exactly
+the 103 rowsets the model describes, because it is driven by that same model.
+Proving the dynamic path live needs a server built from a different model.
+
 ## What is not done yet
 
 **The UI does not use `@emfts/uimodel-composer`.** That package is what should
@@ -87,10 +117,6 @@ shape SSAS sends when a client asks for it, which Excel does on every connect.
 One of the two recorded statement responses uses it. Raising is deliberate:
 walking the axis finds nothing there, so the alternative is a grid that looks
 like a query returning no data.
-
-**The models are read from disk.** `@daanse/xmla-model/node` uses `fs`, so the
-browser build needs them inlined first. Until then the explorer runs against the
-recorded conversations.
 
 **The cursor parses eagerly.** The largest recorded response, 4.3 MB, becomes
 49k events in 364 ms and about 24 MB of heap. That is affordable and measured,
