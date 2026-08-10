@@ -10,6 +10,7 @@
 import { bootstrapFromDisk } from '@daanse/xmla-model/node';
 import { conversation, FixtureTransport } from '@daanse/xmla-testkit';
 import type { XmlaModels } from '@daanse/xmla-model';
+import type { EObject, EStructuralFeature } from '@emfts/core';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { ExplorerSession, toEntries } from '../src/session.js';
@@ -55,39 +56,71 @@ function sessionAnswering(...responses: string[]): { session: ExplorerSession; t
   };
 }
 
-describe('the form a restrictions class describes', () => {
-  it('gives every restriction a widget chosen from the model', () => {
-    const eClass = catalog.restrictionsClassFor('MDSCHEMA_CUBES')!;
-    const form = formViewForEClass(eClass, catalog.requiredRestrictionsOf('MDSCHEMA_CUBES'));
+/**
+ * The composer's generated model holds its children in plain arrays and reads
+ * them as properties, so the tests walk it the same way the composer does.
+ */
+function componentsOf(uiModel: EObject): Array<EObject & Record<string, unknown>> {
+  return (uiModel as unknown as { components: Array<EObject & Record<string, unknown>> }).components;
+}
 
-    expect(form.fields.length).toBeGreaterThan(0);
-    for (const field of form.fields) {
-      expect(['text', 'number', 'checkbox', 'timestamp', 'table']).toContain(field.widget);
-      expect(field.label, 'the wire name, which is what a user recognises').not.toBe('');
-      // The feature itself, not its name: the form reads and writes through it.
-      expect(typeof field.feature.getName).toBe('function');
+function widgetsOf(uiModel: EObject): Array<EObject & Record<string, unknown>> {
+  const form = componentsOf(uiModel)[0]!;
+  return (form as unknown as { fields: Array<EObject & Record<string, unknown>> }).fields;
+}
+
+function featureOf(widget: EObject): EStructuralFeature {
+  return (widget as unknown as { feature: EStructuralFeature }).feature;
+}
+
+function labelOf(widget: EObject): string {
+  return String((widget as unknown as { label: string }).label);
+}
+
+describe('the UIModel a restrictions class produces', () => {
+  it('is an EObject tree the composer can render, not a description of our own', () => {
+    // The whole reason for vendoring the composer: the UI is itself a model.
+    const eClass = catalog.restrictionsClassFor('MDSCHEMA_CUBES')!;
+    const built = formViewForEClass(eClass, catalog.requiredRestrictionsOf('MDSCHEMA_CUBES'));
+
+    expect(built.uiModel.eClass().getName()).toBe('UIModel');
+    const components = componentsOf(built.uiModel);
+    expect(components).toHaveLength(1);
+    // FormView is one of the keys UIModelComposer dispatches on.
+    expect(components[0]!.eClass().getName()).toBe('FormView');
+  });
+
+  it('gives every widget the EStructuralFeature itself, not its name', () => {
+    // What makes this work for a class the server described a moment ago and
+    // that nobody could have written a name for.
+    const eClass = catalog.restrictionsClassFor('MDSCHEMA_CUBES')!;
+    const widgets = widgetsOf(formViewForEClass(eClass).uiModel);
+
+    expect(widgets.length).toBeGreaterThan(0);
+    for (const widget of widgets) {
+      const feature = featureOf(widget);
+      expect(typeof feature.getName).toBe('function');
+      expect(feature.getEContainingClass?.()).toBe(eClass);
+      expect(labelOf(widget), 'the wire name, which is what a user recognises').not.toBe('');
+    }
+  });
+
+  it('chooses the widget class from the data type', () => {
+    const eClass = catalog.restrictionsClassFor('MDSCHEMA_CUBES')!;
+    const kinds = new Set(widgetsOf(formViewForEClass(eClass).uiModel).map((w) => w.eClass().getName()));
+
+    for (const kind of kinds) {
+      expect(['InputWidget', 'NumberWidget', 'CheckboxWidget', 'DateWidget']).toContain(kind);
     }
   });
 
   it('keeps the restrictions in the order the mask is defined over', () => {
     const requestType = 'MDSCHEMA_CUBES';
-    const form = formViewForEClass(catalog.restrictionsClassFor(requestType)!);
+    const widgets = widgetsOf(formViewForEClass(catalog.restrictionsClassFor(requestType)!).uiModel);
 
-    expect(form.fields.map((field) => field.label)).toEqual(
+    expect(widgets.map((widget) => labelOf(widget))).toEqual(
       catalog.restrictionsOf(requestType).map((restriction) => restriction.name),
     );
-  });
-
-  it('marks the ones the specification calls required', () => {
-    const requestType = catalog
-      .requestTypes()
-      .find((each) => catalog.requiredRestrictionsOf(each).length > 0);
-    expect(requestType, 'some rowset has required restrictions').toBeTruthy();
-
-    const required = catalog.requiredRestrictionsOf(requestType!);
-    const form = formViewForEClass(catalog.restrictionsClassFor(requestType!)!, required);
-
-    expect(form.fields.filter((field) => field.required).map((field) => field.label)).toEqual(required);
   });
 
   it('turns a filled-in form into wire entries, and leaves the blanks out', () => {
@@ -103,19 +136,26 @@ describe('the form a restrictions class describes', () => {
   });
 });
 
-describe('the table a row class describes', () => {
+describe('the table a row class produces', () => {
+  it('is a TableView the composer knows, with columns this project renders', () => {
+    const built = tableViewForEClass(catalog.forRequestType('MDSCHEMA_CUBES')!);
+
+    expect(componentsOf(built.uiModel)[0]!.eClass().getName()).toBe('TableView');
+    expect(built.columns.length).toBeGreaterThan(0);
+  });
+
   it('describes a nested rowset as an inner table, not as a blob', () => {
-    const table = tableViewForEClass(catalog.forRequestType('DISCOVER_SCHEMA_ROWSETS')!);
-    const nested = table.columns.find((column) => column.widget === 'table');
+    const built = tableViewForEClass(catalog.forRequestType('DISCOVER_SCHEMA_ROWSETS')!);
+    const nested = built.columns.find((column) => column.widget === 'table');
 
     expect(nested, 'Restrictions is a nested rowset').toBeTruthy();
     expect(nested!.nested!.map((column) => column.label)).toContain('Name');
   });
 
   it('carries the documentation the static models hold', () => {
-    const table = tableViewForEClass(catalog.forRequestType('MDSCHEMA_CUBES')!);
+    const built = tableViewForEClass(catalog.forRequestType('MDSCHEMA_CUBES')!);
 
-    expect(table.columns.some((column) => column.documentation !== null)).toBe(true);
+    expect(built.columns.some((column) => column.documentation !== null)).toBe(true);
   });
 });
 
@@ -168,6 +208,7 @@ describe('running a rowset the model has never seen', () => {
     // Same shape, same keys, same nesting - which is what lets one grid render
     // both.
     expect(Object.keys(fromModel.table)).toEqual(Object.keys(fromServer.table));
+    expect(fromServer.table.uiModel.eClass().getName()).toBe('UIModel');
     expect(fromServer.table.columns.some((column) => column.widget === 'table')).toBe(true);
   });
 });

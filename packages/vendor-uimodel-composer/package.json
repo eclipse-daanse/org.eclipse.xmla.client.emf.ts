@@ -1,0 +1,15 @@
+{
+  "name": "@daanse/vendor-uimodel-composer",
+  "version": "0.0.1-next.1",
+  "private": true,
+  "type": "module",
+  "license": "EPL-2.0",
+  "description": "A trimmed, vendored copy of @emfts/uimodel-composer. Not published upstream, so it lives here. See VENDOR.md.",
+  "main": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@emfts/core": "0.1.1-next.16",
+    "@emfts/vue-registry": "0.0.1-next.1",
+    "vue": "^3.5.13"
+  }
+}

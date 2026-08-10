@@ -7,97 +7,152 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
+import { UimodelFactory, UimodelPackage } from '@daanse/vendor-uimodel-composer';
 import { wireNameOf } from '@daanse/emf-xml';
-import type { EClass, EStructuralFeature } from '@emfts/core';
+import type { WidgetComponent } from '@daanse/vendor-uimodel-composer';
+import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
 
 /**
- * Turning an EClass into a description of the screen for it.
+ * Building a UI that is itself an Ecore model.
  *
- * This is the seam the EMF-TS UIModel composer is meant to fill: it renders a
- * UI that is itself an Ecore model. That package is not published - it is 404 on
- * npm and would have to be vendored, 239 files of it - so the description is
- * built here for now. What matters is that it *is* a description rather than
- * markup: the widget for a feature is chosen from the model, and nothing in the
- * screens knows a rowset by name.
+ * The composer renders a `UIModel` instance, so what this produces is EObjects
+ * and not a description of its own: a `FormView` holding one widget per
+ * restriction, a `TableView` for the rows. Which widget a feature gets is read
+ * off its data type, so nothing here knows a rowset by name - and a class the
+ * server described a moment ago goes through exactly the same code as one from
+ * a `.ecore`.
  *
- * The other thing it must not know is where an EClass came from. A form over a
- * restrictions class from a `.ecore` and one over a class built from a schema
- * the server just sent are the same shape, because a screen that branched on
- * that would render one of the two paths badly.
+ * `widget.feature` holds the **EStructuralFeature itself**, not its name. That
+ * is what the composer reads and writes through, and it is what makes the whole
+ * thing work for a class that has no name anyone could have written down.
+ *
+ * These UIModels stay in memory. They point at features in a package that has
+ * no Resource, so saving one would write `href`s that resolve to nothing.
  */
-export type WidgetKind = 'text' | 'number' | 'checkbox' | 'timestamp' | 'table';
+const GENMODEL = 'http://www.eclipse.org/emf/2002/GenModel';
 
-export interface FieldModel {
-  /** The EStructuralFeature itself, not its name - the caller reads and writes through it. */
+/** The widget kinds this generator chooses between. */
+export type WidgetKind = 'input' | 'number' | 'checkbox' | 'date' | 'textArea';
+
+export interface BuiltForm {
+  /** The UIModel to hand the composer. */
+  readonly uiModel: EObject;
+  /** The instance it edits. */
+  readonly instance: EObject;
+  readonly fields: readonly EStructuralFeature[];
+}
+
+export interface BuiltTable {
+  readonly uiModel: EObject;
+  readonly columns: readonly ColumnModel[];
+}
+
+/**
+ * A column, described the same way whichever path produced the class.
+ *
+ * The grid is rendered by this project rather than by the composer's
+ * `TableViewComposer`, because a nested rowset has to fold into an inner table
+ * and a `Record<string, unknown>` renderer cannot do that. The description is
+ * still taken from the model.
+ */
+export interface ColumnModel {
   readonly feature: EStructuralFeature;
-  /** What the column is called on the wire, which is what a user recognises. */
   readonly label: string;
-  readonly widget: WidgetKind;
+  readonly widget: WidgetKind | 'table';
   readonly many: boolean;
-  readonly required: boolean;
-  /** For a nested rowset: the columns of the inner table. */
-  readonly nested: readonly FieldModel[] | null;
+  readonly nested: readonly ColumnModel[] | null;
   readonly documentation: string | null;
 }
 
-export interface FormModel {
-  readonly title: string;
-  readonly fields: readonly FieldModel[];
-}
+/**
+ * A `FormView` over a restrictions class, and the instance it edits.
+ *
+ * The class's **own** features, in declaration order: for a restrictions class
+ * that order is the ordinal order the RestrictionsMask is defined over, and any
+ * other would misrepresent it.
+ */
+export function formViewForEClass(eClass: EClass, required: readonly string[] = []): BuiltForm {
+  const factory = UimodelFactory.eINSTANCE;
+  const form = factory.createFormView();
+  form.name = eClass.getName() ?? 'Restrictions';
 
-export interface TableModel {
-  readonly title: string;
-  readonly columns: readonly FieldModel[];
-}
-
-const GENMODEL = 'http://www.eclipse.org/emf/2002/GenModel';
-
-/** A form over a restrictions class: one widget per feature it declares itself. */
-export function formViewForEClass(eClass: EClass, required: readonly string[] = []): FormModel {
-  // Its own features, not the inherited ones: for a restrictions class the
-  // declaration order is the ordinal order the RestrictionsMask is defined over,
-  // and showing them in any other order would misrepresent it.
   const own = list(eClass.getEStructuralFeatures());
+  for (const feature of own) {
+    const widget = widgetFor(feature, factory);
+    widget.name = feature.getName() ?? '';
+    widget.feature = feature;
+    widget.label = wireNameOf(feature);
+    widget.required = required.includes(wireNameOf(feature));
+    form.fields.push(widget);
+  }
+
+  const uiModel = factory.createUIModel();
+  uiModel.name = `${eClass.getName()} restrictions`;
+  uiModel.targetClasses.push(eClass);
+  uiModel.components.push(form);
+
   return {
-    title: eClass.getName() ?? 'Restrictions',
-    fields: own.map((feature) => fieldFor(feature, required)),
+    uiModel: uiModel as unknown as EObject,
+    instance: eClass.getEPackage()!.getEFactoryInstance().create(eClass),
+    fields: own,
   };
 }
 
-/** A table over a row class: one column per feature, nested ones included. */
-export function tableViewForEClass(eClass: EClass): TableModel {
+/** A `TableView` over a row class, plus the columns this project renders with. */
+export function tableViewForEClass(eClass: EClass): BuiltTable {
+  const factory = UimodelFactory.eINSTANCE;
+  const table = factory.createTableView();
+  table.name = eClass.getName() ?? 'Rows';
+  table.tableStyle = factory.createTableStyle();
+
+  const uiModel = factory.createUIModel();
+  uiModel.name = `${eClass.getName()} rows`;
+  uiModel.targetClasses.push(eClass);
+  uiModel.components.push(table);
+
   return {
-    title: eClass.getName() ?? 'Rows',
-    columns: allFeatures(eClass).map((feature) => fieldFor(feature, [])),
+    uiModel: uiModel as unknown as EObject,
+    columns: allFeatures(eClass).map((feature) => columnFor(feature)),
   };
 }
 
-function fieldFor(feature: EStructuralFeature, required: readonly string[]): FieldModel {
-  const label = wireNameOf(feature);
+function columnFor(feature: EStructuralFeature): ColumnModel {
   const type = feature.getEType();
-  const nestedClass = isClass(type) ? (type as EClass) : null;
+  const nested = isClass(type) ? (type as EClass) : null;
 
   return {
     feature,
-    label,
-    widget: nestedClass !== null ? 'table' : widgetFor(type),
+    label: wireNameOf(feature),
+    widget: nested !== null ? 'table' : widgetKindFor(type),
     many: feature.isMany(),
-    required: required.includes(label),
     // A nested rowset folds into an inner table rather than a JSON blob. That is
-    // the whole gain of carrying EObjects this far.
-    nested: nestedClass === null ? null : allFeatures(nestedClass).map((each) => fieldFor(each, [])),
+    // the gain of carrying EObjects this far.
+    nested: nested === null ? null : allFeatures(nested).map((each) => columnFor(each)),
     documentation: documentationOf(feature),
   };
+}
+
+function widgetFor(feature: EStructuralFeature, factory: typeof UimodelFactory.eINSTANCE): WidgetComponent {
+  switch (widgetKindFor(feature.getEType())) {
+    case 'checkbox':
+      return factory.createCheckboxWidget();
+    case 'number':
+      return factory.createNumberWidget();
+    case 'date':
+      return factory.createDateWidget();
+    default:
+      return factory.createInputWidget();
+  }
 }
 
 /**
  * The widget a data type asks for.
  *
- * Chosen from the instance class rather than the type's name, because the same
- * XSD type arrives under several names - `IntObject`, `UnsignedIntObject` and
- * `Short` are all a number to a person filling in a form.
+ * Read off the instance class rather than the type's name, because the same
+ * thing arrives under several names - `IntObject`, `UnsignedIntObject` and
+ * `Short` are all a number to someone filling in a form.
  */
-function widgetFor(type: unknown): WidgetKind {
+export function widgetKindFor(type: unknown): WidgetKind {
   const named = type as { getName?(): string; getInstanceClassName?(): string } | null;
   const instanceClass = named?.getInstanceClassName?.() ?? '';
   const name = named?.getName?.() ?? '';
@@ -106,7 +161,7 @@ function widgetFor(type: unknown): WidgetKind {
     return 'checkbox';
   }
   if (name === 'DateTime' || name === 'Date' || name === 'Time') {
-    return 'timestamp';
+    return 'date';
   }
   switch (instanceClass) {
     case 'int':
@@ -124,16 +179,17 @@ function widgetFor(type: unknown): WidgetKind {
     case 'java.math.BigInteger':
       return 'number';
     default:
-      return 'text';
+      return 'input';
   }
 }
 
 /**
- * What the model says this column means.
+ * What the model says a column means.
  *
- * Worth surfacing: the static models carry the [MS-SSAS] prose for most
- * columns, and a dynamically built class carries none - which is a visible,
- * honest difference between the two paths rather than a hidden one.
+ * Worth surfacing, and worth noticing when it is absent: the static models
+ * carry the [MS-SSAS] prose for most columns and a dynamically built class
+ * carries none, which is a visible difference between the two paths rather than
+ * a hidden one.
  */
 function documentationOf(feature: EStructuralFeature): string | null {
   const annotation = feature.getEAnnotation(GENMODEL);
@@ -142,6 +198,11 @@ function documentationOf(feature: EStructuralFeature): string | null {
   }
   const text = annotation.getDetails().getByKey('documentation');
   return text === undefined || text === null || text === '' ? null : text;
+}
+
+/** The UIModel package, so a caller can register it before rendering. */
+export function uiModelPackage(): unknown {
+  return UimodelPackage.eINSTANCE;
 }
 
 function isClass(type: unknown): boolean {
