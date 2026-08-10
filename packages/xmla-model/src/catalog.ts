@@ -16,7 +16,6 @@ import type { XmlaModels } from './bootstrap.js';
 const KINDS = ['core', 'relational', 'multidimensional', 'mining', 'server'] as const;
 
 const ROWSET_MODELS = KINDS.map((kind) => `rowset-${kind}`);
-const RESTRICTION_MODELS = KINDS.map((kind) => `rowset-${kind}-restrictions`);
 
 /** The annotation carrying the XMLA and OLE DB facts EMF has no idiom for. */
 export const ROWSET_ANNOTATION = 'https://www.daanse.org/spec/xmla/rowset/1.0';
@@ -47,21 +46,21 @@ export class RowsetCatalog {
     for (const name of ROWSET_MODELS) {
       for (const eClass of classesOf(required(models, name))) {
         const requestType = detail(eClass, 'requestType');
-        if (requestType !== null) {
+        if (requestType === null) {
+          continue;
+        }
+        // One package per kind holds both: what a rowset is, and what a request for
+        // it may be restricted by. The annotation tells them apart, not the package.
+        if (detail(eClass, 'role') === 'restrictions') {
+          this.restrictionsByRequestType.set(requestType, eClass);
+        } else {
           this.byRequestType.set(requestType, eClass);
           this.requestTypeByClass.set(eClass, requestType);
         }
       }
     }
 
-    for (const name of RESTRICTION_MODELS) {
-      for (const eClass of classesOf(required(models, name))) {
-        const requestType = detail(eClass, 'requestType');
-        if (requestType !== null && detail(eClass, 'role') === 'restrictions') {
-          this.restrictionsByRequestType.set(requestType, eClass);
-        }
-      }
-    }
+
   }
 
   /** Every request type the model describes, in model order. */
