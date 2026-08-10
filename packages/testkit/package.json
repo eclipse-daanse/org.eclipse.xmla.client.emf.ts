@@ -5,8 +5,19 @@
   "type": "module",
   "license": "EPL-2.0",
   "description": "Recorded XMLA conversations and a transport that replays them. Test scaffolding, never published.",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "build": "tsc --build"
+  },
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@daanse/xmla-client": "0.0.1"
   }
 }
