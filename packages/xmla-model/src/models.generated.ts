@@ -47,8 +47,6 @@ export const MODEL_ORDER: readonly ModelDescriptor[] = [
   { name: "rowset-mining", nsURI: "urn:schemas-microsoft-com:xml-analysis:rowset:mining", optional: false },
   { name: "rowset-server-restrictions", nsURI: "https://www.daanse.org/spec/xmla/rowset/server/restrictions/1.0", optional: false },
   { name: "rowset-server", nsURI: "urn:schemas-microsoft-com:xml-analysis:rowset:server", optional: false },
-  { name: "rowset-tabular-restrictions", nsURI: "https://www.daanse.org/spec/xmla/rowset/tabular/restrictions/1.0", optional: false },
-  { name: "rowset-tabular", nsURI: "urn:schemas-microsoft-com:xml-analysis:rowset:tabular", optional: false },
   { name: "soap", nsURI: "http://schemas.xmlsoap.org/soap/envelope/", optional: false },
   { name: "xmla", nsURI: "urn:schemas-microsoft-com:xml-analysis", optional: false },
 ];

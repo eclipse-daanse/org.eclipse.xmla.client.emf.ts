@@ -34,7 +34,7 @@ import type { DynamicRowset } from './schema-import.js';
 const PRIVATE_PREFIX = 'https://www.daanse.org/spec/xmla/rowset/dynamic';
 
 /** The nsURI of each static rowset package, which a dynamic one must never be. */
-const STATIC_ROWSET_NAMESPACES = ['core', 'relational', 'multidimensional', 'mining', 'server', 'tabular'].map(
+const STATIC_ROWSET_NAMESPACES = ['core', 'relational', 'multidimensional', 'mining', 'server'].map(
   (kind) => `${XMLA_NAMESPACES.ROWSET}:${kind}`,
 );
 

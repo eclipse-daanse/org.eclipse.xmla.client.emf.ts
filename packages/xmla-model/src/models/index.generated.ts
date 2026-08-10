@@ -32,8 +32,6 @@ import { rowsetMiningRestrictionsEcore } from './rowset-mining-restrictions.gene
 import { rowsetMiningEcore } from './rowset-mining.generated.js';
 import { rowsetServerRestrictionsEcore } from './rowset-server-restrictions.generated.js';
 import { rowsetServerEcore } from './rowset-server.generated.js';
-import { rowsetTabularRestrictionsEcore } from './rowset-tabular-restrictions.generated.js';
-import { rowsetTabularEcore } from './rowset-tabular.generated.js';
 import { soapEcore } from './soap.generated.js';
 import { xmlaEcore } from './xmla.generated.js';
 
@@ -69,8 +67,6 @@ export const MODEL_TEXT: Readonly<Record<string, string>> = {
   "rowset-mining": rowsetMiningEcore,
   "rowset-server-restrictions": rowsetServerRestrictionsEcore,
   "rowset-server": rowsetServerEcore,
-  "rowset-tabular-restrictions": rowsetTabularRestrictionsEcore,
-  "rowset-tabular": rowsetTabularEcore,
   "soap": soapEcore,
   "xmla": xmlaEcore,
 };
