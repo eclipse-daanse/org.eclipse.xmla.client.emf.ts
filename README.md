@@ -72,6 +72,30 @@ empty list, and `eIsSet` is true from then on. So the writer asks `eIsSet` befor
 it ever touches `eGet`, or a freshly created row emits every collection wrapper
 it has.
 
+## What is not done yet
+
+**The UI does not use `@emfts/uimodel-composer`.** That package is what should
+generate the forms and grids - a UI that is itself an Ecore model - but it is
+not published: `npm view` answers 404, and the snapshot is 239 files that would
+have to be vendored and trimmed. So `apps/explorer/src/ui-model.ts` builds the
+same *description* by hand, behind the seam the composer would fill. It is still
+model-driven - the widget for a feature is chosen from the model and nothing in
+the screens knows a rowset by name - but it is not the composer.
+
+**`NormTupleSet` raises rather than being read.** It is the optimised response
+shape SSAS sends when a client asks for it, which Excel does on every connect.
+One of the two recorded statement responses uses it. Raising is deliberate:
+walking the axis finds nothing there, so the alternative is a grid that looks
+like a query returning no data.
+
+**The models are read from disk.** `@daanse/xmla-model/node` uses `fs`, so the
+browser build needs them inlined first. Until then the explorer runs against the
+recorded conversations.
+
+**The cursor parses eagerly.** The largest recorded response, 4.3 MB, becomes
+49k events in 364 ms and about 24 MB of heap. That is affordable and measured,
+but a streaming cursor belongs behind the same interface eventually.
+
 ## License
 
 EPL-2.0. See [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md).
