@@ -43,10 +43,10 @@ export const XMLA_NAMESPACES = {
    * attribute — counted over both specifications, nothing else in this namespace
    * is ever written.
    *
-   * The Java side models it (`model/xml.sql`) because it *writes* inline schemas
-   * and takes the attribute's name and namespace from there. This side only reads
-   * them, and reading needs the element names rather than the annotation, so the
-   * model is not loaded here and this constant is all there is.
+   * There is a model for it on the Java side, `model/xml.sql`, but it is parked and
+   * out of the build. Nothing here would use it anyway: this side only *reads*
+   * inline schemas, and reading needs the element names rather than the annotation.
+   * This constant is all there is.
    */
   SQL: 'urn:schemas-microsoft-com:xml-sql',
   SQL_PREFIX: 'sql',

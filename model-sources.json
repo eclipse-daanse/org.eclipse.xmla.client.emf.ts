@@ -132,33 +132,9 @@
       "dependsOn": []
     },
     {
-      "name": "rowset-core-restrictions",
-      "file": "model/rowset.core/model/rowset-core-restrictions.ecore",
-      "nsURI": "https://www.daanse.org/spec/xmla/rowset/core/restrictions/1.0",
-      "dependsOn": [
-        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
-      ]
-    },
-    {
-      "name": "rowset-relational-restrictions",
-      "file": "model/rowset.relational/model/rowset-relational-restrictions.ecore",
-      "nsURI": "https://www.daanse.org/spec/xmla/rowset/relational/restrictions/1.0",
-      "dependsOn": [
-        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
-      ]
-    },
-    {
       "name": "rowset-relational",
       "file": "model/rowset.relational/model/rowset-relational.ecore",
       "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:relational",
-      "dependsOn": [
-        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
-      ]
-    },
-    {
-      "name": "rowset-multidimensional-restrictions",
-      "file": "model/rowset.multidimensional/model/rowset-multidimensional-restrictions.ecore",
-      "nsURI": "https://www.daanse.org/spec/xmla/rowset/multidimensional/restrictions/1.0",
       "dependsOn": [
         "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
@@ -172,25 +148,9 @@
       ]
     },
     {
-      "name": "rowset-mining-restrictions",
-      "file": "model/rowset.mining/model/rowset-mining-restrictions.ecore",
-      "nsURI": "https://www.daanse.org/spec/xmla/rowset/mining/restrictions/1.0",
-      "dependsOn": [
-        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
-      ]
-    },
-    {
       "name": "rowset-mining",
       "file": "model/rowset.mining/model/rowset-mining.ecore",
       "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:mining",
-      "dependsOn": [
-        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
-      ]
-    },
-    {
-      "name": "rowset-server-restrictions",
-      "file": "model/rowset.server/model/rowset-server-restrictions.ecore",
-      "nsURI": "https://www.daanse.org/spec/xmla/rowset/server/restrictions/1.0",
       "dependsOn": [
         "urn:schemas-microsoft-com:xml-analysis:rowset:core"
       ]
