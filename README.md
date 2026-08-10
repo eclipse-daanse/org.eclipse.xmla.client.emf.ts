@@ -112,12 +112,6 @@ same *description* by hand, behind the seam the composer would fill. It is still
 model-driven - the widget for a feature is chosen from the model and nothing in
 the screens knows a rowset by name - but it is not the composer.
 
-**`NormTupleSet` raises rather than being read.** It is the optimised response
-shape SSAS sends when a client asks for it, which Excel does on every connect.
-One of the two recorded statement responses uses it. Raising is deliberate:
-walking the axis finds nothing there, so the alternative is a grid that looks
-like a query returning no data.
-
 **The cursor parses eagerly.** The largest recorded response, 4.3 MB, becomes
 49k events in 364 ms and about 24 MB of heap. That is affordable and measured,
 but a streaming cursor belongs behind the same interface eventually.
