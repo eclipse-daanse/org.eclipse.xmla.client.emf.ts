@@ -8,9 +8,15 @@
  * SPDX-License-Identifier: EPL-2.0
  */
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.util.List;
 
+import javax.xml.stream.XMLStreamException;
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 import org.eclipse.daanse.xmla.api.SimpleSessionHandler;
@@ -18,6 +24,7 @@ import org.eclipse.daanse.xmla.api.XmlaConnector;
 import org.eclipse.daanse.xmla.api.XmlaRequest;
 import org.eclipse.daanse.xmla.api.auth.AuthenticationChain;
 import org.eclipse.daanse.xmla.model.io.RowsetCatalog;
+import org.eclipse.daanse.xmla.model.io.XmlaMessageCodec;
 import org.eclipse.daanse.xmla.model.rowset.RowsetFactory;
 import org.eclipse.daanse.xmla.model.rowset.RowsetPackage;
 import org.eclipse.daanse.xmla.model.xmla.Discover;
@@ -25,9 +32,15 @@ import org.eclipse.daanse.xmla.model.xmla.Execute;
 import org.eclipse.daanse.xmla.server.adapter.emf.AccessPolicy;
 import org.eclipse.daanse.xmla.server.adapter.emf.EmfXmlaAdapter;
 import org.eclipse.daanse.xmla.server.jdk.httpserver.EmfXmlaHttpHandler;
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.ExtendedMetaData;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * A real Daanse XMLA server, on a port, for the TypeScript client to talk to.
@@ -67,6 +80,9 @@ public final class DaanseProbe {
                 AccessPolicy.OPEN);
         server.createContext(contextPath,
                 new EmfXmlaHttpHandler(adapter, null, AuthenticationChain::new, "*"));
+        // A second endpoint that answers a rowset no model describes. See
+        // ForeignRowsetHandler for why that cannot be done through the adapter.
+        server.createContext(contextPath + "-foreign", new ForeignRowsetHandler());
         server.setExecutor(java.util.concurrent.Executors.newFixedThreadPool(4));
         server.start();
 
@@ -74,6 +90,93 @@ public final class DaanseProbe {
         System.out.flush();
         Runtime.getRuntime().addShutdownHook(new Thread(() -> server.stop(0)));
         Thread.currentThread().join();
+    }
+
+    /**
+     * A rowset this project has no model for, written by the real writer.
+     * <p>
+     * The dynamic path claims that a server describing itself is enough - that a
+     * client can read a rowset nobody modelled. Nothing had ever tested that
+     * over a wire, because the only servers to hand are driven by the very model
+     * the client already has.
+     * <p>
+     * This cannot go through {@link EmfXmlaAdapter}: it looks the row class up
+     * in {@link RowsetCatalog} by request type and refuses what it does not
+     * find, which is correct of it. So the response is written directly by
+     * {@link XmlaMessageCodec} - the same code the adapter uses, including the
+     * inline schema derived from the class - over an EClass built here at
+     * runtime and present in no {@code .ecore} anywhere.
+     */
+    private static final class ForeignRowsetHandler implements HttpHandler {
+
+        private static final String NS = "urn:schemas-microsoft-com:xml-analysis:rowset";
+
+        @Override
+        public void handle(HttpExchange exchange) throws IOException {
+            EClass rowClass = foreignRowClass();
+            List<EObject> rows = List.of(foreignRow(rowClass, "pool-one", 4, true),
+                    foreignRow(rowClass, "pool-two", 16, false));
+
+            exchange.getResponseHeaders().add("Content-Type", "text/xml; charset=utf-8");
+            exchange.sendResponseHeaders(200, 0);
+            try (OutputStream body = exchange.getResponseBody()) {
+                XmlaMessageCodec.writeDiscoverResponse(body, List.of(), rowClass, rows.iterator());
+            } catch (XMLStreamException unwritable) {
+                throw new IOException(unwritable);
+            }
+        }
+
+        /**
+         * Built here and nowhere else: three columns with types no rowset in the
+         * model happens to combine, so a client that reads them got the shape
+         * from the response and not from something it already knew.
+         */
+        private static EClass foreignRowClass() {
+            EPackage ePackage = EcoreFactory.eINSTANCE.createEPackage();
+            ePackage.setName("foreign");
+            ePackage.setNsPrefix("foreign");
+            ePackage.setNsURI("urn:daanse:probe:foreign");
+
+            EClass row = EcoreFactory.eINSTANCE.createEClass();
+            row.setName("ForeignRow");
+            annotate(row, ExtendedMetaData.ANNOTATION_URI, "name", "row", "kind", "elementOnly");
+            ePackage.getEClassifiers().add(row);
+
+            column(row, "poolName", "POOL_NAME", XMLTypePackage.eINSTANCE.getString());
+            column(row, "threadCount", "THREAD_COUNT", XMLTypePackage.eINSTANCE.getIntObject());
+            column(row, "isDefault", "IS_DEFAULT", XMLTypePackage.eINSTANCE.getBooleanObject());
+            return row;
+        }
+
+        private static void column(EClass owner, String name, String wireName,
+                org.eclipse.emf.ecore.EDataType type) {
+            EAttribute attribute = EcoreFactory.eINSTANCE.createEAttribute();
+            attribute.setName(name);
+            attribute.setEType(type);
+            attribute.setLowerBound(0);
+            attribute.setUpperBound(1);
+            annotate(attribute, ExtendedMetaData.ANNOTATION_URI, "kind", "element", "name", wireName, "namespace",
+                    NS);
+            owner.getEStructuralFeatures().add(attribute);
+        }
+
+        private static void annotate(org.eclipse.emf.ecore.EModelElement target, String source,
+                String... keyThenValue) {
+            EAnnotation annotation = EcoreFactory.eINSTANCE.createEAnnotation();
+            annotation.setSource(source);
+            for (int i = 0; i + 1 < keyThenValue.length; i += 2) {
+                annotation.getDetails().put(keyThenValue[i], keyThenValue[i + 1]);
+            }
+            target.getEAnnotations().add(annotation);
+        }
+
+        private static EObject foreignRow(EClass rowClass, String pool, int threads, boolean isDefault) {
+            EObject row = EcoreUtil.create(rowClass);
+            row.eSet(rowClass.getEStructuralFeature("poolName"), pool);
+            row.eSet(rowClass.getEStructuralFeature("threadCount"), threads);
+            row.eSet(rowClass.getEStructuralFeature("isDefault"), isDefault);
+            return row;
+        }
     }
 
     /**

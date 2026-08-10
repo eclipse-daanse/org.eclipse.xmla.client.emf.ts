@@ -24,6 +24,7 @@ import { XmlaClient, FetchTransport } from '../packages/xmla-client/dist/index.j
 import { RowsetCatalog } from '../packages/xmla-model/dist/catalog.js';
 import { bootstrapFromDisk } from '../packages/xmla-model/dist/node.js';
 import { RowsetResolver } from '../packages/xmla-dynamic/dist/resolver.js';
+import { wireNameOf } from '../packages/emf-xml/dist/emd.js';
 
 const url = process.argv[2] ?? process.env['XMLA_URL'] ?? 'http://localhost:8090/xmla';
 const user = process.env['XMLA_USER'];
@@ -114,24 +115,36 @@ check('a session is really negotiated', async () => {
 });
 
 check('a rowset the model does not describe is still readable', async () => {
-  // The whole reason the dynamic path exists. If this server declares nothing
-  // unmodelled, say so rather than passing on nothing.
-  const declared = await client.discover('DISCOVER_SCHEMA_ROWSETS');
-  const names = declared.rows.map((row) => String(read(row, 'schemaName') ?? ''));
-  const unmodelled = names.find((name) => name !== '' && catalog.forRequestType(name) === null);
+  // The claim the whole second path rests on, over a wire. The endpoint answers
+  // a rowset written from an EClass built at runtime on the server and present
+  // in no .ecore anywhere - so nothing the client knows could have told it the
+  // shape.
+  const foreign = new XmlaClient({ url: `${url}-foreign`, transport: new FetchTransport(), models, credentials });
+  const requestType = 'DISCOVER_RESOURCE_POOLS';
 
-  if (unmodelled === undefined) {
-    return 'this server declares nothing the model lacks - not proven here';
+  const xml = await foreign.discoverRaw(requestType);
+  const schema = foreign.schemaOf(xml);
+  if (schema === null) {
+    throw new Error('the response carried no inline schema, so there is nothing to build from');
   }
-  const resolver = new RowsetResolver(catalog, url);
-  const xml = await client.discoverRaw(unmodelled);
-  const resolved = resolver.resolve(unmodelled, client.schemaOf(xml));
-  const read_ = client.readRows(xml, resolved.rowClass);
 
+  const resolver = new RowsetResolver(catalog, `${url}-foreign`);
+  const resolved = resolver.resolve(requestType, schema);
   if (resolved.origin !== 'dynamic') {
-    throw new Error(`${unmodelled} resolved as ${resolved.origin}`);
+    throw new Error(`${requestType} resolved as ${resolved.origin}, so this proved nothing`);
   }
-  return `${unmodelled}: ${resolved.rowClass.getEAllStructuralFeatures().length} columns built from the response, ${read_.rows.length} row(s)`;
+
+  const rows = foreign.readRows(xml, resolved.rowClass).rows;
+  const columns = [...resolved.rowClass.getEAllStructuralFeatures()].map((f) => wireNameOf(f));
+  if (rows.length === 0) {
+    throw new Error('no rows');
+  }
+  const first = rows[0];
+  const values = columns.map((name, i) => {
+    const feature = [...resolved.rowClass.getEAllStructuralFeatures()][i];
+    return `${name}=${first.eIsSet(feature) ? JSON.stringify(first.eGet(feature)) : 'NULL'}`;
+  });
+  return `${columns.length} columns built from the response, ${rows.length} rows; first: ${values.join(' ')}`;
 });
 
 check('what the server describes matches what the model says', async () => {
