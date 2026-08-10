@@ -3,7 +3,11 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [vue()],
-  // The models are read from disk in Node and inlined for the browser. Until
-  // that inlining exists, the app runs against the recorded conversations.
-  optimizeDeps: { exclude: ['@daanse/xmla-model'] },
+  server: {
+    // So the app can be opened without a CORS-aware server in front of it:
+    // /xmla is forwarded to the probe, and the browser sees one origin.
+    proxy: {
+      '/xmla': { target: process.env['XMLA_TARGET'] ?? 'http://localhost:8090', changeOrigin: true },
+    },
+  },
 });
