@@ -1,0 +1,26 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="6B7DB918-D510-49B2-9AAE-8D5F7DF31005" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_PROPERTIES</RequestType>
+      <Restrictions>
+        <RestrictionList>
+          <PropertyName>ProviderVersion</PropertyName>
+        </RestrictionList>
+      </Restrictions>
+      <Properties>
+        <PropertyList>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>3b9fc858-1c7c-4578-80b8-c121876f0c94</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>3b9fc858-1c7c-4578-80b8-c121876f0c94</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>a6ba3313-bc6e-4cc6-afc5-3308533d74db</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

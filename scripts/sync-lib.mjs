@@ -1,0 +1,163 @@
+/*
+ * Copyright (c) 2026 Contributors to the Eclipse Foundation.
+ *
+ * This program and the accompanying materials are made
+ * available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ */
+
+/**
+ * Copying files in from the Java repository, and proving they stayed in step.
+ *
+ * The Ecore models and the recorded fixtures are the ground truth of this port,
+ * and they live in another repository. A git submodule would demand a 100 MB
+ * checkout and a Java toolchain for anyone who only wants to run the tests; a
+ * one-off copy drifts silently. So the files are committed here and guarded by a
+ * sha256 manifest, and `--check` turns any drift into a failing build.
+ *
+ * The manifest deliberately carries no timestamp. Syncing an unchanged source
+ * has to produce a byte-identical manifest, otherwise every run would show up as
+ * a diff and the guard would be noise instead of a signal.
+ */
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { dirname, join, relative, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+export const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+
+export function readSources() {
+  const sources = JSON.parse(readFileSync(join(repoRoot, 'model-sources.json'), 'utf8'));
+  // The environment wins, so a checkout somewhere else needs no edit to a tracked file.
+  const sourceRoot = process.env['XMLA_MODEL_SOURCE'] ?? sources.sourceRoot;
+  return { ...sources, sourceRoot };
+}
+
+export function sha256(path) {
+  return createHash('sha256').update(readFileSync(path)).digest('hex');
+}
+
+/** The source commit, so a manifest says which revision it was taken from. */
+export function sourceCommit(sourceRoot) {
+  try {
+    return execFileSync('git', ['-C', sourceRoot, 'rev-parse', 'HEAD'], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+  } catch {
+    return null;
+  }
+}
+
+/** Every file under `dir`, relative to it, sorted so the manifest is stable. */
+export function filesUnder(dir, prefix = '') {
+  const found = [];
+  for (const entry of readdirSync(join(dir, prefix), { withFileTypes: true }).sort((a, b) =>
+    a.name < b.name ? -1 : 1,
+  )) {
+    const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) {
+      found.push(...filesUnder(dir, rel));
+    } else if (entry.isFile()) {
+      found.push(rel);
+    }
+  }
+  return found;
+}
+
+/**
+ * Copy `entries` into `targetDir` and write the manifest, or in check mode
+ * report every difference without touching anything.
+ *
+ * @param options.entries  `{ from: absolute source path, to: path relative to targetDir }`
+ * @param options.check    verify only
+ * @returns the number of problems found; zero means in step
+ */
+export function syncFiles({ label, sourceRoot, targetDir, manifestName, entries, check }) {
+  const problems = [];
+
+  const expected = new Map();
+  for (const entry of entries) {
+    if (!fileExists(entry.from)) {
+      problems.push(`missing at the source: ${relative(sourceRoot, entry.from)}`);
+      continue;
+    }
+    expected.set(entry.to, sha256(entry.from));
+  }
+
+  const manifestPath = join(targetDir, manifestName);
+
+  if (check) {
+    if (!fileExists(manifestPath)) {
+      problems.push(`no manifest yet - run the sync script for ${label}`);
+      return report(label, problems, expected.size, check);
+    }
+    const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+
+    for (const [rel, hash] of expected) {
+      const local = join(targetDir, rel);
+      if (!fileExists(local)) {
+        problems.push(`copied file is gone: ${rel}`);
+      } else if (sha256(local) !== hash) {
+        problems.push(`differs from the source: ${rel}`);
+      } else if (manifest.files[rel] !== hash) {
+        problems.push(`manifest is stale for: ${rel}`);
+      }
+    }
+    for (const rel of Object.keys(manifest.files)) {
+      if (!expected.has(rel)) {
+        problems.push(`no longer in the source, still copied: ${rel}`);
+      }
+    }
+    return report(label, problems, expected.size, check);
+  }
+
+  if (problems.length > 0) {
+    return report(label, problems, expected.size, check);
+  }
+
+  // A full replace, so a file dropped at the source disappears here too rather
+  // than lingering as an orphan the manifest no longer mentions.
+  rmSync(targetDir, { recursive: true, force: true });
+  for (const entry of entries) {
+    const target = join(targetDir, entry.to);
+    mkdirSync(dirname(target), { recursive: true });
+    writeFileSync(target, readFileSync(entry.from));
+  }
+
+  const commit = sourceCommit(sourceRoot);
+  const manifest = {
+    _comment: `Generated by scripts/sync-${label}.mjs - do not edit. Run 'npm run check:sync' to verify.`,
+    source: { repository: 'org.eclipse.daanse.xmla', commit },
+    files: Object.fromEntries([...expected].sort((a, b) => (a[0] < b[0] ? -1 : 1))),
+  };
+  writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+
+  return report(label, problems, expected.size, check);
+}
+
+function fileExists(path) {
+  try {
+    return statSync(path).isFile();
+  } catch {
+    return false;
+  }
+}
+
+function report(label, problems, count, check) {
+  if (problems.length > 0) {
+    console.error(`${label}: ${problems.length} problem(s)`);
+    for (const problem of problems) {
+      console.error(`  - ${problem}`);
+    }
+    if (check) {
+      console.error(`\nRun 'npm run sync:${label}' to bring the copies back in step.`);
+    }
+    return problems.length;
+  }
+  console.log(`${label}: ${count} file(s) ${check ? 'in step' : 'synced'}`);
+  return 0;
+}

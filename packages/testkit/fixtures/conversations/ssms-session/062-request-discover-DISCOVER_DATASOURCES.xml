@@ -1,0 +1,24 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <Version Sequence="926" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine/2" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_DATASOURCES</RequestType>
+      <Restrictions />
+      <Properties>
+        <PropertyList>
+          <Timeout>0</Timeout>
+          <SspropInitAppName>Среда Microsoft SQL Server Management Studio - запрос</SspropInitAppName>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <ClientProcessID>6232</ClientProcessID>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>3cf94bdd-993b-4d16-b052-7da3d95d17fa</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>3cf94bdd-993b-4d16-b052-7da3d95d17fa</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>2a102e22-6df8-416f-800e-a55056f3b64a</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

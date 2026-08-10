@@ -1,0 +1,147 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="18C938FD-6B38-470C-9763-03A1CD4BDEEA" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement>SELECT
+    {
+        [Measures].[Average Rate]
+    }ON 0,
+    SUBSET(
+        NONEMPTY(
+            CROSSJOIN(
+                CROSSJOIN(
+                    CROSSJOIN(
+                        CROSSJOIN(
+                            CROSSJOIN(
+                                CROSSJOIN(
+                                    CROSSJOIN(
+                                        CROSSJOIN(
+                                            CROSSJOIN(
+                                                CROSSJOIN(
+                                                    CROSSJOIN(
+                                                        CROSSJOIN(
+                                                            CROSSJOIN(
+                                                                CROSSJOIN(
+                                                                    CROSSJOIN(
+                                                                        CROSSJOIN(
+                                                                            CROSSJOIN(
+                                                                                CROSSJOIN(
+                                                                                    CROSSJOIN(
+                                                                                        CROSSJOIN(
+                                                                                            CROSSJOIN(
+                                                                                                CROSSJOIN(
+                                                                                                    CROSSJOIN(
+                                                                                                        CROSSJOIN(
+                                                                                                            CROSSJOIN(
+                                                                                                                CROSSJOIN(
+                                                                                                                    CROSSJOIN(
+                                                                                                                        CROSSJOIN(
+                                                                                                                            CROSSJOIN(
+                                                                                                                                CROSSJOIN(
+                                                                                                                                    CROSSJOIN(
+                                                                                                                                        CROSSJOIN(
+                                                                                                                                            [Account].[Account Number].[Account Number].ALLMEMBERS,
+                                                                                                                                            [Account].[Account Type].[Account Type].ALLMEMBERS
+                                                                                                                                        ),
+                                                                                                                                        ADDCALCULATEDMEMBERS(
+                                                                                                                                            DESCENDANTS(
+                                                                                                                                                [Account].[Accounts].[Account Level 01].ALLMEMBERS,
+                                                                                                                                                [Account].[Accounts].[Account Level 06],
+                                                                                                                                                LEAVES
+                                                                                                                                            )
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    [Customer].[City].[City].ALLMEMBERS
+                                                                                                                                ),
+                                                                                                                                [Customer].[Commute Distance].[Commute Distance].ALLMEMBERS
+                                                                                                                            ),
+                                                                                                                            [Customer].[Country].[Country].ALLMEMBERS
+                                                                                                                        ),
+                                                                                                                        [Customer].[Customer].[Customer].ALLMEMBERS
+                                                                                                                    ),
+                                                                                                                    ADDCALCULATEDMEMBERS(
+                                                                                                                        DESCENDANTS(
+                                                                                                                            [Customer].[Customer Geography].[Country].ALLMEMBERS,
+                                                                                                                            [Customer].[Customer Geography].[Customer],
+                                                                                                                            LEAVES
+                                                                                                                        )
+                                                                                                                    )
+                                                                                                                ),
+                                                                                                                [Customer].[Education].[Education].ALLMEMBERS
+                                                                                                            ),
+                                                                                                            [Customer].[Gender].[Gender].ALLMEMBERS
+                                                                                                        ),
+                                                                                                        [Customer].[Home Owner].[Home Owner].ALLMEMBERS
+                                                                                                    ),
+                                                                                                    [Customer].[Marital Status].[Marital Status].ALLMEMBERS
+                                                                                                ),
+                                                                                                [Customer].[Number of Cars Owned].[Number of Cars Owned].ALLMEMBERS
+                                                                                            ),
+                                                                                            [Customer].[Number of Children At Home].[Number of Children At Home].ALLMEMBERS
+                                                                                        ),
+                                                                                        [Customer].[Occupation].[Occupation].ALLMEMBERS
+                                                                                    ),
+                                                                                    [Customer].[Postal Code].[Postal Code].ALLMEMBERS
+                                                                                ),
+                                                                                [Customer].[State-Province].[State-Province].ALLMEMBERS
+                                                                            ),
+                                                                            [Customer].[Total Children].[Total Children].ALLMEMBERS
+                                                                        ),
+                                                                        [Customer].[Yearly Income].[Yearly Income].ALLMEMBERS
+                                                                    ),
+                                                                    [Date].[Calendar Quarter of Year].[Calendar Quarter of Year].ALLMEMBERS
+                                                                ),
+                                                                [Date].[Calendar Semester of Year].[Calendar Semester of Year].ALLMEMBERS
+                                                            ),
+                                                            [Date].[Calendar Week of Year].[Calendar Week of Year].ALLMEMBERS
+                                                        ),
+                                                        [Date].[Calendar Year].[Calendar Year].ALLMEMBERS
+                                                    ),
+                                                    [Date].[Date].[Date].ALLMEMBERS
+                                                ),
+                                                [Date].[Day Name].[Day Name].ALLMEMBERS
+                                            ),
+                                            [Date].[Day of Month].[Day of Month].ALLMEMBERS
+                                        ),
+                                        [Date].[Day of Week].[Day of Week].ALLMEMBERS
+                                    ),
+                                    [Date].[Day of Year].[Day of Year].ALLMEMBERS
+                                ),
+                                [Date].[Fiscal Quarter of Year].[Fiscal Quarter of Year].ALLMEMBERS
+                            ),
+                            [Date].[Fiscal Semester of Year].[Fiscal Semester of Year].ALLMEMBERS
+                        ),
+                        [Date].[Fiscal Week of Year].[Fiscal Week of Year].ALLMEMBERS
+                    ),
+                    [Date].[Fiscal Year].[Fiscal Year].ALLMEMBERS
+                ),
+                [Date].[Month of Year].[Month of Year].ALLMEMBERS
+            ),
+            {
+                [Measures].[Average Rate]
+            }
+        ),
+        0,
+        200
+    )
+    PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON 1
+FROM [Adventure Works] CELL PROPERTIES VALUE</Statement>
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Format>Tabular</Format>
+          <Content>SchemaData</Content>
+          <DbpropMsmdActivityID>2c999e09-9eb3-4ff3-a947-b9392d12a95f</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>2c999e09-9eb3-4ff3-a947-b9392d12a95f</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>89aed875-afb4-4c94-aad5-d4cf6c8eb98c</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

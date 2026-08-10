@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*********************************************************************
+* Copyright (c) 2026 Contributors to the Eclipse Foundation.
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which is available at https://www.eclipse.org/legal/epl-2.0/
+*
+* SPDX-License-Identifier: EPL-2.0
+**********************************************************************/
+-->
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="msxmla" nsURI="http://schemas.microsoft.com/analysisservices/2003/xmla"
+    nsPrefix="msxmla">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Microsoft extension: NormTupleSet, the compressed tuple form Excel requests."/>
+    <details key="oSGiCompatible" value="true"/>
+    <details key="basePackage" value="org.eclipse.daanse.xmla.model"/>
+    <details key="prefix" value="MsXmla"/>
+    <details key="fileExtensions" value="msxmla"/>
+    <details key="resource" value="XML"/>
+    <details key="literalsInterface" value="true"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="NormTuplesTypeNormTupleMemberRef">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MemberRef"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberOrdinal" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MemberOrdinal"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberDispInfo" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MemberDispInfo"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormTuplesTypeNormTuple">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NormTuple"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memberRef" upperBound="-1"
+        eType="#//NormTuplesTypeNormTupleMemberRef" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MemberRef"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormTuplesType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NormTuplesType"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="normTuple" upperBound="-1"
+        eType="#//NormTuplesTypeNormTuple" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NormTuple"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormTupleSetMembersLookup">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="MembersLookup"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass urn:schemas-microsoft-com:xml-analysis:mddataset#//MembersType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Members"/>
+        <details key="namespace" value="urn:schemas-microsoft-com:xml-analysis:mddataset"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormTupleSet" eSuperTypes="urn:schemas-microsoft-com:xml-analysis:mddataset#//SetType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The msxmla:NormTupleSet type provides an optimized format for a TupleSet. This format is used when the DbpropMsmdOptimizeResponse property is appropriately set (see section 3.1.4.2.2.1.2.1). &lt;xsd:element name=&quot;NormTupleSet&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;NormTuples&quot; type=&quot;msxmla:NormTuplesType&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot;/> &lt;xsd:element name=&quot;MembersLookup&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element ref=&quot;xmla-ds:Members&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:sequence> &lt;/xsd:complexType …"/>
+    </eAnnotations>
+    <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
+      <details key="groupElementName" value="NormTupleSet"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NormTupleSet"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="normTuples" lowerBound="1"
+        eType="#//NormTuplesType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="NormTuples"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="membersLookup" lowerBound="1"
+        eType="#//NormTupleSetMembersLookup" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="MembersLookup"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

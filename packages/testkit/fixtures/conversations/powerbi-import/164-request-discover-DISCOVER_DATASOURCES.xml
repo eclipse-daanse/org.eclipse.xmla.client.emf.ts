@@ -1,0 +1,23 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <Version Sequence="926" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine/2" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_DATASOURCES</RequestType>
+      <Restrictions />
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>2c999e09-9eb3-4ff3-a947-b9392d12a95f</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>2c999e09-9eb3-4ff3-a947-b9392d12a95f</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>20cdc02b-7952-40b7-94f1-871083dc6733</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

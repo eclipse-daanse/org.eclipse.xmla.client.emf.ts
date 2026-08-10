@@ -1,0 +1,29 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="2FD0EDA8-214C-4170-86CC-BBDD6A955D2B" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DBSCHEMA_CATALOGS</RequestType>
+      <Restrictions>
+        <RestrictionList>
+          <CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME>
+        </RestrictionList>
+      </Restrictions>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <Cube>Adventure Works</Cube>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <SspropInitAppName>Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592</SspropInitAppName>
+          <ClientProcessID>5596</ClientProcessID>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>107685e7-a018-4f7f-85df-16df1609f26b</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>5769b70a-46ea-4b45-94c7-e3d23d064237</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>f39426c7-92cc-4e9b-ae69-d6aea4bf13b1</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

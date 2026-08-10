@@ -1,0 +1,22 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="18C938FD-6B38-470C-9763-03A1CD4BDEEA" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Cancel xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" />
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <DbpropMsmdActivityID>473af781-da73-4084-b91b-07850d5529f4</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>473af781-da73-4084-b91b-07850d5529f4</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>87039493-9fdb-4ad4-bb95-e5af884bfcc1</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

@@ -1,0 +1,64 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><DiscoverResponse xmlns="urn:schemas-microsoft-com:xml-analysis" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100="http://schemas.microsoft.com/analysisservices/2008/engine/100" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl410="http://schemas.microsoft.com/analysisservices/2012/engine/410" xmlns:ddl410_410="http://schemas.microsoft.com/analysisservices/2012/engine/410/410" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500"><return><root xmlns="urn:schemas-microsoft-com:xml-analysis:rowset" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msxmla="http://schemas.microsoft.com/analysisservices/2003/xmla"><xsd:schema targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset" xmlns:sql="urn:schemas-microsoft-com:xml-sql" elementFormDefault="qualified"><xsd:element name="root"><xsd:complexType><xsd:sequence minOccurs="0" maxOccurs="unbounded"><xsd:element name="row" type="row"/></xsd:sequence></xsd:complexType></xsd:element><xsd:simpleType name="uuid"><xsd:restriction base="xsd:string"><xsd:pattern value="[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}"/></xsd:restriction></xsd:simpleType><xsd:complexType name="xmlDocument"><xsd:sequence><xsd:any/></xsd:sequence></xsd:complexType><xsd:complexType name="row"><xsd:sequence><xsd:element sql:field="CATALOG_NAME" name="CATALOG_NAME" type="xsd:string" minOccurs="0"/><xsd:element sql:field="SCHEMA_NAME" name="SCHEMA_NAME" type="xsd:string" minOccurs="0"/><xsd:element sql:field="CUBE_NAME" name="CUBE_NAME" type="xsd:string" minOccurs="0"/><xsd:element sql:field="SET_NAME" name="SET_NAME" type="xsd:string" minOccurs="0"/><xsd:element sql:field="SCOPE" name="SCOPE" type="xsd:int" minOccurs="0"/><xsd:element sql:field="DESCRIPTION" name="DESCRIPTION" type="xsd:string" minOccurs="0"/><xsd:element sql:field="EXPRESSION" name="EXPRESSION" type="xsd:string" minOccurs="0"/><xsd:element sql:field="DIMENSIONS" name="DIMENSIONS" type="xsd:string" minOccurs="0"/><xsd:element sql:field="SET_CAPTION" name="SET_CAPTION" type="xsd:string" minOccurs="0"/><xsd:element sql:field="SET_DISPLAY_FOLDER" name="SET_DISPLAY_FOLDER" type="xsd:string" minOccurs="0"/><xsd:element sql:field="SET_EVALUATION_CONTEXT" name="SET_EVALUATION_CONTEXT" type="xsd:int" minOccurs="0"/></xsd:sequence></xsd:complexType></xsd:schema><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>Negative Margin Products</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>Filter
+    (
+       [Product].[Subcategory].[Subcategory], 
+       [Measures].[Gross Profit Margin] &lt; 0
+    )</EXPRESSION><DIMENSIONS>[Product].[Subcategory]</DIMENSIONS><SET_CAPTION>Negative Margin Products</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>2</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>Top 50 Customers</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>TopCount
+    (
+       [Customer].[Customer].[Customer].Members,
+       50,
+       [Measures].[Internet Sales Amount]
+    )</EXPRESSION><DIMENSIONS>[Customer].[Customer]</DIMENSIONS><SET_CAPTION>Top 50 Customers</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>2</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>Top 25 Selling Products</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>TopCount
+    (
+       [Product].[Product].[Product].Members,
+       25,
+       [Measures].[Sales Amount]
+    )</EXPRESSION><DIMENSIONS>[Product].[Product]</DIMENSIONS><SET_CAPTION>Top 25 Selling Products</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>2</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>New Product Models FY 2011</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>Exists
+    (
+       [Product].[Model Name].[Model Name].Members,
+       [Product].[Start Date].&amp;[2011-07-01T00:00:00]
+    )</EXPRESSION><DIMENSIONS>[Product].[Model Name]</DIMENSIONS><SET_CAPTION>New Product Models FY 2011</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>New Product Models FY 2012</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>Exists
+    (
+       [Product].[Model Name].[Model Name].Members,
+       [Product].[Start Date].&amp;[2012-07-01T00:00:00]
+    )</EXPRESSION><DIMENSIONS>[Product].[Model Name]</DIMENSIONS><SET_CAPTION>New Product Models FY 2012</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>New Product Models FY 2013</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>Exists
+    (
+       [Product].[Model Name].[Model Name].Members,
+       [Product].[Start Date].&amp;[2013-07-01T00:00:00]
+    )</EXPRESSION><DIMENSIONS>[Product].[Model Name]</DIMENSIONS><SET_CAPTION>New Product Models FY 2013</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>Long Lead Products</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>Exists
+    (
+       [Product].[Model Name].[Model Name].Members,
+       [Product].[Days to Manufacture].&amp;[4]
+    )</EXPRESSION><DIMENSIONS>[Product].[Model Name]</DIMENSIONS><SET_CAPTION>Long Lead Products</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>Core Product Group</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>DrillDownMember
+    (
+      [Product].[Product Categories].[Category].Members, 
+      [Product].[Product Categories].[Category].[Bikes]
+    )</EXPRESSION><DIMENSIONS>[Product].[Product Categories]</DIMENSIONS><SET_CAPTION>Core Product Group</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>Large Resellers</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>Exists
+    (
+       [Reseller].[Reseller].[Reseller].Members,
+       [Reseller].[Number of Employees].[Number of Employees].[81 - 100]
+    )</EXPRESSION><DIMENSIONS>[Reseller].[Reseller]</DIMENSIONS><SET_CAPTION>Large Resellers</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>High Discount Promotions</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>Exists
+    (
+       [Promotion].[Promotion].[Promotion].Members,
+       Filter
+       (
+		  [Promotion].[Discount Percent].[Discount Percent].Members,
+	      [Promotion].[Discount Percent].CurrentMember.MemberValue &gt;= .30
+	   )
+    )</EXPRESSION><DIMENSIONS>[Promotion].[Promotion]</DIMENSIONS><SET_CAPTION>High Discount Promotions</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row><row><CATALOG_NAME>Adventure Works DW Standard Edition</CATALOG_NAME><CUBE_NAME>Adventure Works</CUBE_NAME><SET_NAME>Summary P&amp;L</SET_NAME><SCOPE>1</SCOPE><DESCRIPTION/><EXPRESSION>{
+      [Account].[Accounts].[Account Level 01].&amp;[47], -- Net Income
+      [Account].[Accounts].[Account Level 02].&amp;[48], -- Operating Profit
+      [Account].[Accounts].[Account Level 03].&amp;[49], -- Gross Margin
+      [Account].[Accounts].[Account Level 04].&amp;[50], -- Net Sales
+      [Account].[Accounts].[Account Level 05].&amp;[54], -- Discounts
+      [Account].[Accounts].[Account Level 05].&amp;[51], -- Gross Sales
+      [Account].[Accounts].[Account Level 05].&amp;[53], -- Returns
+      [Account].[Accounts].[Account Level 04].&amp;[55], -- Total Cost/Sales
+      [Account].[Accounts].[Account Level 03].&amp;[58], -- Operating Expense
+      [Account].[Accounts].[Account Level 02].&amp;[88], -- Other I/E
+      [Account].[Accounts].[Account Level 03].&amp;[93], -- Currency G/L
+      [Account].[Accounts].[Account Level 03].&amp;[91], -- Asset Sales G/L
+      [Account].[Accounts].[Account Level 03].&amp;[90], -- Interest Expense
+      [Account].[Accounts].[Account Level 03].&amp;[89], -- Interest Income
+      [Account].[Accounts].[Account Level 03].&amp;[92], -- Other Income
+      [Account].[Accounts].[Account Level 02].&amp;[94]  -- Taxes
+    }</EXPRESSION><DIMENSIONS>[Account].[Accounts]</DIMENSIONS><SET_CAPTION>Summary P&amp;L</SET_CAPTION><SET_DISPLAY_FOLDER>Sets</SET_DISPLAY_FOLDER><SET_EVALUATION_CONTEXT>1</SET_EVALUATION_CONTEXT></row></root></return></DiscoverResponse></soap:Body></soap:Envelope>

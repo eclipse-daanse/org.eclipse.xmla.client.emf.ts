@@ -1,0 +1,32 @@
+{
+  "name": "xmla.emf.ts.client",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "license": "EPL-2.0",
+  "description": "An XMLA client in TypeScript, driven entirely by the Ecore models and EMF-TS.",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --build --force",
+    "sync:ecore": "node scripts/sync-ecore.mjs",
+    "sync:fixtures": "node scripts/sync-fixtures.mjs",
+    "check:sync": "node scripts/sync-ecore.mjs --check && node scripts/sync-fixtures.mjs --check"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@emfts/core": "0.1.1-next.16",
+    "sax": "^1.4.1"
+  }
+}

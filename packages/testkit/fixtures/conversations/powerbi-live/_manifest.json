@@ -1,0 +1,2842 @@
+{
+ "recording": "spec/recordings/pbi_connect_live.txt",
+ "messages": [
+  {
+   "position": 0,
+   "file": "00-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 658,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-ActivityID": "7332a5a3-9273-430c-8ae7-fbf73c395615",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "677"
+   }
+  },
+  {
+   "position": 1,
+   "file": "01-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35271,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:01 GMT",
+    "Content-Length": "35271"
+   }
+  },
+  {
+   "position": 2,
+   "file": "02-request-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "request",
+   "bytes": 1022,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_DATASOURCES",
+   "restrictions": {},
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "DbpropMsmdCurrentActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdRequestID": "f2721170-f1c1-465e-86a3-ab2e40a8cc25"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-ActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "X-AS-RequestID": "f2721170-f1c1-465e-86a3-ab2e40a8cc25",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1046"
+   }
+  },
+  {
+   "position": 3,
+   "file": "03-response-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "response",
+   "bytes": 3237,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:01 GMT",
+    "Content-Length": "3237"
+   }
+  },
+  {
+   "position": 4,
+   "file": "04-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1175,
+   "headers": [
+    "BeginSession",
+    "Version",
+    "NamespaceCompatibility"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2",
+    "http://schemas.microsoft.com/analysisservices/2003/xmla"
+   ],
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "DbpropMsmdActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "DbpropMsmdCurrentActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdRequestID": "02c78756-94ec-4eba-9a7d-7b2864c25aeb"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-ActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "X-AS-RequestID": "02c78756-94ec-4eba-9a7d-7b2864c25aeb",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1198"
+   }
+  },
+  {
+   "position": 5,
+   "file": "05-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:01 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 6,
+   "file": "06-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 1253,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ReferenceOnly"
+   },
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "DbpropMsmdCurrentActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdRequestID": "4bae465f-d74e-4d2a-ba54-23629a17d942"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+    "X-AS-ActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "X-AS-RequestID": "4bae465f-d74e-4d2a-ba54-23629a17d942",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1281"
+   }
+  },
+  {
+   "position": 7,
+   "file": "07-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 4105,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:02 GMT",
+    "Content-Length": "4105"
+   }
+  },
+  {
+   "position": 8,
+   "file": "08-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1239,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdCurrentActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdRequestID": "7c925ace-be73-428f-bbcb-e9ab7c5d0e23"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+    "X-AS-ActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "X-AS-RequestID": "7c925ace-be73-428f-bbcb-e9ab7c5d0e23",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1267"
+   }
+  },
+  {
+   "position": 9,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:02 GMT",
+    "Content-Length": "3063"
+   }
+  },
+  {
+   "position": 10,
+   "file": "10-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1176,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Format": "Tabular",
+    "Content": "SchemaData",
+    "DbpropMsmdActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "DbpropMsmdCurrentActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdRequestID": "57145d45-9b07-4d6d-b426-dd866e3d5ffc"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+    "X-AS-ActivityID": "a9782e2c-aae7-4786-82a2-523efe99d48c",
+    "X-AS-RequestID": "57145d45-9b07-4d6d-b426-dd866e3d5ffc",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1201"
+   }
+  },
+  {
+   "position": 11,
+   "file": "11-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 1561,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 7,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:02 GMT",
+    "Content-Length": "1561"
+   }
+  },
+  {
+   "position": 12,
+   "file": "12-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1018,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "DbpropMsmdActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdCurrentActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "DbpropMsmdRequestID": "0f1f55ca-7a3e-438e-b9ae-b365c2868f51"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "11D3CBD2-BD6C-49D3-B0AC-6D3E7B7E9B8B",
+    "X-AS-ActivityID": "e099761e-f9a7-4ea4-9bf7-ac6f47a330d1",
+    "X-AS-RequestID": "0f1f55ca-7a3e-438e-b9ae-b365c2868f51",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1041"
+   }
+  },
+  {
+   "position": 13,
+   "file": "13-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:02 GMT",
+    "Content-Length": "268"
+   }
+  },
+  {
+   "position": 14,
+   "file": "00-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 658,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-ActivityID": "8455a14d-d2e8-49ba-9b8a-068106ffc12a",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "677"
+   },
+   "sameAs": "00-request-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 15,
+   "file": "01-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35271,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:03 GMT",
+    "Content-Length": "35271"
+   },
+   "sameAs": "01-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 16,
+   "file": "16-request-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "request",
+   "bytes": 1022,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_DATASOURCES",
+   "restrictions": {},
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "14ff1dc9-58bd-49a0-a9f4-1ccb7d809de5"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-ActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "X-AS-RequestID": "14ff1dc9-58bd-49a0-a9f4-1ccb7d809de5",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1046"
+   }
+  },
+  {
+   "position": 17,
+   "file": "03-response-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "response",
+   "bytes": 3237,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:03 GMT",
+    "Content-Length": "3237"
+   },
+   "sameAs": "03-response-discover-DISCOVER_DATASOURCES.xml"
+  },
+  {
+   "position": 18,
+   "file": "18-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1175,
+   "headers": [
+    "BeginSession",
+    "Version",
+    "NamespaceCompatibility"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2",
+    "http://schemas.microsoft.com/analysisservices/2003/xmla"
+   ],
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "DbpropMsmdActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "1a5f3614-b1c2-4144-8bd3-492275aa7c9a"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-ActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "X-AS-RequestID": "1a5f3614-b1c2-4144-8bd3-492275aa7c9a",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1198"
+   }
+  },
+  {
+   "position": 19,
+   "file": "19-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:03 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 20,
+   "file": "20-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1213,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Format": "Tabular",
+    "Content": "SchemaData",
+    "DbpropMsmdActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "862990cb-e546-432d-b345-7e7cd0154650"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "E7714953-EAE9-416D-A364-B5B37C28732F",
+    "X-AS-ActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "X-AS-RequestID": "862990cb-e546-432d-b345-7e7cd0154650",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1238"
+   }
+  },
+  {
+   "position": 21,
+   "file": "21-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 1720,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:03 GMT",
+    "Content-Length": "1720"
+   }
+  },
+  {
+   "position": 22,
+   "file": "22-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1239,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "19cc8be9-606c-4bc4-b300-e1e10fc90a38"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "E7714953-EAE9-416D-A364-B5B37C28732F",
+    "X-AS-ActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "X-AS-RequestID": "19cc8be9-606c-4bc4-b300-e1e10fc90a38",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1267"
+   }
+  },
+  {
+   "position": 23,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:26 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "09-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 24,
+   "file": "24-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1560,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Format": "Tabular",
+    "Content": "SchemaData",
+    "DbpropMsmdActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "f6e2666f-4081-432a-87be-4df2d78c532d"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "E7714953-EAE9-416D-A364-B5B37C28732F",
+    "X-AS-ActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "X-AS-RequestID": "f6e2666f-4081-432a-87be-4df2d78c532d",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1591"
+   }
+  },
+  {
+   "position": 25,
+   "file": "25-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 2621,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 7,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:26 GMT",
+    "Content-Length": "2621"
+   }
+  },
+  {
+   "position": 26,
+   "file": "26-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1239,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "d80ceda2-f4d8-4eed-bd6a-e39c4b6187be"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "E7714953-EAE9-416D-A364-B5B37C28732F",
+    "X-AS-ActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "X-AS-RequestID": "d80ceda2-f4d8-4eed-bd6a-e39c4b6187be",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1267"
+   }
+  },
+  {
+   "position": 27,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:29 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "09-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 28,
+   "file": "28-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1545,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Format": "Tabular",
+    "Content": "SchemaData",
+    "DbpropMsmdActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "cc5d0084-187f-46b4-83b4-71e22eb68c17"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "E7714953-EAE9-416D-A364-B5B37C28732F",
+    "X-AS-ActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "X-AS-RequestID": "cc5d0084-187f-46b4-83b4-71e22eb68c17",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1576"
+   }
+  },
+  {
+   "position": 29,
+   "file": "29-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 2571,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 21,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:29 GMT",
+    "Content-Length": "2571"
+   }
+  },
+  {
+   "position": 30,
+   "file": "30-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1490,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Format": "Tabular",
+    "Content": "SchemaData",
+    "DbpropMsmdActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "7f9ed51d-bb1d-4e1f-949b-d166ab393d16"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "E7714953-EAE9-416D-A364-B5B37C28732F",
+    "X-AS-ActivityID": "2b7783d6-0aed-4b96-a8c3-6c75243b3376",
+    "X-AS-RequestID": "7f9ed51d-bb1d-4e1f-949b-d166ab393d16",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1521"
+   }
+  },
+  {
+   "position": 31,
+   "file": "31-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 4669,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 51,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:29 GMT",
+    "Content-Length": "4669"
+   }
+  },
+  {
+   "position": 32,
+   "file": "32-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1018,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "E7714953-EAE9-416D-A364-B5B37C28732F",
+   "command": "Statement",
+   "properties": {
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "DbpropMsmdActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdCurrentActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "DbpropMsmdRequestID": "4d1d4f2c-f94d-42cb-8053-8015f8c4b5ac"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "E7714953-EAE9-416D-A364-B5B37C28732F",
+    "X-AS-ActivityID": "0b0ca541-11d5-4f96-9236-d3dfd27c2de0",
+    "X-AS-RequestID": "4d1d4f2c-f94d-42cb-8053-8015f8c4b5ac",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1041"
+   }
+  },
+  {
+   "position": 33,
+   "file": "13-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:32 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "13-response-execute-EndSession.xml"
+  },
+  {
+   "position": 34,
+   "file": "34-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 762,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-ActivityID": "e5f97ef0-5f5f-429b-ab7b-7503fe719d28",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "783"
+   }
+  },
+  {
+   "position": 35,
+   "file": "35-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35301,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:32 GMT",
+    "Content-Length": "35301"
+   }
+  },
+  {
+   "position": 36,
+   "file": "36-request-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "request",
+   "bytes": 1126,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_DATASOURCES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "3ddbe6c7-0c4f-48bf-8de0-df69d66c6145"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-ActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "X-AS-RequestID": "3ddbe6c7-0c4f-48bf-8de0-df69d66c6145",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1152"
+   }
+  },
+  {
+   "position": 37,
+   "file": "03-response-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "response",
+   "bytes": 3237,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:32 GMT",
+    "Content-Length": "3237"
+   },
+   "sameAs": "03-response-discover-DISCOVER_DATASOURCES.xml"
+  },
+  {
+   "position": 38,
+   "file": "38-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1279,
+   "headers": [
+    "BeginSession",
+    "Version",
+    "NamespaceCompatibility"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2",
+    "http://schemas.microsoft.com/analysisservices/2003/xmla"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "DbpropMsmdActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "bd119752-5515-472b-9ddb-af6f0feba272"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-ActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "X-AS-RequestID": "bd119752-5515-472b-9ddb-af6f0feba272",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1304"
+   }
+  },
+  {
+   "position": 39,
+   "file": "39-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:32 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 40,
+   "file": "40-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 1357,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ReferenceOnly"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "9a44e849-328a-417c-9145-6200d8f8a45e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+    "X-AS-ActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "X-AS-RequestID": "9a44e849-328a-417c-9145-6200d8f8a45e",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1387"
+   }
+  },
+  {
+   "position": 41,
+   "file": "07-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 4105,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:32 GMT",
+    "Content-Length": "4105"
+   },
+   "sameAs": "07-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 42,
+   "file": "42-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1343,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "6d01a209-fa45-4516-ad46-feae4bac0462"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+    "X-AS-ActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "X-AS-RequestID": "6d01a209-fa45-4516-ad46-feae4bac0462",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1373"
+   }
+  },
+  {
+   "position": 43,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:32 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "09-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 44,
+   "file": "44-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1280,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Format": "Tabular",
+    "Content": "SchemaData",
+    "DbpropMsmdActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "31b7ba6a-b440-4e58-82e5-3c531927489f"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+    "X-AS-ActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "X-AS-RequestID": "31b7ba6a-b440-4e58-82e5-3c531927489f",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1307"
+   }
+  },
+  {
+   "position": 45,
+   "file": "11-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 1561,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 7,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:35 GMT",
+    "Content-Length": "1561"
+   },
+   "sameAs": "11-response-execute-Statement.xml"
+  },
+  {
+   "position": 46,
+   "file": "46-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1347,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "DBMSVersion"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "930a9acf-3993-440b-91f7-8e494e6d10ae"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+    "X-AS-ActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "X-AS-RequestID": "930a9acf-3993-440b-91f7-8e494e6d10ae",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1377"
+   }
+  },
+  {
+   "position": 47,
+   "file": "47-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3042,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:35 GMT",
+    "Content-Length": "3042"
+   }
+  },
+  {
+   "position": 48,
+   "file": "48-request-discover-DBSCHEMA_CATALOGS.xml",
+   "direction": "request",
+   "bytes": 1369,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+   "requestType": "DBSCHEMA_CATALOGS",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "f39426c7-92cc-4e9b-ae69-d6aea4bf13b1"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-AS-SessionID": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+    "X-AS-ActivityID": "107685e7-a018-4f7f-85df-16df1609f26b",
+    "X-AS-RequestID": "f39426c7-92cc-4e9b-ae69-d6aea4bf13b1",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1399"
+   }
+  },
+  {
+   "position": 49,
+   "file": "49-response-discover-DBSCHEMA_CATALOGS.xml",
+   "direction": "response",
+   "bytes": 3549,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:35 GMT",
+    "Content-Length": "3549"
+   }
+  },
+  {
+   "position": 50,
+   "file": "50-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1122,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Cube": "Adventure Works",
+    "LocaleIdentifier": "1033",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "DbpropMsmdActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdCurrentActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "DbpropMsmdRequestID": "58f31d38-3ab8-4f40-9d5c-6a18cdeb9ace"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=PBIDesktop.exe,AppVer=2.149.1429.0,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,ClientLibVer=Microsoft.PowerBI.AdomdClient:17.0.44.19,CacheUsed=1,ConStrId=1,sspropInitApp=Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-AS-SessionID": "2FD0EDA8-214C-4170-86CC-BBDD6A955D2B",
+    "X-AS-ActivityID": "5769b70a-46ea-4b45-94c7-e3d23d064237",
+    "X-AS-RequestID": "58f31d38-3ab8-4f40-9d5c-6a18cdeb9ace",
+    "Host": "olap.flexmonster.com",
+    "Content-Length": "1147"
+   }
+  },
+  {
+   "position": 51,
+   "file": "13-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:35 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "13-response-execute-EndSession.xml"
+  },
+  {
+   "position": 52,
+   "file": "52-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 664,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "664",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 53,
+   "file": "53-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3806,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 4,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:37 GMT",
+    "Content-Length": "3806"
+   }
+  },
+  {
+   "position": 54,
+   "file": "54-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1003,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "command": "Statement",
+   "properties": {
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "DbpropMsmdRequestID": "F043E0C3-9743-446F-BF40-7A1960DF4DD5",
+    "DbpropMsmdCurrentActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-RequestID": "f043e0c3-9743-446f-bf40-7a1960df4dd5",
+    "X-AS-CurrentActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Execute",
+    "Content-Length": "1003",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 55,
+   "file": "55-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:37 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 56,
+   "file": "56-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1076,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "DbpropMsmdRequestID": "33FE8AD3-F465-4154-B54A-7B7F648E26DA",
+    "DbpropMsmdCurrentActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-RequestID": "33fe8ad3-f465-4154-b54a-7b7f648e26da",
+    "X-AS-CurrentActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1076",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 57,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:37 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "09-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 58,
+   "file": "58-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1266,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "DbpropMsmdRequestID": "D6F6FE6C-CDC6-4CC7-AF4F-2753193CBD81",
+    "DbpropMsmdCurrentActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-RequestID": "d6f6fe6c-cdc6-4cc7-af4f-2753193cbd81",
+    "X-AS-CurrentActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1266",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 59,
+   "file": "59-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 4284,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 6,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:37 GMT",
+    "Content-Length": "4284"
+   }
+  },
+  {
+   "position": 60,
+   "file": "60-request-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "request",
+   "bytes": 1027,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "requestType": "DISCOVER_SCHEMA_ROWSETS",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "DbpropMsmdRequestID": "2550B62C-E483-4ABF-A5E2-F8D85060F676",
+    "DbpropMsmdCurrentActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-RequestID": "2550b62c-e483-4abf-a5e2-f8d85060f676",
+    "X-AS-CurrentActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1027",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 61,
+   "file": "61-response-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "response",
+   "bytes": 37112,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 70,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:37 GMT",
+    "Content-Length": "37112"
+   }
+  },
+  {
+   "position": 62,
+   "file": "62-request-discover-DISCOVER_CSDL_METADATA.xml",
+   "direction": "request",
+   "bytes": 1181,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "requestType": "DISCOVER_CSDL_METADATA",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition",
+    "PERSPECTIVE_NAME": "Adventure Works",
+    "VERSION": "2.5"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "DbpropMsmdRequestID": "47CBF72E-4BF3-4B11-99AA-9046EF595ECF",
+    "DbpropMsmdCurrentActivityID": "47BA7904-4C1E-45A3-B45F-078AB95A3CC2",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-RequestID": "47cbf72e-4bf3-4b11-99aa-9046ef595ecf",
+    "X-AS-CurrentActivityID": "47ba7904-4c1e-45a3-b45f-078ab95a3cc2",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1181",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 63,
+   "file": "63-response-discover-DISCOVER_CSDL_METADATA.xml",
+   "direction": "response",
+   "bytes": 331849,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:37 GMT",
+    "Content-Length": "331849"
+   }
+  },
+  {
+   "position": 64,
+   "file": "64-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1052,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "Format": "Native",
+    "DbpropMsmdFlattened2": "false",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "D180F88F-6153-4D02-9FA5-C46144B8670C",
+    "DbpropMsmdRequestID": "0529B922-AEC4-49A4-9BBA-9FD2CE3239FD",
+    "DbpropMsmdCurrentActivityID": "D180F88F-6153-4D02-9FA5-C46144B8670C",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "d180f88f-6153-4d02-9fa5-c46144b8670c",
+    "X-AS-RequestID": "0529b922-aec4-49a4-9bba-9fd2ce3239fd",
+    "X-AS-CurrentActivityID": "d180f88f-6153-4d02-9fa5-c46144b8670c",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Execute",
+    "Content-Length": "1052",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 65,
+   "file": "13-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:41 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "13-response-execute-EndSession.xml"
+  },
+  {
+   "position": 66,
+   "file": "66-request-discover-DISCOVER_CSDL_METADATA.xml",
+   "direction": "request",
+   "bytes": 1181,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "requestType": "DISCOVER_CSDL_METADATA",
+   "restrictions": {
+    "CATALOG_NAME": "Adventure Works DW Standard Edition",
+    "PERSPECTIVE_NAME": "Adventure Works",
+    "VERSION": "2.0"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "D180F88F-6153-4D02-9FA5-C46144B8670C",
+    "DbpropMsmdRequestID": "B4F2F0D4-AEE1-44A7-98A2-B2B5ABB30294",
+    "DbpropMsmdCurrentActivityID": "D180F88F-6153-4D02-9FA5-C46144B8670C",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "d180f88f-6153-4d02-9fa5-c46144b8670c",
+    "X-AS-RequestID": "b4f2f0d4-aee1-44a7-98a2-b2b5abb30294",
+    "X-AS-CurrentActivityID": "d180f88f-6153-4d02-9fa5-c46144b8670c",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1181",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 67,
+   "file": "67-response-discover-DISCOVER_CSDL_METADATA.xml",
+   "direction": "response",
+   "bytes": 325363,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:41 GMT",
+    "Content-Length": "325363"
+   }
+  },
+  {
+   "position": 68,
+   "file": "52-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 664,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "664",
+    "Host": "olap.flexmonster.com"
+   },
+   "sameAs": "52-request-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 69,
+   "file": "53-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3806,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 4,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:45 GMT",
+    "Content-Length": "3806"
+   },
+   "sameAs": "53-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 70,
+   "file": "70-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1003,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2008/engine/100"
+   ],
+   "command": "Statement",
+   "properties": {
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "DbpropMsmdRequestID": "CB207FB7-73F1-4F38-AF9E-C3FA6A10062C",
+    "DbpropMsmdCurrentActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-RequestID": "cb207fb7-73f1-4f38-af9e-c3fa6a10062c",
+    "X-AS-CurrentActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Execute",
+    "Content-Length": "1003",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 71,
+   "file": "71-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:45 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 72,
+   "file": "72-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1076,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "DbpropMsmdRequestID": "E429A1B1-A26B-4764-8B7C-A68299E222A9",
+    "DbpropMsmdCurrentActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-RequestID": "e429a1b1-a26b-4764-8b7c-a68299e222a9",
+    "X-AS-CurrentActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-SessionID": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1076",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 73,
+   "file": "09-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:46 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "09-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 74,
+   "file": "74-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1266,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": ""
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "DbpropMsmdRequestID": "CD141571-F0EC-4A37-8959-B0DE8FDD7ED7",
+    "DbpropMsmdCurrentActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-RequestID": "cd141571-f0ec-4a37-8959-b0de8fdd7ed7",
+    "X-AS-CurrentActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-SessionID": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1266",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 75,
+   "file": "59-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 4284,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 6,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:46 GMT",
+    "Content-Length": "4284"
+   },
+   "sameAs": "59-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 76,
+   "file": "76-request-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "request",
+   "bytes": 1027,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "requestType": "DISCOVER_SCHEMA_ROWSETS",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "DbpropMsmdRequestID": "576CCAE5-2E79-4E6D-9926-F38CB6C8F200",
+    "DbpropMsmdCurrentActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-RequestID": "576ccae5-2e79-4e6d-9926-f38cb6c8f200",
+    "X-AS-CurrentActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-SessionID": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1027",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 77,
+   "file": "61-response-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "response",
+   "bytes": 37112,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 70,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:46 GMT",
+    "Content-Length": "37112"
+   },
+   "sameAs": "61-response-discover-DISCOVER_SCHEMA_ROWSETS.xml"
+  },
+  {
+   "position": 78,
+   "file": "78-request-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "request",
+   "bytes": 1057,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "requestType": "MDSCHEMA_FUNCTIONS",
+   "restrictions": {
+    "ORIGIN": "4"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "DbpropMsmdRequestID": "B6AD89A7-C18C-4005-BD5D-E478C3499E7D",
+    "DbpropMsmdCurrentActivityID": "4F801547-450C-41B7-9988-4828DD95537E",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-RequestID": "b6ad89a7-c18c-4005-bd5d-e478c3499e7d",
+    "X-AS-CurrentActivityID": "4f801547-450c-41b7-9988-4828dd95537e",
+    "X-AS-SessionID": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1057",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 79,
+   "file": "79-response-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "response",
+   "bytes": 80382,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 123,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:46 GMT",
+    "Content-Length": "80382"
+   }
+  },
+  {
+   "position": 80,
+   "file": "80-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1052,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "Format": "Native",
+    "DbpropMsmdFlattened2": "false",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "DbpropMsmdRequestID": "64CE1C09-F6F1-4156-A948-9A078F4464B6",
+    "DbpropMsmdCurrentActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-RequestID": "64ce1c09-f6f1-4156-a948-9a078f4464b6",
+    "X-AS-CurrentActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Execute",
+    "Content-Length": "1052",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 81,
+   "file": "13-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:47 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "13-response-execute-EndSession.xml"
+  },
+  {
+   "position": 82,
+   "file": "82-request-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "request",
+   "bytes": 1057,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "requestType": "MDSCHEMA_FUNCTIONS",
+   "restrictions": {
+    "ORIGIN": "3"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "DbpropMsmdRequestID": "16799EAC-81D7-422A-A357-6B1140D3D5BF",
+    "DbpropMsmdCurrentActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-RequestID": "16799eac-81d7-422a-a357-6b1140d3d5bf",
+    "X-AS-CurrentActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1057",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 83,
+   "file": "83-response-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "response",
+   "bytes": 87044,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 127,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:47 GMT",
+    "Content-Length": "87044"
+   }
+  },
+  {
+   "position": 84,
+   "file": "84-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1052,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "Format": "Native",
+    "DbpropMsmdFlattened2": "false",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "DbpropMsmdRequestID": "3914B7D4-243E-4ABD-8D62-5DB724E4BF38",
+    "DbpropMsmdCurrentActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-RequestID": "3914b7d4-243e-4abd-8d62-5db724e4bf38",
+    "X-AS-CurrentActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-SessionID": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Execute",
+    "Content-Length": "1052",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 85,
+   "file": "13-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:47 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "13-response-execute-EndSession.xml"
+  },
+  {
+   "position": 86,
+   "file": "86-request-discover-DISCOVER_KEYWORDS.xml",
+   "direction": "request",
+   "bytes": 1021,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "requestType": "DISCOVER_KEYWORDS",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "DbpropMsmdRequestID": "7840FA10-90B8-4BA3-90B1-55251CC33AC8",
+    "DbpropMsmdCurrentActivityID": "9BEF3B82-7600-4236-B443-39CA570C8B40",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-RequestID": "7840fa10-90b8-4ba3-90b1-55251cc33ac8",
+    "X-AS-CurrentActivityID": "9bef3b82-7600-4236-b443-39ca570c8b40",
+    "X-AS-SessionID": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Discover",
+    "Content-Length": "1021",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 87,
+   "file": "87-response-discover-DISCOVER_KEYWORDS.xml",
+   "direction": "response",
+   "bytes": 10472,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:51:47 GMT",
+    "Content-Length": "30098"
+   },
+   "rowsAtCapture": 687,
+   "trimmed": true
+  },
+  {
+   "position": 88,
+   "file": "88-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1405,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "600",
+    "Format": "Native",
+    "MaximumRows": "-1",
+    "DbpropMsmdFlattened2": "false",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "E14AD479-3F2F-4E67-BEBF-EC5890DB9587",
+    "DbpropMsmdRequestID": "5C391353-A584-47B1-9E69-5EE433D004B2",
+    "DbpropMsmdCurrentActivityID": "E14AD479-3F2F-4E67-BEBF-EC5890DB9587",
+    "DbpropMsmdRequestMemoryLimit": "1048576",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "e14ad479-3f2f-4e67-bebf-ec5890db9587",
+    "X-AS-RequestID": "5c391353-a584-47b1-9e69-5ee433d004b2",
+    "X-AS-CurrentActivityID": "e14ad479-3f2f-4e67-bebf-ec5890db9587",
+    "X-AS-SessionID": "40BF0D40-4387-44C9-9DC8-A7159AE90706",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Execute",
+    "Content-Length": "1405",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 89,
+   "file": "89-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 1774,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:52:18 GMT",
+    "Content-Length": "1774"
+   }
+  },
+  {
+   "position": 90,
+   "file": "90-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1640,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "600",
+    "Format": "Native",
+    "MaximumRows": "-1",
+    "DbpropMsmdFlattened2": "false",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "ClientProcessID": "5596",
+    "Cube": "Adventure Works",
+    "DbpropMsmdOptimizeResponse": "9",
+    "DbpropMsmdActivityID": "79B22F01-4D66-4B94-B0B6-B0DEFA673B26",
+    "DbpropMsmdRequestID": "C06F4608-927E-455F-AB4D-B6EC47D290AB",
+    "DbpropMsmdCurrentActivityID": "79B22F01-4D66-4B94-B0B6-B0DEFA673B26",
+    "DbpropMsmdRequestMemoryLimit": "1048576",
+    "LocaleIdentifier": "1033"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "Connection": "Keep-Alive",
+    "Content-Type": "text/xml",
+    "User-Agent": "MSOLAP 17.0 Client",
+    "SspropInitAppName": "Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592",
+    "X-AS-ActivityID": "79b22f01-4d66-4b94-b0b6-b0defa673b26",
+    "X-AS-RequestID": "c06f4608-927e-455f-ab4d-b6ec47d290ab",
+    "X-AS-CurrentActivityID": "79b22f01-4d66-4b94-b0b6-b0defa673b26",
+    "X-AS-SessionID": "4092C468-E668-4380-8AFC-F27CF9B17CD7",
+    "SOAPAction": "urn:schemas-microsoft-com:xml-analysis:Execute",
+    "Content-Length": "1640",
+    "Host": "olap.flexmonster.com"
+   }
+  },
+  {
+   "position": 91,
+   "file": "91-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 2423,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:52:30 GMT",
+    "Content-Length": "2423"
+   }
+  }
+ ]
+}

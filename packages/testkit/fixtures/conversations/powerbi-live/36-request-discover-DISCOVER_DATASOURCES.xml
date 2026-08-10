@@ -1,0 +1,25 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <Version Sequence="926" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine/2" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_DATASOURCES</RequestType>
+      <Restrictions />
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <Cube>Adventure Works</Cube>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <SspropInitAppName>Power BI Desktop8457329f-a368-472a-b2e8-bf55cc7b5592</SspropInitAppName>
+          <ClientProcessID>5596</ClientProcessID>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>107685e7-a018-4f7f-85df-16df1609f26b</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>5769b70a-46ea-4b45-94c7-e3d23d064237</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>3ddbe6c7-0c4f-48bf-8de0-df69d66c6145</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

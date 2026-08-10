@@ -1,0 +1,3670 @@
+{
+ "recording": "spec/recordings/mms_final",
+ "messages": [
+  {
+   "position": 0,
+   "file": "000-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 740,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "368f79dc-65fa-4483-ac2d-004d027e9892",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "761"
+   }
+  },
+  {
+   "position": 1,
+   "file": "001-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35273,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:07 GMT",
+    "Content-Length": "35273"
+   }
+  },
+  {
+   "position": 2,
+   "file": "002-request-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "request",
+   "bytes": 1104,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_DATASOURCES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdCurrentActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdRequestID": "bce4fc1c-3b76-40a6-aed4-afe065590aa4"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-ActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "X-AS-RequestID": "bce4fc1c-3b76-40a6-aed4-afe065590aa4",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1130"
+   }
+  },
+  {
+   "position": 3,
+   "file": "003-response-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "response",
+   "bytes": 3237,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:07 GMT",
+    "Content-Length": "3237"
+   }
+  },
+  {
+   "position": 4,
+   "file": "004-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1257,
+   "headers": [
+    "BeginSession",
+    "Version",
+    "NamespaceCompatibility"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2",
+    "http://schemas.microsoft.com/analysisservices/2003/xmla"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdCurrentActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdRequestID": "e7e9f2f7-8df9-4867-ba3a-ac6dffa42aac"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-ActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "X-AS-RequestID": "e7e9f2f7-8df9-4867-ba3a-ac6dffa42aac",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1282"
+   }
+  },
+  {
+   "position": 5,
+   "file": "005-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "8490CA92-1A96-40CC-A8A4-2DDA21960FD6",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:09 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 6,
+   "file": "006-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1329,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "8490CA92-1A96-40CC-A8A4-2DDA21960FD6",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "ProviderVersion"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdCurrentActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdRequestID": "d07900ee-d444-48df-977b-f54b362fb69e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "8490CA92-1A96-40CC-A8A4-2DDA21960FD6",
+    "X-AS-ActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "X-AS-RequestID": "d07900ee-d444-48df-977b-f54b362fb69e",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1359"
+   }
+  },
+  {
+   "position": 7,
+   "file": "007-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3050,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:09 GMT",
+    "Content-Length": "3050"
+   }
+  },
+  {
+   "position": 8,
+   "file": "008-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1100,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "8490CA92-1A96-40CC-A8A4-2DDA21960FD6",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdCurrentActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "DbpropMsmdRequestID": "1119b43a-1a47-492d-8688-3dee95c23f59"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "8490CA92-1A96-40CC-A8A4-2DDA21960FD6",
+    "X-AS-ActivityID": "8671795c-5327-44dc-8bd2-8cbffe4416bf",
+    "X-AS-RequestID": "1119b43a-1a47-492d-8688-3dee95c23f59",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1125"
+   }
+  },
+  {
+   "position": 9,
+   "file": "009-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:09 GMT",
+    "Content-Length": "268"
+   }
+  },
+  {
+   "position": 10,
+   "file": "010-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 864,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "225dfff1-2b73-4298-8d49-09fdf34ad09a",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "887"
+   }
+  },
+  {
+   "position": 11,
+   "file": "011-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "A668256C-FCE2-4FC9-8B70-01465B82885F",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:10 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 12,
+   "file": "012-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 838,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "A668256C-FCE2-4FC9-8B70-01465B82885F",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "A668256C-FCE2-4FC9-8B70-01465B82885F",
+    "X-AS-ActivityID": "20a29719-493e-4ad2-b3e1-151623b877a9",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "859"
+   }
+  },
+  {
+   "position": 13,
+   "file": "013-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35277,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:10 GMT",
+    "Content-Length": "35277"
+   }
+  },
+  {
+   "position": 14,
+   "file": "014-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 1259,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "A668256C-FCE2-4FC9-8B70-01465B82885F",
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "cdc7bbdd-3c6e-4e9a-bc0b-a6b58d1c082e",
+    "DbpropMsmdRequestID": "35de6827-b0d2-46a7-9339-ecd4aca89ae3",
+    "DbpropMsmdCurrentActivityID": "cdc7bbdd-3c6e-4e9a-bc0b-a6b58d1c082e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "A668256C-FCE2-4FC9-8B70-01465B82885F",
+    "X-AS-ActivityID": "cdc7bbdd-3c6e-4e9a-bc0b-a6b58d1c082e",
+    "X-AS-RequestID": "35de6827-b0d2-46a7-9339-ecd4aca89ae3",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1287"
+   }
+  },
+  {
+   "position": 15,
+   "file": "015-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:10 GMT",
+    "Content-Length": "37734"
+   }
+  },
+  {
+   "position": 16,
+   "file": "016-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1100,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "A668256C-FCE2-4FC9-8B70-01465B82885F",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "cdc7bbdd-3c6e-4e9a-bc0b-a6b58d1c082e",
+    "DbpropMsmdRequestID": "641f8719-6233-480f-a808-22de3cc22d76",
+    "DbpropMsmdCurrentActivityID": "cdc7bbdd-3c6e-4e9a-bc0b-a6b58d1c082e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "A668256C-FCE2-4FC9-8B70-01465B82885F",
+    "X-AS-ActivityID": "cdc7bbdd-3c6e-4e9a-bc0b-a6b58d1c082e",
+    "X-AS-RequestID": "641f8719-6233-480f-a808-22de3cc22d76",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1125"
+   }
+  },
+  {
+   "position": 17,
+   "file": "009-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:12 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "009-response-execute-EndSession.xml"
+  },
+  {
+   "position": 18,
+   "file": "018-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 502,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "XmlaClient",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "1e3e11e0-9d07-44ab-9a20-e45f93a6921b",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "517"
+   }
+  },
+  {
+   "position": 19,
+   "file": "015-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:12 GMT",
+    "Content-Length": "37734"
+   },
+   "sameAs": "015-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 20,
+   "file": "010-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 864,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "5220fd77-2c3c-4e9d-95d0-6d6ca2043257",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "887"
+   },
+   "sameAs": "010-request-execute-BeginSession.xml"
+  },
+  {
+   "position": 21,
+   "file": "021-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "EAC31F9A-968E-46D9-A9C1-0661A17DFF97",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:12 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 22,
+   "file": "022-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 838,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "EAC31F9A-968E-46D9-A9C1-0661A17DFF97",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "EAC31F9A-968E-46D9-A9C1-0661A17DFF97",
+    "X-AS-ActivityID": "e309a8ec-df1c-44ba-9f41-e9495f10ab4c",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "859"
+   }
+  },
+  {
+   "position": 23,
+   "file": "013-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35277,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:13 GMT",
+    "Content-Length": "35277"
+   },
+   "sameAs": "013-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 24,
+   "file": "024-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 1259,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "EAC31F9A-968E-46D9-A9C1-0661A17DFF97",
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "7d3d71fe-cba0-402d-870b-f47f2b20af8e",
+    "DbpropMsmdRequestID": "f65112cb-bd6d-44ee-ba22-ac17a98d8352",
+    "DbpropMsmdCurrentActivityID": "7d3d71fe-cba0-402d-870b-f47f2b20af8e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "EAC31F9A-968E-46D9-A9C1-0661A17DFF97",
+    "X-AS-ActivityID": "7d3d71fe-cba0-402d-870b-f47f2b20af8e",
+    "X-AS-RequestID": "f65112cb-bd6d-44ee-ba22-ac17a98d8352",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1287"
+   }
+  },
+  {
+   "position": 25,
+   "file": "015-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:13 GMT",
+    "Content-Length": "37734"
+   },
+   "sameAs": "015-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 26,
+   "file": "026-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1100,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "EAC31F9A-968E-46D9-A9C1-0661A17DFF97",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "7d3d71fe-cba0-402d-870b-f47f2b20af8e",
+    "DbpropMsmdRequestID": "9f6832a1-eeac-4ee4-be6b-675701c1660a",
+    "DbpropMsmdCurrentActivityID": "7d3d71fe-cba0-402d-870b-f47f2b20af8e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "EAC31F9A-968E-46D9-A9C1-0661A17DFF97",
+    "X-AS-ActivityID": "7d3d71fe-cba0-402d-870b-f47f2b20af8e",
+    "X-AS-RequestID": "9f6832a1-eeac-4ee4-be6b-675701c1660a",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1125"
+   }
+  },
+  {
+   "position": 27,
+   "file": "009-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:14 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "009-response-execute-EndSession.xml"
+  },
+  {
+   "position": 28,
+   "file": "018-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 502,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "XmlaClient",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "c198e9e2-e289-413d-8a3e-bbe39478d7b7",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "517"
+   },
+   "sameAs": "018-request-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 29,
+   "file": "015-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:18 GMT",
+    "Content-Length": "37734"
+   },
+   "sameAs": "015-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 30,
+   "file": "030-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 566,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "DatabaseID": "AdventureWorksDW2014Multidimensional-EE",
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "XmlaClient",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "3941786b-de21-4108-a3e0-05799fa27400",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "581"
+   }
+  },
+  {
+   "position": 31,
+   "file": "031-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 13858,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:21 GMT",
+    "Content-Length": "13858"
+   }
+  },
+  {
+   "position": 32,
+   "file": "030-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 566,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "DatabaseID": "AdventureWorksDW2014Multidimensional-EE",
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "XmlaClient",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "2d470fdd-3e70-48a9-b737-b9a598ca6a33",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "581"
+   },
+   "sameAs": "030-request-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 33,
+   "file": "031-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 13858,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:23 GMT",
+    "Content-Length": "13858"
+   },
+   "sameAs": "031-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 34,
+   "file": "030-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 566,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "DatabaseID": "AdventureWorksDW2014Multidimensional-EE",
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "XmlaClient",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "d3a20425-1afb-4f95-a556-3a56d284d715",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "581"
+   },
+   "sameAs": "030-request-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 35,
+   "file": "031-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 13858,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:26 GMT",
+    "Content-Length": "13858"
+   },
+   "sameAs": "031-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 36,
+   "file": "018-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 502,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "XmlaClient",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "1d27d5f4-16ee-4255-9373-a7a9bf934a90",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "517"
+   },
+   "sameAs": "018-request-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 37,
+   "file": "015-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:28 GMT",
+    "Content-Length": "37734"
+   },
+   "sameAs": "015-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 38,
+   "file": "030-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 566,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "DatabaseID": "AdventureWorksDW2014Multidimensional-EE",
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {},
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "XmlaClient",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Xmla:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=Microsoft SQL Server Management Studio",
+    "SspropInitAppName": "Microsoft SQL Server Management Studio",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "f81c1878-1782-44d2-af88-6815029df2a6",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "581"
+   },
+   "sameAs": "030-request-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 39,
+   "file": "031-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 13858,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:29 GMT",
+    "Content-Length": "13858"
+   },
+   "sameAs": "031-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 40,
+   "file": "040-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 755,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "c8f6761b-8c49-4018-9914-1e90475de68f",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "787"
+   }
+  },
+  {
+   "position": 41,
+   "file": "041-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35288,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:44 GMT",
+    "Content-Length": "35299"
+   }
+  },
+  {
+   "position": 42,
+   "file": "042-request-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "request",
+   "bytes": 1119,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_DATASOURCES",
+   "restrictions": {},
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdCurrentActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdRequestID": "ea4d86a7-1910-493e-b25e-d58290b2a8d7"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-ActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "X-AS-RequestID": "ea4d86a7-1910-493e-b25e-d58290b2a8d7",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1156"
+   }
+  },
+  {
+   "position": 43,
+   "file": "003-response-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "response",
+   "bytes": 3237,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:44 GMT",
+    "Content-Length": "3237"
+   },
+   "sameAs": "003-response-discover-DISCOVER_DATASOURCES.xml"
+  },
+  {
+   "position": 44,
+   "file": "044-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1272,
+   "headers": [
+    "BeginSession",
+    "Version",
+    "NamespaceCompatibility"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2",
+    "http://schemas.microsoft.com/analysisservices/2003/xmla"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdCurrentActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdRequestID": "3d716445-2711-4677-80e6-72fd1e9a54eb"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-ActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "X-AS-RequestID": "3d716445-2711-4677-80e6-72fd1e9a54eb",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1308"
+   }
+  },
+  {
+   "position": 45,
+   "file": "045-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:44 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 46,
+   "file": "046-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1344,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "ProviderVersion"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdCurrentActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdRequestID": "3299cd02-b3b6-4bfc-8260-8d04b60eb086"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+    "X-AS-ActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "X-AS-RequestID": "3299cd02-b3b6-4bfc-8260-8d04b60eb086",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1385"
+   }
+  },
+  {
+   "position": 47,
+   "file": "007-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3050,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:45 GMT",
+    "Content-Length": "3050"
+   },
+   "sameAs": "007-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 48,
+   "file": "048-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 814,
+   "headers": [
+    "BeginSession",
+    "Version"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "e8e93fd1-81bb-498f-b7a9-ecf0870d3219",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "847"
+   }
+  },
+  {
+   "position": 49,
+   "file": "049-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "CD5F33A6-90CC-4DFF-B176-BAB5712E8764",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:45 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 50,
+   "file": "050-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 788,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "CD5F33A6-90CC-4DFF-B176-BAB5712E8764",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "CD5F33A6-90CC-4DFF-B176-BAB5712E8764",
+    "X-AS-ActivityID": "df2ce3c4-d8d1-45e7-9c24-aab7c7e416b0",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "819"
+   }
+  },
+  {
+   "position": 51,
+   "file": "051-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35292,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:45 GMT",
+    "Content-Length": "35303"
+   }
+  },
+  {
+   "position": 52,
+   "file": "052-request-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "request",
+   "bytes": 1209,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "CD5F33A6-90CC-4DFF-B176-BAB5712E8764",
+   "requestType": "DISCOVER_XML_METADATA",
+   "restrictions": {
+    "ObjectExpansion": "ExpandObject"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "7e02afd3-cfb8-4fc2-8247-366218fe4c9a",
+    "DbpropMsmdRequestID": "31fe232c-90e4-4292-b29c-0542f9407645",
+    "DbpropMsmdCurrentActivityID": "7e02afd3-cfb8-4fc2-8247-366218fe4c9a"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "CD5F33A6-90CC-4DFF-B176-BAB5712E8764",
+    "X-AS-ActivityID": "7e02afd3-cfb8-4fc2-8247-366218fe4c9a",
+    "X-AS-RequestID": "31fe232c-90e4-4292-b29c-0542f9407645",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1247"
+   }
+  },
+  {
+   "position": 53,
+   "file": "015-response-discover-DISCOVER_XML_METADATA.xml",
+   "direction": "response",
+   "bytes": 37734,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:47 GMT",
+    "Content-Length": "37734"
+   },
+   "sameAs": "015-response-discover-DISCOVER_XML_METADATA.xml"
+  },
+  {
+   "position": 54,
+   "file": "054-request-execute-EndSession.xml",
+   "direction": "request",
+   "bytes": 1050,
+   "headers": [
+    "EndSession"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "CD5F33A6-90CC-4DFF-B176-BAB5712E8764",
+   "command": "Statement",
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "7e02afd3-cfb8-4fc2-8247-366218fe4c9a",
+    "DbpropMsmdRequestID": "3e3a0f46-9080-4f07-9e41-3313c6892ee3",
+    "DbpropMsmdCurrentActivityID": "7e02afd3-cfb8-4fc2-8247-366218fe4c9a"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "AMO",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.Core:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.Core:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "CD5F33A6-90CC-4DFF-B176-BAB5712E8764",
+    "X-AS-ActivityID": "7e02afd3-cfb8-4fc2-8247-366218fe4c9a",
+    "X-AS-RequestID": "3e3a0f46-9080-4f07-9e41-3313c6892ee3",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1085"
+   }
+  },
+  {
+   "position": 55,
+   "file": "009-response-execute-EndSession.xml",
+   "direction": "response",
+   "bytes": 268,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:47 GMT",
+    "Content-Length": "268"
+   },
+   "sameAs": "009-response-execute-EndSession.xml"
+  },
+  {
+   "position": 56,
+   "file": "056-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1340,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "DBMSVersion"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdCurrentActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdRequestID": "9626d870-949f-45cc-8269-c334284bd610"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+    "X-AS-ActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "X-AS-RequestID": "9626d870-949f-45cc-8269-c334284bd610",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1381"
+   }
+  },
+  {
+   "position": 57,
+   "file": "057-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3042,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:48 GMT",
+    "Content-Length": "3042"
+   }
+  },
+  {
+   "position": 58,
+   "file": "058-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1336,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdCurrentActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdRequestID": "ac79119c-eb40-41c7-be6c-c3577062be4c"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+    "X-AS-ActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "X-AS-RequestID": "ac79119c-eb40-41c7-be6c-c3577062be4c",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1377"
+   }
+  },
+  {
+   "position": 59,
+   "file": "059-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:48 GMT",
+    "Content-Length": "3063"
+   }
+  },
+  {
+   "position": 60,
+   "file": "060-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 690,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {},
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-AS-ActivityID": "cd755e2e-dc0e-44de-b444-58f7fa2618c3",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "721"
+   }
+  },
+  {
+   "position": 61,
+   "file": "041-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 35288,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 133,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:49 GMT",
+    "Content-Length": "35299"
+   },
+   "sameAs": "041-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 62,
+   "file": "062-request-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "request",
+   "bytes": 1054,
+   "headers": [
+    "Version"
+   ],
+   "headerNamespaces": [
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2"
+   ],
+   "requestType": "DISCOVER_DATASOURCES",
+   "restrictions": {},
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "2a102e22-6df8-416f-800e-a55056f3b64a"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "2a102e22-6df8-416f-800e-a55056f3b64a",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1090"
+   }
+  },
+  {
+   "position": 63,
+   "file": "003-response-discover-DISCOVER_DATASOURCES.xml",
+   "direction": "response",
+   "bytes": 3237,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:49 GMT",
+    "Content-Length": "3237"
+   },
+   "sameAs": "003-response-discover-DISCOVER_DATASOURCES.xml"
+  },
+  {
+   "position": 64,
+   "file": "064-request-execute-BeginSession.xml",
+   "direction": "request",
+   "bytes": 1207,
+   "headers": [
+    "BeginSession",
+    "Version",
+    "NamespaceCompatibility"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis",
+    "http://schemas.microsoft.com/analysisservices/2003/engine/2",
+    "http://schemas.microsoft.com/analysisservices/2003/xmla"
+   ],
+   "command": "Statement",
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "a0ed35f8-fcd2-4a08-a1c0-d29497e150f1"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "a0ed35f8-fcd2-4a08-a1c0-d29497e150f1",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1242"
+   }
+  },
+  {
+   "position": 65,
+   "file": "065-response-execute-BeginSession.xml",
+   "direction": "response",
+   "bytes": 401,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:49 GMT",
+    "Content-Length": "401"
+   }
+  },
+  {
+   "position": 66,
+   "file": "066-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1275,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "DBMSVersion"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "26975b9a-7d56-4aec-9e25-0b5a20e3a817"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "26975b9a-7d56-4aec-9e25-0b5a20e3a817",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1315"
+   }
+  },
+  {
+   "position": 67,
+   "file": "057-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3042,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:50 GMT",
+    "Content-Length": "3042"
+   },
+   "sameAs": "057-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 68,
+   "file": "068-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1336,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "17a7430d-6907-424b-81d5-ecdec8cf8e01"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "17a7430d-6907-424b-81d5-ecdec8cf8e01",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1377"
+   }
+  },
+  {
+   "position": 69,
+   "file": "059-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:50 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "059-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 70,
+   "file": "070-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1323,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "df4cabd0-2ac8-4e9f-95a6-5cd348f29293"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "df4cabd0-2ac8-4e9f-95a6-5cd348f29293",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1364"
+   }
+  },
+  {
+   "position": 71,
+   "file": "071-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 20348,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 28,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:50 GMT",
+    "Content-Length": "20348"
+   }
+  },
+  {
+   "position": 72,
+   "file": "072-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1317,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "Data",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "0afd5922-ebb2-4c7a-8ef2-a7ced669590a"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "0afd5922-ebb2-4c7a-8ef2-a7ced669590a",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1358"
+   }
+  },
+  {
+   "position": 73,
+   "file": "073-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 17842,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 28,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:52 GMT",
+    "Content-Length": "17842"
+   }
+  },
+  {
+   "position": 74,
+   "file": "074-request-discover-MDSCHEMA_DIMENSIONS.xml",
+   "direction": "request",
+   "bytes": 1377,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_DIMENSIONS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "4ff34c4a-952b-4b8d-83db-2550dd7ddec6"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "4ff34c4a-952b-4b8d-83db-2550dd7ddec6",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1419"
+   }
+  },
+  {
+   "position": 75,
+   "file": "075-response-discover-MDSCHEMA_DIMENSIONS.xml",
+   "direction": "response",
+   "bytes": 19530,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 22,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:52 GMT",
+    "Content-Length": "19530"
+   }
+  },
+  {
+   "position": 76,
+   "file": "076-request-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "request",
+   "bytes": 1341,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_MEASUREGROUPS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "a9e7c399-2b86-4fc9-808c-c1171e05cbe8"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "a9e7c399-2b86-4fc9-808c-c1171e05cbe8",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1382"
+   }
+  },
+  {
+   "position": 77,
+   "file": "077-response-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "response",
+   "bytes": 6039,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 11,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:52 GMT",
+    "Content-Length": "6039"
+   }
+  },
+  {
+   "position": 78,
+   "file": "078-request-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "request",
+   "bytes": 1351,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_MEASUREGROUP_DIMENSIONS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "d1b387d2-0a36-45ef-bb64-256126049f0a"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "d1b387d2-0a36-45ef-bb64-256126049f0a",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1392"
+   }
+  },
+  {
+   "position": 79,
+   "file": "079-response-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "response",
+   "bytes": 49361,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 86,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:53 GMT",
+    "Content-Length": "49361"
+   }
+  },
+  {
+   "position": 80,
+   "file": "080-request-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "request",
+   "bytes": 1220,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "DISCOVER_SCHEMA_ROWSETS",
+   "restrictions": {},
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "99b0dd43-aa47-4e68-be76-abf2d9f83aa2"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "99b0dd43-aa47-4e68-be76-abf2d9f83aa2",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1257"
+   }
+  },
+  {
+   "position": 81,
+   "file": "081-response-discover-DISCOVER_SCHEMA_ROWSETS.xml",
+   "direction": "response",
+   "bytes": 37112,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 70,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:53 GMT",
+    "Content-Length": "37112"
+   }
+  },
+  {
+   "position": 82,
+   "file": "082-request-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "request",
+   "bytes": 1215,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_FUNCTIONS",
+   "restrictions": {},
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "f3faedfa-4b91-4d22-85e6-10ff1d4190a5"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "f3faedfa-4b91-4d22-85e6-10ff1d4190a5",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1252"
+   }
+  },
+  {
+   "position": 83,
+   "file": "083-response-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "response",
+   "bytes": 81221,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:55 GMT",
+    "Content-Length": "216113"
+   },
+   "rowsAtCapture": 404,
+   "trimmed": true
+  },
+  {
+   "position": 84,
+   "file": "084-request-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "request",
+   "bytes": 1341,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_MEASUREGROUPS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "4562d6ff-3341-467f-9b8a-4328ce30d23e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "4562d6ff-3341-467f-9b8a-4328ce30d23e",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1382"
+   }
+  },
+  {
+   "position": 85,
+   "file": "077-response-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "response",
+   "bytes": 6039,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 11,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:55 GMT",
+    "Content-Length": "6039"
+   },
+   "sameAs": "077-response-discover-MDSCHEMA_MEASUREGROUPS.xml"
+  },
+  {
+   "position": 86,
+   "file": "086-request-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "request",
+   "bytes": 1351,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_MEASUREGROUP_DIMENSIONS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "c57ce439-89f6-479a-890c-b7a18b748446"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "c57ce439-89f6-479a-890c-b7a18b748446",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1392"
+   }
+  },
+  {
+   "position": 87,
+   "file": "079-response-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "response",
+   "bytes": 49361,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 86,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:56 GMT",
+    "Content-Length": "49361"
+   },
+   "sameAs": "079-response-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml"
+  },
+  {
+   "position": 88,
+   "file": "088-request-discover-MDSCHEMA_MEASURES.xml",
+   "direction": "request",
+   "bytes": 1375,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_MEASURES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "71ae8b6d-e35c-4c6d-890a-b043471a1834"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "71ae8b6d-e35c-4c6d-890a-b043471a1834",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1417"
+   }
+  },
+  {
+   "position": 89,
+   "file": "089-response-discover-MDSCHEMA_MEASURES.xml",
+   "direction": "response",
+   "bytes": 48512,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 51,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:56 GMT",
+    "Content-Length": "48512"
+   }
+  },
+  {
+   "position": 90,
+   "file": "090-request-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "request",
+   "bytes": 1215,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_FUNCTIONS",
+   "restrictions": {},
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "0056980c-68cc-4998-9423-fed0cfcdba00"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "0056980c-68cc-4998-9423-fed0cfcdba00",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1252"
+   }
+  },
+  {
+   "position": 91,
+   "file": "083-response-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "response",
+   "bytes": 81221,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:57 GMT",
+    "Content-Length": "216113"
+   },
+   "rowsAtCapture": 404,
+   "trimmed": true,
+   "sameAs": "083-response-discover-MDSCHEMA_FUNCTIONS.xml"
+  },
+  {
+   "position": 92,
+   "file": "092-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1336,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "c25d995e-0315-424c-8549-4cd7f843e8e6"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "c25d995e-0315-424c-8549-4cd7f843e8e6",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1377"
+   }
+  },
+  {
+   "position": 93,
+   "file": "059-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:57 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "059-response-discover-DISCOVER_PROPERTIES.xml"
+  },
+  {
+   "position": 94,
+   "file": "094-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1323,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "117461e9-c769-4cf8-ae68-9eaa187ab73f"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "117461e9-c769-4cf8-ae68-9eaa187ab73f",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1364"
+   }
+  },
+  {
+   "position": 95,
+   "file": "071-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 20348,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 28,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:58 GMT",
+    "Content-Length": "20348"
+   },
+   "sameAs": "071-response-discover-MDSCHEMA_CUBES.xml"
+  },
+  {
+   "position": 96,
+   "file": "096-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1317,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "Data",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "f0ca1a11-73a4-4f69-823d-75971703e3d9"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "f0ca1a11-73a4-4f69-823d-75971703e3d9",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1358"
+   }
+  },
+  {
+   "position": 97,
+   "file": "073-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 17842,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 28,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:58 GMT",
+    "Content-Length": "17842"
+   },
+   "sameAs": "073-response-discover-MDSCHEMA_CUBES.xml"
+  },
+  {
+   "position": 98,
+   "file": "098-request-discover-MDSCHEMA_DIMENSIONS.xml",
+   "direction": "request",
+   "bytes": 1377,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_DIMENSIONS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "0d3c9d25-f733-4507-a104-44bc56ad2554"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "0d3c9d25-f733-4507-a104-44bc56ad2554",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1419"
+   }
+  },
+  {
+   "position": 99,
+   "file": "075-response-discover-MDSCHEMA_DIMENSIONS.xml",
+   "direction": "response",
+   "bytes": 19530,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 22,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:59 GMT",
+    "Content-Length": "19530"
+   },
+   "sameAs": "075-response-discover-MDSCHEMA_DIMENSIONS.xml"
+  },
+  {
+   "position": 100,
+   "file": "100-request-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "request",
+   "bytes": 1341,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_MEASUREGROUPS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "a77b870b-10d5-491b-8123-24b543697c9c"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "a77b870b-10d5-491b-8123-24b543697c9c",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1382"
+   }
+  },
+  {
+   "position": 101,
+   "file": "077-response-discover-MDSCHEMA_MEASUREGROUPS.xml",
+   "direction": "response",
+   "bytes": 6039,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 11,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:59 GMT",
+    "Content-Length": "6039"
+   },
+   "sameAs": "077-response-discover-MDSCHEMA_MEASUREGROUPS.xml"
+  },
+  {
+   "position": 102,
+   "file": "102-request-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "request",
+   "bytes": 1351,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_MEASUREGROUP_DIMENSIONS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "0f5036c6-a8e8-45c0-b486-4fd6604fc205"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "0f5036c6-a8e8-45c0-b486-4fd6604fc205",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1392"
+   }
+  },
+  {
+   "position": 103,
+   "file": "079-response-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml",
+   "direction": "response",
+   "bytes": 49361,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 86,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:03:59 GMT",
+    "Content-Length": "49361"
+   },
+   "sameAs": "079-response-discover-MDSCHEMA_MEASUREGROUP_DIMENSIONS.xml"
+  },
+  {
+   "position": 104,
+   "file": "104-request-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "request",
+   "bytes": 1215,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_FUNCTIONS",
+   "restrictions": {},
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "2bdd8a4d-bbde-4a00-afaa-5bf83fbf902e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "2bdd8a4d-bbde-4a00-afaa-5bf83fbf902e",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1252"
+   }
+  },
+  {
+   "position": 105,
+   "file": "083-response-discover-MDSCHEMA_FUNCTIONS.xml",
+   "direction": "response",
+   "bytes": 81221,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 200,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:04:01 GMT",
+    "Content-Length": "216113"
+   },
+   "rowsAtCapture": 404,
+   "trimmed": true,
+   "sameAs": "083-response-discover-MDSCHEMA_FUNCTIONS.xml"
+  },
+  {
+   "position": 106,
+   "file": "106-request-discover-MDSCHEMA_HIERARCHIES.xml",
+   "direction": "request",
+   "bytes": 1378,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_HIERARCHIES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "f85e96fd-5cca-406f-b0e6-00c26517047a"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "f85e96fd-5cca-406f-b0e6-00c26517047a",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1420"
+   }
+  },
+  {
+   "position": 107,
+   "file": "107-response-discover-MDSCHEMA_HIERARCHIES.xml",
+   "direction": "response",
+   "bytes": 197667,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 172,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:04:04 GMT",
+    "Content-Length": "197667"
+   }
+  },
+  {
+   "position": 108,
+   "file": "108-request-discover-MDSCHEMA_SETS.xml",
+   "direction": "request",
+   "bytes": 1371,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_SETS",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "6ac67ebf-e6e5-47a8-becd-a7cc84125d8e"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "6ac67ebf-e6e5-47a8-becd-a7cc84125d8e",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1413"
+   }
+  },
+  {
+   "position": 109,
+   "file": "109-response-discover-MDSCHEMA_SETS.xml",
+   "direction": "response",
+   "bytes": 10196,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 11,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:04:04 GMT",
+    "Content-Length": "10196"
+   }
+  },
+  {
+   "position": 110,
+   "file": "110-request-discover-MDSCHEMA_CUBES.xml",
+   "direction": "request",
+   "bytes": 1366,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+   "requestType": "MDSCHEMA_CUBES",
+   "restrictions": {
+    "CUBE_NAME": "Adventure Works",
+    "CUBE_SOURCE": "3"
+   },
+   "properties": {
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Content": "Data",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdCurrentActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "DbpropMsmdRequestID": "ce4c193f-05a0-4c86-b5c1-47078054ed8c"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "C61C2EC0-7963-4D04-B41F-6B51F3E80518",
+    "X-AS-ActivityID": "3cf94bdd-993b-4d16-b052-7da3d95d17fa",
+    "X-AS-RequestID": "ce4c193f-05a0-4c86-b5c1-47078054ed8c",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1408"
+   }
+  },
+  {
+   "position": 111,
+   "file": "111-response-discover-MDSCHEMA_CUBES.xml",
+   "direction": "response",
+   "bytes": 2144,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:04:11 GMT",
+    "Content-Length": "2144"
+   }
+  },
+  {
+   "position": 112,
+   "file": "112-request-execute-Statement.xml",
+   "direction": "request",
+   "bytes": 1317,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+   "command": "Statement",
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Format": "Native",
+    "AxisFormat": "TupleFormat",
+    "Content": "SchemaData",
+    "Timeout": "0",
+    "DbpropMsmdActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdCurrentActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdRequestID": "f3b87667-0c18-43a1-98f7-4a01110c84ce"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Execute\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+    "X-AS-ActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "X-AS-RequestID": "f3b87667-0c18-43a1-98f7-4a01110c84ce",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1356"
+   }
+  },
+  {
+   "position": 113,
+   "file": "113-response-execute-Statement.xml",
+   "direction": "response",
+   "bytes": 129693,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "ExecuteResponse",
+   "rows": 0,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:04:26 GMT",
+    "Content-Length": "129693"
+   }
+  },
+  {
+   "position": 114,
+   "file": "114-request-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "request",
+   "bytes": 1336,
+   "headers": [
+    "Session"
+   ],
+   "headerNamespaces": [
+    "urn:schemas-microsoft-com:xml-analysis"
+   ],
+   "sessionId": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+   "requestType": "DISCOVER_PROPERTIES",
+   "restrictions": {
+    "PropertyName": "Catalog"
+   },
+   "properties": {
+    "Catalog": "Adventure Works DW Standard Edition",
+    "Timeout": "0",
+    "SspropInitAppName": "\u0421\u0440\u0435\u0434\u0430 Microsoft SQL Server Management Studio - \u0437\u0430\u043f\u0440\u043e\u0441",
+    "LocaleIdentifier": "1033",
+    "ClientProcessID": "6232",
+    "Content": "SchemaData",
+    "Format": "Tabular",
+    "DbpropMsmdActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdCurrentActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "DbpropMsmdRequestID": "094cfe22-d730-43ab-81d2-8c042930b7c5"
+   },
+   "http": "POST http://olap.flexmonster.com/olap/msmdpump.dll HTTP/1.1",
+   "httpHeaders": {
+    "User-Agent": "ADOMD.NET",
+    "X-AS-AcquireTokenStats": "AppName=SSMS.exe,AppVer=22.8.12023.21 built by: stable,AppBinaryType=6,HostRuntime='.NET Framework 4.8.1',ManagedVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,ClientLibVer=Microsoft.AnalysisServices.AdomdClient:17.0.65.16,CacheUsed=1,ConStrId=1,sspropInitApp=!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "SspropInitAppName": "!@540 Microsoft SQL Server Management Studio - 70?@>A",
+    "Content-Type": "text/xml",
+    "SOAPAction": "\"urn:schemas-microsoft-com:xml-analysis:Discover\"",
+    "X-Transport-Caps-Negotiation-Flags": "1,0,0,0,0",
+    "X-AS-SessionID": "13E66410-7557-42B6-BCB6-9A349B9D0CC0",
+    "X-AS-ActivityID": "02cda3e8-a545-4584-80e6-7b25d58c0c6e",
+    "X-AS-RequestID": "094cfe22-d730-43ab-81d2-8c042930b7c5",
+    "Host": "olap.flexmonster.com",
+    "Expect": "100-continue",
+    "Content-Length": "1377"
+   }
+  },
+  {
+   "position": 115,
+   "file": "059-response-discover-DISCOVER_PROPERTIES.xml",
+   "direction": "response",
+   "bytes": 3063,
+   "headers": [],
+   "headerNamespaces": [],
+   "bodyElement": "DiscoverResponse",
+   "rows": 1,
+   "http": "HTTP/1.1 200 OK",
+   "httpHeaders": {
+    "Content-Type": "text/xml",
+    "Server": "Microsoft-IIS/8.5",
+    "X-Transport-Caps-Negotiation-Flags": "0,0,0,0,0",
+    "X-Powered-By": "ASP.NET",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, Accept,Authorization",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Request-Method": "POST, OPTIONS",
+    "Date": "Wed, 05 Aug 2026 11:04:28 GMT",
+    "Content-Length": "3063"
+   },
+   "sameAs": "059-response-discover-DISCOVER_PROPERTIES.xml"
+  }
+ ]
+}

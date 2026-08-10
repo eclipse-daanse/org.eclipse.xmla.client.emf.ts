@@ -1,0 +1,22 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <Version Sequence="926" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine/2" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_DATASOURCES</RequestType>
+      <Restrictions />
+      <Properties>
+        <PropertyList>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Content>SchemaData</Content>
+          <Format>Tabular</Format>
+          <DbpropMsmdActivityID>3b9fc858-1c7c-4578-80b8-c121876f0c94</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>3b9fc858-1c7c-4578-80b8-c121876f0c94</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>6258691c-4517-4da3-beb1-134ab8328d33</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Discover>
+  </Body>
+</Envelope>

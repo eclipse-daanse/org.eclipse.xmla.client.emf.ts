@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*********************************************************************
+* Copyright (c) 2025 Contributors to the Eclipse Foundation.
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which is available at https://www.eclipse.org/legal/epl-2.0/
+*
+* SPDX-License-Identifier: EPL-2.0
+**********************************************************************/
+-->
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="engine300" nsURI="http://schemas.microsoft.com/analysisservices/2011/engine/300"
+    nsPrefix="engine300">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="The 2011 engine namespace: the four visualization property types the document defines in eng300."/>
+    <details key="oSGiCompatible" value="true"/>
+    <details key="basePackage" value="org.eclipse.daanse.xmla.model"/>
+    <details key="prefix" value="Engine300"/>
+    <details key="fileExtensions" value="xmlaeng300"/>
+    <details key="resource" value="XML"/>
+    <details key="literalsInterface" value="true"/>
+    <details key="copyrightText" value="Copyright (c) 2026 Contributors to the Eclipse Foundation.&#xA;&#xA;This program and the accompanying materials are made&#xA;available under the terms of the Eclipse Public License 2.0&#xA;which is available at https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA;SPDX-License-Identifier: EPL-2.0"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="CalculationPropertiesVisualizationProperties">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The CalculationPropertiesVisualizationProperties complex type specifies visualization properties for a calculated result. This type is defined in the eng300 namespace. The following is the XSD for the CalculationPropertiesVisualizationProperties complex type. &lt;xsd:complexType name=&quot;CalculationPropertiesVisualizationProperties&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;FolderPosition&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;-1&quot;/> &lt;xsd:element name=&quot;ContextualNameRule&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;None&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value …"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="CalculationPropertiesVisualizationProperties"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="folderPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest the position that this attribute might hold among the other elements that share the same display folder (AttributeTranslation)."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FolderPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextualNameRule" eType="#//ContextualNameRuleEnum"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest how to create unambiguous names for this attribute. The following values are allowed:&quot;None&quot; – Use the attribute name&quot;Context&quot; – Use the incoming relationship name.&quot;Merge&quot; – Attending to language grammar, concatenate the incoming relationship name and the attribute name."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ContextualNameRule"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="#//AlignmentEnum"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest how to justify this attribute when displayed. The following values are allowed:&quot;Default&quot; – Use the alignment appropriate for the attribute’s data type.&quot;Left&quot; – Align left.&quot;Right&quot; – Align right.&quot;Center&quot; – Center."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Alignment"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFolderDefault" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that this attribute is representative of its display folder."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsFolderDefault"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRightToLeft" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that this attribute is to be displayed right-to-left."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsRightToLeft"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sortDirection" eType="#//SortDirectionEnum"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest how to sort instances of this attribute. The following values are allowed:&quot;Default&quot; – Use the sort direction appropriate for the attribute’s data type.&quot;Ascending&quot; – Sort in ascending order.&quot;Descending&quot; – Sort in descending order."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SortDirection"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="units" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest a string to be associated with values of this attribute"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Units"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest the length (in characters) to reserve to display this attribute."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Width"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDefaultMeasure" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that this CalculationProperty contains a result that is uniquely representative of a Dimension instance that the CalculationProperty is associated with."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsDefaultMeasure"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDetailsPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides the ability to place this attribute in the Default Details collection of the Dimension. This collection is an ordered set of DimensionAttribute types, CalculationProperty types, and RelationshipEnd elements. A positive value specifies participation in the collection. The collection is sorted in ascending order of this element."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DefaultDetailsPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sortPropertiesPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides the ability to place this attribute in the Sort Properties collection of the Dimension. This collection is an ordered set of DimensionAttribute types, CalculationProperty types, and RelationshipEnd elements. Client applications can interpret this collection as a suggestion for how to perform a multi-column sort on this Dimension. A positive value specifies participation in the collection. The collection is sorted in ascending order of this element."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SortPropertiesPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSimpleMeasure" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that this CalculationProperty need not be displayed in clients. For example, a client might mark an automatically generated calculation as IsSimple so that it remains visible to the client, but is filtered out of any user views."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsSimpleMeasure"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DimensionAttributeVisualizationProperties">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The DimensionAttributeVisualizationProperties complex type specifies visualization properties for a calculated result. This type is defined in the eng300 namespace. The following is the XSD for the DimensionAttributeVisualizationProperties complex type. &lt;xsd:complexType name=&quot;DimensionAttributeVisualizationProperties&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;FolderPosition&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;-1&quot;/> &lt;xsd:element name=&quot;ContextualNameRule&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;None&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;None&quot; / …"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DimensionAttributeVisualizationProperties"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="folderPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest the position this attribute might hold among the other elements that share the same display folder (AttributeTranslation)."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FolderPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextualNameRule" eType="#//ContextualNameRuleEnum"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest how to create unambiguous names for this attribute. The following values are allowed:&quot;None&quot; – Use the attribute name&quot;Context&quot; – Use the incoming relationship name.&quot;Merge&quot; – Attending to language grammar, concatenate the incoming relationship name and the attribute name."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ContextualNameRule"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="#//AlignmentEnum"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest how to justify this attribute when displayed. The following values are allowed:&quot;Default&quot; – Use the alignment that is appropriate for the attribute’s data type.&quot;Left&quot; – Align left.&quot;Right&quot; – Align right.&quot;Center&quot; – Center."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Alignment"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFolderDefault" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that this attribute is representative of its display folder."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsFolderDefault"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRightToLeft" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that this attribute is to be displayed right-to-left."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsRightToLeft"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sortDirection" eType="#//SortDirectionEnum"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest how to sort instances of this attribute. The following values are allowed:&quot;Default&quot; – Use the sort direction that is appropriate for the attribute’s data type.&quot;Ascending&quot; – Sort in ascending order.&quot;Descending&quot; – Sort in descending order."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SortDirection"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="units" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that specifies a string to be associated with the values of this attribute."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Units"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that suggests the length (in characters) to reserve to display this attribute."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="Width"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDetailsPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides the ability to place this attribute in the Default Details collection of the Dimension. This collection is an ordered set of DimensionAttribute types, CalculationProperty types, and Relationship Ends. A positive value indicates participation in the collection. The collection is sorted in ascending order of this element."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DefaultDetailsPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commonIdentifierPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides the ability to place this attribute in the Common Identifier collection of the Dimension. This collection is an ordered set of DimensionAttribute types and Relationship Ends. Client applications can interpret this collection as a suggestion to use such items to perform a multi-column sort on this Dimension. A positive value indicates participation in the collection. The collection is sorted in ascending order of this element."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CommonIdentifierPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sortPropertiesPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides the ability to place this attribute in the Sort Properties collection of the Dimension. This collection is an ordered set of DimensionAttribute types, CalculationProperty types, and Relationship Ends. Client applications can interpret this collection as a suggestion as to how to perform a multi-column sort on this Dimension. A positive value specifies participation in the collection. The collection is sorted in ascending order of this element."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SortPropertiesPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayKeyPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides the ability to place this attribute in the Display Key collection of the Dimension. This collection is an ordered set of DimensionAttribute types and Relationship Ends. Client applications can interpret this collection as a suggestion as to how to perform a multi-column sort on this Dimension. A positive value indicates participation in the collection. The collection is sorted in ascending order of this element."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DisplayKeyPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDefaultImage" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications that this attribute contains an image that is representative of its Dimension instance."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsDefaultImage"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultAggregateFunction"
+        eType="#//DefaultAggregateFunctionEnum" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest how to aggregate instances of this attribute. The following values are allowed: &quot;Default&quot; – Use the function that is appropriate for the attribute’s data type.&quot;None&quot; – Data in this property is not suited for aggregation.&quot;Sum&quot; – Aggregate this dimension with Sum.&quot;Min&quot; – Aggregate this dimension with Min.&quot;Max&quot; – Aggregate this dimension with Max.&quot;Count&quot; – Aggregate this dimension with Count.&quot;Average&quot; – Aggregate this dimension with Average."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DefaultAggregateFunction"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HierarchyVisualizationProperties">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The HierarchyVisualizationProperties complex type defines the properties that can be used by tools to specify the visualization and enhanced formatting information of the Hierarchy. This type is defined in the eng300 namespace. The following is the XSD for the HierarchyVisualizationProperties complex type. …"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="HierarchyVisualizationProperties"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextualNameRule" eType="#//ContextualNameRuleEnum"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest hot to create unambiguous names for this attribute. The following values are allowed:None – Use the hierarchy name.Context – Use the incoming relationship name.Merge – Attending to language grammar, concatenate the incoming relationship name and the attribute name."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ContextualNameRule"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="folderPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides a hint to client applications to suggest the position that this attribute might hold among the other elements that share the same DisplayFolder."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FolderPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipEndVisualizationProperties">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RelationshipEndVisualizationProperties"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="folderPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="FolderPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextualNameRule" eType="#//ContextualNameRuleEnum"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="ContextualNameRule"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDetailsPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DefaultDetailsPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayKeyPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="DisplayKeyPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commonIdentifierPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="CommonIdentifierPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDefaultMeasure" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsDefaultMeasure"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDefaultImage" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="IsDefaultImage"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sortPropertiesPosition"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SortPropertiesPosition"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContextualNameRuleEnum">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The values CalculationPropertiesVisualizationProperties/ContextualNameRule is restricted to by the schema. The model carried it as embedded XML, which accepted anything and checked nothing."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ContextualNameRuleEnum"/>
+    </eAnnotations>
+    <eLiterals name="NONE" literal="None">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Use the attribute name."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CONTEXT" value="1" literal="Context">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Use the incoming relationship name."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MERGE" value="2" literal="Merge">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Attending to language grammar, concatenate the incoming relationship name and the attribute name."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AlignmentEnum">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The values CalculationPropertiesVisualizationProperties/Alignment is restricted to by the schema. The model carried it as embedded XML, which accepted anything and checked nothing."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AlignmentEnum"/>
+    </eAnnotations>
+    <eLiterals name="DEFAULT" literal="Default">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Use the alignment appropriate for the attribute’s data type."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LEFT" value="1" literal="Left">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Align left."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RIGHT" value="2" literal="Right">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Align right."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CENTER" value="3" literal="Center">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Center."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SortDirectionEnum">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The values CalculationPropertiesVisualizationProperties/SortDirection is restricted to by the schema. The model carried it as embedded XML, which accepted anything and checked nothing."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="SortDirectionEnum"/>
+    </eAnnotations>
+    <eLiterals name="DEFAULT" literal="Default">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Use the sort direction appropriate for the attribute’s data type."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ASCENDING" value="1" literal="Ascending">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Sort in ascending order."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DESCENDING" value="2" literal="Descending">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Sort in descending order."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DefaultAggregateFunctionEnum">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The values DimensionAttributeVisualizationProperties/DefaultAggregateFunction is restricted to by the schema. The model carried it as embedded XML, which accepted anything and checked nothing."/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DefaultAggregateFunctionEnum"/>
+    </eAnnotations>
+    <eLiterals name="DEFAULT" literal="Default">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Use the function that is appropriate for the attribute’s data type."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="NONE" value="1" literal="None">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Data in this property is not suited for aggregation."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SUM" value="2" literal="Sum">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Aggregate this dimension with Sum."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MIN" value="3" literal="Min">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Aggregate this dimension with Min."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAX" value="4" literal="Max">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Aggregate this dimension with Max."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="COUNT" value="5" literal="Count">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Aggregate this dimension with Count."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="AVERAGE" value="6" literal="Average">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Aggregate this dimension with Average."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+</ecore:EPackage>

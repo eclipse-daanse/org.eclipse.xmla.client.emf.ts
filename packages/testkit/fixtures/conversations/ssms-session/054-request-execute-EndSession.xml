@@ -1,0 +1,23 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <EndSession soap:mustUnderstand="1" SessionId="CD5F33A6-90CC-4DFF-B176-BAB5712E8764" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement />
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Timeout>0</Timeout>
+          <SspropInitAppName>Среда Microsoft SQL Server Management Studio - запрос</SspropInitAppName>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <ClientProcessID>6232</ClientProcessID>
+          <DbpropMsmdActivityID>7e02afd3-cfb8-4fc2-8247-366218fe4c9a</DbpropMsmdActivityID>
+          <DbpropMsmdRequestID>3e3a0f46-9080-4f07-9e41-3313c6892ee3</DbpropMsmdRequestID>
+          <DbpropMsmdCurrentActivityID>7e02afd3-cfb8-4fc2-8247-366218fe4c9a</DbpropMsmdCurrentActivityID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

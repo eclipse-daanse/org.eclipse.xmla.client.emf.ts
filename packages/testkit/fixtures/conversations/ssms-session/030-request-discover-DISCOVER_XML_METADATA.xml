@@ -1,0 +1,14 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <Version Sequence="926" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine/2" />
+  </Header>
+  <Body>
+    <Discover xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <RequestType>DISCOVER_XML_METADATA</RequestType>
+      <Restrictions>
+        <RestrictionList><DatabaseID>AdventureWorksDW2014Multidimensional-EE</DatabaseID><ObjectExpansion>ExpandObject</ObjectExpansion></RestrictionList>
+      </Restrictions>
+      <Properties />
+    </Discover>
+  </Body>
+</Envelope>

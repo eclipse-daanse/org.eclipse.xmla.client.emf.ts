@@ -1,0 +1,27 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="13E66410-7557-42B6-BCB6-9A349B9D0CC0" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement>SELECT {[Measures].[Average Rate]} on Columns from [Adventure Works]</Statement>
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <SspropInitAppName>Среда Microsoft SQL Server Management Studio - запрос</SspropInitAppName>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <ClientProcessID>6232</ClientProcessID>
+          <Format>Native</Format>
+          <AxisFormat>TupleFormat</AxisFormat>
+          <Content>SchemaData</Content>
+          <Timeout>0</Timeout>
+          <DbpropMsmdActivityID>02cda3e8-a545-4584-80e6-7b25d58c0c6e</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>02cda3e8-a545-4584-80e6-7b25d58c0c6e</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>f3b87667-0c18-43a1-98f7-4a01110c84ce</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+    </Execute>
+  </Body>
+</Envelope>

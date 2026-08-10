@@ -1,0 +1,30 @@
+﻿<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <XA:Session soap:mustUnderstand="1" SessionId="1850C7E1-344B-45CD-820F-930D16692B77" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:XA="urn:schemas-microsoft-com:xml-analysis" />
+  </Header>
+  <Body>
+    <Execute xmlns="urn:schemas-microsoft-com:xml-analysis">
+      <Command>
+        <Statement>select [KPI_NAME], [KPI_CAPTION], [MEASUREGROUP_NAME], [KPI_DISPLAY_FOLDER], [KPI_GOAL], [KPI_STATUS], [KPI_TREND], [KPI_VALUE] from $system.mdschema_kpis where [CUBE_NAME] = @CubeName</Statement>
+      </Command>
+      <Properties>
+        <PropertyList>
+          <Catalog>Adventure Works DW Standard Edition</Catalog>
+          <DbpropMsmdSubqueries>2</DbpropMsmdSubqueries>
+          <LocaleIdentifier>1033</LocaleIdentifier>
+          <Format>Tabular</Format>
+          <Content>SchemaData</Content>
+          <DbpropMsmdActivityID>fbcf3653-7822-4763-80bf-114337f82ea3</DbpropMsmdActivityID>
+          <DbpropMsmdCurrentActivityID>fbcf3653-7822-4763-80bf-114337f82ea3</DbpropMsmdCurrentActivityID>
+          <DbpropMsmdRequestID>8571eb4c-443a-40d8-8b9e-531dc3a9fad3</DbpropMsmdRequestID>
+        </PropertyList>
+      </Properties>
+      <Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Parameter>
+          <Name>CubeName</Name>
+          <Value xsi:type="xsd:string">Adventure Works</Value>
+        </Parameter>
+      </Parameters>
+    </Execute>
+  </Body>
+</Envelope>
