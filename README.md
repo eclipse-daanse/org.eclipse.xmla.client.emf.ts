@@ -98,9 +98,14 @@ request carries no command*. Every recorded client sends
 says what a server would have refused. There is now a test against the
 recording so it cannot come back.
 
-One thing the probe does **not** prove: the dynamic path. It declares exactly
-the 103 rowsets the model describes, because it is driven by that same model.
-Proving the dynamic path live needs a server built from a different model.
+The probe also answers, on `/xmla-foreign`, a rowset **no model describes**. It
+cannot go through the adapter - that looks the row class up in the catalogue and
+refuses what it does not find, correctly - so the response is written by the
+same `XmlaMessageCodec` the adapter uses, over an EClass built at runtime on the
+server and present in no `.ecore` anywhere. The client reads it into three
+columns and two rows, with the numeric and boolean columns arriving as a number
+and a boolean. That is the dynamic path over a wire, and nothing the client
+already knew could have told it the shape.
 
 ## Reading a large response
 
