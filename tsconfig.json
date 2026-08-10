@@ -1,0 +1,8 @@
+{
+  "$comment": "The solution file. Holds no sources of its own - it only names the projects and their order, so `tsc --build` at the root builds everything once and in the right sequence.",
+  "files": [],
+  "references": [
+    { "path": "./packages/emf-xml" },
+    { "path": "./packages/xmla-model" }
+  ]
+}
