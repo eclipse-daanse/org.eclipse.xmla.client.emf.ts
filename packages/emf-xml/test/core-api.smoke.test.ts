@@ -12,6 +12,7 @@ import {
   BasicEAnnotation,
   BasicEAttribute,
   BasicEClass,
+  BasicEDataType,
   BasicEPackage,
   BasicEReference,
   BasicResourceSet,
@@ -171,6 +172,40 @@ describe('the core APIs this project depends on', () => {
     const label = thing.getEStructuralFeature('label')!;
     instance.eSet(label, 'hello');
     expect(instance.eGet(label)).toBe('hello');
+  });
+
+  /**
+   * The Ecore package here is missing the boxed wrapper data types EMF proper
+   * carries, and the models use them: 106 features in xmla.ecore point at
+   * EIntegerObject, EBooleanObject or EDoubleObject - among them all of
+   * PropertyList, which every request writes. Each resolves to an unresolved
+   * proxy, and a proxy reads as an empty value rather than as an error.
+   *
+   * The bootstrap restores them. Both halves are asserted: that the gap is still
+   * there, and that filling it works. If a later version ships them itself, the
+   * first half fails and the workaround can go.
+   */
+  it('is missing the boxed Ecore wrapper types, which the bootstrap has to restore', () => {
+    const ecore = getEcorePackage();
+
+    for (const name of ['EIntegerObject', 'EBooleanObject', 'EDoubleObject']) {
+      expect(ecore.getEClassifier(name), `${name} appeared - the bootstrap workaround can go`).toBeFalsy();
+    }
+    // The unboxed ones are present, which is what makes the gap easy to miss.
+    expect(ecore.getEClassifier('EInt')).toBeTruthy();
+    expect(ecore.getEClassifier('EBoolean')).toBeTruthy();
+
+    const restored = new BasicEDataType();
+    restored.setName('EIntegerObject');
+    restored.setInstanceClassName('java.lang.Integer');
+    const classifiers = ecore.getEClassifiers();
+    classifiers.push(restored);
+    try {
+      expect(ecore.getEClassifier('EIntegerObject')).toBe(restored);
+    } finally {
+      classifiers.remove(restored);
+    }
+    expect(ecore.getEClassifier('EIntegerObject'), 'the shared package was left as we found it').toBeFalsy();
   });
 
   it('carries the XMLType data types a rowset column needs', () => {
