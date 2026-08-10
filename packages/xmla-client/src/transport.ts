@@ -37,12 +37,32 @@ export interface Transport {
 export class XmlaHttpError extends Error {
   readonly status: number;
   readonly body: string;
+  /**
+   * The response headers.
+   *
+   * Carried because a 401 is not only a refusal: `WWW-Authenticate` says which
+   * mechanisms the server will accept, and a caller that has to log in cannot
+   * do it without that. Dropping them turns "you may authenticate with Basic"
+   * into "no".
+   */
+  readonly headers: Readonly<Record<string, string>>;
 
-  constructor(status: number, body: string) {
+  constructor(status: number, body: string, headers: Readonly<Record<string, string>> = {}) {
     super(`the server answered HTTP ${status}`);
     this.name = 'XmlaHttpError';
     this.status = status;
     this.body = body;
+    this.headers = headers;
+  }
+
+  /** What the server said it would accept, or null when it said nothing. */
+  get challenge(): string | null {
+    for (const [name, value] of Object.entries(this.headers)) {
+      if (name.toLowerCase() === 'www-authenticate') {
+        return value;
+      }
+    }
+    return null;
   }
 }
 
