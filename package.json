@@ -25,6 +25,8 @@
     "check:vendor": "node scripts/check-vendor.mjs"
   },
   "devDependencies": {
+    "@vue/test-utils": "^2.4.11",
+    "happy-dom": "^20.11.2",
     "typescript": "~5.8.3",
     "vitest": "^3.2.4"
   },

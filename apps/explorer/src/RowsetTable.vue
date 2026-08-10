@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import type { EObject, EStructuralFeature } from '@emfts/core';
 
-import type { FieldModel, TableModel } from './ui-model.js';
+import type { ColumnModel } from './ui-model.js';
 
 /**
  * A grid over any row class, static or dynamic.
@@ -20,7 +20,7 @@ import type { FieldModel, TableModel } from './ui-model.js';
  * inner table rather than a JSON blob, and an unset column is shown as NULL
  * rather than as an empty string, because those say different things.
  */
-const props = defineProps<{ table: TableModel; rows: readonly EObject[]; limit?: number }>();
+const props = defineProps<{ columns: readonly ColumnModel[]; rows: readonly EObject[]; limit?: number }>();
 
 function shown(): readonly EObject[] {
   const limit = props.limit ?? 200;
@@ -33,7 +33,7 @@ function isSet(row: EObject, feature: EStructuralFeature): boolean {
   return row.eIsSet(feature);
 }
 
-function scalar(row: EObject, field: FieldModel): string {
+function scalar(row: EObject, field: ColumnModel): string {
   const value = row.eGet(field.feature);
   if (value === null || value === undefined) {
     return '';
@@ -41,7 +41,7 @@ function scalar(row: EObject, field: FieldModel): string {
   return String(value);
 }
 
-function nestedRows(row: EObject, field: FieldModel): EObject[] {
+function nestedRows(row: EObject, field: ColumnModel): EObject[] {
   const value = row.eGet(field.feature);
   if (field.many) {
     return [...(value as Iterable<EObject>)];
@@ -49,8 +49,8 @@ function nestedRows(row: EObject, field: FieldModel): EObject[] {
   return value === null || value === undefined ? [] : [value as EObject];
 }
 
-function nestedTable(field: FieldModel): TableModel {
-  return { title: field.label, columns: field.nested ?? [] };
+function nestedColumns(field: ColumnModel): readonly ColumnModel[] {
+  return field.nested ?? [];
 }
 </script>
 
@@ -63,7 +63,7 @@ function nestedTable(field: FieldModel): TableModel {
     <table class="grid">
       <thead>
         <tr>
-          <th v-for="column in table.columns" :key="column.label" :title="column.documentation ?? ''">
+          <th v-for="column in columns" :key="column.label" :title="column.documentation ?? ''">
             {{ column.label }}
             <span v-if="column.widget === 'table'" class="badge">nested</span>
           </th>
@@ -71,11 +71,11 @@ function nestedTable(field: FieldModel): TableModel {
       </thead>
       <tbody>
         <tr v-for="(row, index) in shown()" :key="index">
-          <td v-for="column in table.columns" :key="column.label">
+          <td v-for="column in columns" :key="column.label">
             <span v-if="!isSet(row, column.feature)" class="null">NULL</span>
             <RowsetTable
               v-else-if="column.widget === 'table'"
-              :table="nestedTable(column)"
+              :columns="nestedColumns(column)"
               :rows="nestedRows(row, column)"
             />
             <span v-else>{{ scalar(row, column) }}</span>

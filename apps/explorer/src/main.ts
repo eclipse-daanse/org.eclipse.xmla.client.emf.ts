@@ -9,10 +9,12 @@
  */
 import { FetchTransport } from '@daanse/xmla-client';
 import { bootstrapInBrowser } from '@daanse/xmla-model/browser';
+import { EmftsRendererPlugin } from '@emfts/vue-registry';
 import { createApp } from 'vue';
 
 import App from './App.vue';
 import { ExplorerSession } from './session.js';
+import { registerXmlaWidgets } from './widgets.js';
 
 /**
  * The app against a live server.
@@ -31,4 +33,9 @@ const session = new ExplorerSession({
   models: bootstrapInBrowser(),
 });
 
-createApp(App, { session }).mount('#app');
+// The registry has to know the XMLType data types before anything is rendered:
+// its own editors are keyed on Ecore's, and one restriction in six is not a
+// string.
+registerXmlaWidgets();
+
+createApp(App, { session }).use(EmftsRendererPlugin).mount('#app');
