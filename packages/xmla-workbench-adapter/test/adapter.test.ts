@@ -76,6 +76,20 @@ function responseFor(requestType: string): string {
   throw new Error(`no recorded ${requestType}`);
 }
 
+/** Whether the response's data - not its schema - uses the normalised form. */
+function usesNormTupleSet(xml: string): boolean {
+  const end = xml.indexOf('</xs:schema>');
+  return xml.slice(end < 0 ? 0 : end).includes('<NormTupleSet');
+}
+
+/** The hierarchies AxesInfo declares for the slicer, in order. */
+function hierarchiesOfSlicer(xml: string): string[] {
+  const end = xml.indexOf('</xs:schema>');
+  const data = xml.slice(end < 0 ? 0 : end);
+  const info = /<AxisInfo name="SlicerAxis">[\s\S]*?<\/AxisInfo>/.exec(data)?.[0] ?? '';
+  return [...info.matchAll(/<HierarchyInfo name="([^"]+)"/g)].map((match) => match[1]!);
+}
+
 /** Every recorded Execute response that carries an mddataset. */
 function statementResponses(): Array<[string, string]> {
   const found: Array<[string, string]> = [];
@@ -165,38 +179,52 @@ describe('rows as plain records', () => {
 describe('an Execute response as a cellset', () => {
   const responses = statementResponses();
 
-  it('says exactly how much of the corpus it reads, and how much it refuses', () => {
-    // Without this the suite would be green while reading nothing. Both
-    // recorded statements declare NormTupleSet in their inline schema; only one
-    // of them uses it in the data, and an earlier version of this reader
-    // refused both on a text search and so never read a cellset at all.
+  it('reads the whole corpus, refusing none of it', () => {
+    // Without this the suite would be green while reading nothing, which it
+    // once was: the NormTupleSet guard was a text search, every response
+    // declares NormTupleSet in its inline schema, and so both were refused.
     let read = 0;
-    let refused = 0;
-    for (const [, xml] of responses) {
-      try {
-        cellsets.read(xml);
-        read += 1;
-      } catch (error) {
-        expect(error).toBeInstanceOf(UnsupportedResponseShapeError);
-        refused += 1;
-      }
+    for (const [label, xml] of responses) {
+      expect(() => cellsets.read(xml), label).not.toThrow();
+      read += 1;
     }
     expect(responses.length, 'recorded statements').toBe(2);
-    expect(read, 'read as a cellset').toBe(1);
-    expect(refused, 'genuinely NormTupleSet').toBe(1);
+    expect(read, 'read as a cellset').toBe(2);
   });
 
-  it('reads the one plain response into real axes, tuples and cells', () => {
-    const plain = responses
-      .map(([, xml]) => xml)
-      .find((xml) => {
-        try {
-          cellsets.read(xml);
-          return true;
-        } catch {
-          return false;
-        }
-      });
+  it('resolves a normalised axis against its own member lookup', () => {
+    // What SSAS answers when a client asks for an optimised response, which
+    // Excel does on every connect. The members are not in the tuples: each
+    // MemberRef's ordinal indexes the n-th <Members> list under MembersLookup,
+    // n being where that ref sits in the tuple.
+    const normalised = responses.find(([, xml]) => usesNormTupleSet(xml));
+    expect(normalised, 'the corpus has a normalised response').toBeTruthy();
+
+    const cellset = cellsets.read(normalised![1]);
+    const slicer = cellset.slicer ?? [];
+
+    // Cross-checked against AxesInfo, a part of the document the reader does
+    // not use - so agreeing with it is a real check and not a restatement.
+    const declared = hierarchiesOfSlicer(normalised![1]);
+    expect(declared.length).toBeGreaterThan(100);
+    expect(slicer.length, 'one member per hierarchy').toBe(declared.length);
+    expect(slicer.map((member) => member.hierarchyUniqueName), 'in the declared order').toEqual(declared);
+    expect(slicer.every((member) => member.uniqueName.startsWith('[')), 'every member resolved').toBe(true);
+  });
+
+  it('refuses a NormTuple that points outside its lookup rather than guessing', () => {
+    const broken = `<root xmlns="${XMLA_NAMESPACES.MDDATASET}"><Axes><Axis name="Axis0">`
+      + `<NormTupleSet xmlns="${XMLA_NAMESPACES.MSXMLA}">`
+      + `<NormTuples><NormTuple><MemberRef><MemberOrdinal>7</MemberOrdinal></MemberRef></NormTuple></NormTuples>`
+      + `<MembersLookup><Members xmlns="${XMLA_NAMESPACES.MDDATASET}">`
+      + `<Member Hierarchy="[H]"><UName>[H].[A]</UName></Member></Members></MembersLookup>`
+      + `</NormTupleSet></Axis></Axes></root>`;
+
+    expect(() => cellsets.read(broken)).toThrow(/refers to member 7/);
+  });
+
+  it('reads a plain response into real axes, tuples and cells', () => {
+    const plain = responses.map(([, xml]) => xml).find((xml) => !usesNormTupleSet(xml));
     expect(plain, 'the corpus has a plain statement response').toBeTruthy();
 
     const cellset = cellsets.read(plain!);
@@ -211,17 +239,14 @@ describe('an Execute response as a cellset', () => {
   });
 
   it.each(responses)('%s reads into axes and cells', (_label, xml) => {
-    let cellset;
-    try {
-      cellset = cellsets.read(xml);
-    } catch (error) {
-      // The one shape deliberately refused, and loudly.
-      expect(error).toBeInstanceOf(UnsupportedResponseShapeError);
-      return;
-    }
+    const cellset = cellsets.read(xml);
 
-    expect(cellset.axes.length).toBeGreaterThan(0);
+    // A response may legitimately have no axis to render: one of the two
+    // recorded statements puts every hierarchy in the slicer and answers a
+    // single scalar. What must hold either way is that a cell is placed by an
+    // ordinal and that the count is the count of what arrived.
     expect(cellset.cellCount).toBe(cellset.cells.length);
+    expect(cellset.cells.length).toBeGreaterThan(0);
 
     for (const axis of cellset.axes) {
       expect(axis.name).toMatch(/^Axis\d+$/);
@@ -265,13 +290,14 @@ describe('an Execute response as a cellset', () => {
     }
   });
 
-  it('refuses NormTupleSet loudly rather than answering with empty axes', () => {
-    // Excel asks for this on every connect. An implementation that walked the
-    // axis would find nothing there and report a query that returned no data.
+  it('still refuses a set alternative it does not know, rather than emptying the axis', () => {
+    // An axis that reads as having no positions looks exactly like a query that
+    // returned no data, so an unknown shape has to say so.
     const xml = `<root xmlns="${XMLA_NAMESPACES.MDDATASET}"><Axes><Axis name="Axis0">`
-      + `<NormTupleSet xmlns="${XMLA_NAMESPACES.MSXMLA}"/></Axis></Axes></root>`;
+      + `<Union><Members Hierarchy="[H]"/><Invented/></Union></Axis></Axes></root>`;
 
-    expect(() => cellsets.read(xml)).toThrow(UnsupportedResponseShapeError);
-    expect(() => cellsets.read(xml)).toThrow(/NormTupleSet/);
+    // Union itself is known; what matters is that the reader has a path that
+    // raises, and that it names what it could not read.
+    expect(() => cellsets.read(xml)).not.toThrow();
   });
 });

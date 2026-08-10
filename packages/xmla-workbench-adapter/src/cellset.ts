@@ -7,7 +7,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EcoreXmlReader, EventKind, Unknown, wireNameOf, XmlCursor } from '@daanse/emf-xml';
+import { EcoreXmlReader, EventKind, Unknown, wireNameOf, XmlCodecError, XmlCursor } from '@daanse/emf-xml';
 import { XMLA_NAMESPACES } from '@daanse/xmla-model';
 import type { XmlaModels } from '@daanse/xmla-model';
 import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
@@ -43,15 +43,10 @@ export interface XmlaCellset {
 }
 
 /**
- * An Execute response answers in one of two shapes, and this is raised for the
- * one not handled yet.
+ * A set alternative this reader does not know.
  *
- * `NormTupleSet` is the optimised form SSAS sends when a client asks for it -
- * which Excel does, on every connect. It puts the tuples in a normalised side
- * structure rather than in the axis, so an implementation that walks the axis
- * finds nothing there and reports an empty result. Raising is the honest answer
- * until it is implemented: the alternative is a chart of no data that looks
- * like a query returning nothing.
+ * Raised rather than answered with empty axes, because an axis that reads as
+ * having no positions looks exactly like a query that returned no data.
  */
 export class UnsupportedResponseShapeError extends Error {
   constructor(shape: string) {
@@ -157,10 +152,7 @@ function tuplesOfSet(set: EObject): XmlaCellsetMember[][] {
     return children(set, 'member').map((member) => [memberOf(member)]);
   }
   if (kind === 'NormTupleSet') {
-    // Excel asks for this on every connect. The tuples live in a normalised
-    // side structure rather than in the axis, so walking the axis finds nothing
-    // and would report a query that returned no data.
-    throw new UnsupportedResponseShapeError('NormTupleSet');
+    return normTuples(set);
   }
   if (kind === 'SetListType' || kind === 'Union') {
     // A CrossProduct or a Union: the alternatives it holds, concatenated. Their
@@ -168,6 +160,48 @@ function tuplesOfSet(set: EObject): XmlaCellsetMember[][] {
     return children(set, 'setType').flatMap((inner) => tuplesOfSet(inner));
   }
   throw new UnsupportedResponseShapeError(kind ?? 'an unnamed set');
+}
+
+/**
+ * The positions of a normalised axis.
+ *
+ * This is what SSAS answers when a client asks for an optimised response, which
+ * Excel does on every connect. The members are not in the tuples: each
+ * `<NormTuple>` holds one `<MemberRef>` per hierarchy, and its `MemberOrdinal`
+ * indexes into the *n*-th `<Members>` list under `<MembersLookup>`, where *n* is
+ * the position of that MemberRef within the tuple. So a member repeated across
+ * a thousand positions travels once instead of a thousand times - which is the
+ * whole point of the form, and the reason it cannot be read by walking the axis.
+ */
+function normTuples(set: EObject): XmlaCellsetMember[][] {
+  // One list of members per hierarchy, in the order the hierarchies appear
+  // inside a tuple.
+  const lookup = child(set, 'membersLookup');
+  const byHierarchy: XmlaCellsetMember[][] = lookup === null
+    ? []
+    : children(lookup, 'members').map((members) => children(members, 'member').map(memberOf));
+
+  const tuplesHolder = child(set, 'normTuples');
+  if (tuplesHolder === null) {
+    return [];
+  }
+
+  return children(tuplesHolder, 'normTuple').map((tuple) => {
+    const refs = children(tuple, 'memberRef');
+    return refs.map((ref, hierarchy) => {
+      const ordinal = Number(value(ref, 'memberOrdinal') ?? 0);
+      const member = byHierarchy[hierarchy]?.[ordinal];
+      if (member === undefined) {
+        // A reference into a lookup that does not have it. Guessing would put a
+        // silently wrong member on an axis, which is worse than saying so.
+        throw new XmlCodecError(
+          `a NormTuple refers to member ${ordinal} of hierarchy ${hierarchy}, `
+            + `and the lookup has ${byHierarchy[hierarchy]?.length ?? 0} there`,
+        );
+      }
+      return member;
+    });
+  });
 }
 
 function memberOf(member: EObject): XmlaCellsetMember {
