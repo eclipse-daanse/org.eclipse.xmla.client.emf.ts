@@ -32,6 +32,8 @@ export {
 } from './emd.js';
 export { XmlCodecError } from './errors.js';
 export type { XmlLocation } from './errors.js';
+export { EcoreXmlWriter } from './ecore-writer.js';
 export { EcoreXmlReader, Unknown } from './reader.js';
 export type { ReaderOptions } from './reader.js';
 export { formatValue, parseValue } from './values.js';
+export { XmlWriter } from './writer.js';
