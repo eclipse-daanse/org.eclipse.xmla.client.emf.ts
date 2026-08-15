@@ -24,7 +24,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Emptyresult">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The xmla-e:emptyresult complex type is returned if the return result is empty. The XSD for the xmla-e:emptyresult complex type is as follows. &lt;xsd:complexType name=&quot;emptyresult&quot; > &lt;xsd:sequence> &lt;xsd:element name=&quot;Exception&quot; minOccurs=&quot;0&quot; type=&quot;Exception&quot; /> &lt;xsd:element name=&quot;Messages&quot; minOccurs=&quot;0&quot; type=&quot;Messages&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The xmla-e:emptyresult complex type is returned if the return result is empty."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="emptyresult"/>

@@ -24,7 +24,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="MdDataset">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An xmla-ds:mddataset type is the type that is returned by commands that return an mddataset as the return result. The XML schema definition (XSD) for the xmla-ds:mddataset complex type is as follows. &lt;xsd:complexType name=&quot;mddataset&quot; > &lt;xsd:sequence> &lt;xsd:element ref=&quot;xs:Schema&quot; /> &lt;xsd:element name=&quot;OlapInfo&quot; minOccurs=&quot;0&quot; type=&quot;OlapInfo&quot; /> &lt;xsd:element name=&quot;Axes&quot; minOccurs=&quot;0&quot; type=&quot;Axes&quot; /> &lt;xsd:element name=&quot;CellData&quot; minOccurs=&quot;0&quot; type=&quot;CellData&quot; /> &lt;xsd:element name=&quot;Exception&quot; minOccurs=&quot;0&quot; type=&quot;Exception&quot; /> &lt;xsd:element name=&quot;Messages&quot; minOccurs=&quot;0&quot; type=&quot;Messages&quot; /> &lt;/xsd:sequenc …"/>
+      <details key="documentation" value="An xmla-ds:mddataset type is the type that is returned by commands that return an mddataset as the return result."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="mddataset"/>
@@ -130,7 +130,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubeInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CubeInfo complex type describes all the sources that are involved in providing the current result set. &lt;xsd:complexType name=&quot;CubeInfo&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Cube&quot; maxOccurs=&quot;unbounded&quot; type=&quot;OlapInfoCube&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The CubeInfo complex type describes all the sources that are involved in providing the current result set."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubeInfo"/>
@@ -150,7 +150,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TupleType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The TupleType type describes the set of members that identifies a point in the axis hierarchy. A TupleType type is a collection of MemberType objects. &lt;xsd:complexType name=&quot;TupleType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Member&quot; type=&quot;MemberType&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The TupleType type describes the set of members that identifies a point in the axis hierarchy. A TupleType type is a collection of MemberType objects."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TupleType"/>
@@ -170,7 +170,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OlapInfoCube">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type contains information about the cubes that are returned in an mddataset result. &lt;xsd:complexType name=&quot;OlapInfoCube&quot; > &lt;xsd:sequence> &lt;xsd:element name=&quot;CubeName&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element ref=&quot;eng:LastDataUpdate&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element ref=&quot;eng:LastSchemaUpdate&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> The OlapInfoCube XSD depends upon element definitions in namespaces other than the default namespace. The following elements are defined in the namespace eng. …"/>
+      <details key="documentation" value="This complex type contains information about the cubes that are returned in an mddataset result."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="OlapInfoCube"/>
@@ -207,7 +207,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AxesInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The AxesInfo complex type describes the axes that will be contained in the Axes element of the mddataset result. &lt;xsd:complexType name=&quot;AxesInfo&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;AxisInfo&quot; maxOccurs=&quot;unbounded&quot; type=&quot;AxisInfo&quot;> &lt;/xsd:element> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The AxesInfo complex type describes the axes that will be contained in the Axes element of the mddataset result."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AxesInfo"/>
@@ -227,7 +227,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AxisInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The AxisInfo complex type describes a single axis that will appear in the Axes section of a particular mddataset return result. &lt;xsd:complexType name=&quot;AxisInfo&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;HierarchyInfo&quot; type=&quot;HierarchyInfo&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;xsd:attribute name=&quot;name&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The AxisInfo complex type describes a single axis that will appear in the Axes section of a particular mddataset return result."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AxisInfo"/>
@@ -253,7 +253,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HierarchyInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The HierarchyInfo complex type contains information about the hierarchies that appear on an axis of an mddataset return result. &lt;xsd:complexType name=&quot;HierarchyInfo&quot;> &lt;xsd:sequence> &lt;xsd:any namespace=&quot;##targetNamespace&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; processContents=&quot;skip&quot; /> &lt;/xsd:sequence> &lt;xsd:attribute name=&quot;name&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The HierarchyInfo complex type contains information about the hierarchies that appear on an axis of an mddataset return result."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="HierarchyInfo"/>
@@ -276,7 +276,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CellInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CellInfo complex type describes the properties of a data cell that will appear in the CellData section of a specific mddataset return result. &lt;xsd:complexType name=&quot;CellInfo&quot;> &lt;xsd:sequence> &lt;xsd:any namespace=&quot;##targetNamespace&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; processContents=&quot;skip&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> The elements returned also have the following XML attributes, with the following interpretations."/>
+      <details key="documentation" value="The CellInfo complex type describes the properties of a data cell that will appear in the CellData section of a specific mddataset return result."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CellInfo"/>
@@ -293,7 +293,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Axes">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The xmla-ds:Axes complex type contains the values and properties of each member in the hierarchy of an axis in the mddataset result. &lt;xsd:complexType name=&quot;Axes&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Axis&quot; type=&quot;Axis&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The xmla-ds:Axes complex type contains the values and properties of each member in the hierarchy of an axis in the mddataset result."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Axes"/>
@@ -336,7 +336,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MembersType" eSuperTypes="#//SetType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MembersType complex type is a collection of MemberType elements. For more information, see section 2.2.4.1.1.2.1.1.2. &lt;xsd:complexType name=&quot;MembersType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Member&quot; type=&quot;MemberType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;xsd:attribute name=&quot;Hierarchy&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The MembersType complex type is a collection of MemberType elements. For more information, see section 2.2.4.1.1.2.1.1.2."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Members"/>
@@ -366,7 +366,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MemberType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MemberType type describes the properties of a simple element in the axis hierarchy. For example, in the Year:Quarter:Month:MonthDay axis dimension, the member type describes the Year, the Quarter, the Month, or the MonthDay member of the hierarchy. The schema definition of the MemberType type is defined in the AxisInfo specification of this message. &lt;xsd:complexType name=&quot;MemberType&quot;> &lt;xsd:sequence> &lt;xsd:any namespace=&quot;##targetNamespace&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; processContents=&quot;skip&quot; /> &lt;/xsd:sequence> &lt;xsd:attribute name=&quot;Hierarchy&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The MemberType type describes the properties of a simple element in the axis hierarchy. For example, in the Year:Quarter:Month:MonthDay axis dimension, the member type describes the Year, the Quarter, the Month, or the MonthDay member of the hierarchy. The schema definition of the MemberType type is defined in the AxisInfo specification of this message."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MemberType"/>
@@ -409,7 +409,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SetListType" eSuperTypes="#//SetType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A SetListType type describes a complex type that is composed of elements that belong to the SetType group. &lt;xsd:complexType name=&quot;SetListType&quot;> &lt;xsd:group ref=&quot;SetType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;xsd:attribute name=&quot;Size&quot; type=&quot;xsd:unsignedInt&quot; /> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="A SetListType type describes a complex type that is composed of elements that belong to the SetType group."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="CrossProduct"/>
@@ -420,7 +420,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//UnsignedIntObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Indicates the number of elements in the CrossProduct element.&lt;42>"/>
+        <details key="documentation" value="Indicates the number of elements in the CrossProduct element."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
@@ -438,7 +438,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CellData">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CellSetType complex type contains the data for the CellSet element in the response. The server returns the results in the CellType format. However, when the DbpropMsmdOptimizeResponse flag is set to &quot;7&quot; in the query request, the server returns a CellSetType with embedded binary data. &lt;xsd:complexType name=&quot;CellSetType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Data&quot; type=&quot;xsd:base64Binary&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The CellSetType complex type contains the data for the CellSet element in the response. The server returns the results in the CellType format. However, when the DbpropMsmdOptimizeResponse flag is set to &quot;7&quot; in the query request, the server returns a CellSetType with embedded binary data."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CellData"/>
@@ -573,7 +573,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetadataType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MetadataType type&lt;45> describes the properties of a simple element in the axis hierarchy. For example, in the Year:Quarter:Month:MonthDay axis dimension, the member type describes the Year, the Quarter, the Month, or the MonthDay member of the hierarchy. &lt;xsd:complexType name=&quot;MetadataType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;HierUName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;HierFlags&quot; type=&quot;xsd:int&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;AllMemberName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;L#UName&quot; type=&quot;xsd:string&quot; minO …"/>
+      <details key="documentation" value="The MetadataType type describes the properties of a simple element in the axis hierarchy. For example, in the Year:Quarter:Month:MonthDay axis dimension, the member type describes the Year, the Quarter, the Month, or the MonthDay member of the hierarchy."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MetadataType"/>
@@ -625,7 +625,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberFormatString" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The MemberFormatString provides the format string of the members of the hierarchy.&lt;46>"/>
+        <details key="documentation" value="The MemberFormatString provides the format string of the members of the hierarchy."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -647,7 +647,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TuplesNormType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The TuplesNormType type&lt;47> is a collection of simple elements. &lt;xsd:complexType name=&quot;TuplesNormType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;TupleCount&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;Data&quot; type=&quot;xsd:base64Binary&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The TuplesNormType type is a collection of simple elements."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TuplesNormType"/>
@@ -691,7 +691,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KeyNormType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The KeyNormType type&lt;49> is a collection of two simple elements that represents the keys of all the distinct members in a hierarchy. &lt;xsd:complexType name=&quot;KeyNormType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;DistinctCountMember&quot; type=&quot;xsd:string&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;Data&quot; type=&quot;xsd:base64Binary&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> The following format details specify how the tuples are optimized within the Data element: The Data element contains the keys for each level of the hierarchy. …"/>
+      <details key="documentation" value="The KeyNormType type is a collection of two simple elements that represents the keys of all the distinct members in a hierarchy."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="KeyNormType"/>
@@ -736,7 +736,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureFormatStringNormType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MeasureFormatStringNormType&lt;51> type is a collection of simple elements. &lt;xsd:complexType name=&quot;MeasureFormatStringNormType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;DistinctMemberCount&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;Data&quot; type=&quot;xsd:base64Binary&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The MeasureFormatStringNormType type is a collection of simple elements."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MeasureFormatStringNormType"/>
@@ -827,7 +827,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RowSetRow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Each row element represents a row of tabular data. &lt;xsd:complexType name=&quot;row&quot;> &lt;xsd:sequence> &lt;xsd:any namespace=&quot;##any&quot; minOccurs=&quot;0&quot; maxOccurs =&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="Each row element represents a row of tabular data."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="row"/>
@@ -861,7 +861,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CellProperty">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A property *value*, inside a Cell or a Member: &lt;FmtValue>$29,358,677.22&lt;/FmtValue>. The same element name as the declaration in CellInfo, but carrying a value rather than saying what the name means - and it may carry an Error instead, when the cell's calculation failed. The api models both shapes with one interface and overloads name() to mean the value here, which is why there are two classes on this side and one there."/>
+      <details key="documentation" value="A property *value*, inside a Cell or a Member: &amp;lt;FmtValue>$29,358,677.22&amp;lt;/FmtValue>. The same element name as the declaration in CellInfo, but carrying a value rather than saying what the name means - and it may carry an Error instead, when the cell's calculation failed. The api models both shapes with one interface and overloads name() to mean the value here, which is why there are two classes on this side and one there."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CellProperty"/>
@@ -900,7 +900,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RowSetRowItem">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="One column of a tabular Execute result. As with CellProperty the element name is the column name, so it is carried as data. A column may also be structured rather than scalar - SELECT * FROM $SYSTEM.DISCOVER_SCHEMA_ROWSETS returns a Restrictions column holding &lt;Name> and &lt;Type>, repeated once per restriction - so an item may contain further items. All five captured servers do this, on every SSAS version from 11.0 to 16.0."/>
+      <details key="documentation" value="One column of a tabular Execute result. As with CellProperty the element name is the column name, so it is carried as data. A column may also be structured rather than scalar - SELECT * FROM $SYSTEM.DISCOVER_SCHEMA_ROWSETS returns a Restrictions column holding &amp;lt;Name> and &amp;lt;Type>, repeated once per restriction - so an item may contain further items. All five captured servers do this, on every SSAS version from 11.0 to 16.0."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="RowSetRowItem"/>

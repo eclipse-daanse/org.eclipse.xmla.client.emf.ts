@@ -27,6 +27,8 @@ import { rowsetRelationalEcore } from './rowset-relational.generated.js';
 import { rowsetMultidimensionalEcore } from './rowset-multidimensional.generated.js';
 import { rowsetMiningEcore } from './rowset-mining.generated.js';
 import { rowsetServerEcore } from './rowset-server.generated.js';
+import { rowsetTabularRestrictionsEcore } from './rowset-tabular-restrictions.generated.js';
+import { rowsetTabularEcore } from './rowset-tabular.generated.js';
 import { soapEcore } from './soap.generated.js';
 import { xmlaEcore } from './xmla.generated.js';
 
@@ -57,6 +59,8 @@ export const MODEL_TEXT: Readonly<Record<string, string>> = {
   "rowset-multidimensional": rowsetMultidimensionalEcore,
   "rowset-mining": rowsetMiningEcore,
   "rowset-server": rowsetServerEcore,
+  "rowset-tabular-restrictions": rowsetTabularRestrictionsEcore,
+  "rowset-tabular": rowsetTabularEcore,
   "soap": soapEcore,
   "xmla": xmlaEcore,
 };

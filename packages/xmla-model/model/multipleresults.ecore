@@ -24,7 +24,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Results">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The xmla-m:results complex type is returned only as a response to a Batch command. The results element contains one or more root elements, one that corresponds to each command that was executed within the Batch command. See section 3.1.4.3.2.2.1 for a description of the root element and of the different types for the root element. &lt;xsd:complexType name=&quot;results&quot; > &lt;xsd:sequence> &lt;xsd:element ref=&quot;xmla-e:root&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The xmla-m:results complex type is returned only as a response to a Batch command. The results element contains one or more root elements, one that corresponds to each command that was executed within the Batch command. See section 3.1.4.3.2.2.1 for a description of the root element and of the different types for the root element."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="results"/>

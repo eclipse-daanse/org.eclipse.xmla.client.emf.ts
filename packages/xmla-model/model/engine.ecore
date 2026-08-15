@@ -84,7 +84,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an action. Action is an abstract type, and types for derived Action types are derived from it. Therefore, the XSD for action does not show the elements; instead they are shown within the XSD of each of the derived types. However, all the elements in the base type are explained in the table in this section. &lt;xsd:complexType name=&quot;Action&quot; abstract=&quot;true&quot; />"/>
+      <details key="documentation" value="This complex type represents an action. Action is an abstract type, and types for derived Action types are derived from it. Therefore, the XSD for action does not show the elements; instead they are shown within the XSD of each of the derived types. However, all the elements in the base type are explained in the table in this section."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Action"/>
@@ -93,7 +93,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Aggregation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an aggregation in the AggregationDesign. &lt;xsd:complexType name=&quot;Aggregation&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Dimensions&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Dimension&quot; type=&quot;AggregationDimension&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;un …"/>
+      <details key="documentation" value="This complex type represents an aggregation in the AggregationDesign."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Aggregation"/>
@@ -160,7 +160,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents the attribute in the AggregationDimension for which the fact data is aggregated. &lt;xsd:complexType name=&quot;AggregationAttribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents the attribute in the AggregationDimension for which the fact data is aggregated."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationAttribute"/>
@@ -194,7 +194,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationDesign">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a group of aggregations for the MeasureGroup. &lt;xsd:complexType name=&quot;AggregationDesign&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot; …"/>
+      <details key="documentation" value="This complex type represents a group of aggregations for the MeasureGroup."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationDesign"/>
@@ -298,7 +298,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationDesignAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an attribute in the AggregationDesignDimension. &lt;xsd:complexType name=&quot;AggregationDesignAttribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;EstimatedCount&quot; type=&quot;xsd:long&quot; minOccurs=&quot;0&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents an attribute in the AggregationDesignDimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationDesignAttribute"/>
@@ -328,7 +328,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationDesignDimension">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a CubeDimension within an AggregationDesign. &lt;xsd:complexType name=&quot;AggregationDesignDimension&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Attributes&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Attribute&quot; type=&quot;AggregationDesignAttribute&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequ …"/>
+      <details key="documentation" value="This complex type represents a CubeDimension within an AggregationDesign."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationDesignDimension"/>
@@ -376,7 +376,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationDimension">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a dimension in the aggregation. &lt;xsd:complexType name=&quot;AggregationDimension&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Attributes&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Attribute&quot; type=&quot;AggregationAttribute&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> …"/>
+      <details key="documentation" value="This complex type represents a dimension in the aggregation."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationDimension"/>
@@ -424,7 +424,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationInstance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an aggregation instance in a partition. &lt;xsd:complexType name=&quot;AggregationInstance&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;AggregationType&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;IndexedView&quot; /> &lt;xsd:enumeration value=&quot;Table&quot; /> &lt;xsd:enumeration value=&quot;UserDefined&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Source&quot; type=&quot;TabularBinding&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Dimensions&quot; minOccurs=&quot;0&quot;> &lt;xsd …"/>
+      <details key="documentation" value="This complex type represents an aggregation instance in a partition."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationInstance"/>
@@ -527,7 +527,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationInstanceAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents the attribute in the AggregationInstanceDimension for which the fact data is aggregated. &lt;xsd:complexType name=&quot;AggregationInstanceAttribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;KeyColumns&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;KeyColumn&quot; type=&quot;DataItem&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents the attribute in the AggregationInstanceDimension for which the fact data is aggregated."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationInstanceAttribute"/>
@@ -561,7 +561,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationInstanceDimension">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a CubeDimension in an AggregationInstance. &lt;xsd:complexType name=&quot;AggregationInstanceDimension&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Attributes&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Attribute&quot; type=&quot;AggregationInstanceAttribute&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a CubeDimension in an AggregationInstance."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationInstanceDimension"/>
@@ -595,7 +595,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregationInstanceMeasure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a Measure in an AggregationInstance. &lt;xsd:complexType name=&quot;AggregationInstanceMeasure&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;MeasureID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Source&quot; type=&quot;ColumnBinding&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a Measure in an AggregationInstance."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AggregationInstanceMeasure"/>
@@ -626,7 +626,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlgorithmParameter">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an algorithm parameter for a MiningModel. The parameters that are allowed vary by which algorithm is chosen. &lt;xsd:complexType name=&quot;AlgorithmParameter&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Value&quot; type=&quot;xsd:anySimpleType&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents an algorithm parameter for a MiningModel. The parameters that are allowed vary by which algorithm is chosen."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AlgorithmParameter"/>
@@ -655,7 +655,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Annotation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The LinguisticSchemas annotation&lt;115> is a predefined Annotation that is available on the Database object with Name = LinguisticSchemas. The value of this annotation is the element LinguisticSchemas with the following complex type. &lt;xsd:complexType name=&quot;LinguisticSchemas&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;LinguisticSchema&quot; type=&quot;LinguisticSchema&quot; minOccurs=&quot;1&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> The following is an example of a LinguisticSchemas annotation. …"/>
+      <details key="documentation" value="The LinguisticSchemas annotation is a predefined Annotation that is available on the Database object with Name = LinguisticSchemas. The value of this annotation is the element LinguisticSchemas with the following complex type."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Annotation"/>
@@ -663,7 +663,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This element SHOULD&lt;113> be in a style that references the vendor's XML namespace, to prevent collisions in sharing of information contained in other Annotation objects. The Name element MUST be unique within the collection of Annotations that is contained within an individual object."/>
+        <details key="documentation" value="This element SHOULD be in a style that references the vendor's XML namespace, to prevent collisions in sharing of information contained in other Annotation objects. The Name element MUST be unique within the collection of Annotations that is contained within an individual object."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -695,7 +695,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assembly" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Assembly complex type represents a function library that can be invoked from within a Multidimensional Expressions (MDX), Data Mining Extensions (DMX), or SQL query. Assembly is an abstract type and requires an instance to identify the type of Assembly being sent--ComAssembly or ClrAssembly. &lt;xsd:complexType name=&quot;Assembly&quot; abstract=&quot;true&quot; > &lt;xsd:sequence> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:e …"/>
+      <details key="documentation" value="The Assembly complex type represents a function library that can be invoked from within a Multidimensional Expressions (MDX), Data Mining Extensions (DMX), or SQL query. Assembly is an abstract type and requires an instance to identify the type of Assembly being sent--ComAssembly or ClrAssembly."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Assembly"/>
@@ -761,7 +761,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a DimensionAttribute. &lt;xsd:complexType name=&quot;AttributeBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Type&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;All&quot; /> &lt;xsd:enumeration value=&quot;Key&quot; /> &lt;xsd:enumeration value=&quot;Name&quot; /> &lt;xsd:enumeration value=&quot;Value&quot; /> &lt;xsd:enumeration value=&quot;Translation&quot; /> &lt;xsd:enumeration value=&quot;UnaryOperator&quot; /> &lt;xsd:enumeration value=&quot;SkippedLevels&quot; /> &lt;xsd:enumeration value=&quot;CustomRollup&quot; /> &lt;x …"/>
+      <details key="documentation" value="This complex type represents a binding to a DimensionAttribute."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AttributeBinding"/>
@@ -802,7 +802,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributePermission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The AttributePermission complex type represents permissions for a DimensionAttribute. &lt;xsd:complexType name=&quot;AttributePermission&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;DefaultMember&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;VisualTotals&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;AllowedSet&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;DeniedSet&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequenc …"/>
+      <details key="documentation" value="The AttributePermission complex type represents permissions for a DimensionAttribute."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AttributePermission"/>
@@ -886,7 +886,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeRelationship">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a relationship between two attributes in a dimension. &lt;xsd:complexType name=&quot;AttributeRelationship&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;RelationshipType&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Rigid&quot; /> &lt;xsd:enumeration value=&quot;Flexible&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Cardinality&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Many&quot; /> &lt;xsd:enumeration value=&quot;One&quot; /> &lt;/xsd:restri …"/>
+      <details key="documentation" value="This complex type represents a relationship between two attributes in a dimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AttributeRelationship"/>
@@ -998,7 +998,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeTranslation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a translation of a DimensionAttribute in a specific language. The AttributeTranslation type is an extension of the Translation type, and includes all its elements. &lt;xsd:complexType name=&quot;AttributeTranslation&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Language&quot; type=&quot;xsd:unsignedInt&quot;/> &lt;xsd:element name=&quot;Caption&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;DisplayFolder&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;An …"/>
+      <details key="documentation" value="This complex type represents a translation of a DimensionAttribute in a specific language. The AttributeTranslation type is an extension of the Translation type, and includes all its elements."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="AttributeTranslation"/>
@@ -1075,7 +1075,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CalculatedMeasureBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a calculated measure. &lt;xsd:complexType name=&quot;CalculatedMeasureBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;MeasureName&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a binding to a calculated measure."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CalculatedMeasureBinding"/>
@@ -1095,7 +1095,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CalculationProperty">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents properties associated with a calculation in the MDX script. &lt;xsd:complexType name=&quot;CalculationProperty&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CalculationReference&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;CalculationType&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;Member&quot; /> &lt;xsd:enumeration value=&quot;Set&quot; /> &lt;xsd:enumeration value=&quot;Cells&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Translations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Translation&quot; type=&quot;Translation&quot; minOccurs=&quot;0&quot; maxOcc …"/>
+      <details key="documentation" value="This complex type represents properties associated with a calculation in the MDX script."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CalculationProperty"/>
@@ -1260,7 +1260,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use.&lt;91>"/>
+        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1283,7 +1283,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CellPermission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CellPermission complex type represents permissions for the cells in a Cube. A maximum of three CellPermission objects can exist within a CellPermissions collection, one each for the Read, ReadContingent, and ReadWrite values of the Access element. &lt;xsd:complexType name=&quot;CellPermission&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Access&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Read&quot; /> &lt;xsd:enumeration value=&quot;ReadContingent&quot; /> &lt;xsd:enumeration value=&quot;ReadWrite&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; …"/>
+      <details key="documentation" value="The CellPermission complex type represents permissions for the cells in a Cube. A maximum of three CellPermission objects can exist within a CellPermissions collection, one each for the Read, ReadContingent, and ReadWrite values of the Access element."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CellPermission"/>
@@ -1371,7 +1371,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClrAssemblyFile">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="ClrAssemblyFile specifies the actual contents of a CLR assembly file. &lt;xsd:complexType name=&quot;ClrAssemblyFile&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Type&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Main&quot; /> &lt;xsd:enumeration value=&quot;Dependent&quot; /> &lt;xsd:enumeration value=&quot;Debug&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Data&quot; type=&quot;DataBlock&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The following table describes the elements that are included in the XSD schema for ClrAssemblyFile."/>
+      <details key="documentation" value="ClrAssemblyFile specifies the actual contents of a CLR assembly file."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ClrAssemblyFile"/>
@@ -1412,7 +1412,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColumnBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a column of a table. &lt;xsd:complexType name=&quot;ColumnBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;TableID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ColumnID&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a binding to a column of a table."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ColumnBinding"/>
@@ -1443,7 +1443,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComAssembly" eSuperTypes="#//Assembly">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ComAssembly complex type represents a Component Object Model (COM) library. ComAssembly is derived from Assembly. COM assemblies treat ImpersonationMode=Default as ImpersonateCurrentUser. COM assemblies do not support impersonation modes other than ImpersonateCurrentUser. &lt;xsd:complexType name=&quot;ComAssembly&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Assembly&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Source&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;/xsd:sequence> &lt;/xsd:extension > &lt;/xsd:complexContent> &lt;/xsd:complexType> The following table describes the elements that are included in the XSD schema for …"/>
+      <details key="documentation" value="The ComAssembly complex type represents a Component Object Model (COM) library. ComAssembly is derived from Assembly. COM assemblies treat ImpersonationMode=Default as ImpersonateCurrentUser. COM assemblies do not support impersonation modes other than ImpersonateCurrentUser."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ComAssembly"/>
@@ -1462,7 +1462,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cube">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Cube complex type represents a cube. &lt;xsd:complexType name=&quot;Cube&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; max …"/>
+      <details key="documentation" value="The Cube complex type represents a cube."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Cube"/>
@@ -1516,7 +1516,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use.&lt;84>"/>
+        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1526,7 +1526,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="collation" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The collation to use by default.&lt;85>"/>
+        <details key="documentation" value="The collation to use by default."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1807,7 +1807,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="daxOptimizationMode" eType="#//DaxOptimizationModeEnum"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Indicates whether Data Analysis Expressions (DAX) optimizations are enabled or disabled on the cube.&lt;86> The possible values are as follows:1 – DAX optimizations are enabled.0 – DAX optimizations are disabled."/>
+        <details key="documentation" value="Indicates whether Data Analysis Expressions (DAX) optimizations are enabled or disabled on the cube. The possible values are as follows:1 – DAX optimizations are enabled.0 – DAX optimizations are disabled."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1818,7 +1818,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubeAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CubeAttribute complex type defines details for an attribute on a cube. &lt;xsd:complexType name=&quot;CubeAttribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;AggregationUsage&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;Full&quot; /> &lt;xsd:enumeration value=&quot;None&quot; /> &lt;xsd:enumeration value=&quot;Unrestricted&quot; /> &lt;xsd:enumeration value=&quot;Default&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;AttributeHierarchyOptimizedState&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xs …"/>
+      <details key="documentation" value="The CubeAttribute complex type defines details for an attribute on a cube."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubeAttribute"/>
@@ -1896,7 +1896,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubeAttributeBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a CubeAttribute. &lt;xsd:complexType name=&quot;CubeAttributeBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot; > &lt;xsd:all> &lt;xsd:element name=&quot;CubeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Type&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;All&quot; /> &lt;xsd:enumeration value=&quot;Key&quot; /> &lt;xsd:enumeration value=&quot;Name&quot; /> &lt;xsd:enumeration value=&quot;Value&quot; /> &lt;xsd:enumeration value=&quot;Translation&quot; /> &lt;xsd:enumeration value=&quot; …"/>
+      <details key="documentation" value="This complex type represents a binding to a CubeAttribute."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubeAttributeBinding"/>
@@ -1963,7 +1963,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubeDimension">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CubeDimension complex type defines the dimensions that are part of a cube. &lt;xsd:complexType name=&quot;CubeDimension&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Translations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Translation&quot; type=&quot;Translation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;DimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name= …"/>
+      <details key="documentation" value="The CubeDimension complex type defines the dimensions that are part of a cube."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubeDimension"/>
@@ -2070,7 +2070,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//CubeAttribute" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A collection of CubeAttribute objects.The server SHOULD&lt;87> implicitly include any attributes not specified in the collection with their default values."/>
+        <details key="documentation" value="A collection of CubeAttribute objects.The server SHOULD implicitly include any attributes not specified in the collection with their default values."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2084,7 +2084,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="hierarchies" upperBound="-1"
         eType="#//CubeHierarchy" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A collection of CubeHierarchy objects.The server SHOULD&lt;88> implicitly include any hierarchies not specified in the collection with their default values."/>
+        <details key="documentation" value="A collection of CubeHierarchy objects.The server SHOULD implicitly include any hierarchies not specified in the collection with their default values."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2112,7 +2112,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubeDimensionBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CubeDimensionBinding complex type represents a binding to a CubeDimension. &lt;xsd:complexType name=&quot;CubeDimensionBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;CubeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Filter&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The CubeDimensionBinding complex type represents a binding to a CubeDimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubeDimensionBinding"/>
@@ -2164,7 +2164,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubeDimensionPermission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CubeDimensionPermission complex type represents permissions for a CubeDimension. &lt;xsd:complexType name=&quot;CubeDimensionPermission&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Read&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;None&quot; /> &lt;xsd:enumeration value=&quot;Allowed&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Write&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot; …"/>
+      <details key="documentation" value="The CubeDimensionPermission complex type represents permissions for a CubeDimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubeDimensionPermission"/>
@@ -2244,7 +2244,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubeHierarchy">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CubeHierarchy complex type defines details for a hierarchy on a cube. &lt;xsd:complexType name=&quot;CubeHierarchy&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;HierarchyID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;OptimizedState&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;FullyOptimized&quot; /> &lt;xsd:enumeration value=&quot;NotOptimized&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Visible&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Enabled&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexT …"/>
+      <details key="documentation" value="The CubeHierarchy complex type defines details for a hierarchy on a cube."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubeHierarchy"/>
@@ -2309,7 +2309,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CubePermission" eSuperTypes="#//Permission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CubePermission complex type represents permissions for a Cube. &lt;xsd:complexType name=&quot;CubePermission&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Permission&quot;> &lt;xsd:sequence> &lt;!--Extended elements for CubePermission object--> &lt;xsd:element name=&quot;ReadSourceData&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;None&quot; /> &lt;xsd:enumeration value=&quot;Allowed&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;DimensionPermissions&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;DimensionPermission&quot; type=&quot;CubeDimensio …"/>
+      <details key="documentation" value="The CubePermission complex type represents permissions for a Cube."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CubePermission"/>
@@ -2365,7 +2365,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSVTableBinding" eSuperTypes="#//TabularBinding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DSVTableBinding complex type represents a binding to a table within a DataSourceView. &lt;xsd:complexType name=&quot;DSVTableBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;TabularBinding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceViewID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;TableID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element ref=&quot;eng300:DataEmbeddingStyle&quot; minOccurs=&quot;0&quot;/> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType> In the namespace eng300: &lt;xsd:element name =&quot;DataEmbeddingStyle&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Embedd …"/>
+      <details key="documentation" value="The DSVTableBinding complex type represents a binding to a table within a DataSourceView."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DSVTableBinding"/>
@@ -2406,7 +2406,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataBlock">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="DataBlock specifies the binary contents of each block of Assembly code. &lt;xsd:complexType name=&quot;DataBlock&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Block&quot; type=&quot;xsd:base64Binary&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> The following table describes the elements that are included in the XSD schema for DataBlock."/>
+      <details key="documentation" value="DataBlock specifies the binary contents of each block of Assembly code."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DataBlock"/>
@@ -2466,7 +2466,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullProcessing" eType="#//NullProcessingEnum"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Sets the processing of NULL values:&quot;Automatic&quot; – The server determines how null processing is handled.&lt;118> &quot;Automatic&quot; uses the default processing that is appropriate for the element:&quot;UnknownMember&quot; – Generates an unknown member. This value MUST NOT be used if the column is associated with a measure.&quot;ZeroOrBlank&quot; – Converts the null value to zero (for numeric data items) or a blank string (for string data items).&quot;Preserve&quot; – Preserves the null value.&quot;Error&quot; – Raises an error. Value &quot;Error&quot; is not supported for measures. This value MUST NOT be used if the column is associated with a measure."/>
+        <details key="documentation" value="Sets the processing of NULL values:&quot;Automatic&quot; – The server determines how null processing is handled. &quot;Automatic&quot; uses the default processing that is appropriate for the element:&quot;UnknownMember&quot; – Generates an unknown member. This value MUST NOT be used if the column is associated with a measure.&quot;ZeroOrBlank&quot; – Converts the null value to zero (for numeric data items) or a blank string (for string data items).&quot;Preserve&quot; – Preserves the null value.&quot;Error&quot; – Raises an error. Value &quot;Error&quot; is not supported for measures. This value MUST NOT be used if the column is associated with a measure."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2601,7 +2601,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataSource" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DataSource complex type represents a source of data for cubes, dimensions, and mining structures. The following complex types extend this type: RelationalDataSource OlapDataSource &lt;xsd:complexType name=&quot;DataSource&quot; abstract=&quot;true&quot; > &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string …"/>
+      <details key="documentation" value="The DataSource complex type represents a source of data for cubes, dimensions, and mining structures. The following complex types extend this type: RelationalDataSource OlapDataSource"/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DataSource"/>
@@ -2765,7 +2765,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataSourcePermission" eSuperTypes="#//Permission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DataSourcePermission complex type represents permissions for a DataSource. &lt;xsd:complexType name=&quot;DataSourcePermission&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Permission&quot;> &lt;xsd:sequence> &lt;!--Extended elements for DataSourcePermission object--> &lt;xsd:element name=&quot;Write&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;None&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;/xsd:sequence> &lt;/xsd:extension > &lt;/xsd:complexContent> &lt;/xsd:complexType> DataSourcePermission has no elements that are additional to those that are contained in the P …"/>
+      <details key="documentation" value="The DataSourcePermission complex type represents permissions for a DataSource."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DataSourcePermission"/>
@@ -2785,7 +2785,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataSourceView">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DataSourceView complex type represents a view over the schema of a data source. &lt;xsd:complexType name=&quot;DataSourceView&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;MajorObject&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOcc …"/>
+      <details key="documentation" value="The DataSourceView complex type represents a view over the schema of a data source."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DataSourceView"/>
@@ -2851,7 +2851,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataSourceViewBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a DataSourceView. &lt;xsd:complexType name=&quot;DataSourceViewBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceViewID&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a binding to a DataSourceView."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DataSourceViewBinding"/>
@@ -2871,7 +2871,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Database">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Database complex type represents a database. &lt;xsd:complexType name=&quot;Database&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOc …"/>
+      <details key="documentation" value="The Database complex type represents a database."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Database"/>
@@ -3004,7 +3004,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The language code identifier (LCID)&lt;70> of the language to use by default.&lt;71>"/>
+        <details key="documentation" value="The language code identifier (LCID) of the language to use by default."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3277,7 +3277,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compatibilityLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Specifies the compatibility level of the database.&lt;72>"/>
+        <details key="documentation" value="Specifies the compatibility level of the database."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3308,7 +3308,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cryptKeyCreationTS" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//DateTime">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The date that the database encryption key was created or regenerated.&lt;73>"/>
+        <details key="documentation" value="The date that the database encryption key was created or regenerated."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3319,7 +3319,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unicodeCharacterBehavior"
         eType="#//UnicodeCharacterBehaviorEnum">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An enumeration that indicates how strings will be handled by queries. The enumeration values are as follows:CodeUnits – String operations in certain DAX scenarios will not account for Unicode surrogate pairs as the character will be interpreted as two separate code points in this mode.CodePoints – String operations in certain DAX scenarios will account for Unicode surrogate pairs as they will be interpreted as one code point. This mode is available only for databases that have the compatibility level set to 1103 or greater. For more information about surrogate pairs, see [MSLEARN-SSC].&lt;74>"/>
+        <details key="documentation" value="An enumeration that indicates how strings will be handled by queries. The enumeration values are as follows:CodeUnits – String operations in certain DAX scenarios will not account for Unicode surrogate pairs as the character will be interpreted as two separate code points in this mode.CodePoints – String operations in certain DAX scenarios will account for Unicode surrogate pairs as they will be interpreted as one code point. This mode is available only for databases that have the compatibility level set to 1103 or greater. For more information about surrogate pairs, see [MSLEARN-SSC]."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3330,7 +3330,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DatabasePermission" eSuperTypes="#//Permission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DatabasePermission complex type represents permissions for a Database. &lt;xsd:complexType name=&quot;DatabasePermission&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Permission&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Administer&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Write&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;None&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;/xsd:sequence> &lt;/xsd:extension > &lt;/xsd:complexContent> &lt;/xsd:complexType> The following table shows only the additional elements that are not contained in the Permi …"/>
+      <details key="documentation" value="The DatabasePermission complex type represents permissions for a Database."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DatabasePermission"/>
@@ -3416,7 +3416,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dimension">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Dimension complex type represents a dimension object. &lt;xsd:complexType name=&quot;Dimension&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotat …"/>
+      <details key="documentation" value="The Dimension complex type represents a dimension object."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Dimension"/>
@@ -3492,7 +3492,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DimensionTypeEnum"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An enumeration value that provides both the server and client applications with information about the contents of the dimension. Enumeration values can be informative only; however, a server MAY&lt;75> implement behavior for specific enumeration values. The enumeration values are as follows:Regular – The dimension is a regular dimension.Time – The dimension is a time dimension.Geography – The dimension contains geographical information.Organization – The dimension contains organizational information.BillOfMaterials – The dimension contains bill of materials information.Accounts – The dimension co …"/>
+        <details key="documentation" value="An enumeration value that provides both the server and client applications with information about the contents of the dimension. Enumeration values can be informative only; however, a server MAY implement behavior for specific enumeration values. The enumeration values are as follows:Regular – The dimension is a regular dimension.Time – The dimension is a time dimension.Geography – The dimension contains geographical information.Organization – The dimension contains organizational information.BillOfMaterials – The dimension contains bill of materials information.Accounts – The dimension co …"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3600,7 +3600,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use.&lt;76>"/>
+        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3786,7 +3786,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringStoresCompatibilityLevel"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An enumeration value that specifies the string store compatibility level that is instituted the next time the object is processed. The valid values are the following:1050 – Standard string handling.1100 – Enhanced string handling.&lt;77>"/>
+        <details key="documentation" value="An enumeration value that specifies the string store compatibility level that is instituted the next time the object is processed. The valid values are the following:1050 – Standard string handling.1100 – Enhanced string handling."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3808,7 +3808,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DimensionAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DimensionAttribute complex type represents an attribute of a dimension. &lt;xsd:complexType name=&quot;DimensionAttribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Type&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:simpleContent> &lt;xsd:extension base=&quot;DimensionAttributeTypeEnumType&quot;> &lt;xsd:attribute name=&quot;valuens&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value= &quot;http://schemas.microsoft.com/analysisservices/2010/engine/20 …"/>
+      <details key="documentation" value="The DimensionAttribute complex type represents an attribute of a dimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DimensionAttribute"/>
@@ -4230,7 +4230,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="processingState" eType="#//ProcessingStateEnum"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents the processing state of the attribute. For calculated columns, any of the five available enumeration values can appear. Attributes that are not calculated columns can have only the values Processed or Unprocessed.&lt;78>"/>
+        <details key="documentation" value="Represents the processing state of the attribute. For calculated columns, any of the five available enumeration values can appear. Attributes that are not calculated columns can have only the values Processed or Unprocessed."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4241,7 +4241,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeHierarchyProcessingState"
         eType="#//AttributeHierarchyProcessingState" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Represents the processing state of the attribute.&lt;79>"/>
+        <details key="documentation" value="Represents the processing state of the attribute."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4263,7 +4263,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendedType" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="When a client needs to set the Type property of the DimensionAttribute to a value other than one of the enum values (for example, ABC) that is provided by DimensionAttributeTypeEnumType,&lt;80> the client MUST first set the Type property of the DimensionAttribute to ExtendedType and then assign the value (ABC) to the ExtendedType property.&lt;81>"/>
+        <details key="documentation" value="When a client needs to set the Type property of the DimensionAttribute to a value other than one of the enum values (for example, ABC) that is provided by DimensionAttributeTypeEnumType, the client MUST first set the Type property of the DimensionAttribute to ExtendedType and then assign the value (ABC) to the ExtendedType property."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4274,7 +4274,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DimensionBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DimensionBinding complex type represents a binding to a dimension. &lt;xsd:complexType name=&quot;DimensionBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;DimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Persistence&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;NotPersisted&quot; /> &lt;xsd:enumeration value=&quot;Metadata&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;RefreshPolicy&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base= …"/>
+      <details key="documentation" value="The DimensionBinding complex type represents a binding to a dimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DimensionBinding"/>
@@ -4337,7 +4337,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DimensionPermission" eSuperTypes="#//Permission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DimensionPermission complex type represents permissions for a Dimension. &lt;xsd:complexType name=&quot;DimensionPermission&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Permission&quot;> &lt;xsd:sequence> &lt;!--Extended elements for DimensionPermission object--> &lt;xsd:element name=&quot;AttributePermissions&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;AttributePermission&quot; type=&quot;AttributePermission&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Write&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumerat …"/>
+      <details key="documentation" value="The DimensionPermission complex type represents permissions for a Dimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DimensionPermission"/>
@@ -4371,7 +4371,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowedRowsExpression"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This string is to contain a DAX Boolean expression that evaluates to TRUE for the rows in the table that are allowed. This is equivalent to saying that the table expression that returns the allowed rows is FILTER (ALL (Table), AllowedRowsExpression).&lt;121>If the DAX Boolean expression is empty, it is treated as TRUE.If the DAX Boolean expression evaluates to an error, it is treated as FALSE for those rows and permission is not allowed."/>
+        <details key="documentation" value="This string is to contain a DAX Boolean expression that evaluates to TRUE for the rows in the table that are allowed. This is equivalent to saying that the table expression that returns the allowed rows is FILTER (ALL (Table), AllowedRowsExpression).If the DAX Boolean expression is empty, it is treated as TRUE.If the DAX Boolean expression evaluates to an error, it is treated as FALSE for those rows and permission is not allowed."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4382,7 +4382,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DrillThroughAction" eSuperTypes="#//Action">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an action that returns the underlying detail data associated with a cell. DrillThroughAction inherits all elements from Action. &lt;xsd:complexType name=&quot;DrillThroughAction&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Action&quot;> &lt;xsd:all> &lt;!--These elements are inherited from Action--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Caption&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;CaptionIsMdx&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Translations&quot; minOccurs=&quot;0&quot;> &lt;xsd:compl …"/>
+      <details key="documentation" value="This complex type represents an action that returns the underlying detail data associated with a cell. DrillThroughAction inherits all elements from Action."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DrillThroughAction"/>
@@ -4612,7 +4612,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ErrorConfiguration">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ErrorConfiguration complex type represents error configuration settings to deal with issues in the source data. &lt;xsd:complexType name=&quot;ErrorConfiguration&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;KeyErrorLimit&quot; type=&quot;xsd:long&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;KeyErrorLogFile&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;KeyErrorAction&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;ConvertToUnknown&quot; /> &lt;xsd:enumeration value=&quot;DiscardRecord&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;KeyErrorLimitAction&quot; minOccurs=&quot;0 …"/>
+      <details key="documentation" value="The ErrorConfiguration complex type represents error configuration settings to deal with issues in the source data."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ErrorConfiguration"/>
@@ -4718,7 +4718,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Event complex type represents an event that is traced. &lt;xsd:complexType name=&quot;Event&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;EventID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Columns&quot; type=&quot;EventColumnID&quot;/> &lt;/xsd:all> &lt;/xsd:complexType> The following table describes the elements that are included in the XSD schema for Event."/>
+      <details key="documentation" value="The Event complex type represents an event that is traced."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Event"/>
@@ -4749,7 +4749,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventColumnID">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The EventColumnID complex type describes the columns for this Event. &lt;xsd:complexType name=&quot;EventColumnID&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;ColumnID&quot; type=&quot;xsd:string&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> The following table describes the elements that are included in the XSD schema for EventColumnID."/>
+      <details key="documentation" value="The EventColumnID complex type describes the columns for this Event."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="EventColumnID"/>
@@ -4769,7 +4769,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FoldingParameters">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents the folding parameters for a MiningModel.&lt;108> &lt;xsd:complexType name=&quot;FoldingParameters&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;FoldIndex&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;FoldCount&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;FoldMaxCases&quot; type=&quot;xsd:long&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;FoldTargetAttribute&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents the folding parameters for a MiningModel."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="FoldingParameters"/>
@@ -4778,7 +4778,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foldIndex" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An integer that indicates the index of the partition to be used for validating this mining model in a multifold cross-validation procedure.&lt;109>"/>
+        <details key="documentation" value="An integer that indicates the index of the partition to be used for validating this mining model in a multifold cross-validation procedure."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4789,7 +4789,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foldCount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An integer that indicates the number of partitions in the multifold cross-validation procedure.&lt;110>"/>
+        <details key="documentation" value="An integer that indicates the number of partitions in the multifold cross-validation procedure."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4799,7 +4799,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foldMaxCases" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//LongObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An integer value that indicates the maximum number of training cases to be used for cross-validation in this model. This value MUST be a positive integer. A value of 0 indicates that all cases are used.&lt;111>"/>
+        <details key="documentation" value="An integer value that indicates the maximum number of training cases to be used for cross-validation in this model. This value MUST be a positive integer. A value of 0 indicates that all cases are used."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4809,7 +4809,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foldTargetAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string that indicates the ID of the model column that contains the predictable attribute.&lt;112>"/>
+        <details key="documentation" value="A string that indicates the ID of the model column that contains the predictable attribute."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -4820,7 +4820,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Group">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a single group within a UserDefinedGroupBinding. &lt;xsd:complexType name=&quot;Group&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Members&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Member&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a single group within a UserDefinedGroupBinding."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Group"/>
@@ -4853,7 +4853,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hierarchy">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Hierarchy complex type represents a hierarchy in a dimension. &lt;xsd:complexType name=&quot;Hierarchy&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element ref=&quot;eng300:ProcessingState&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element ref=&quot;eng300:StructureType&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;DisplayFolder&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Translations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Translation&quot; type=&quot;Translation&quot; minOc …"/>
+      <details key="documentation" value="The Hierarchy complex type represents a hierarchy in a dimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Hierarchy"/>
@@ -5016,7 +5016,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberKeysUnique" eType="#//MemberKeysUniqueEnum"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Specifies whether member keys are required to be unique.&lt;82>"/>
+        <details key="documentation" value="Specifies whether member keys are required to be unique."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -5027,7 +5027,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImpersonationInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ImpersonationInfo complex type represents impersonation settings for an object or operation. &lt;xsd:complexType name=&quot;ImpersonationInfo&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ImpersonationMode&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Default&quot; /> &lt;xsd:enumeration value=&quot;ImpersonateServiceAccount&quot; /> &lt;xsd:enumeration value=&quot;ImpersonateAnonymous&quot; /> &lt;xsd:enumeration value=&quot;ImpersonateCurrentUser&quot; /> &lt;xsd:enumeration value=&quot;ImpersonateAccount&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Account&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd: …"/>
+      <details key="documentation" value="The ImpersonationInfo complex type represents impersonation settings for an object or operation."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImpersonationInfo"/>
@@ -5036,7 +5036,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="impersonationMode" lowerBound="1"
         eType="#//ImpersonationModeEnum" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string that specifies the credentials to use for impersonation. The enumeration values are as follows:Default - The server uses the impersonation method that it deems to be appropriate for the context in which impersonation is used.ImpersonateServiceAccount - Use the user account that the server is running as.ImpersonateAnonymous - Use the anonymous user account.ImpersonateCurrentUser - Use the user account that the client is connecting as.ImpersonateAccount - Use the specified user account.&lt;124>"/>
+        <details key="documentation" value="A string that specifies the credentials to use for impersonation. The enumeration values are as follows:Default - The server uses the impersonation method that it deems to be appropriate for the context in which impersonation is used.ImpersonateServiceAccount - Use the user account that the server is running as.ImpersonateAnonymous - Use the anonymous user account.ImpersonateCurrentUser - Use the user account that the client is connecting as.ImpersonateAccount - Use the specified user account."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -5078,7 +5078,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IncrementalProcessingNotification">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an incremental processing notification for proactive caching. &lt;xsd:complexType name=&quot;IncrementalProcessingNotification&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;TableID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ProcessingQuery&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents an incremental processing notification for proactive caching."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="IncrementalProcessingNotification"/>
@@ -5115,7 +5115,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Kpi">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Kpi complex type represents a KPI. &lt;xsd:complexType name=&quot;Kpi&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Translations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Translation&quot; type=&quot;Translation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;DisplayFolder&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;AssociatedMeasureGroupID&quot; type=&quot;xsd:string&quot; min …"/>
+      <details key="documentation" value="The Kpi complex type represents a KPI."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Kpi"/>
@@ -5238,7 +5238,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trendGraphic" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The recommended graphic to represent the trend of this KPI.&lt;89>"/>
+        <details key="documentation" value="The recommended graphic to represent the trend of this KPI."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -5248,7 +5248,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="statusGraphic" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The recommended graphic to represent the status of this KPI.&lt;90>"/>
+        <details key="documentation" value="The recommended graphic to represent the status of this KPI."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -5293,7 +5293,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Level">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Level complex type defines a level in a hierarchy. &lt;xsd:complexType name=&quot;Level&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;SourceAttributeID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;HideMemberIf&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Never&quot; /> &lt;xsd:enumeration value=&quot;OnlyChildWithNoName&quot; /> &lt;xsd:enumeration value=&quot;OnlyChildWithParentName&quot; /> &lt;xsd:enumeration value=&quot;NoN …"/>
+      <details key="documentation" value="The Level complex type defines a level in a hierarchy."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Level"/>
@@ -5381,7 +5381,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinguisticSchema">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an Entity.&lt;117> &lt;xsd:complexType name=&quot;EntityType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Words&quot; type=&quot;WordsType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; /> &lt;/xsd:sequence> &lt;xsd:attribute name=&quot;Name&quot; type=&quot;Name&quot; use=&quot;required&quot; /> &lt;xsd:attribute name=&quot;EdmEntitySet&quot; type=&quot;EdmQualifiedName&quot; use=&quot;required&quot; /> &lt;xsd:attribute name=&quot;EdmProperty&quot; type=&quot;EdmSimpleName&quot; use=&quot;optional&quot; /> &lt;/xsd:complexType> &lt;xsd:complexType name=&quot;WordsType&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Word&quot; type=&quot;xsd:token&quot; minOccurs=&quot;1&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents an Entity."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="LinguisticSchema"/>
@@ -5424,7 +5424,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MajorObject">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MajorObject complex type represents a choice between the objects that can be created or altered directly with a Create command or an Alter command. Any of the elements that are available within the xsd:choice element for MajorObject are referred to as &quot;major objects&quot; throughout this document. &lt;xsd:complexType name=&quot;MajorObject&quot;> &lt;xsd:choice> &lt;xsd:element name=&quot;AggregationDesign&quot; type=&quot;AggregationDesign&quot;/> &lt;xsd:element name=&quot;Assembly&quot; type=&quot;Assembly&quot;/> &lt;xsd:element name=&quot;Cube&quot; type=&quot;Cube&quot;/> &lt;xsd:element name=&quot;Database&quot; type=&quot;Database&quot;/> &lt;xsd:element name=&quot;DataSource&quot; type=&quot;DataSource&quot;/> &lt;xs …"/>
+      <details key="documentation" value="The MajorObject complex type represents a choice between the objects that can be created or altered directly with a Create command or an Alter command. Any of the elements that are available within the xsd:choice element for MajorObject are referred to as &quot;major objects&quot; throughout this document."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MajorObject"/>
@@ -5683,7 +5683,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MdxScript">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a script containing MDX calculations. &lt;xsd:complexType name=&quot;MdxScript&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type …"/>
+      <details key="documentation" value="This complex type represents a script containing MDX calculations."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MdxScript"/>
@@ -5776,7 +5776,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Measure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a measure. &lt;xsd:complexType name=&quot;Measure&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;AggregateFunction&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Sum&quot; /> &lt;xsd:enumeration value=&quot;Count&quot; /> &lt;xsd:enumeration value=&quot;Min&quot; /> &lt;xsd:enumeration value=&quot;Max&quot; /> &lt;xsd:enumeration value=&quot;DistinctCount&quot; /> &lt;xsd:enumeration value=&quot;None&quot; /> &lt;xsd:enumeration value=&quot;ByAccount&quot; /> …"/>
+      <details key="documentation" value="This complex type represents a measure."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Measure"/>
@@ -5887,7 +5887,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="backColor" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Specifies the background color of a cell in the red-green-blue (RGB) format.&lt;95>The valid range for an ordinary RGB color is from zero (&amp;H00000000) to 16,777,215 (&amp;H00FFFFFF). The high byte of a number in this range always equals zero. The lower 3 bytes, from least to most significant byte, determine the amount of red, green, and blue, respectively. The red, green, and blue components are each represented by a number between 0 and 255 (&amp;HFF)."/>
+        <details key="documentation" value="Specifies the background color of a cell in the red-green-blue (RGB) format.The valid range for an ordinary RGB color is from zero (&amp;amp;H00000000) to 16,777,215 (&amp;amp;H00FFFFFF). The high byte of a number in this range always equals zero. The lower 3 bytes, from least to most significant byte, determine the amount of red, green, and blue, respectively. The red, green, and blue components are each represented by a number between 0 and 255 (&amp;amp;HFF)."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -5897,7 +5897,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foreColor" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Specifies the foreground color of a cell in the RGB format.&lt;96>The valid range for an ordinary RGB color is from zero (&amp;H00000000) to 16,777,215 (&amp;H00FFFFFF). The high byte of a number in this range always equals zero. The lower 3 bytes, from least to most significant byte, determine the amount of red, green, and blue, respectively. The red, green, and blue components are each represented by a number between 0 and 255 (&amp;HFF)."/>
+        <details key="documentation" value="Specifies the foreground color of a cell in the RGB format.The valid range for an ordinary RGB color is from zero (&amp;amp;H00000000) to 16,777,215 (&amp;amp;H00FFFFFF). The high byte of a number in this range always equals zero. The lower 3 bytes, from least to most significant byte, determine the amount of red, green, and blue, respectively. The red, green, and blue components are each represented by a number between 0 and 255 (&amp;amp;HFF)."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -5966,7 +5966,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a Measure. &lt;xsd:complexType name=&quot;MeasureBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;MeasureID&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a binding to a Measure."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MeasureBinding"/>
@@ -5986,7 +5986,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureGroup">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a measure group in the cube. &lt;xsd:complexType name=&quot;MeasureGroup&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Anno …"/>
+      <details key="documentation" value="This complex type represents a measure group in the cube."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MeasureGroup"/>
@@ -6270,7 +6270,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureGroupAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an attribute in a MeasureGroupDimension. &lt;xsd:complexType name=&quot;MeasureGroupAttribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;KeyColumns&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;KeyColumn&quot; type=&quot;DataItem&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Type&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Regular&quot; /> &lt;xsd:enumeration value=&quot;Granularity&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt; …"/>
+      <details key="documentation" value="This complex type represents an attribute in a MeasureGroupDimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MeasureGroupAttribute"/>
@@ -6329,7 +6329,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureGroupBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MeasureGroupBinding complex type represents a binding to a MeasureGroup. &lt;xsd:complexType name=&quot;MeasureGroupBinding&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;CubeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;MeasureGroupID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Persistence&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;NotPersisted&quot; /> &lt;xsd:enumeration value=&quot;Metadata&quot; /> &lt;xsd:enumeration value=&quot;All&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element …"/>
+      <details key="documentation" value="The MeasureGroupBinding complex type represents a binding to a MeasureGroup."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MeasureGroupBinding"/>
@@ -6413,7 +6413,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureGroupDimension" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents the relationship between a CubeDimension and a MeasureGroup. MeasureGroupDimension is an abstract class and has derived types for different MeasureGroupDimension types. An XML instance always has one of the derived types. This section does not include the common elements in the XSD; those elements are included within the XSDs for the derived types. However, the table in this section includes the common elements, and those common elements are not included in the tables for the derived types. &lt;xsd:complexType name=&quot;MeasureGroupDimension&quot; abstract=&quot;true&quot; />"/>
+      <details key="documentation" value="This complex type represents the relationship between a CubeDimension and a MeasureGroup. MeasureGroupDimension is an abstract class and has derived types for different MeasureGroupDimension types. An XML instance always has one of the derived types. This section does not include the common elements in the XSD; those elements are included within the XSDs for the derived types. However, the table in this section includes the common elements, and those common elements are not included in the tables for the derived types."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MeasureGroupDimension"/>
@@ -6422,7 +6422,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MeasureGroupDimensionBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MeasureGroupDimensionBinding complex type represents a binding to a MeasureGroupDimension. &lt;xsd:complexType name=&quot;MeasureGroupDimensionBinding&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:extension > &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The MeasureGroupDimensionBinding complex type represents a binding to a MeasureGroupDimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MeasureGroupDimensionBinding"/>
@@ -6442,7 +6442,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Member">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Member complex type represents a member in a role. &lt;xsd:complexType name=&quot;Member&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; minOccurs=&quot;0&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Sid&quot; minOccurs=&quot;0&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Member complex type represents a member in a role."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Member"/>
@@ -6471,7 +6471,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiningModel">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type MAY&lt;101> represent a mining model. &lt;xsd:complexType name=&quot;MiningModel&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation …"/>
+      <details key="documentation" value="This complex type MAY represent a mining model."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MiningModel"/>
@@ -6526,7 +6526,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" lowerBound="1"
         eType="#//AlgorithmEnum" unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The protocol does not require any particular algorithms to be supported, and each server developer can support whichever algorithms he or she chooses to support.&lt;102>"/>
+        <details key="documentation" value="The protocol does not require any particular algorithms to be supported, and each server developer can support whichever algorithms he or she chooses to support."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -6610,7 +6610,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="foldingParameters" eType="#//FoldingParameters"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An object of type FoldingParameters. Describes a fold (a partition of the training data) to be used for training this mining model. Used only as part of the multifold cross-validation procedure.&lt;103>"/>
+        <details key="documentation" value="An object of type FoldingParameters. Describes a fold (a partition of the training data) to be used for training this mining model. Used only as part of the multifold cross-validation procedure."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -6620,7 +6620,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DMX filter statement to be applied to training data for models that are trained only on a part of a structure's data. An empty string or missing element implies no filter.&lt;104>"/>
+        <details key="documentation" value="The DMX filter statement to be applied to training data for models that are trained only on a part of a structure's data. An empty string or missing element implies no filter."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -6665,7 +6665,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiningModelColumn">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a column in a MiningModel. &lt;xsd:complexType name=&quot;MiningModelColumn&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;SourceColumnID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Usage&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Key&quot; /> &lt;xsd:enumeration value=&quot;Input&quot; /> &lt;xsd:enumeration value=&quot;Predict&quot; /> &lt;xsd:enumeration value=&quot;PredictOnly&quot; /> &lt;/xsd:restriction> &lt;/xsd:simple …"/>
+      <details key="documentation" value="This complex type represents a column in a MiningModel."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MiningModelColumn"/>
@@ -6725,7 +6725,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filter" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string that contains a valid DMX filter to be applied to nested table columns. An empty string or missing element implies no filter. This element is empty for non-table columns.&lt;107>"/>
+        <details key="documentation" value="A string that contains a valid DMX filter to be applied to nested table columns. An empty string or missing element implies no filter. This element is empty for non-table columns."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -6792,7 +6792,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiningModelPermission" eSuperTypes="#//Permission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MiningModelPermission complex type MAY&lt;123> represent permissions for a MiningModel. &lt;xsd:complexType name=&quot;MiningModelPermission&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Permission&quot;> &lt;xsd:sequence> &lt;!--Extended elements for MiningModelPermission object--> &lt;xsd:element name=&quot;AllowDrillThrough&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;AllowBrowsing&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Write&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;None&quot; /> &lt;xsd:enumeration value=&quot;Allowed&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpl …"/>
+      <details key="documentation" value="The MiningModelPermission complex type MAY represent permissions for a MiningModel."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MiningModelPermission"/>
@@ -6832,7 +6832,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiningModelingFlag">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a flag for a MiningModel algorithm. The flags that can be accepted depend upon the algorithm used in the MiningModel. &lt;xsd:complexType name=&quot;MiningModelingFlag&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ModelingFlag&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a flag for a MiningModel algorithm. The flags that can be accepted depend upon the algorithm used in the MiningModel."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MiningModelingFlag"/>
@@ -6841,7 +6841,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelingFlag" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A flag that is passed to a mining model algorithm. The form and content of flags is specific to each algorithm. Each ModelingFlag needs to be valid for the algorithm chosen.&lt;105> Server vendors can define flags that support their algorithms."/>
+        <details key="documentation" value="A flag that is passed to a mining model algorithm. The form and content of flags is specific to each algorithm. Each ModelingFlag needs to be valid for the algorithm chosen. Server vendors can define flags that support their algorithms."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -6852,7 +6852,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiningStructure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type MAY&lt;99> represent a mining structure. &lt;xsd:complexType name=&quot;MiningStructure&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Ann …"/>
+      <details key="documentation" value="This complex type MAY represent a mining structure."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MiningStructure"/>
@@ -6941,7 +6941,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use.&lt;100>"/>
+        <details key="documentation" value="The LCID of the language to use by default. See [MS-LCID] for information about LCIDs. If empty, the server will determine the language to use."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -7077,7 +7077,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiningStructureColumn" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a column in a MiningStructure. This is an abstract type for the ScalarMiningStructureColumn and TableMiningStructureColumn derived types. The XSD in this section has no elements because the derived classes contain the XSD for the elements. However, the common elements to all derived classes are documented in the following table. &lt;xsd:complexType name=&quot;MiningStructureColumn&quot; abstract=&quot;true&quot; />"/>
+      <details key="documentation" value="This complex type represents a column in a MiningStructure. This is an abstract type for the ScalarMiningStructureColumn and TableMiningStructureColumn derived types. The XSD in this section has no elements because the derived classes contain the XSD for the elements. However, the common elements to all derived classes are documented in the following table."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MiningStructureColumn"/>
@@ -7086,7 +7086,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MiningStructurePermission" eSuperTypes="#//Permission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MiningStructurePermission complex type MAY&lt;122> represent permissions for a MiningStructure. &lt;xsd:complexType name=&quot;MiningStructurePermission&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Permission&quot;> &lt;xsd:sequence> &lt;!--Extended elements for MiningStructurePermission object--> &lt;xsd:element name=&quot;AllowDrillThrough&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Write&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;None&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;/xsd:sequence> &lt;/xsd:extension > &lt;/xsd:complexContent> &lt;/xsd:compl …"/>
+      <details key="documentation" value="The MiningStructurePermission complex type MAY represent permissions for a MiningStructure."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MiningStructurePermission"/>
@@ -7122,7 +7122,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Partition">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Partition complex type represents a partition of a measure group. &lt;xsd:complexType name=&quot;Partition&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; t …"/>
+      <details key="documentation" value="The Partition complex type represents a partition of a measure group."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Partition"/>
@@ -7380,7 +7380,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringStoresCompatibilityLevel"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//IntObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An enumeration value that specifies the string store compatibility level that will be instituted the next time the object is processed. The valid values are the following:1050 – Standard string handling.1100 – Enhanced string handling.&lt;97>"/>
+        <details key="documentation" value="An enumeration value that specifies the string store compatibility level that will be instituted the next time the object is processed. The valid values are the following:1050 – Standard string handling.1100 – Enhanced string handling."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -7413,7 +7413,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Permission">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Permission complex type represents a set of permissions assigned to a Role. &lt;xsd:complexType name=&quot;Permission&quot;> &lt;xsd:sequence> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element nam …"/>
+      <details key="documentation" value="The Permission complex type represents a set of permissions assigned to a Role."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Permission"/>
@@ -7500,7 +7500,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="read" eType="#//ReadWritePermissionEnum"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string that specifies whether the role has permission to read metadata or data from the object or any of its contained objects.&quot;None&quot; implies no read access to object metadata or data.&lt;120>&quot;Allowed&quot; implies full read access to object metadata or data."/>
+        <details key="documentation" value="A string that specifies whether the role has permission to read metadata or data from the object or any of its contained objects.&quot;None&quot; implies no read access to object metadata or data.&quot;Allowed&quot; implies full read access to object metadata or data."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -7511,7 +7511,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Perspective">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a perspective of a cube. &lt;xsd:complexType name=&quot;Perspective&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotatio …"/>
+      <details key="documentation" value="This complex type represents a perspective of a cube."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Perspective"/>
@@ -7660,7 +7660,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveAction">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an Action in a Perspective. &lt;xsd:complexType name=&quot;PerspectiveAction&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ActionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents an Action in a Perspective."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveAction"/>
@@ -7694,7 +7694,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an attribute in a PerspectiveDimension. &lt;xsd:complexType name=&quot;PerspectiveAttribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;AttributeHierarchyVisible&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;DefaultMember&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents an attribute in a PerspectiveDimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveAttribute"/>
@@ -7724,7 +7724,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultMember" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An MDX expression specifying the default member for this attribute.&lt;98>"/>
+        <details key="documentation" value="An MDX expression specifying the default member for this attribute."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -7749,7 +7749,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveCalculation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a calculation in a Perspective. &lt;xsd:complexType name=&quot;PerspectiveCalculation&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Type&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Member&quot; /> &lt;xsd:enumeration value=&quot;Set&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:co …"/>
+      <details key="documentation" value="This complex type represents a calculation in a Perspective."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveCalculation"/>
@@ -7793,7 +7793,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveDimension">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a CubeDimension in a Perspective. &lt;xsd:complexType name=&quot;PerspectiveDimension&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Attributes&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Attribute&quot; type=&quot;PerspectiveAttribute&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Hierarchies&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Hierarchy&quot; type=&quot;PerspectiveHierarchy&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:co …"/>
+      <details key="documentation" value="This complex type represents a CubeDimension in a Perspective."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveDimension"/>
@@ -7855,7 +7855,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveHierarchy">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a hierarchy in a PerspectiveDimension. &lt;xsd:complexType name=&quot;PerspectiveHierarchy&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;HierarchyID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a hierarchy in a PerspectiveDimension."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveHierarchy"/>
@@ -7889,7 +7889,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveKpi">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a KPI in a Perspective. &lt;xsd:complexType name=&quot;PerspectiveKpi&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;KpiID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a KPI in a Perspective."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveKpi"/>
@@ -7922,7 +7922,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveMeasure">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a measure in a PerspectiveMeasureGroup. &lt;xsd:complexType name=&quot;PerspectiveMeasure&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;MeasureID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a measure in a PerspectiveMeasureGroup."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveMeasure"/>
@@ -7956,7 +7956,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PerspectiveMeasureGroup">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a measure group in a Perspective. &lt;xsd:complexType name=&quot;PerspectiveMeasureGroup&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;MeasureGroupID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Measures&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Measure&quot; type=&quot;PerspectiveMeasure&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/ …"/>
+      <details key="documentation" value="This complex type represents a measure group in a Perspective."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PerspectiveMeasureGroup"/>
@@ -8004,7 +8004,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProactiveCaching">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ProactiveCaching complex type represents proactive caching settings for an object. &lt;xsd:complexType name=&quot;ProactiveCaching&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;OnlineMode&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;Immediate&quot; /> &lt;xsd:enumeration value=&quot;OnCacheComplete&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;AggregationStorage&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;Regular&quot; /> &lt;xsd:enumeration value=&quot;MolapOnly&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:elem …"/>
+      <details key="documentation" value="The ProactiveCaching complex type represents proactive caching settings for an object."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ProactiveCaching"/>
@@ -8104,7 +8104,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProactiveCachingIncrementalProcessingBinding"
       eSuperTypes="#//ProactiveCachingBinding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a collection of incremental processing notifications for proactive caching. &lt;xsd:complexType name=&quot;ProactiveCachingIncrementalProcessingBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;ProactiveCachingBinding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;RefreshInterval&quot; type=&quot;xsd:duration&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;IncrementalProcessingNotifications&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;IncrementalProcessingNotification&quot; type=&quot;IncrementalProcessingNotification&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/ …"/>
+      <details key="documentation" value="This complex type represents a binding to a collection of incremental processing notifications for proactive caching."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ProactiveCachingIncrementalProcessingBinding"/>
@@ -8155,7 +8155,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProactiveCachingObjectNotificationBinding"
       abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ProactiveCachingObjectNotificationBinding abstract complex type represents an object notification binding for proactive caching. The XSD does not show the elements for this class; instead the XSD of each derived class shows the elements. However, the elements that are common to all derived classes are shown in the table. &lt;xsd:complexType name=&quot;ProactiveCachingObjectNotificationBinding&quot; abstract=&quot;true&quot; />"/>
+      <details key="documentation" value="The ProactiveCachingObjectNotificationBinding abstract complex type represents an object notification binding for proactive caching. The XSD does not show the elements for this class; instead the XSD of each derived class shows the elements. However, the elements that are common to all derived classes are shown in the table."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ProactiveCachingObjectNotificationBinding"/>
@@ -8164,7 +8164,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProactiveCachingQueryBinding" eSuperTypes="#//ProactiveCachingBinding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ProactiveCachingQueryBinding complex type represents a binding to a collection of query notifications for proactive caching. The base type has no elements. Therefore, all elements are defined in the following XSD and table. &lt;xsd:complexType name=&quot;ProactiveCachingQueryBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;ProactiveCachingBinding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;RefreshInterval&quot; type=&quot;xsd:duration&quot; /> &lt;xsd:element name=&quot;QueryNotifications&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;QueryNotification&quot; type=&quot;QueryNotification&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd …"/>
+      <details key="documentation" value="The ProactiveCachingQueryBinding complex type represents a binding to a collection of query notifications for proactive caching. The base type has no elements. Therefore, all elements are defined in the following XSD and table."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ProactiveCachingQueryBinding"/>
@@ -8263,7 +8263,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QueryBinding" eSuperTypes="#//TabularBinding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The QueryBinding complex type represents a binding to a query. &lt;xsd:complexType name=&quot;QueryBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;TabularBinding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;QueryDefinition&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The QueryBinding complex type represents a binding to a query."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="QueryBinding"/>
@@ -8293,7 +8293,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QueryNotification">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The QueryNotification complex type represents a query notification for proactive caching. &lt;xsd:complexType name=&quot;QueryNotification&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Query&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The QueryNotification complex type represents a query notification for proactive caching."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="QueryNotification"/>
@@ -8401,7 +8401,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegularMeasureGroupDimension" eSuperTypes="#//MeasureGroupDimension">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a direct many-to-one or one-to-one relationship between a CubeDimension and a MeasureGroup. The XSD is complete for this class and includes all elements from the base class and the derived class. The table includes only additional elements in the derived class. &lt;xsd:complexType name=&quot;RegularMeasureGroupDimension&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;MeasureGroupDimension&quot;> &lt;xsd:all> &lt;!--These elements are inherited from MeasureGroupDimension--> &lt;xsd:element name=&quot;CubeDimensionID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexT …"/>
+      <details key="documentation" value="This complex type represents a direct many-to-one or one-to-one relationship between a CubeDimension and a MeasureGroup. The XSD is complete for this class and includes all elements from the base class and the derived class. The table includes only additional elements in the derived class."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="RegularMeasureGroupDimension"/>
@@ -8457,7 +8457,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//MeasureGroupAttribute" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A collection of MeasureGroupAttribute objects. Exactly one granularity attribute MUST be defined for a Regular Measure Group. Additional attributes can be included in the collection if they are not granularity attributes. The server SHOULD&lt;94> implicitly add any attribute that is not specified in the collection with the default element values."/>
+        <details key="documentation" value="A collection of MeasureGroupAttribute objects. Exactly one granularity attribute MUST be defined for a Regular Measure Group. Additional attributes can be included in the collection if they are not granularity attributes. The server SHOULD implicitly add any attribute that is not specified in the collection with the default element values."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -8477,7 +8477,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReportAction" eSuperTypes="#//Action">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents an action that invokes a report. ReportAction extends Action, and includes all the elements in Action. The XSD includes all the elements from the base class and the additional elements in the derived class. &lt;xsd:complexType name=&quot;ReportAction&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Action&quot;> &lt;xsd:all> &lt;!--These elements are inherited from Action--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Caption&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;CaptionIsMdx&quot; type=&quot;xsd:boolean&quot; m …"/>
+      <details key="documentation" value="This complex type represents an action that invokes a report. ReportAction extends Action, and includes all the elements in Action. The XSD includes all the elements from the base class and the additional elements in the derived class."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ReportAction"/>
@@ -8676,7 +8676,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReportFormatParameter">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ReportFormatParameter complex type specifies a parameter for formatting a report. &lt;xsd:complexType name=&quot;ReportFormatParameter&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Value&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The ReportFormatParameter complex type specifies a parameter for formatting a report."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ReportFormatParameter"/>
@@ -8705,7 +8705,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReportParameter">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Each ReportParameter is a name-value pair. As a collection, it is the parameters needed for a report. &lt;xsd:complexType name=&quot;ReportParameter&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Value&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="Each ReportParameter is a name-value pair. As a collection, it is the parameters needed for a report."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ReportParameter"/>
@@ -8734,7 +8734,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Role">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Role complex type represents a role for which permissions can be assigned. &lt;xsd:complexType name=&quot;Role&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotatio …"/>
+      <details key="documentation" value="The Role complex type represents a role for which permissions can be assigned."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Role"/>
@@ -8803,7 +8803,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RowBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to the rows of a table. &lt;xsd:complexType name=&quot;RowBinding&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;TableID&quot; type=&quot;xsd:string&quot;/> &lt;/xsd:all> &lt;/xsd:extension > &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a binding to the rows of a table."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="RowBinding"/>
@@ -8823,7 +8823,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScalarMiningStructureColumn" eSuperTypes="#//MiningStructureColumn">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a scalar column in the MiningStructure. ScalarMiningStructureColumn extends the base class MiningStructureColumn. &lt;xsd:complexType name=&quot;ScalarMiningStructureColumn&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Type&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Long&quot; /> &lt;xsd:enumeration value=&quot;Boolean&quot; /> &lt;xsd:enumeration value=&quot;Text&quot; /> &lt;xsd:enumeration value=&quot;Double&quot; /> &lt;xsd:enu …"/>
+      <details key="documentation" value="This complex type represents a scalar column in the MiningStructure. ScalarMiningStructureColumn extends the base class MiningStructureColumn."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ScalarMiningStructureColumn"/>
@@ -9017,7 +9017,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Server">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a Server instance. This protocol does not allow for the creation or deletion of the Server object. &lt;xsd:complexType name=&quot;Server&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot; > &lt;xsd:compl …"/>
+      <details key="documentation" value="This complex type represents a Server instance. This protocol does not allow for the creation or deletion of the Server object."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Server"/>
@@ -9092,7 +9092,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="editionID" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//LongObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The ID for the edition.&lt;56>"/>
+        <details key="documentation" value="The ID for the edition."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -9102,7 +9102,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The product version.&lt;57>"/>
+        <details key="documentation" value="The product version."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -9237,7 +9237,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServerProperty">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A ServerProperty is a name-value pair that contains values for setting server properties.&lt;58> &lt;xsd:complexType name=&quot;ServerProperty&quot; > &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Value&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;RequiresRestart&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;PendingValue&quot; type=&quot;xsd:anySimpleType&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;DefaultValue&quot; type=&quot;xsd:anySimpleType&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;DisplayFlag&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Type&quot; minOccurs=&quot;0&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/ …"/>
+      <details key="documentation" value="A ServerProperty is a name-value pair that contains values for setting server properties."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ServerProperty"/>
@@ -9316,7 +9316,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardAction" eSuperTypes="#//Action">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a standard action. The StandardAction type extends the Action type and includes all elements of Action. The XSD includes all the elements from the base class and the additional elements in the derived class. &lt;xsd:complexType name=&quot;StandardAction&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Action&quot;> &lt;xsd:all> &lt;!--These elements are inherited from Action--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Caption&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;CaptionIsMdx&quot; type=&quot;xsd:boolean …"/>
+      <details key="documentation" value="This complex type represents a standard action. The StandardAction type extends the Action type and includes all elements of Action. The XSD includes all the elements from the base class and the additional elements in the derived class."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="StandardAction"/>
@@ -9477,7 +9477,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableBinding" eSuperTypes="#//TabularBinding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The TableBinding complex type represents a binding to a table. &lt;xsd:complexType name=&quot;TableBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;TabularBinding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;DbTableName&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;DbSchemaName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The TableBinding complex type represents a binding to a table."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TableBinding"/>
@@ -9517,7 +9517,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableMiningStructureColumn" eSuperTypes="#//MiningStructureColumn">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a nested table column in the MiningStructure. TableMiningStructureColumn extends MiningStructureColumn. &lt;xsd:complexType name=&quot;TableMiningStructureColumn&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ForeignKeyColumns&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;ForeignKeyColumn&quot; type=&quot;DataItem&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;SourceMeasureGroup&quot; type=&quot;MeasureGroupBinding&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Columns&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot; …"/>
+      <details key="documentation" value="This complex type represents a nested table column in the MiningStructure. TableMiningStructureColumn extends MiningStructureColumn."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TableMiningStructureColumn"/>
@@ -9579,7 +9579,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableNotification">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The TableNotification complex type represents a table notification for proactive caching. &lt;xsd:complexType name=&quot;TableNotification&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DbTableName&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;DbSchemaName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The TableNotification complex type represents a table notification for proactive caching."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TableNotification"/>
@@ -9621,7 +9621,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The TimeBinding complex type represents a binding to a time calendar. &lt;xsd:complexType name=&quot;TimeBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;CalendarStartDate&quot; type=&quot;xsd:dateTime&quot;/> &lt;xsd:element name=&quot;CalendarEndDate&quot; type=&quot;xsd:dateTime&quot;/> &lt;xsd:element name=&quot;FirstDayOfWeek &quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:integer&quot;> &lt;xsd:minInclusive value=&quot;1&quot; /> &lt;xsd:maxInclusive value=&quot;7&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;CalendarLanguage&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Fi …"/>
+      <details key="documentation" value="The TimeBinding complex type represents a binding to a time calendar."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TimeBinding"/>
@@ -9769,7 +9769,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Trace">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Trace complex type represents a trace object. A trace consists of a set of server events that a client can subscribe to by using the Subscribe command. &lt;xsd:complexType name=&quot;Trace&quot;> &lt;xsd:all> &lt;!--These elements are common to each MajorObject--> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CreatedTimestamp&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;LastSchemaUpdate&quot; type=&quot;xsd:dateTime&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Annotations&quot; …"/>
+      <details key="documentation" value="The Trace complex type represents a trace object. A trace consists of a set of server events that a client can subscribe to by using the Subscribe command."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Trace"/>
@@ -9843,7 +9843,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logFileSize" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//LongObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An integer that sets maximum file size in MB. If zero or negative, it means no maximum size.&lt;59>"/>
+        <details key="documentation" value="An integer that sets maximum file size in MB. If zero or negative, it means no maximum size."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -9894,7 +9894,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//TraceFilter"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A complex XML type that specifies a logical condition that will determine whether the event is included in Trace output.&lt;60>"/>
+        <details key="documentation" value="A complex XML type that specifies a logical condition that will determine whether the event is included in Trace output."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -10007,7 +10007,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Translation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a translation of an object in a specific language. &lt;xsd:complexType name=&quot;Translation&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Language&quot; type=&quot;xsd:unsignedInt&quot;/> &lt;xsd:element name=&quot;Caption&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;DisplayFolder&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Annotations&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Annotation&quot; type=&quot;Annotation&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd: …"/>
+      <details key="documentation" value="This complex type represents a translation of an object in a specific language."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Translation"/>
@@ -10071,7 +10071,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserDefinedGroupBinding" eSuperTypes="#//Binding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a grouping of members from another DimensionAttribute. &lt;xsd:complexType name=&quot;UserDefinedGroupBinding&quot; > &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeID&quot; type=&quot;xsd:string&quot;/> &lt;xsd:element name=&quot;Groups&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Group&quot; type=&quot;Group&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a binding to a grouping of members from another DimensionAttribute."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="UserDefinedGroupBinding"/>
@@ -11684,7 +11684,7 @@
     </eAnnotations>
     <eLiterals name="AUTOMATIC" literal="Automatic">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The server determines how null processing is handled.&lt;118> &quot;Automatic&quot; uses the default processing that is appropriate for the element:."/>
+        <details key="documentation" value="The server determines how null processing is handled. &quot;Automatic&quot; uses the default processing that is appropriate for the element:."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="UNKNOWN_MEMBER" value="1" literal="UnknownMember">
@@ -12057,13 +12057,13 @@
     </eLiterals>
     <eLiterals name="CODE_POINTS" value="1" literal="CodePoints">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="String operations in certain DAX scenarios will account for Unicode surrogate pairs as they will be interpreted as one code point. This mode is available only for databases that have the compatibility level set to 1103 or greater. For more information about surrogate pairs, see [MSLEARN-SSC].&lt;74>."/>
+        <details key="documentation" value="String operations in certain DAX scenarios will account for Unicode surrogate pairs as they will be interpreted as one code point. This mode is available only for databases that have the compatibility level set to 1103 or greater. For more information about surrogate pairs, see [MSLEARN-SSC]."/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MdxScriptCommand">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Export command&lt;394> writes import data to a Delta table in OneLake. &lt;xsd:complexType name=&quot;Export&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Layout&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;Delta&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Type&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;Full&quot; /> &lt;xsd:enumeration value=&quot;Incremental&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The …"/>
+      <details key="documentation" value="The Export command writes import data to a Delta table in OneLake."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Command"/>
@@ -12801,7 +12801,7 @@
     </eLiterals>
     <eLiterals name="IMPERSONATE_ACCOUNT" value="4" literal="ImpersonateAccount">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Use the specified user account.&lt;124>."/>
+        <details key="documentation" value="Use the specified user account."/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>

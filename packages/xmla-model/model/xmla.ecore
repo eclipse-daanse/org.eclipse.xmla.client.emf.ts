@@ -158,7 +158,7 @@
     </eLiterals>
     <eLiterals name="DISCOVER_CSDL_METADATA" value="29" literal="DISCOVER_CSDL_METADATA">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_CSDL_METADATA&lt;355> schema rowset returns information about database metadata for in-memory databases. When the Perspectives restriction is included in DISCOVER_CSDL_METADATA, the output, which is the XML documented in [MS-CSDLBI], SHOULD&lt;356> include the objects that are not part of the perspectives in the XML output, and these objects SHOULD be marked as hidden."/>
+        <details key="documentation" value="The DISCOVER_CSDL_METADATA schema rowset returns information about database metadata for in-memory databases. When the Perspectives restriction is included in DISCOVER_CSDL_METADATA, the output, which is the XML documented in [MS-CSDLBI], SHOULD include the objects that are not part of the perspectives in the XML output, and these objects SHOULD be marked as hidden."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_TRACES" value="30" literal="DISCOVER_TRACES">
@@ -258,17 +258,17 @@
     </eLiterals>
     <eLiterals name="DISCOVER_STORAGE_TABLES" value="49" literal="DISCOVER_STORAGE_TABLES">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset returns statistics about in-memory tables available to the server.&lt;332>"/>
+        <details key="documentation" value="This schema rowset returns statistics about in-memory tables available to the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_STORAGE_TABLE_COLUMNS" value="50" literal="DISCOVER_STORAGE_TABLE_COLUMNS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset contains information about the columns used for representing the columns of an in-memory table.&lt;337>"/>
+        <details key="documentation" value="This schema rowset contains information about the columns used for representing the columns of an in-memory table."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS" value="51" literal="DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS schema rowset returns information about the column segments used for storing data for in-memory tables.&lt;347>"/>
+        <details key="documentation" value="The DISCOVER_STORAGE_TABLE_COLUMN_SEGMENTS schema rowset returns information about the column segments used for storing data for in-memory tables."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_PARTITION_DIMENSION_STAT" value="52" literal="DISCOVER_PARTITION_DIMENSION_STAT">
@@ -288,107 +288,107 @@
     </eLiterals>
     <eLiterals name="DISCOVER_CALC_DEPENDENCY" value="55" literal="DISCOVER_CALC_DEPENDENCY">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_CALC_DEPENDENCY&lt;360> schema rowset returns information about the calculation dependency for an object that is specified in a Tabular database or in a DAX query that is executed against a Tabular database. For more information about Tabular databases at compatibility levels equal to or greater than 1200, see [MS-SSAS-T]."/>
+        <details key="documentation" value="The DISCOVER_CALC_DEPENDENCY schema rowset returns information about the calculation dependency for an object that is specified in a Tabular database or in a DAX query that is executed against a Tabular database. For more information about Tabular databases at compatibility levels equal to or greater than 1200, see [MS-SSAS-T]."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_RING_BUFFERS" value="56" literal="DISCOVER_RING_BUFFERS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_RING_BUFFERS schema rowset SHOULD&lt;367> return information about the current XEvent ring buffers on the server."/>
+        <details key="documentation" value="The DISCOVER_RING_BUFFERS schema rowset SHOULD return information about the current XEvent ring buffers on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_XEVENT_TRACE_DEFINITION" value="57" literal="DISCOVER_XEVENT_TRACE_DEFINITION">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_XEVENT_TRACE_DEFINITION schema rowset SHOULD&lt;368> provide information about the XEvent traces that are currently active on the server."/>
+        <details key="documentation" value="The DISCOVER_XEVENT_TRACE_DEFINITION schema rowset SHOULD provide information about the XEvent traces that are currently active on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_XEVENT_PACKAGES" value="58" literal="DISCOVER_XEVENT_PACKAGES">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_XEVENT_PACKAGES schema rowset SHOULD&lt;369> provide information about the XEvent packages that are defined on the server."/>
+        <details key="documentation" value="The DISCOVER_XEVENT_PACKAGES schema rowset SHOULD provide information about the XEvent packages that are defined on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_XEVENT_OBJECTS" value="59" literal="DISCOVER_XEVENT_OBJECTS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_XEVENT_OBJECTS schema rowset SHOULD&lt;370> provide information about the XEvent objects that are defined on the server."/>
+        <details key="documentation" value="The DISCOVER_XEVENT_OBJECTS schema rowset SHOULD provide information about the XEvent objects that are defined on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_XEVENT_OBJECT_COLUMNS" value="60" literal="DISCOVER_XEVENT_OBJECT_COLUMNS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_XEVENT_OBJECT_COLUMNS schema rowset SHOULD&lt;371> provide information about the schema of XEvent objects that are defined on the server."/>
+        <details key="documentation" value="The DISCOVER_XEVENT_OBJECT_COLUMNS schema rowset SHOULD provide information about the schema of XEvent objects that are defined on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_XEVENT_SESSIONS" value="61" literal="DISCOVER_XEVENT_SESSIONS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_XEVENT_SESSIONS schema rowset SHOULD&lt;372> provide information about the current XEvent sessions on the server."/>
+        <details key="documentation" value="The DISCOVER_XEVENT_SESSIONS schema rowset SHOULD provide information about the current XEvent sessions on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_XEVENT_SESSION_TARGETS" value="62" literal="DISCOVER_XEVENT_SESSION_TARGETS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_XEVENT_SESSION_TARGETS schema rowset SHOULD&lt;373> provide information about the current XEvent session targets on the server."/>
+        <details key="documentation" value="The DISCOVER_XEVENT_SESSION_TARGETS schema rowset SHOULD provide information about the current XEvent session targets on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_MEM_STATS" value="63" literal="DISCOVER_MEM_STATS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_MEM_STATS schema rowset SHOULD&lt;374> provide fine-grained information about all the memory trackers that are active on the server."/>
+        <details key="documentation" value="The DISCOVER_MEM_STATS schema rowset SHOULD provide fine-grained information about all the memory trackers that are active on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_DB_MEM_STATS" value="64" literal="DISCOVER_DB_MEM_STATS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_DB_MEM_STATS schema rowset SHOULD&lt;377> provide coarse-grained information about the memory trackers that are active on the server. The data is aggregated at the database and system level."/>
+        <details key="documentation" value="The DISCOVER_DB_MEM_STATS schema rowset SHOULD provide coarse-grained information about the memory trackers that are active on the server. The data is aggregated at the database and system level."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DISCOVER_OBJECT_COUNTERS" value="65" literal="DISCOVER_OBJECT_COUNTERS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DISCOVER_OBJECT_COUNTERS schema rowset SHOULD&lt;379> return coarse-grained information about the number of in-memory objects of the specified class that are cached in engine memory. This rowset is intended for diagnostic investigations only."/>
+        <details key="documentation" value="The DISCOVER_OBJECT_COUNTERS schema rowset SHOULD return coarse-grained information about the number of in-memory objects of the specified class that are cached in engine memory. This rowset is intended for diagnostic investigations only."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_SERVICES" value="66" literal="DMSCHEMA_MINING_SERVICES">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;266> provide information about each data mining algorithm that the server supports."/>
+        <details key="documentation" value="This schema rowset MAY provide information about each data mining algorithm that the server supports."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_SERVICE_PARAMETERS" value="67" literal="DMSCHEMA_MINING_SERVICE_PARAMETERS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;271> provide a list of parameters that can be used to configure the behavior of each data mining algorithm that is installed on the server."/>
+        <details key="documentation" value="This schema rowset MAY provide a list of parameters that can be used to configure the behavior of each data mining algorithm that is installed on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_FUNCTIONS" value="68" literal="DMSCHEMA_MINING_FUNCTIONS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;272> describe the data mining functions that are supported by the data mining algorithms that are available on a server that is running Analysis Services."/>
+        <details key="documentation" value="This schema rowset MAY describe the data mining functions that are supported by the data mining algorithms that are available on a server that is running Analysis Services."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_MODEL_CONTENT" value="69" literal="DMSCHEMA_MINING_MODEL_CONTENT">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;273> enable the client application to browse the content of a trained data mining model."/>
+        <details key="documentation" value="This schema rowset MAY enable the client application to browse the content of a trained data mining model."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_MODEL_XML" value="70" literal="DMSCHEMA_MINING_MODEL_XML">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The DMSCHEMA_MINING_MODEL_XML schema rowset MAY&lt;280> return the XML structure of the mining model. The format of the XML string follows the PMML 2.1 standard.&lt;281>"/>
+        <details key="documentation" value="The DMSCHEMA_MINING_MODEL_XML schema rowset MAY return the XML structure of the mining model. The format of the XML string follows the PMML 2.1 standard."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_MODEL_CONTENT_PMML" value="71" literal="DMSCHEMA_MINING_MODEL_CONTENT_PMML">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;284> return the XML structure of the mining model. The format of the XML string follows the PMML 2.1 standard.&lt;285>"/>
+        <details key="documentation" value="This schema rowset MAY return the XML structure of the mining model. The format of the XML string follows the PMML 2.1 standard."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_MODELS" value="72" literal="DMSCHEMA_MINING_MODELS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;288> enumerate the data mining models that are deployed on the server."/>
+        <details key="documentation" value="This schema rowset MAY enumerate the data mining models that are deployed on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_COLUMNS" value="73" literal="DMSCHEMA_MINING_COLUMNS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;291> describe the individual columns of all defined data mining models that are deployed on the server."/>
+        <details key="documentation" value="This schema rowset MAY describe the individual columns of all defined data mining models that are deployed on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_STRUCTURES" value="74" literal="DMSCHEMA_MINING_STRUCTURES">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;303> enumerate information about the mining structures in the current catalog."/>
+        <details key="documentation" value="This schema rowset MAY enumerate information about the mining structures in the current catalog."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DMSCHEMA_MINING_STRUCTURE_COLUMNS" value="75" literal="DMSCHEMA_MINING_STRUCTURE_COLUMNS">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This schema rowset MAY&lt;305> describe the individual columns of all mining structures that are deployed on the server."/>
+        <details key="documentation" value="This schema rowset MAY describe the individual columns of all mining structures that are deployed on the server."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="DBSCHEMA_ASSERTIONS" value="76" literal="DBSCHEMA_ASSERTIONS"/>
@@ -414,6 +414,7 @@
     <eLiterals name="DBSCHEMA_TABLE_PRIVILEGES" value="96" literal="DBSCHEMA_TABLE_PRIVILEGES"/>
     <eLiterals name="DBSCHEMA_TABLE_STATISTICS" value="97" literal="DBSCHEMA_TABLE_STATISTICS"/>
     <eLiterals name="DBSCHEMA_TRANSLATIONS" value="98" literal="DBSCHEMA_TRANSLATIONS"/>
+    <eLiterals name="DBSCHEMA_TRUSTEE" value="105" literal="DBSCHEMA_TRUSTEE"/>
     <eLiterals name="DBSCHEMA_USAGE_PRIVILEGES" value="99" literal="DBSCHEMA_USAGE_PRIVILEGES"/>
     <eLiterals name="DBSCHEMA_VIEWS" value="100" literal="DBSCHEMA_VIEWS"/>
     <eLiterals name="DBSCHEMA_VIEW_COLUMN_USAGE" value="101" literal="DBSCHEMA_VIEW_COLUMN_USAGE"/>
@@ -445,7 +446,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Discover">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Discover message is used to request information from the server. The server MUST support each of the enumerated RequestTypes. The schema rowset has the following definition. &lt;xsd:element name=&quot;Discover&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;RequestType&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;DBSCHEMA_CATALOGS&quot; /> &lt;xsd:enumeration value=&quot;MDSCHEMA_CUBES&quot; /> &lt;xsd:enumeration value=&quot;MDSCHEMA_DIMENSIONS&quot; /> &lt;xsd:enumeration value=&quot;MDSCHEMA_HIERARCHIES&quot; /> &lt;xsd:enumeration value=&quot;MDSCHEMA_LEVELS&quot; /> &lt;xsd:enumerat …"/>
+      <details key="documentation" value="The Discover message is used to request information from the server. The server MUST support each of the enumerated RequestTypes."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Discover"/>
@@ -501,7 +502,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Execute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Execute element has the following definition: &lt;xsd:complexType name=&quot;Execute&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Command&quot; type=&quot;Command&quot; /> &lt;xsd:element name=&quot;Properties&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;PropertyList&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; type=&quot;PropertyList&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Parameters&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Parameter&quot; type=&quot;ExecuteParameter&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd: …"/>
+      <details key="documentation" value=""/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Execute"/>
@@ -543,7 +544,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecuteResponse">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The return element contains the result that is returned by the server. The content of the result that is contained in the return element is dependent upon the command and the properties that were specified in the Execute method call. &lt;xsd:complexType name=&quot;return&quot;> &lt;xsd:choice> &lt;xsd:element ref=&quot;xmla-ds:root&quot; /> &lt;xsd:element ref=&quot;xmla-rs:root&quot; /> &lt;xsd:element ref=&quot;xmla-e:root&quot; /> &lt;xsd:element ref=&quot;xmla-m:results&quot; /> &lt;/xsd:choice> &lt;/xsd:complexType> The definition of the xmla-ds:root element is as follows. …"/>
+      <details key="documentation" value="The return element contains the result that is returned by the server. The content of the result that is contained in the return element is dependent upon the command and the properties that were specified in the Execute method call."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ExecuteResponse"/>
@@ -579,7 +580,7 @@
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="elementNameFrom" value="name"/>
-      <details key="documentation" value="One child of &lt;RestrictionList>. Its XML form is &lt;COLUMN_NAME>value&lt;/COLUMN_NAME> - the element name is the restriction column, so it is a value here rather than a fixed name in the schema. XSD cannot say that and neither can ExtendedMetaData, which is why the codec reads elementNameFrom instead of deriving the name from the feature."/>
+      <details key="documentation" value="One child of &amp;lt;RestrictionList>. Its XML form is &amp;lt;COLUMN_NAME>value&amp;lt;/COLUMN_NAME> - the element name is the restriction column, so it is a value here rather than a fixed name in the schema. XSD cannot say that and neither can ExtendedMetaData, which is why the codec reads elementNameFrom instead of deriving the name from the feature."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -610,7 +611,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyList">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The PropertyList type contains the properties that are associated with a Discover or Execute request. Only writeable properties can be sent to the server in a request. Attempts to send properties that are not writeable or that are reserved for future use will result in a fault. &lt;xsd:complexType name=&quot;PropertyList&quot; > &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceInfo&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Timeout&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;UserName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Password&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:eleme …"/>
+      <details key="documentation" value="The PropertyList type contains the properties that are associated with a Discover or Execute request. Only writeable properties can be sent to the server in a request. Attempts to send properties that are not writeable or that are reserved for future use will result in a fault."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="PropertyList"/>
@@ -744,7 +745,7 @@
         <details key="default" value="TupleFormat"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An enumeration value that determines the format used within an mddataset result set to describe the axes of the multidimensional dataset. This property can have one of the following values:ClusterFormat - The mddataset axis is made up of one or more CrossProduct elements.CustomFormat - A vendor can use this value to indicate a vendor-specific format.TupleFormat - The mddataset axis contains one or more Tuple elements.&lt;130>"/>
+        <details key="documentation" value="An enumeration value that determines the format used within an mddataset result set to describe the axes of the multidimensional dataset. This property can have one of the following values:ClusterFormat - The mddataset axis is made up of one or more CrossProduct elements.CustomFormat - A vendor can use this value to indicate a vendor-specific format.TupleFormat - The mddataset axis contains one or more Tuple elements."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -889,7 +890,7 @@
         <details key="access" value="ReadWrite"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A server SHOULD&lt;186> attempt to deduce the command dialect from the content of the statement element. The dialect property establishes the dialect used in the following situations:The dialect that the provider will use the first time that the provider tries to run a query.The dialect used to return execution errors as the result of query failures.The dialect that is used when it is ambiguous as to what dialect was used in the query.If the Dialect property is not set, query execution returns errors in the dialect last used.The value of the Dialect property identifies the language used for expre …"/>
+        <details key="documentation" value="A server SHOULD attempt to deduce the command dialect from the content of the statement element. The dialect property establishes the dialect used in the following situations:The dialect that the provider will use the first time that the provider tries to run a query.The dialect used to return execution errors as the result of query failures.The dialect that is used when it is ambiguous as to what dialect was used in the query.If the Dialect property is not set, query execution returns errors in the dialect last used.The value of the Dialect property identifies the language used for expre …"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1025,7 +1026,7 @@
         <details key="access" value="ReadWrite"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is provided by external applications and is used for end-to-end correlation of user activities.&lt;201>"/>
+        <details key="documentation" value="This property is provided by external applications and is used for end-to-end correlation of user activities."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1205,7 +1206,7 @@
         <details key="access" value="ReadWrite"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property controls the result of the commands documented in [MS-SSAS-T]. This property is an integer that can be set to cause the current command to return the affected objects.&lt;199>The possible values are as follows.-1 – This value can be set only when a transaction is active on the current session. The result of the command will contain all the objects that are affected by the command.>= 0 – This value represents the Base Version of the Tabular Metadata. …"/>
+        <details key="documentation" value="This property controls the result of the commands documented in [MS-SSAS-T]. This property is an integer that can be set to cause the current command to return the affected objects.The possible values are as follows.-1 – This value can be set only when a transaction is active on the current session. The result of the command will contain all the objects that are affected by the command.>= 0 – This value represents the Base Version of the Tabular Metadata. …"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1218,7 +1219,7 @@
         <details key="access" value="ReadWrite"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string value that can be set by a client on a session to trace multiple query requests to the server.&lt;197>"/>
+        <details key="documentation" value="A string value that can be set by a client on a session to trace multiple query requests to the server."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1236,6 +1237,11 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dbpropMsmdCurrentActivityID"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="https://www.daanse.org/spec/xmla/property/1.0">
+        <details key="access" value="ReadWrite"/>
+        <details key="accessSource" value="OBSERVED"/>
+        <details key="observedFrom" value="Analysis Services 13.0, DISCOVER_PROPERTIES answer to Excel (MSOLAP 16.0)"/>
+      </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="DbpropMsmdCurrentActivityID"/>
@@ -1278,7 +1284,7 @@
         <details key="access" value="ReadWrite"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string value that can be set by a client on a session to correlate traces from multiple components.&lt;198>"/>
+        <details key="documentation" value="A string value that can be set by a client on a session to correlate traces from multiple components."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1292,7 +1298,7 @@
         <details key="access" value="ReadWrite"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is used to further constrain the memory allowed to be used for a request by the Memory\QueryMemoryLimit server property value (see section 2.2.4.2.2.2.1). The unit of measure is in kilobytes.&lt;200>"/>
+        <details key="documentation" value="This property is used to further constrain the memory allowed to be used for a request by the Memory\QueryMemoryLimit server property value (see section 2.2.4.2.2.2.1). The unit of measure is in kilobytes."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1319,7 +1325,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An integer enumeration value that is equivalent to the DBPROP_CATALOGLOCATION OLE DB property and which identifies where the catalog name appears within a text string that represents a fully qualified name. This property can be one of the following values:DBPROPVAL_CL_START (0x00000001L) - The catalog name is at the start of the fully qualified name.DBPROPVAL_CL_END (0x00000002L) - The catalog name is at the end of the fully qualified name.&lt;133>"/>
+        <details key="documentation" value="An integer enumeration value that is equivalent to the DBPROP_CATALOGLOCATION OLE DB property and which identifies where the catalog name appears within a text string that represents a fully qualified name. This property can be one of the following values:DBPROPVAL_CL_START (0x00000001L) - The catalog name is at the start of the fully qualified name.DBPROPVAL_CL_END (0x00000002L) - The catalog name is at the end of the fully qualified name."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1333,7 +1339,7 @@
         <details key="default" value="0"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An enumeration value that determines the behavior of subqueries. This property can have one of the following values:&lt;191>0 – Calculated members are not restricted by subselects.1 – Calculated members are restricted by subselects. This value does not support arbitrary-shaped subselects.2 – Calculated members are restricted by subselects. This value supports arbitrary-shaped subselects."/>
+        <details key="documentation" value="An enumeration value that determines the behavior of subqueries. This property can have one of the following values:0 – Calculated members are not restricted by subselects.1 – Calculated members are restricted by subselects. This value does not support arbitrary-shaped subselects.2 – Calculated members are restricted by subselects. This value supports arbitrary-shaped subselects."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1415,7 +1421,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This string property is equivalent to the DBPROP_CATALOGTERM OLE DB property which lists the term that the server uses to describe a catalog.&lt;134>"/>
+        <details key="documentation" value="This string property is equivalent to the DBPROP_CATALOGTERM OLE DB property which lists the term that the server uses to describe a catalog."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1442,7 +1448,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the DBPROP_COLUMNDEFINITION OLE DB property. A bitmask defining the valid clauses for the definition of a column. This property can have a combination of zero or more of the following values:DBPROPVAL_CD_NOTNULL (0x00000001L) Columns can be created non-nullable.&lt;136>"/>
+        <details key="documentation" value="This property is equivalent to the DBPROP_COLUMNDEFINITION OLE DB property. A bitmask defining the valid clauses for the definition of a column. This property can have a combination of zero or more of the following values:DBPROPVAL_CD_NOTNULL (0x00000001L) Columns can be created non-nullable."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1456,7 +1462,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the DBPROP_CONCATNULLBEHAVIOR OLE DB property. An enumeration value that indicates how the data source object handles the concatenation of NULL-valued character data type columns with non–NULL-valued character data type columns. This property can have one of the following values:DBPROPVAL_CB_NULL (1) - The result is NULL-valued.DBPROPVAL_CB_NON_NULL (2) - The result is the concatenation of the non–NULL-valued column or columns.&lt;137>"/>
+        <details key="documentation" value="This property is equivalent to the DBPROP_CONCATNULLBEHAVIOR OLE DB property. An enumeration value that indicates how the data source object handles the concatenation of NULL-valued character data type columns with non–NULL-valued character data type columns. This property can have one of the following values:DBPROPVAL_CB_NULL (1) - The result is NULL-valued.DBPROPVAL_CB_NON_NULL (2) - The result is the concatenation of the non–NULL-valued column or columns."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1470,7 +1476,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A Boolean that is equivalent to the DBPROP_DATASOURCEREADONLY OLE DB property. When true, indicates that the data store is read-only; otherwise, false.&lt;138>"/>
+        <details key="documentation" value="A Boolean that is equivalent to the DBPROP_DATASOURCEREADONLY OLE DB property. When true, indicates that the data store is read-only; otherwise, false."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1497,7 +1503,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_HETEROGENEOUSTABLES. A bitmask that specifies whether the provider can join tables from different catalogs or providers. This property can be a combination of zero or more of the following values:DBPROPVAL_HT_DIFFERENT_CATALOGS(0x00000001L)DBPROPVAL_HT_DIFFERENT_PROVIDERS(0x00000002L)&lt;140>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_HETEROGENEOUSTABLES. A bitmask that specifies whether the provider can join tables from different catalogs or providers. This property can be a combination of zero or more of the following values:DBPROPVAL_HT_DIFFERENT_CATALOGS(0x00000001L)DBPROPVAL_HT_DIFFERENT_PROVIDERS(0x00000002L)"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1524,7 +1530,7 @@
         <details key="access" value="ReadWrite"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is a bitmask specifying access permissions, and is equivalent to the OLE DB property DBPROP_INIT_MODE.The only supported values for this property are DB_MODE_READWRITE (0x03) and DB_MODE_READ (0x01).&lt;185>"/>
+        <details key="documentation" value="This property is a bitmask specifying access permissions, and is equivalent to the OLE DB property DBPROP_INIT_MODE.The only supported values for this property are DB_MODE_READWRITE (0x03) and DB_MODE_READ (0x01)."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1537,7 +1543,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_MAXINDEXSIZE. Indicates the maximum number of bytes allowed in the combined columns of an index. If there is no specified limit or the limit is unknown, this value is set to zero.&lt;142>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_MAXINDEXSIZE. Indicates the maximum number of bytes allowed in the combined columns of an index. If there is no specified limit or the limit is unknown, this value is set to zero."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1551,7 +1557,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This integer property is equivalent to the OLE DB property DBPROP_MAXOPENCHAPTERS. If a chapter is released before a new chapter can be opened, this value is &quot;1&quot;; if the provider has no limit on the number of open chapters or does not support chapters, this value is &quot;0&quot;.&lt;143>"/>
+        <details key="documentation" value="This integer property is equivalent to the OLE DB property DBPROP_MAXOPENCHAPTERS. If a chapter is released before a new chapter can be opened, this value is &quot;1&quot;; if the provider has no limit on the number of open chapters or does not support chapters, this value is &quot;0&quot;."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1564,7 +1570,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This integer property is equivalent to the OLE DB property DBPROP_MAXROWSIZE. Indicates the maximum length of a single row in a table. If there is no specified limit or the limit is unknown, this value is set to zero.&lt;144>"/>
+        <details key="documentation" value="This integer property is equivalent to the OLE DB property DBPROP_MAXROWSIZE. Indicates the maximum length of a single row in a table. If there is no specified limit or the limit is unknown, this value is set to zero."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1578,7 +1584,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_MAXROWSIZEINCLUDESBLOB. A Boolean that, when true, indicates that the maximum row size includes any blob present in the row; otherwise, false.&lt;145>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_MAXROWSIZEINCLUDESBLOB. A Boolean that, when true, indicates that the maximum row size includes any blob present in the row; otherwise, false."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1592,7 +1598,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This integer property is equivalent to the OLE DB property DBPROP_MAXTABLESINSELECT. Indicates the maximum number of tables allowed in the FROM clause of a SELECT statement. If there is no specified limit or the limit is unknown, this value is set to zero.&lt;146>"/>
+        <details key="documentation" value="This integer property is equivalent to the OLE DB property DBPROP_MAXTABLESINSELECT. Indicates the maximum number of tables allowed in the FROM clause of a SELECT statement. If there is no specified limit or the limit is unknown, this value is set to zero."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1693,7 +1699,7 @@
         <details key="default" value="0"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A bitmask that determines the algorithm for generating the unique names of members in a dimension. This property can have a combination of zero or more of the following values:0 - For compatibility with earlier versions of Analysis Services, this value is equivalent to 3.1 - Uses a key path algorithm that has the following format: [dim].&amp;[key1].&amp;[key2]Note In this algorithm, dim is the name of the dimension, and key1 and key2 are the attribute keys.2 - Uses a name path algorithm that has the following format: [dim].[name1].&amp;[name2]Note In this algorithm, dim is the name of the dimension, and n …"/>
+        <details key="documentation" value="A bitmask that determines the algorithm for generating the unique names of members in a dimension. This property can have a combination of zero or more of the following values:0 - For compatibility with earlier versions of Analysis Services, this value is equivalent to 3.1 - Uses a key path algorithm that has the following format: [dim].&amp;amp;[key1].&amp;amp;[key2]Note In this algorithm, dim is the name of the dimension, and key1 and key2 are the attribute keys.2 - Uses a name path algorithm that has the following format: [dim].[name1].&amp;amp;[name2]Note In this algorithm, dim is the name of the dimension, and n"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1736,7 +1742,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This Boolean property is equivalent to the OLE DB property DBPROP_MULTITABLEUPDATE. When true, indicates that the provider can do a multitable update; otherwise, false.&lt;147>"/>
+        <details key="documentation" value="This Boolean property is equivalent to the OLE DB property DBPROP_MULTITABLEUPDATE. When true, indicates that the provider can do a multitable update; otherwise, false."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1749,7 +1755,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This enumeration value is equivalent to the OLE DB property DBPROP_NULLCOLLATION. Indicates where NULLs are sorted in a list. This property can have one of the following values:DBPROPVAL_NC_END(0x00000001L) - NULLs are sorted at the end of the list, regardless of the sort order.DBPROPVAL_NC_HIGH(0x00000002L) - NULLs are sorted at the high end of the list.DBPROPVAL_NC_LOW(0x00000004L) - NULLs are sorted at the low end of the list.DBPROPVAL_NC_START(0x00000008L) - NULLs are sorted at the start of the list, regardless of the sort order.&lt;148>"/>
+        <details key="documentation" value="This enumeration value is equivalent to the OLE DB property DBPROP_NULLCOLLATION. Indicates where NULLs are sorted in a list. This property can have one of the following values:DBPROPVAL_NC_END(0x00000001L) - NULLs are sorted at the end of the list, regardless of the sort order.DBPROPVAL_NC_HIGH(0x00000002L) - NULLs are sorted at the high end of the list.DBPROPVAL_NC_LOW(0x00000004L) - NULLs are sorted at the low end of the list.DBPROPVAL_NC_START(0x00000008L) - NULLs are sorted at the start of the list, regardless of the sort order."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1763,7 +1769,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This Boolean property is equivalent to the OLE DB property DBPROP_ORDERBYCOLUMNSINSELECT. When true, orders by columns in the select list; otherwise, false.&lt;149>"/>
+        <details key="documentation" value="This Boolean property is equivalent to the OLE DB property DBPROP_ORDERBYCOLUMNSINSELECT. When true, orders by columns in the select list; otherwise, false."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1805,7 +1811,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This enumeration value is equivalent to the OLE DB property DBPROP_PREPAREABORTBEHAVIOR. It indicates how aborting a transaction affects prepared commands. This property can have one of the following values:DBPROPVAL_CB_DELETE(0x00000002L) - Aborting a transaction deletes prepared commands. The application MUST re-prepare commands before executing them.DBPROPAL_CB_PRESERVE(0x00000001L) - Aborting a transaction preserves prepared commands. The application can re-execute commands without re-preparing them.&lt;152>"/>
+        <details key="documentation" value="This enumeration value is equivalent to the OLE DB property DBPROP_PREPAREABORTBEHAVIOR. It indicates how aborting a transaction affects prepared commands. This property can have one of the following values:DBPROPVAL_CB_DELETE(0x00000002L) - Aborting a transaction deletes prepared commands. The application MUST re-prepare commands before executing them.DBPROPAL_CB_PRESERVE(0x00000001L) - Aborting a transaction preserves prepared commands. The application can re-execute commands without re-preparing them."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1819,7 +1825,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This integer enumeration value is equivalent to the OLE DB property DBPROP_PREPARECOMMITBEHAVIOR. It indicates how committing a transaction affects prepared commands. This property can have one of the following values:DBPROPVAL_CB_DELETE(0x00000002L) - Committing a transaction deletes prepared commands. The application MUST re-prepare commands before executing them.DBPROPAL_CB_PRESERVE(0x00000001L) - Committing a transaction preserves prepared commands. The application can re-execute commands without re-preparing them.&lt;153>"/>
+        <details key="documentation" value="This integer enumeration value is equivalent to the OLE DB property DBPROP_PREPARECOMMITBEHAVIOR. It indicates how committing a transaction affects prepared commands. This property can have one of the following values:DBPROPVAL_CB_DELETE(0x00000002L) - Committing a transaction deletes prepared commands. The application MUST re-prepare commands before executing them.DBPROPAL_CB_PRESERVE(0x00000001L) - Committing a transaction preserves prepared commands. The application can re-execute commands without re-preparing them."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1832,7 +1838,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_PROCEDURETERM. A character string with the data store vendor's name for a procedure - for example, &quot;database procedure&quot;, &quot;stored procedure&quot;, or &quot;procedure&quot;. This is used for building user interfaces.&lt;154>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_PROCEDURETERM. A character string with the data store vendor's name for a procedure - for example, &quot;database procedure&quot;, &quot;stored procedure&quot;, or &quot;procedure&quot;. This is used for building user interfaces."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1887,7 +1893,7 @@
         <details key="default" value="0"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_SUBQUERIES. A bitmask specifying the predicates in text commands that support subqueries. This property can have a combination of zero or more of the following values:DBPROPVAL_SQ_CORRELATEDSUBQUERIES(0x00000001L)DBPROPVAL_SQ_COMPARISON(0x00000002L)DBPROPVAL_SQ_EXISTS(0x00000004L)DBPROPVAL_SQ_IN(0x00000008L)DBPROPVAL_SQ_QUANTIFIED(0x00000010L)DBPROPVAL_SQ_TABLE(0x00000020L)&lt;158>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_SUBQUERIES. A bitmask specifying the predicates in text commands that support subqueries. This property can have a combination of zero or more of the following values:DBPROPVAL_SQ_CORRELATEDSUBQUERIES(0x00000001L)DBPROPVAL_SQ_COMPARISON(0x00000002L)DBPROPVAL_SQ_EXISTS(0x00000004L)DBPROPVAL_SQ_IN(0x00000008L)DBPROPVAL_SQ_QUANTIFIED(0x00000010L)DBPROPVAL_SQ_TABLE(0x00000020L)"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1915,7 +1921,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_SUPPORTEDTXNISOLEVELS. A bitmask specifying the supported transaction isolation levels. This property can have a combination of zero or more of the following values:DBPROPVAL_TI_CHAOS(0x00000010L)DBPROPVAL_TI_READUNCOMMITTED or DBPROPVAL_TI_BROWSE(0x00000100L)DBPROPVAL_TI_CURSORSTABILITY or DBPROPVAL_TI_READCOMMITTED(0x00001000L)DBPROPVAL_TI_REPEATABLEREAD(0x00010000L)DBPROPVAL_TI_SERIALIZABLE or DBPROPVAL_TI_ISOLATED(0x00100000L)&lt;160>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_SUPPORTEDTXNISOLEVELS. A bitmask specifying the supported transaction isolation levels. This property can have a combination of zero or more of the following values:DBPROPVAL_TI_CHAOS(0x00000010L)DBPROPVAL_TI_READUNCOMMITTED or DBPROPVAL_TI_BROWSE(0x00000100L)DBPROPVAL_TI_CURSORSTABILITY or DBPROPVAL_TI_READCOMMITTED(0x00001000L)DBPROPVAL_TI_REPEATABLEREAD(0x00010000L)DBPROPVAL_TI_SERIALIZABLE or DBPROPVAL_TI_ISOLATED(0x00100000L)"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1943,7 +1949,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_TABLETERM. A string value that indicates the name the data source object uses for a table - for example, &quot;table&quot; or &quot;file&quot;. This property is used for building user interfaces.&lt;162>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property DBPROP_TABLETERM. A string value that indicates the name the data source object uses for a table - for example, &quot;table&quot; or &quot;file&quot;. This property is used for building user interfaces."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1970,7 +1976,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_AXES. This is an OLE DB for OLAP property. The value of this property is the maximum number of axes that the provider supports in the dataset. To be compliant with OLE DB for OLAP, this value MUST be at least 3.&lt;164>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_AXES. This is an OLE DB for OLAP property. The value of this property is the maximum number of axes that the provider supports in the dataset. To be compliant with OLE DB for OLAP, this value MUST be at least 3."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1984,7 +1990,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A bitmask that indicates one or more of the following:&lt;193>DBPROPVAL_MDX_DDL_CREATECUBE (0x1). Create Cube is supported.DBPROPVAL_MDX_DDL_INSERTINTO (0x2). InsertInto is supported.DBPROPVAL_MDX_DDL_REFRESHCUBE (0x4). Refresh Cube is supported.DBPROPVAL_MDX_DLL_CREATESESSIONCUBE (0x8). Create Session is supported.DBPROPVAL_MDX_DLL_CREATEGLOBALCUBE (0x10). Create Global Cube is supported."/>
+        <details key="documentation" value="A bitmask that indicates one or more of the following:DBPROPVAL_MDX_DDL_CREATECUBE (0x1). Create Cube is supported.DBPROPVAL_MDX_DDL_INSERTINTO (0x2). InsertInto is supported.DBPROPVAL_MDX_DDL_REFRESHCUBE (0x4). Refresh Cube is supported.DBPROPVAL_MDX_DLL_CREATESESSIONCUBE (0x8). Create Session is supported.DBPROPVAL_MDX_DLL_CREATEGLOBALCUBE (0x10). Create Global Cube is supported."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -1998,7 +2004,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A bitmask indicating support for drilldown and drillup groups of functions. These functions indicate provider support for drilldown and drillup on tuples as well as members. This property is a combination of zero or more of the following values:MDPROPVAL_MDF_BASIC(0x01) - The support operation for the drilldown and drillup groups of functions on members.MDPROPVAL_MDF_ASYMMETRIC(0x02) - The support operation for the drilldown and drillup groups of functions on tuples as well as members.&lt;168>MDPROPVAL_MDF_CALC_MEMBERS(0x04) - The support operation for the drilldown and drillup groups of function …"/>
+        <details key="documentation" value="A bitmask indicating support for drilldown and drillup groups of functions. These functions indicate provider support for drilldown and drillup on tuples as well as members. This property is a combination of zero or more of the following values:MDPROPVAL_MDF_BASIC(0x01) - The support operation for the drilldown and drillup groups of functions on members.MDPROPVAL_MDF_ASYMMETRIC(0x02) - The support operation for the drilldown and drillup groups of functions on tuples as well as members.MDPROPVAL_MDF_CALC_MEMBERS(0x04) - The support operation for the drilldown and drillup groups of function …"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2025,7 +2031,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_CASESUPPORT. A bitmask that represents the type of CASE statement in MDX that the provider supports. This property can have one of the following values:MDPROPVAL_MC_SINGLECASE(0x00000001L) - The provider supports a simple case expression.MDPROPVAL_MC_SEARCHEDCASE(0x00000002L) - The provider supports a searched case expression.&lt;166>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_CASESUPPORT. A bitmask that represents the type of CASE statement in MDX that the provider supports. This property can have one of the following values:MDPROPVAL_MC_SINGLECASE(0x00000001L) - The provider supports a simple case expression.MDPROPVAL_MC_SEARCHEDCASE(0x00000002L) - The provider supports a searched case expression."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2038,7 +2044,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_DESCFLAGS. It is a bitmask that indicates which desc flag values in the DESCENDANTS MDX function are supported by the provider. This property can have a combination of zero or more of the following values:MDPROPVAL_MD_BEFORE (0x00000002L) - The provider supports the flag BEFORE.MDPROPVAL_MD_AFTER(0x00000004L) - The provider supports the flag AFTER.MDPROPVAL_MD_SELF(0x00000001L) - The provider supports the flag SELF. This bit MUST be set by all providers because support for SELF is mandatory.&lt;167>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_DESCFLAGS. It is a bitmask that indicates which desc flag values in the DESCENDANTS MDX function are supported by the provider. This property can have a combination of zero or more of the following values:MDPROPVAL_MD_BEFORE (0x00000002L) - The provider supports the flag BEFORE.MDPROPVAL_MD_AFTER(0x00000004L) - The provider supports the flag AFTER.MDPROPVAL_MD_SELF(0x00000001L) - The provider supports the flag SELF. This bit MUST be set by all providers because support for SELF is mandatory."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2081,7 +2087,7 @@
         <details key="default" value="15"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_MEMBER_FUNCTIONS. A bitmask indicating support for various MDX member functions. This property can have a combination of zero or more of the following values:MDPROPVAL_MMF_COUSIN(0x00000001L) - The provider supports the function COUSIN.MDPROPVAL_MMF_PARALLELPERIOD(0x00000002L) - The provider supports the function PARALLELPERIOD.MDPROPVAL_MMF_OPENINGPERIOD(0x00000004L) - The provider supports the function OPENINGPERIOD.MDPROPVAL_MMF_CLOSINGPERIOD(0x00000008L) - The provider supports the function CLOSINGPERIOD.&lt;173>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_MEMBER_FUNCTIONS. A bitmask indicating support for various MDX member functions. This property can have a combination of zero or more of the following values:MDPROPVAL_MMF_COUSIN(0x00000001L) - The provider supports the function COUSIN.MDPROPVAL_MMF_PARALLELPERIOD(0x00000002L) - The provider supports the function PARALLELPERIOD.MDPROPVAL_MMF_OPENINGPERIOD(0x00000004L) - The provider supports the function OPENINGPERIOD.MDPROPVAL_MMF_CLOSINGPERIOD(0x00000008L) - The provider supports the function CLOSINGPERIOD."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2109,7 +2115,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_NONMEASURE_EXPRESSIONS. An enumeration value that indicates the capabilities in the numeric_value_expression argument of MDX set functions. This property can have one of the following values:MDPROPVAL_NME_MEASURESONLY(0x00000001L) - The provider supports only expressions involving Measures dimension members.MDPROPVAL_NME_ALLDIMENSIONS(0x00000000L) - The provider supports expressions involving members from any dimension.&lt;174>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_NONMEASURE_EXPRESSIONS. An enumeration value that indicates the capabilities in the numeric_value_expression argument of MDX set functions. This property can have one of the following values:MDPROPVAL_NME_MEASURESONLY(0x00000001L) - The provider supports only expressions involving Measures dimension members.MDPROPVAL_NME_ALLDIMENSIONS(0x00000000L) - The provider supports expressions involving members from any dimension."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2151,7 +2157,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_OUTERREFERENCE. This integer indicates whether &lt;tuple>[.VALUE] can be qualified by &lt;cube_name> in an MDX value expression. 0 means true and 1 means false.&lt;177>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_OUTERREFERENCE. This integer indicates whether &amp;lt;tuple>[.VALUE] can be qualified by &amp;lt;cube_name> in an MDX value expression. 0 means true and 1 means false."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2166,7 +2172,7 @@
         <details key="default" value="True"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_QUERYBYPROPERTY. A Boolean that, when true, indicates that the provider supports for querying by property values in an MDX statement; otherwise, false.&lt;178>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_QUERYBYPROPERTY. A Boolean that, when true, indicates that the provider supports for querying by property values in an MDX statement; otherwise, false."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2179,7 +2185,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_RANGEROWSET. An enumeration value that defines the type of support for cell updates provided by the provider. This property can have one of the following values:MDPROPVAL_RR_NORANGEROWSET(0x00000001L) - The provider does not support a range rowset.MDPROPVAL_RR_READONLY(0x00000002L) - The provider supports a read-only range rowset.MDPROPVAL_RR_UPDATE(0x00000004L) - The provider supports an updatable range rowset.&lt;179>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_RANGEROWSET. An enumeration value that defines the type of support for cell updates provided by the provider. This property can have one of the following values:MDPROPVAL_RR_NORANGEROWSET(0x00000001L) - The provider does not support a range rowset.MDPROPVAL_RR_READONLY(0x00000002L) - The provider supports a read-only range rowset.MDPROPVAL_RR_UPDATE(0x00000004L) - The provider supports an updatable range rowset."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2206,7 +2212,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_SLICER. An enumeration value that indicates the capabilities available in the WHERE clause of an MDX statement. This property can have one of the following values:MDPROPVAL_MS_SINGLETUPLE(0x00000002L) - The provider supports only one tuple in the WHERE clause.MDPROPVAL_MS_MULTIPLETUPLES(0x00000001L) - The provider supports more than one tuple in the WHERE clause.&lt;181>"/>
+        <details key="documentation" value="This property is equivalent to the OLE DB property MDPROP_MDX_SLICER. An enumeration value that indicates the capabilities available in the WHERE clause of an MDX statement. This property can have one of the following values:MDPROPVAL_MS_SINGLETUPLE(0x00000002L) - The provider supports only one tuple in the WHERE clause.MDPROPVAL_MS_MULTIPLETUPLES(0x00000001L) - The provider supports more than one tuple in the WHERE clause."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2233,7 +2239,7 @@
         <details key="access" value="Read"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A bitmask that indicates the level of support for subqueries in MDX. This property can have a combination of zero or more of the following values:&lt;187>MDPROPVAL_MSQ_BASIC (0x01) – Supports subselects without arbitrary shapes.MDPROPVAL_MSQ_ARBITRARYSHAPE (0x02) - Supports subselects with arbitrary shapes.MDPROPVAL_MSQ_NONVISUAL (0x04) - Supports subselects with NON VISUAL keyword. MDPROPVAL_MSQ_CALCMEMBERS (0x08) - Supports calc members in subselects. This option does not allow use of arbitrary shapes in a subselect.&lt;188>MDPROPVAL_MSQ_CALCMEMBERS2 (0x10) - Supports calc members in subselects. …"/>
+        <details key="documentation" value="A bitmask that indicates the level of support for subqueries in MDX. This property can have a combination of zero or more of the following values:MDPROPVAL_MSQ_BASIC (0x01) – Supports subselects without arbitrary shapes.MDPROPVAL_MSQ_ARBITRARYSHAPE (0x02) - Supports subselects with arbitrary shapes.MDPROPVAL_MSQ_NONVISUAL (0x04) - Supports subselects with NON VISUAL keyword. MDPROPVAL_MSQ_CALCMEMBERS (0x08) - Supports calc members in subselects. This option does not allow use of arbitrary shapes in a subselect.MDPROPVAL_MSQ_CALCMEMBERS2 (0x10) - Supports calc members in subselects. …"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2260,7 +2266,7 @@
         <details key="default" value="Core"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An enumeration value that specifies the degree of MDX support.This enumeration has only one value, &quot;Core&quot;.&lt;184>"/>
+        <details key="documentation" value="An enumeration value that specifies the degree of MDX support.This enumeration has only one value, &quot;Core&quot;."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2274,7 +2280,7 @@
         <details key="default" value="6"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This property is equivalent to the DBPROP_DATASOURCE_TYPE OLE DB property. This property can have one of the following values or a combination of the following values:DBPROPVAL_DST_TDP(0x00000001L) - The provider is a tabular data provider (TDP).DBPROPVAL_DST_MDP(0x00000002L) - The provider is a multidimensional provider (MDP). DBPROPVAL_DST_TDPANDMDP(0x00000003L) - The provider is both a TDP and an MDP.DBPROPVAL_DST_DOCSOURCE(0x00000004L) - The provider supports direct URL binding and is a document source provider.&lt;131>"/>
+        <details key="documentation" value="This property is equivalent to the DBPROP_DATASOURCE_TYPE OLE DB property. This property can have one of the following values or a combination of the following values:DBPROPVAL_DST_TDP(0x00000001L) - The provider is a tabular data provider (TDP).DBPROPVAL_DST_MDP(0x00000002L) - The provider is a multidimensional provider (MDP). DBPROPVAL_DST_TDPANDMDP(0x00000003L) - The provider is both a TDP and an MDP.DBPROPVAL_DST_DOCSOURCE(0x00000004L) - The provider supports direct URL binding and is a document source provider."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -2538,7 +2544,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Alter" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Alter command is used to alter an object that already exists on a server. &lt;xsd:complexType name=&quot;Alter&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;ObjectDefinition&quot; type=&quot;MajorObject&quot; /> &lt;/xsd:all> &lt;xsd:attribute name=&quot;Scope&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Session&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:attribute> &lt;xsd:attribute name=&quot;AllowCreate&quot; type=&quot;xsd:boolean&quot; /> &lt;xsd:attribute name=&quot;ObjectExpansion&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration val …"/>
+      <details key="documentation" value="The Alter command is used to alter an object that already exists on a server."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Alter"/>
@@ -2604,7 +2610,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cancel" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Cancel command cancels the currently running command on the specified connection. &lt;xsd:complexType name=&quot;Cancel&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ConnectionID&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;SessionID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;SPID&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;CancelAssociated&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the Cancel command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Cancel command cancels the currently running command on the specified connection."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Cancel"/>
@@ -2656,7 +2662,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClearCache" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ClearCache command clears the in-memory cache of the specified object. &lt;xsd:complexType name=&quot;ClearCache&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the ClearCache command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The ClearCache command clears the in-memory cache of the specified object."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="ClearCache"/>
@@ -2727,7 +2733,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attach" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Attach command attaches a database from a database folder. &lt;xsd:complexType name=&quot;Attach&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Folder&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Password&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;AllowOverwrite&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element ref=&quot;eng100:ReadWriteMode&quot; minOccurs=&quot;0&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;ReadWrite&quot; /> &lt;xsd:enumeration value=&quot;ReadOnly&quot; /> &lt;xsd:enumeration value=&quot;ReadOnlyExclusive&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType> …"/>
+      <details key="documentation" value="The Attach command attaches a database from a database folder."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Attach"/>
@@ -2779,7 +2785,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Backup" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Backup command backs up the specified database. &lt;xsd:complexType name=&quot;Backup&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;File&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Security&quot; minOccurs=&quot;0&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;SkipMembership&quot; /> &lt;xsd:enumeration value=&quot;CopyAll&quot; /> &lt;xsd:enumeration value=&quot;IgnoreSecurity&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;ApplyCompression&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;AllowOverwrite&quot; type=&quot;xsd:boolean&quot; minOccu …"/>
+      <details key="documentation" value="The Backup command backs up the specified database."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Backup"/>
@@ -2962,7 +2968,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The Batch command contains multiple commands that are executed in a single request. &lt;xsd:complexType name=&quot;Batch&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Parallel&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Process&quot; type=&quot;Process&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;xsd:attribute name=&quot;MaxParallel&quot; type=&quot;xsd:int&quot; default=&quot;0&quot; /> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Bindings&quot; minOccurs=&quot;0&quot; type=&quot;OutOfLineBinding&quot; /> &lt;xsd:element name=&quot;DataSource&quot; minOccurs=&quot;0&quot; type=&quot;DataSource&quot; /> &lt;xsd:element name=&quot;DataSourceView&quot; typ …"/>
+        <details key="documentation" value="The Batch command contains multiple commands that are executed in a single request."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -2977,7 +2983,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommitTransaction" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CommitTransaction command commits a transaction on the current session. &lt;xsd:complexType name=&quot;CommitTransaction&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DurabilityGuarantee&quot; minOccurs=&quot;0&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;LocalDisk&quot; /> &lt;xsd:enumeration value=&quot;Full&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the CommitTransaction command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The CommitTransaction command commits a transaction on the current session."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="CommitTransaction"/>
@@ -2999,7 +3005,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Create command is used to create an object on a server. &lt;xsd:complexType name=&quot;Create&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ParentObject&quot; type=&quot;ObjectReference&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;ObjectDefinition&quot; type=&quot;MajorObject&quot; /> &lt;/xsd:all> &lt;xsd:attribute name=&quot;Scope&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Session&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:attribute> &lt;xsd:attribute name=&quot;AllowOverwrite&quot; type=&quot;xsd:boolean&quot; /> &lt;/xsd:complexType> The following table describes the elements allowed in the Create command. …"/>
+      <details key="documentation" value="The Create command is used to create an object on a server."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Create"/>
@@ -3052,7 +3058,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Delete command is used to delete an object from a server. &lt;xsd:complexType name=&quot;Delete&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;/xsd:all> &lt;xsd:attribute name=&quot;IgnoreFailures&quot; type=&quot;xsd:boolean&quot; /> &lt;/xsd:complexType> The following table shows the XML elements included in the Delete command. The following table describes the XML attributes allowed in the Delete command. The return result type for the Delete command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Delete command is used to delete an object from a server."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Delete"/>
@@ -3084,7 +3090,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DesignAggregations" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This command designs aggregations on an AggregationDesign object and returns a rowset containing the statistics of the design. The Object element MUST point to an existing aggregation design object. Otherwise, an error is raised. &lt;xsd:complexType name=&quot;DesignAggregations&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;Time&quot; type=&quot;xsd:duration&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Steps&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Optimization&quot; type=&quot;xsd:double&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Storage&quot; type=&quot;xsd:long&quot; minOccurs=&quot;0&quot; /> &lt;xsd:eleme …"/>
+      <details key="documentation" value="This command designs aggregations on an AggregationDesign object and returns a rowset containing the statistics of the design. The Object element MUST point to an existing aggregation design object. Otherwise, an error is raised."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="DesignAggregations"/>
@@ -3171,7 +3177,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Detach" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Detach command detaches a database. &lt;xsd:complexType name=&quot;Detach&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;Password&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the Detach command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Detach command detaches a database."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Detach"/>
@@ -3204,7 +3210,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Drop" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Drop command deletes a dimension member. &lt;xsd:complexType name=&quot;Drop&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;Object&quot; /> &lt;xsd:element name=&quot;DeleteWithDescendants&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Where&quot; type=&quot;Where&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the Drop command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Drop command deletes a dimension member."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Drop"/>
@@ -3249,7 +3255,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Insert" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Object type identifies the dimension that the Insert, Update, and Drop commands operate on. It differs from an ObjectReference Type in that it uses the name of the objects rather than the ID. &lt;xsd:complexType name=&quot;Object&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Database&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Cube&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Dimension&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Object type identifies the dimension that the Insert, Update, and Drop commands operate on. It differs from an ObjectReference Type in that it uses the name of the objects rather than the ID."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Insert"/>
@@ -3283,7 +3289,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lock" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Lock command locks an object in the context of the current transaction.&lt;384> &lt;xsd:complexType name=&quot;Lock&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:token&quot;> &lt;xsd:pattern value=&quot;[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z] {4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}&quot;/> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;Mode&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Read&quot; /> &lt;xsd:enumeration value=&quot;Write&quot; /> &lt;xsd:enumeration value=&quot;CommitShared&quot; /> &lt;xsd:enum …"/>
+      <details key="documentation" value="The Lock command locks an object in the context of the current transaction."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Lock"/>
@@ -3326,7 +3332,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MergePartitions" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This command merges the data of one or more source partitions into a target partition and deletes the source partitions. The Source and Target object references MUST point to distinct partitions in the same measure group. Otherwise, an error is raised. &lt;xsd:complexType name=&quot;MergePartitions&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Sources&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Source&quot; type=&quot;ObjectReference&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Target&quot; type=&quot;ObjectReference&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return r …"/>
+      <details key="documentation" value="This command merges the data of one or more source partitions into a target partition and deletes the source partitions. The Source and Target object references MUST point to distinct partitions in the same measure group. Otherwise, an error is raised."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="MergePartitions"/>
@@ -3360,7 +3366,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NotifyTableChange" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The NotifyTableChange command notifies the server about changes in source tables so that the server can drop any cached data from these tables. &lt;xsd:complexType name=&quot;NotifyTableChange&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;TableNotifications&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;TableNotification&quot; type=&quot;TableNotification&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the NotifyTableChange command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The NotifyTableChange command notifies the server about changes in source tables so that the server can drop any cached data from these tables."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="NotifyTableChange"/>
@@ -3395,7 +3401,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Process command is used to process objects on the server. &lt;xsd:complexType name=&quot;Process&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Type&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;ProcessFull&quot; /> &lt;xsd:enumeration value=&quot;ProcessAdd&quot; /> &lt;xsd:enumeration value=&quot;ProcessUpdate&quot; /> &lt;xsd:enumeration value=&quot;ProcessIndexes&quot; /> &lt;xsd:enumeration value=&quot;ProcessScriptCache&quot; /> &lt;xsd:enumeration value=&quot;ProcessData&quot; /> &lt;xsd:enumeration value=&quot;ProcessDefault&quot; /> &lt;xsd:enumeration value=&quot;ProcessClear&quot; /> &lt;xsd:enumeration value=&quot;ProcessStructure&quot; /> &lt;xsd:enumeration value=&quot;ProcessCle …"/>
+      <details key="documentation" value="The Process command is used to process objects on the server."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Process"/>
@@ -3483,7 +3489,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Restore" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Restore command restores a database from a backup file. &lt;xsd:complexType name=&quot;Restore&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DatabaseName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;DatabaseID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;File&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Security&quot; minOccurs=&quot;0&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;SkipMembership&quot; /> &lt;xsd:enumeration value=&quot;CopyAll&quot; /> &lt;xsd:enumeration value=&quot;IgnoreSecurity&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;AllowOverwrite&quot; type=&quot;xsd …"/>
+      <details key="documentation" value="The Restore command restores a database from a backup file."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Restore"/>
@@ -3618,7 +3624,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subscribe" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Subscribe command subscribes to a Trace object for events. &lt;xsd:complexType name=&quot;Subscribe&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;eng800:SubscriptionId&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the Subscribe command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Subscribe command subscribes to a Trace object for events."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Subscribe"/>
@@ -3640,7 +3646,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscriptionId" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A client identifier that SHOULD&lt;381> be associated with the subscription. This identifier can be used later to terminate the subscription by using the Unsubscribe command."/>
+        <details key="documentation" value="A client identifier that SHOULD be associated with the subscription. This identifier can be used later to terminate the subscription by using the Unsubscribe command."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -3651,7 +3657,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Synchronize" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Source type specifies the source for the Synchronization command. &lt;xsd:complexType name=&quot;Source&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;ConnectionString&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Source type specifies the source for the Synchronization command."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Synchronize"/>
@@ -3715,7 +3721,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Unlock" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Unlock command unlocks an object in the context of the current transaction. &lt;xsd:complexType name=&quot;Unlock&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:token&quot;> &lt;xsd:pattern value=&quot;[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z] {4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}&quot;/> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the Unlock command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Unlock command unlocks an object in the context of the current transaction."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Unlock"/>
@@ -3737,7 +3743,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Update" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Update command updates a dimension member. &lt;xsd:complexType name=&quot;Update&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;Object&quot; /> &lt;xsd:element name=&quot;Attributes&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Attribute&quot; type=&quot;Attribute_InsertUpdate&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;MoveWithDescendants&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;MoveToRoot&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Where&quot; type=&quot;Where&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for …"/>
+      <details key="documentation" value="The Update command updates a dimension member."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Update"/>
@@ -3802,7 +3808,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UpdateCells" eSuperTypes="#//Command">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The UpdateCells command updates the values of the specified cells. &lt;xsd:complexType name=&quot;UpdateCells&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;Cell&quot; type=&quot;Cell&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> The UpdateCells command is stateful and therefore is used in conjunction with SOAP header elements. When the client has defined an mddataset result that the client requests to update by using the UpdateCells command, the client MUST tell the server to keep the result available for updating. However, a KeepResult element is added to the SOAP header. …"/>
+      <details key="documentation" value="The UpdateCells command updates the values of the specified cells."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="UpdateCells"/>
@@ -3825,7 +3831,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="XmlDocument" instanceClassName="java.lang.String">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Arbitrary XML carried as a value. An Alter or Create carries an ASSL object definition - a whole &lt;Cube> or &lt;Dimension> from one of the engine namespaces - and this project does not model those: it carries them faithfully and hands them to the service, which does. Typed as a string it was worse than unmodelled, because the reader called getElementText() and threw on the first element inside."/>
+      <details key="documentation" value="Arbitrary XML carried as a value. An Alter or Create carries an ASSL object definition - a whole &amp;lt;Cube> or &amp;lt;Dimension> from one of the engine namespaces - and this project does not model those: it carries them faithfully and hands them to the service, which does. Typed as a string it was worse than unmodelled, because the reader called getElementText() and threw on the first element inside."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="xmlDocument"/>
@@ -3858,7 +3864,7 @@
       <details key="groupElementName" value="CloneDatabase"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CloneDatabase command&lt;390> clones an existing database to a new database that has a specified name and id at a specified location. &lt;xsd:complexType name=&quot;CloneDatabase&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; > &lt;xsd:complexType> &lt;xsd:element name=&quot;DatabaseID&quot; type=&quot;ObjectReference&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Target&quot;> &lt;xsd:complexType> &lt;xsd:element ref=&quot;eng100_100:DbStorageLocation&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;DatabaseName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot;/> &lt;xsd:element name=&quot;DatabaseID&quot; type=&quot;xsd:string&quot; minOccurs …"/>
+      <details key="documentation" value="The CloneDatabase command clones an existing database to a new database that has a specified name and id at a specified location."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CloneDatabase"/>
@@ -3886,7 +3892,7 @@
       <details key="groupElementName" value="DBCC"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Database Consistency Check (DBCC) command&lt;392> is used to check consistency of objects on the server. This command applies to databases that are in Multidimensional storage mode. &lt;xsd:complexType name=&quot;DBCC&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot;/> &lt;/xsd:all> &lt;/xsd:complexType> The following table shows the XML elements included in the DBCC command. The return result type for the DBCC command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Database Consistency Check (DBCC) command is used to check consistency of objects on the server. This command applies to databases that are in Multidimensional storage mode."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DBCC"/>
@@ -3909,7 +3915,7 @@
       <details key="groupElementName" value="ImageLoad"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ImageLoad command&lt;388> loads a tabular database from a database folder. The following is the XSD sample. &lt;xsd:complexType name=&quot;ImageLoad&quot;> &lt;xsd:all> &lt;xsd:element ref=&quot;eng200_200:ImagePath&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element ref=&quot;eng200_200:ImageUrl&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element ref=&quot;eng200_200:ImageUniqueID&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element ref=&quot;eng200_200:ImageVersion&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element ref=&quot;eng100:ReadWriteMode&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;ReadWrit …"/>
+      <details key="documentation" value="The ImageLoad command loads a tabular database from a database folder."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImageLoad"/>
@@ -4017,7 +4023,7 @@
       <details key="groupElementName" value="ImageSave"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ImageSave command&lt;389> saves a database back to a location or file that is specified when the database loads by using the ImageLoad command. &lt;xsd:complexType name=&quot;ImageSave&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;Data&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the ImageSave command is xmla-e:emptyresult when Data contains the default value False. When the Data element is set to true, the result of the ImageSave command has the following response definition. …"/>
+      <details key="documentation" value="The ImageSave command saves a database back to a location or file that is specified when the database loads by using the ImageLoad command."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ImageSave"/>
@@ -4050,7 +4056,7 @@
       <details key="groupElementName" value="SetAuthContext"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The SetAuthContext command&lt;391> changes the access scope of a specific user from a system administrator who has access to all databases to a system administrator who has access to only the database that is specified. &lt;xsd:complexType name=&quot;SetAuthContext&quot;> &lt;xsd:all> &lt;xsd:element ref=&quot;eng200_200:Token&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;DatabaseID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;1&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the SetAuthContext command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The SetAuthContext command changes the access scope of a specific user from a system administrator who has access to all databases to a system administrator who has access to only the database that is specified."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="SetAuthContext"/>
@@ -4083,7 +4089,7 @@
       <details key="groupElementName" value="Unsubscribe"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Unsubscribe command SHOULD&lt;382> terminate an ongoing subscription to the events of a Trace object. &lt;xsd:complexType name=&quot;Unsubscribe&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;eng800:SubscriptionId&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The return result type for the Unsubscribe command is xmla-e:emptyresult."/>
+      <details key="documentation" value="The Unsubscribe command SHOULD terminate an ongoing subscription to the events of a Trace object."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Unsubscribe"/>
@@ -4105,7 +4111,7 @@
       <details key="groupElementName" value="RemoveDiscontinuedFeatures"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The RemoveDiscontinuedFeatures command&lt;393> performs the removal of deprecated features from the database. &lt;xsd:complexType name=&quot;RemoveDiscontinuedFeatures&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;DatabaseID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;1&quot; /> &lt;xsd:element name=&quot;RemoveDataMining&quot; type=&quot;xsd:boolean&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element ref=&quot;eng922:EnsureProperEncryption&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> The RemoveDiscontinuedFeatures XSD depends upon the following definitions in namespaces other than the default namespace. …"/>
+      <details key="documentation" value="The RemoveDiscontinuedFeatures command performs the removal of deprecated features from the database."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="RemoveDiscontinuedFeatures"/>
@@ -4196,7 +4202,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeInsertUpdate">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This type contains the data associated with a member of an attribute being inserted into or updated. &lt;xsd:complexType name=&quot;Attribute_InsertUpdate&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeName&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Keys&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Key&quot; type=&quot;xsd:anySimpleType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Translations&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Translation&quot; t …"/>
+      <details key="documentation" value="This type contains the data associated with a member of an attribute being inserted into or updated."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Attribute_InsertUpdate"/>
@@ -4318,7 +4324,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cell">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Cell type specifies the ordinal of a cell and its new value. &lt;xsd:complexType name=&quot;Cell&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Value&quot; type=&quot;xsd:anySimpleType&quot; /> &lt;/xsd:all> &lt;xsd:attribute name=&quot;CellOrdinal&quot; type=&quot;xsd:long&quot; /> &lt;/xsd:complexType> The following tables describe the XML element and attribute of the Cell object."/>
+      <details key="documentation" value="The Cell type specifies the ordinal of a cell and its new value."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Cell"/>
@@ -4346,7 +4352,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventColumn">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a single trace event column. &lt;xsd:complexType name=&quot;EventColumn&quot; > &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;EventColumnSubclassList&quot; minOccurs=&quot;0&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;EventColumnSubclass&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; > &lt;xsd:complexType> &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;name&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a single trace event column."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="EventColumn"/>
@@ -4379,7 +4385,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecuteParameter">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The ExecuteParameter type specifies the value of a parameter in a command. &lt;xsd:complexType name=&quot;ExecuteParameter&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; minOccurs=&quot;1&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Value&quot; minOccurs=&quot;1&quot; type=&quot;xsd:anyType&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The ExecuteParameter type specifies the value of a parameter in a command."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ExecuteParameter"/>
@@ -4408,7 +4414,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Folder">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Folder type contains folder mappings for the restored database. &lt;xsd:complexType name=&quot;Folder&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Original&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;New&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Folder type contains folder mappings for the restored database."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Folder"/>
@@ -4439,7 +4445,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//LocationBackup">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Location type contains the location mappings for remote partitions. It is used by the Restore and the Synchronize commands. It is an extension of the Location_Backup type. &lt;xsd:complexType name=&quot;Location&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Location_Backup&quot; > &lt;xsd:all> &lt;xsd:element name=&quot;DataSourceType&quot; minOccurs=&quot;0&quot; > &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot; > &lt;xsd:enumeration value=&quot;Remote&quot; /> &lt;xsd:enumeration value=&quot;Local&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;/xsd:element> &lt;xsd:element name=&quot;ConnectionString&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Fo …"/>
+      <details key="documentation" value="The Location type contains the location mappings for remote partitions. It is used by the Restore and the Synchronize commands. It is an extension of the Location_Backup type."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Location"/>
@@ -4448,7 +4454,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LocationBackup">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Location_Backup type identifies remote locations that are to be backed up by a Backup command. &lt;xsd:complexType name=&quot;Location_Backup&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;File&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;DataSourceID&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Location_Backup type identifies remote locations that are to be backed up by a Backup command."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Location_Backup"/>
@@ -4478,7 +4484,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Object">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Object type identifies the dimension that the Insert, Update, and Drop commands operate on. It differs from an ObjectReference Type in that it uses the name of the objects rather than the ID. &lt;xsd:complexType name=&quot;Object&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Database&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Cube&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Dimension&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Object type identifies the dimension that the Insert, Update, and Drop commands operate on. It differs from an ObjectReference Type in that it uses the name of the objects rather than the ID."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Object"/>
@@ -4683,7 +4689,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OutOfLineBinding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The OutOfLineBinding type is used for overriding the bindings on an object set in a Create or Alter command. It consists of a set of IDs that reference the object and the bindings to be overridden. The bindings have the same restrictions as those on the object that they override. &lt;xsd:complexType name=&quot;OutOfLineBinding&quot; > &lt;xsd:all> &lt;xsd:element name=&quot;DatabaseID&quot; minOccurs=&quot;0&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;DimensionID&quot; minOccurs=&quot;0&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;CubeID&quot; minOccurs=&quot;0&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;MeasureGroupID&quot; minOccurs=&quot;0&quot; type=&quot;xsd:string&quot; /> &lt; …"/>
+      <details key="documentation" value="The OutOfLineBinding type is used for overriding the bindings on an object set in a Create or Alter command. It consists of a set of IDs that reference the object and the bindings to be overridden. The bindings have the same restrictions as those on the object that they override."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="OutOfLineBinding"/>
@@ -4932,7 +4938,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Source type specifies the source for the Synchronization command. &lt;xsd:complexType name=&quot;Source&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Object&quot; type=&quot;ObjectReference&quot; /> &lt;xsd:element name=&quot;ConnectionString&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Source type specifies the source for the Synchronization command."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Source"/>
@@ -4963,7 +4969,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TraceEvent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a single trace event. &lt;xsd:complexType name=&quot;TraceEvent&quot; > &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;EventColumnList&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;EventColumn&quot; type=&quot;EventColumn&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a single trace event."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TraceEvent"/>
@@ -5016,7 +5022,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TraceColumns">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type contains information about the trace columns that are available from the server. Every TraceEvent can use one or more of these columns. &lt;xsd:complexType name=&quot;Trace_Columns&quot; > &lt;xsd:sequence> &lt;xsd:element name=&quot;Data&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Column&quot; > &lt;xsd:complexType> &lt;xsd:all> &lt;xsd:element name=&quot;ID&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;Type&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/> &lt;xsd:element name=&quot;Filterable&quot; type=&quot;xsd:boolean&quot; /> &lt;xsd:element name= …"/>
+      <details key="documentation" value="This complex type contains information about the trace columns that are available from the server. Every TraceEvent can use one or more of these columns."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Trace_Columns"/>
@@ -5036,7 +5042,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TraceDefinitionProviderInfo">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type contains basic information about the server/trace provider. &lt;xsd:complexType name=&quot;Trace_Definition_ProviderInfo&quot; > &lt;xsd:sequence> &lt;xsd:element name=&quot;Data&quot; > &lt;xsd:complexType> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Version&quot; > &lt;xsd:complexType> &lt;xsd:all> &lt;xsd:element name=&quot;Major&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Minor&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;BuildNumber&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;Type&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; / …"/>
+      <details key="documentation" value="This complex type contains basic information about the server/trace provider."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Trace_Definition_ProviderInfo"/>
@@ -5056,7 +5062,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TraceEventCategories">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type contains information about the trace events that are available from the server. &lt;xsd:complexType name=&quot;Trace_Event_Categories&quot; > &lt;xsd:sequence> &lt;xsd:element name=&quot;Data&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;EventCategory&quot; > &lt;xsd:complexType> &lt;xsd:all> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Type&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;EventList&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Event&quot; type=&quot;TraceEvent&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbound …"/>
+      <details key="documentation" value="This complex type contains information about the trace events that are available from the server."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Trace_Event_Categories"/>
@@ -5076,7 +5082,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TranslationInsertUpdate">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Translation_InsertUpdate type contains the translation data associated with a member of an attribute being inserted into or updated. &lt;xsd:complexType name=&quot;Translation_InsertUpdate&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Language&quot; type=&quot;xsd:integer&quot; /> &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Translation_InsertUpdate type contains the translation data associated with a member of an attribute being inserted into or updated."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Translation_InsertUpdate"/>
@@ -5106,7 +5112,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Where">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Where type identifies which members of a dimension are to be updated or dropped. &lt;xsd:complexType name=&quot;Where&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Attribute&quot; type=&quot;Where_Attribute&quot; /> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Where type identifies which members of a dimension are to be updated or dropped."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Where"/>
@@ -5126,7 +5132,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhereAttribute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Where_Attribute type specifies the name of the attribute to be updated or dropped and the key values. &lt;xsd:complexType name=&quot;Where_Attribute&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;AttributeName&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element name=&quot;Keys&quot; minOccurs=&quot;0&quot; > &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;Key&quot; type=&quot;xsd:anySimpleType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:all> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The Where_Attribute type specifies the name of the attribute to be updated or dropped and the key values."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Where_Attribute"/>
@@ -5159,7 +5165,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The return element contains the result that is returned by the server. The content of the result that is contained in the return element is dependent upon the command and the properties that were specified in the Execute method call. &lt;xsd:complexType name=&quot;return&quot;> &lt;xsd:choice> &lt;xsd:element ref=&quot;xmla-ds:root&quot; /> &lt;xsd:element ref=&quot;xmla-rs:root&quot; /> &lt;xsd:element ref=&quot;xmla-e:root&quot; /> &lt;xsd:element ref=&quot;xmla-m:results&quot; /> &lt;/xsd:choice> &lt;/xsd:complexType> The definition of the xmla-ds:root element is as follows. …"/>
+      <details key="documentation" value="The return element contains the result that is returned by the server. The content of the result that is contained in the return element is dependent upon the command and the properties that were specified in the Execute method call."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="return"/>

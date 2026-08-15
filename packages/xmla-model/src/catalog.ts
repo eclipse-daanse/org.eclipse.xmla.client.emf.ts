@@ -13,7 +13,7 @@ import type { EClass, EClassifier, EPackage, EStructuralFeature } from '@emfts/c
 import type { XmlaModels } from './bootstrap.js';
 
 /** The kinds of rowset, which is one model each - see docs/rowsets-tabular-vs-multidimensional.md. */
-const KINDS = ['core', 'relational', 'multidimensional', 'mining', 'server'] as const;
+const KINDS = ['core', 'relational', 'multidimensional', 'mining', 'server', 'tabular'] as const;
 
 const ROWSET_MODELS = KINDS.map((kind) => `rowset-${kind}`);
 
@@ -92,6 +92,54 @@ export class RowsetCatalog {
   }
 
   /**
+   * The rowset a client knows only by its GUID.
+   *
+   * A client resolves a rowset by name for the twenty-eight it hard-wires and by
+   * `SchemaGuid` for every other - the column DISCOVER_SCHEMA_ROWSETS carries for
+   * exactly that. Without this direction the GUIDs in the model are decoration.
+   *
+   * Case is free and braces are optional, because a GUID reaches this from a
+   * client's own registry, a URL or a hand-typed restriction, and the three
+   * disagree about both.
+   */
+  forGuid(guid: string): EClass | null {
+    const wanted = normalizeGuid(guid);
+    if (wanted === '') {
+      return null;
+    }
+    for (const eClass of this.byRequestType.values()) {
+      const own = this.guidOf(eClass);
+      if (own !== null && normalizeGuid(own) === wanted) {
+        return eClass;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Every GUID the model states, by request type.
+   *
+   * Not one per rowset: DMSCHEMA_MINING_MODEL_XML and
+   * DMSCHEMA_MINING_MODEL_CONTENT_PMML genuinely share one, which is why
+   * {@link forGuid} answers with the first and this answers with all of them.
+   */
+  guids(): ReadonlyMap<string, string> {
+    const found = new Map<string, string>();
+    for (const [requestType, eClass] of this.byRequestType) {
+      const guid = this.guidOf(eClass);
+      if (guid !== null) {
+        found.set(requestType, guid);
+      }
+    }
+    return found;
+  }
+
+  /** Where a GUID came from, which is how a wrong one is ever noticed. */
+  guidSourceOf(eClass: EClass): string | null {
+    return detail(eClass, 'guidSource');
+  }
+
+  /**
    * Where this rowset's column list comes from: `MS-SSAS-251031`,
    * `OLEDB-APPENDIX-B`, `INFERRED` or `PROPRIETARY`.
    */
@@ -167,6 +215,11 @@ function classesOf(ePackage: EPackage): EClass[] {
     (classifier): classifier is EClass =>
       typeof (classifier as unknown as { getEStructuralFeatures?: unknown }).getEStructuralFeatures === 'function',
   );
+}
+
+/** Lower case, no braces - the three forms a GUID reaches us in, made one. */
+function normalizeGuid(guid: string): string {
+  return guid.trim().replace(/^\{|\}$/g, '').toLowerCase();
 }
 
 function detail(eClass: EClass, key: string): string | null {

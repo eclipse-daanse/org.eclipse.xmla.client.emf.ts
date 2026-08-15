@@ -25,7 +25,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="CalculationPropertiesVisualizationProperties">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The CalculationPropertiesVisualizationProperties complex type specifies visualization properties for a calculated result. This type is defined in the eng300 namespace. The following is the XSD for the CalculationPropertiesVisualizationProperties complex type. &lt;xsd:complexType name=&quot;CalculationPropertiesVisualizationProperties&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;FolderPosition&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;-1&quot;/> &lt;xsd:element name=&quot;ContextualNameRule&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;None&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value …"/>
+      <details key="documentation" value="The CalculationPropertiesVisualizationProperties complex type specifies visualization properties for a calculated result. This type is defined in the eng300 namespace."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="CalculationPropertiesVisualizationProperties"/>
@@ -159,7 +159,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DimensionAttributeVisualizationProperties">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DimensionAttributeVisualizationProperties complex type specifies visualization properties for a calculated result. This type is defined in the eng300 namespace. The following is the XSD for the DimensionAttributeVisualizationProperties complex type. &lt;xsd:complexType name=&quot;DimensionAttributeVisualizationProperties&quot;> &lt;xsd:sequence> &lt;xsd:element name=&quot;FolderPosition&quot; type=&quot;xsd:integer&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;-1&quot;/> &lt;xsd:element name=&quot;ContextualNameRule&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; default=&quot;None&quot;> &lt;xsd:simpleType> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:enumeration value=&quot;None&quot; / …"/>
+      <details key="documentation" value="The DimensionAttributeVisualizationProperties complex type specifies visualization properties for a calculated result. This type is defined in the eng300 namespace."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DimensionAttributeVisualizationProperties"/>

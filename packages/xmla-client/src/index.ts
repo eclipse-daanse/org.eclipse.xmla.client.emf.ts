@@ -16,6 +16,15 @@
  */
 export { XmlaClient } from './client.js';
 export type { Credentials, DiscoverResult, XmlaClientOptions } from './client.js';
+export { CAPABILITY_BITS, capabilitiesOf, columnOf, dataSourceOf, open, propertiesOf } from './connect.js';
+export type {
+  AuthenticationMode,
+  Capabilities,
+  CapabilityName,
+  ConnectionInfo,
+  ConnectionProperties,
+  DataSource,
+} from './connect.js';
 export { SessionHeaders, sessionIdOf } from './session.js';
 export { FetchTransport, XmlaHttpError } from './transport.js';
 export type { FetchTransportOptions, Transport, XmlaHttpRequest, XmlaHttpResponse } from './transport.js';

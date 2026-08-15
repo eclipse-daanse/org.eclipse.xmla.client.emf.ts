@@ -88,7 +88,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NormTupleSet" eSuperTypes="urn:schemas-microsoft-com:xml-analysis:mddataset#//SetType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The msxmla:NormTupleSet type provides an optimized format for a TupleSet. This format is used when the DbpropMsmdOptimizeResponse property is appropriately set (see section 3.1.4.2.2.1.2.1). &lt;xsd:element name=&quot;NormTupleSet&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;NormTuples&quot; type=&quot;msxmla:NormTuplesType&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot;/> &lt;xsd:element name=&quot;MembersLookup&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element ref=&quot;xmla-ds:Members&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;/> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;/xsd:sequence> &lt;/xsd:complexType …"/>
+      <details key="documentation" value="The msxmla:NormTupleSet type provides an optimized format for a TupleSet. This format is used when the DbpropMsmdOptimizeResponse property is appropriately set (see section 3.1.4.2.2.1.2.1)."/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="NormTupleSet"/>
