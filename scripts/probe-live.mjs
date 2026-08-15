@@ -88,6 +88,44 @@ check('the server answers at all', async () => {
   return url;
 });
 
+check('open() runs the order a server expects', async () => {
+  const { client: connected, info } = await client.open();
+  if (info.dataSource.info.trim() === '') {
+    throw new Error('the server named no DataSourceInfo, so nothing can be sent back');
+  }
+  // Kept, because everything after this should be carrying the DataSourceInfo
+  // the server just named - which is the whole point of having read it.
+  client = connected;
+  return `DataSourceInfo=${JSON.stringify(info.dataSource.info)}, auth=${info.dataSource.authenticationMode}, catalog=${JSON.stringify(info.currentCatalog)}`;
+});
+
+check('the capability masks are readable', async () => {
+  const { info } = await client.open();
+  const named = ['MDPROPVAL_MSQ_BASIC', 'MDPROPVAL_MF_WITH_CALCMEMBERS', 'MDPROPVAL_MF_CREATE_CALCMEMBERS'];
+  const held = named.filter((each) => info.capabilities.has(each));
+  return `subqueries=${info.capabilities.subqueries}, formulas=${info.capabilities.formulas}, ddl=${info.capabilities.ddlExtensions}; holds ${held.join(', ') || 'none of the three asked about'}`;
+});
+
+check('the rowsets the server declares are reachable by their GUID', async () => {
+  const result = await client.discover('DISCOVER_SCHEMA_ROWSETS');
+  let declared = 0;
+  let resolved = 0;
+  for (const row of result.rows) {
+    const guid = String(read(row, 'schemaGuid') ?? '');
+    if (guid === '') {
+      continue;
+    }
+    declared += 1;
+    if (catalog.forGuid(guid) !== null) {
+      resolved += 1;
+    }
+  }
+  if (declared === 0) {
+    throw new Error('the server states no SchemaGuid at all, so nothing is reachable by GUID');
+  }
+  return `${resolved} of ${declared} declared GUIDs resolve to a modelled rowset`;
+});
+
 check('DISCOVER_DATASOURCES comes back with rows', async () => {
   const result = await client.discover('DISCOVER_DATASOURCES');
   if (result.rows.length === 0) {
@@ -320,6 +358,22 @@ check('the numbers come out of the database, not out of the server', async () =>
   const sales = cubes.rows.find((row) => String(read(row, 'cubeName') ?? '') === 'Sales');
   if (sales === undefined) {
     notHere('this server has no Sales cube - that one is the csv probe\'s own');
+  }
+
+  // The name is not enough: FoodMart has a Sales cube too, and its measures are
+  // other measures entirely. Ask what this one holds before assuming it is the
+  // one meant - otherwise a foreign cube of the same name reads as a failure of
+  // this check rather than as a cube it was never about.
+  const measures = await client.discover('MDSCHEMA_MEASURES', [
+    { name: 'CATALOG_NAME', value: String(read(sales, 'catalogName') ?? '') },
+    { name: 'CUBE_NAME', value: 'Sales' },
+  ]);
+  const held = new Set(measures.rows.map((row) => String(read(row, 'measureName') ?? '')));
+  if (!held.has('Amount') || !held.has('Quantity')) {
+    notHere(
+      `this server's Sales cube holds ${[...held].slice(0, 4).join(', ')} rather than Amount and ` +
+        'Quantity - it is another Sales, not the csv probe\'s',
+    );
   }
 
   const workbench = new WorkbenchXmlaClient({
