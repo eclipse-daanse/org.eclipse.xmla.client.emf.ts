@@ -31,15 +31,22 @@ Power BI tool has any use for.
 
 ## What is missing, and what it is for
 
-### The Tabular Object Model — 60 named by the tools, 32 specified
+### The Tabular Object Model — 60 named by the tools, 48 modelled
 
-**Correction.** The 60 below is what the three tool inventories name between them.
-[MS-SSAS-T] v20210406 specifies **32**, and those 32 are what could be modelled
-from a source. They exist as `model/rowset.tabular` in the Java repository but are
-parked - the module is out of the build, and nothing here loads them. The
-difference is almost exactly the storage group described further down - the
-VertiPaq `_STORAGES`, `_SEGMENT_*` and `_DICTIONARY_*` diagnostics appear in no
-specification, only in tools that read them.
+**Correction, twice over.** The 60 below is what the three tool inventories name
+between them. [MS-SSAS-T] v20210406 specifies 32, which is what could first be
+modelled from a source; the model now carries **48** — the ones a tabular client
+actually asks for, read off what it sends rather than off the prose table.
+
+Those 48 are loaded here: `rowset-tabular` and its restrictions are back in
+`model-sources.json`, and `RowsetCatalog` scans them like any other family. That
+buys describing them, not serving them — no server in this project answers a
+`TMSCHEMA_*` request with rows.
+
+What is left of the difference to 60 is almost exactly the storage group
+described further down: the VertiPaq `_STORAGES`, `_SEGMENT_*` and
+`_DICTIONARY_*` diagnostics appear in no specification, only in tools that read
+them.
 
 `TMSCHEMA_MODEL`, `TMSCHEMA_TABLES`, `TMSCHEMA_COLUMNS`, `TMSCHEMA_MEASURES`,
 `TMSCHEMA_RELATIONSHIPS`, `TMSCHEMA_PARTITIONS`, `TMSCHEMA_ROLES`,

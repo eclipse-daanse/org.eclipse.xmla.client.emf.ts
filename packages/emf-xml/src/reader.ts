@@ -17,6 +17,7 @@ import {
   isAttribute,
   isSimpleContent,
   isWildcard,
+  rawNamespaceOf,
   wireNameOf,
   wrapperNameOf,
 } from './emd.js';
@@ -25,6 +26,7 @@ import { parseValue } from './values.js';
 
 /** The XSD namespace, which is never a feature of anything. */
 const XSD_NS = 'http://www.w3.org/2001/XMLSchema';
+const XSI_NS = 'http://www.w3.org/2001/XMLSchema-instance';
 
 /** What to do with an element the target EClass has no feature for. */
 export const Unknown = {
@@ -120,6 +122,14 @@ export class EcoreXmlReader {
       return;
     }
 
+    if (isNil(cursor)) {
+      // xsi:nil is NULL, not an empty value. Left unset, so that eIsSet keeps
+      // saying what it says everywhere else - and so that a numeric column
+      // arriving as <Col xsi:nil="true"/> is not read as unparseable text.
+      cursor.skipSubtree();
+      return;
+    }
+
     const feature = this.elementsOf(target).get(name);
     if (feature === undefined) {
       // ASSL wraps its collections - <Annotations> around the <Annotation>s. The
@@ -162,6 +172,8 @@ export class EcoreXmlReader {
       return;
     }
 
+    this.checkNamespace(cursor, feature, target);
+
     if (isReference(feature)) {
       const declared = feature.getEType() as EClass;
       // Even a known feature can arrive under a subtype's name when its declared
@@ -191,6 +203,31 @@ export class EcoreXmlReader {
         depth -= 1;
       }
     }
+  }
+
+  /**
+   * That the element sits in the namespace the model puts the feature in.
+   *
+   * Features are matched on the local name, which is what makes a model read a
+   * response at all - but it also means an element with the right name and the
+   * wrong namespace is read as though it belonged. The other direction is worse
+   * and is what a strict client does: it skips such an element without a word,
+   * and the column arrives empty with nothing to say why.
+   *
+   * So the mismatch is named. Only where the model states a namespace: a
+   * feature that states none is unqualified on purpose, and an element that
+   * carries none matches anything.
+   */
+  private checkNamespace(cursor: XmlCursor, feature: EStructuralFeature, target: EClass): void {
+    const declared = rawNamespaceOf(feature);
+    if (declared === null || cursor.namespaceURI === '' || cursor.namespaceURI === declared) {
+      return;
+    }
+    throw new XmlCodecError(
+      `<${cursor.localName}> is in ${cursor.namespaceURI}, but ${target.getName()} puts ` +
+        `${wireNameOf(feature)} in ${declared}`,
+      cursor.location,
+    );
   }
 
   private readAttributes(cursor: XmlCursor, target: EClass, object: EObject): void {
@@ -366,6 +403,22 @@ function add(object: EObject, feature: EStructuralFeature, child: EObject): void
   } else {
     object.eSet(feature, child);
   }
+}
+
+/**
+ * Whether this element says it is NULL.
+ *
+ * Only the literal `true`. XSD allows `1` for a boolean, but `xsi:nil` is
+ * defined over the words, and a client that also honoured `1` would read a
+ * column holding the number one as absent.
+ */
+function isNil(cursor: XmlCursor): boolean {
+  for (const attribute of cursor.attributes) {
+    if (attribute.localName === 'nil' && attribute.namespaceURI === XSI_NS) {
+      return attribute.value.trim() === 'true';
+    }
+  }
+  return false;
 }
 
 function allFeatures(eClass: EClass): EStructuralFeature[] {
