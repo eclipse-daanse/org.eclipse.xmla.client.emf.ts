@@ -14,7 +14,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bi" nsURI="http://schemas.microsoft.com/sqlbi/2010/10/edm/extensions"
     nsPrefix="bi">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="&#xA;      Common Data Model Schema Definition Language.&#xA;      Copyright (c) Microsoft Corp. All rights reserved.&#xA;    "/>
+    <details key="documentation" value="&#xA;      Common Data Model Schema Definition Language.&#xA;      Copyright (c) Microsoft Corp. All rights reserved.&#xA;"/>
     <details key="oSGiCompatible" value="true"/>
     <details key="basePackage" value="org.eclipse.daanse.xmla.model.csdl.v2"/>
     <details key="prefix" value="Bi"/>

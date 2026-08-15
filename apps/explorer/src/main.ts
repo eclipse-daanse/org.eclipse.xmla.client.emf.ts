@@ -20,12 +20,16 @@ import { registerXmlaWidgets } from './widgets.js';
  * The app against a live server.
  *
  * The endpoint comes from the query string so this needs no build to point
- * somewhere else: `?url=http://localhost:8090/xmla`. Credentials are left to
- * the browser, which is why the transport is asked to send what it already
+ * somewhere else: `?endpoint=http://localhost:8090/xmla`. Credentials are left
+ * to the browser, which is why the transport is asked to send what it already
  * holds.
+ *
+ * Not `?url=`: Vite reserves that as an import query flag, so its dev server
+ * answers 403 Restricted before the app is ever loaded. The built app would
+ * have taken it, which is the worst kind of difference between dev and build.
  */
 const parameters = new URLSearchParams(globalThis.location.search);
-const url = parameters.get('url') ?? '/xmla';
+const url = parameters.get('endpoint') ?? '/xmla';
 
 const session = new ExplorerSession({
   url,

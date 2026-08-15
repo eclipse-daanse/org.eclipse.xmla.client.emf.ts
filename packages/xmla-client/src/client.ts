@@ -14,6 +14,8 @@ import { RowsetCatalog, XMLA_NAMESPACES } from '@daanse/xmla-model';
 import type { XmlaModels } from '@daanse/xmla-model';
 import type { EClass, EObject } from '@emfts/core';
 
+import { open } from './connect.js';
+import type { ConnectionInfo, ConnectionProperties } from './connect.js';
 import { SessionHeaders, sessionIdOf } from './session.js';
 import { XmlaHttpError } from './transport.js';
 import type { Transport, XmlaHttpResponse } from './transport.js';
@@ -35,6 +37,11 @@ export interface XmlaClientOptions {
   readonly sessionId?: string | null;
   /** Header blocks to send on every request besides the session ones. */
   readonly extraSoapHeaders?: readonly EObject[];
+  /**
+   * PropertyList entries every request carries, chiefly the DataSourceInfo the
+   * server named in DISCOVER_DATASOURCES. See {@link open}.
+   */
+  readonly connectionProperties?: ConnectionProperties;
 }
 
 export interface DiscoverResult<T = EObject> {
@@ -81,6 +88,28 @@ export class XmlaClient {
     return new XmlaClient({ ...this.options, credentials });
   }
 
+  withConnectionProperties(connectionProperties: ConnectionProperties): XmlaClient {
+    return new XmlaClient({
+      ...this.options,
+      connectionProperties: { ...this.options.connectionProperties, ...connectionProperties },
+    });
+  }
+
+  get connectionProperties(): ConnectionProperties {
+    return this.options.connectionProperties ?? {};
+  }
+
+  /**
+   * Opens the connection the way a server expects: the capability probe, the
+   * data source, then a liveness probe.
+   *
+   * Returns a client carrying the DataSourceInfo the server named, together with
+   * what it said about itself. See {@link open} for why the order is that order.
+   */
+  async open(): Promise<{ client: XmlaClient; info: ConnectionInfo }> {
+    return open(this);
+  }
+
   /** Opens a session and returns a client that carries it. */
   async beginSession(): Promise<XmlaClient> {
     const body = this.codec.write([this.sessions.beginSession()], (out) => {
@@ -121,7 +150,7 @@ export class XmlaClient {
     rowClass?: EClass,
   ): Promise<DiscoverResult> {
     const body = this.codec.write(this.soapHeaders(), (out) => {
-      writeDiscover(out, { requestType, restrictions, properties });
+      writeDiscover(out, { requestType, restrictions, properties: this.withConnection(properties) });
     });
     const response = await this.post(body, XMLA_NAMESPACES.SOAP_ACTION_DISCOVER);
 
@@ -148,7 +177,7 @@ export class XmlaClient {
     properties: EObject | null = null,
   ): Promise<string> {
     const body = this.codec.write(this.soapHeaders(), (out) => {
-      writeDiscover(out, { requestType, restrictions, properties });
+      writeDiscover(out, { requestType, restrictions, properties: this.withConnection(properties) });
     });
     return (await this.post(body, XMLA_NAMESPACES.SOAP_ACTION_DISCOVER)).body;
   }
@@ -166,7 +195,7 @@ export class XmlaClient {
   /** An Execute, with the response body handed back unparsed. */
   async execute(command: EObject | null, properties: EObject | null = null): Promise<string> {
     const body = this.codec.write(this.soapHeaders(), (out) => {
-      writeExecute(out, { command, properties });
+      writeExecute(out, { command, properties: this.withConnection(properties) });
     });
     const response = await this.post(body, XMLA_NAMESPACES.SOAP_ACTION_EXECUTE);
     return response.body;
@@ -181,6 +210,45 @@ export class XmlaClient {
    * was found by talking to a real server, because a recording of what a client
    * sends never says what a server would have refused.
    */
+  /**
+   * The caller's PropertyList with the connection's own entries folded in.
+   *
+   * The caller wins where both name a property: a request that says which
+   * catalog it is about means it, and the connection's default is only a
+   * default. Nothing is created where there is nothing to add, so the empty
+   * `<PropertyList/>` stays empty.
+   */
+  private withConnection(properties: EObject | null): EObject | null {
+    const connection = this.options.connectionProperties;
+    if (connection === undefined) {
+      return properties;
+    }
+    const entries = Object.entries(connection).filter(([, value]) => value !== undefined);
+    if (entries.length === 0) {
+      return properties;
+    }
+    const list = properties ?? this.newPropertyList();
+    for (const [name, value] of entries) {
+      const feature = list.eClass().getEStructuralFeature(name);
+      if (feature !== null && feature !== undefined && !list.eIsSet(feature)) {
+        list.eSet(feature, value);
+      }
+    }
+    return list;
+  }
+
+  private newPropertyList(): EObject {
+    const xmla = this.options.models.named('xmla');
+    if (xmla === null) {
+      throw new Error('the xmla model is not loaded');
+    }
+    const eClass = xmla.getEClassifier('PropertyList') as EClass | null;
+    if (eClass === null || eClass === undefined) {
+      throw new Error('the xmla model has no PropertyList');
+    }
+    return xmla.getEFactoryInstance().create(eClass);
+  }
+
   private emptyStatement(): EObject {
     const xmla = this.options.models.named('xmla');
     if (xmla === null) {
@@ -210,19 +278,43 @@ export class XmlaClient {
   }
 
   private async post(body: string, soapAction: string): Promise<XmlaHttpResponse> {
-    const response = await this.options.transport.send({
-      url: this.options.url,
-      body,
-      headers: {
-        'Content-Type': 'text/xml; charset=utf-8',
-        // Quoted. Every recorded ADOMD.NET request quotes it, and RFC 2616's
-        // SOAPAction is a quoted-string; a bare value is refused by some
-        // gateways and silently ignored by others.
-        SOAPAction: `"${soapAction}"`,
-        ...authHeaders(this.options.credentials ?? { kind: 'none' }),
-        ...(this.options.headers ?? {}),
-      },
-    });
+    const credentials = this.options.credentials ?? { kind: 'none' };
+    const send = (auth: Record<string, string>): Promise<XmlaHttpResponse> =>
+      this.options.transport.send({
+        url: this.options.url,
+        body,
+        headers: {
+          'Content-Type': 'text/xml; charset=utf-8',
+          // Quoted. Every recorded ADOMD.NET request quotes it, and RFC 2616's
+          // SOAPAction is a quoted-string; a bare value is refused by some
+          // gateways and silently ignored by others.
+          SOAPAction: `"${soapAction}"`,
+          ...auth,
+          ...(this.options.headers ?? {}),
+        },
+      });
+
+    let response = await send(authHeaders(credentials));
+
+    // A server that demands a login answers the first request with 401 and a
+    // WWW-Authenticate, and expects the same request again with credentials.
+    // Sending them up front covers the servers that answer the challenge with a
+    // fault instead; this covers the ones that challenge properly and would
+    // otherwise never see them - a caller with none is left with the 401 to
+    // read, which says what is missing.
+    if (response.status === 401 && credentials.kind === 'none') {
+      throw new XmlaHttpError(response.status, response.body, response.headers);
+    }
+    if (response.status === 401 && challengedBasic(response) && credentials.kind !== 'basic') {
+      // The server asks for Basic and this client holds something else. Saying
+      // so beats retrying with a token it has already refused.
+      throw new XmlaHttpError(response.status, response.body, response.headers);
+    }
+    if (response.status === 401) {
+      // Exactly once. A second 401 on the retry is the server's answer, not a
+      // reason to keep asking.
+      response = await send(authHeaders(credentials));
+    }
 
     if (response.status >= 400) {
       // A fault often arrives with a 500, and its text says far more than the
@@ -288,6 +380,16 @@ export class XmlaClient {
     }
     return { rows, inlineSchema };
   }
+}
+
+/** Whether a 401 asked for Basic, whatever case the header came in. */
+function challengedBasic(response: XmlaHttpResponse): boolean {
+  for (const [name, value] of Object.entries(response.headers ?? {})) {
+    if (name.toLowerCase() === 'www-authenticate') {
+      return value.trim().toLowerCase().startsWith('basic');
+    }
+  }
+  return false;
 }
 
 function authHeaders(credentials: Credentials): Record<string, string> {

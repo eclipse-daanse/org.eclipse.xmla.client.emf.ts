@@ -30,7 +30,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Messages">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Any of the root elements can contain a messages element. &lt;xsd:complexType name=&quot;Messages&quot;> &lt;xsd:choice minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;> &lt;xsd:element name=&quot;Warning&quot; type=&quot;WarningType&quot; /> &lt;xsd:element name=&quot;Error&quot; type=&quot;ErrorType&quot; /> &lt;/xsd:choice> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="Any of the root elements can contain a messages element."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Messages"/>
@@ -69,7 +69,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WarningType" eSuperTypes="#//MessageType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The XSD for the WarningType complex type is as follows. &lt;xsd:complexType name=&quot;WarningType&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Location&quot; type=&quot;MessageLocation&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;xsd:attribute name=&quot;WarningCode&quot; type=&quot;xsd:int&quot; /> &lt;xsd:attribute name=&quot;Description&quot; type=&quot;xsd:string&quot; /> &lt;xsd:attribute name=&quot;Source&quot; type=&quot;xsd:string&quot; /> &lt;xsd:attribute name=&quot;HelpFile&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:complexType>"/>
+      <details key="documentation" value=""/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Warning"/>
@@ -128,7 +128,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ErrorType" eSuperTypes="#//MessageType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The XSD for the ErrorType complex type is as follows. &lt;xsd:complexType name=&quot;ErrorType&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Location&quot; type=&quot;MessageLocation&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element name=&quot;Callstack&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;/xsd:all> &lt;xsd:attribute name=&quot;ErrorCode&quot; type=&quot;xsd:long&quot; /> &lt;xsd:attribute name=&quot;Description&quot; type=&quot;xsd:string&quot; /> &lt;xsd:attribute name=&quot;Source&quot; type=&quot;xsd:string&quot; /> &lt;xsd:attribute name=&quot;HelpFile&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:complexType>"/>
+      <details key="documentation" value=""/>
     </eAnnotations>
     <eAnnotations source="https://www.daanse.org/spec/xmla/1.0">
       <details key="groupElementName" value="Error"/>
@@ -239,7 +239,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageLocation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The MessageLocation type is used to identify the line and column location of a warning or an error within a Statement element. The XSD for the MessageLocation complex type is as follows. &lt;xsd:complexType name=&quot;MessageLocation&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Start&quot; > &lt;xsd:complexType> &lt;xsd:all> &lt;xsd:element name=&quot;Line&quot; type=&quot;xsd:int&quot; /> &lt;xsd:element name=&quot;Column&quot; type=&quot;xsd:int&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:element name=&quot;End&quot; > &lt;xsd:complexType> &lt;xsd:all> &lt;xsd:element name=&quot;Line&quot; type=&quot;xsd:int&quot; /> &lt;xsd:element name=&quot;Column&quot; type=&quot;xsd:int&quot; /> &lt;/xsd:all> &lt;/xsd:complexType> &lt; …"/>
+      <details key="documentation" value="The MessageLocation type is used to identify the line and column location of a warning or an error within a Statement element."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MessageLocation"/>
@@ -322,7 +322,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageType" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="One entry of &lt;Messages>: a Warning or an Error. The choice names them, so the concrete subtype decides the element name; there is no common content."/>
+      <details key="documentation" value="One entry of &amp;lt;Messages>: a Warning or an Error. The choice names them, so the concrete subtype decides the element name; there is no common content."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="MessageType"/>

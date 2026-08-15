@@ -11,8 +11,8 @@
 **********************************************************************/
 -->
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core"
-    nsURI="urn:schemas-microsoft-com:xml-analysis:rowset:core" nsPrefix="rscore">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core" nsURI="urn:schemas-microsoft-com:xml-analysis:rowset:core"
+    nsPrefix="rscore">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The datatypes every rowset package needs, in one place.&#xA;&#xA;XMLA rowsets are described by five packages, split by who can answer them rather than by what they are about: this one, holding the six XMLA 1.1 defines itself and every provider must serve; the OLE DB relational family; the multidimensional one; data mining; and the server's own internals. Each of them has columns typed uuid, dateTime or an embedded XML document, and before this package existed each declared its own: DateTime was written out once per package.&#xA;&#xA;They are declared once here and referenced by nsURI. Nothing that holds them is an EClass, so a datatype cannot appear on the wire by itself, which is what makes moving them a change to the models and not to the protocol.&#xA;&#xA;model/io reads the Uuid pattern from here rather than repeating it, so the inline schema it writes and this model cannot disagree about what a GUID looks like. It names all five packages; it used to name none and find them, which EMF's global registry turned out not to support.&#xA;&#xA;The Restrictions classes here are the deliberate exception to everything above. They are API objects for clients and connectors and are never serialized - nothing writes a Restrictions object to a wire. Their features therefore resolve ##targetNamespace to this package, which means nothing, and the test that every rowset column names the rowset namespace skips them for that reason. Their feature order is the order the RestrictionsMask bitmask is defined over, and a restriction's name on the wire is its ExtendedMetaData name.&#xA;&#xA;They are in this package rather than beside it so that a rowset and what may restrict it cannot be loaded apart: they were separate once, half of them was staged in a test, and the server answered that a restriction it models was not recognized."/>
     <details key="oSGiCompatible" value="true"/>
@@ -51,7 +51,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverDatasourcesRow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DISCOVER_DATASOURCES rowset contains the following columns. The rowset is not sorted. The response has the following definition. &lt;xsd:element name=&quot;root&quot;> &lt;xsd:complexType> &lt;xsd:sequence minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;> &lt;xsd:element name=&quot;row&quot; type=&quot;row&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:complexType name=&quot;row&quot;> &lt;xsd:sequence> &lt;xsd:element sql:field=&quot;DataSourceName&quot; name=&quot;DataSourceName&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element sql:field=&quot;DataSourceDescription&quot; name=&quot;DataSourceDescription&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element sql:field=&quot;URL&quot; name=&quot;URL&quot; type=&quot; …"/>
+      <details key="documentation" value="The DISCOVER_DATASOURCES rowset contains the following columns. The rowset is not sorted."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="discover-datasources-row"/>
@@ -60,6 +60,8 @@
     <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
       <details key="requestType" value="DISCOVER_DATASOURCES"/>
       <details key="guid" value="06C03D41-F66D-49F3-B1B8-987F7AF4CF18"/>
+      <details key="guidSource" value="OBSERVED"/>
+      <details key="observedFrom" value="Analysis Services, DISCOVER_SCHEMA_ROWSETS answer (recorded-ssas.xml); the same value in ADOMD.NET 19.114.12 AdomdSchemaGuid. [MS-SSAS] states no rowset GUIDs at all, so the source detail above covers the columns, not this."/>
       <details key="source" value="MS-SSAS-251031"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSourceName" lowerBound="1"
@@ -118,7 +120,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerType" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This array specifies the types of data supported by the server. It can include one or more of the following types:MDP: multidimensional data provider.TDP: tabular data provider.DMP: data mining provider (implements the OLE for DB for Data Mining specification).&lt;311>"/>
+        <details key="documentation" value="This array specifies the types of data supported by the server. It can include one or more of the following types:MDP: multidimensional data provider.TDP: tabular data provider.DMP: data mining provider (implements the OLE for DB for Data Mining specification)."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -128,7 +130,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticationMode" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string that specifies what type of security mode the data source uses. Values can be one of the following:Unauthenticated: No user ID or password has to be sent.Authenticated: User ID and password MUST be included in the information required to connect to the data source.Integrated: The data source uses the underlying security to determine authorization.&lt;312>"/>
+        <details key="documentation" value="A string that specifies what type of security mode the data source uses. Values can be one of the following:Unauthenticated: No user ID or password has to be sent.Authenticated: User ID and password MUST be included in the information required to connect to the data source.Integrated: The data source uses the underlying security to determine authorization."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -139,7 +141,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverEnumeratorsRow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DISCOVER_ENUMERATORS rowset contains the following columns. The rowset is not sorted. The response has the following definition. &lt;xsd:element name=&quot;root&quot;> &lt;xsd:complexType> &lt;xsd:sequence minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;> &lt;xsd:element name=&quot;row&quot; type=&quot;row&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:complexType name=&quot;row&quot;> &lt;xsd:sequence> &lt;xsd:element sql:field=&quot;EnumName&quot; name=&quot;EnumName&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element sql:field=&quot;EnumDescription&quot; name=&quot;EnumDescription&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element sql:field=&quot;EnumType&quot; name=&quot;EnumType&quot; type=&quot;xsd:string&quot; /> …"/>
+      <details key="documentation" value="The DISCOVER_ENUMERATORS rowset contains the following columns. The rowset is not sorted."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="discover-enumerators-row"/>
@@ -148,6 +150,8 @@
     <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
       <details key="requestType" value="DISCOVER_ENUMERATORS"/>
       <details key="guid" value="55A9E78B-ACCB-45B4-95A6-94C5065617A7"/>
+      <details key="guidSource" value="OBSERVED"/>
+      <details key="observedFrom" value="Analysis Services, DISCOVER_SCHEMA_ROWSETS answer (recorded-ssas.xml); the same value in ADOMD.NET 19.114.12 AdomdSchemaGuid. [MS-SSAS] states no rowset GUIDs at all, so the source detail above covers the columns, not this."/>
       <details key="source" value="MS-SSAS-251031"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumName" lowerBound="1"
@@ -216,7 +220,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverKeywordsRow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DISCOVER_KEYWORDS rowset contains the following columns. This schema rowset is not sorted. The response has the following definition. &lt;xsd:element name=&quot;root&quot;> &lt;xsd:complexType> &lt;xsd:sequence minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;> &lt;xsd:element name=&quot;row&quot; type=&quot;row&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:complexType name=&quot;row&quot;> &lt;xsd:sequence> &lt;xsd:element sql:field=&quot;Keyword&quot; name=&quot;Keyword&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="The DISCOVER_KEYWORDS rowset contains the following columns. This schema rowset is not sorted."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="discover-keywords-row"/>
@@ -225,6 +229,8 @@
     <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
       <details key="requestType" value="DISCOVER_KEYWORDS"/>
       <details key="guid" value="1426C443-4CDD-4A40-8F45-572FAB9BBAA1"/>
+      <details key="guidSource" value="OBSERVED"/>
+      <details key="observedFrom" value="Analysis Services, DISCOVER_SCHEMA_ROWSETS answer (recorded-ssas.xml); the same value in ADOMD.NET 19.114.12 AdomdSchemaGuid. [MS-SSAS] states no rowset GUIDs at all, so the source detail above covers the columns, not this."/>
       <details key="source" value="MS-SSAS-251031"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" lowerBound="1"
@@ -241,7 +247,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverLiteralsRow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DISCOVER_LITERALS rowset contains the following columns. This schema rowset is not sorted. The response has the following definition. &lt;xsd:element name=&quot;root&quot;> &lt;xsd:complexType> &lt;xsd:sequence minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;> &lt;xsd:element name=&quot;row&quot; type=&quot;row&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:complexType name=&quot;row&quot;> &lt;xsd:sequence> &lt;xsd:element sql:field=&quot;LiteralName&quot; name=&quot;LiteralName&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element sql:field=&quot;LiteralValue&quot; name=&quot;LiteralValue&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element sql:field=&quot;LiteralInvalidChars&quot; name=&quot;LiteralInvalidChars&quot; type=&quot;x …"/>
+      <details key="documentation" value="The DISCOVER_LITERALS rowset contains the following columns. This schema rowset is not sorted."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="discover-literals-row"/>
@@ -250,6 +256,8 @@
     <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
       <details key="requestType" value="DISCOVER_LITERALS"/>
       <details key="guid" value="C3EF5ECB-0A07-4665-A140-B075722DBDC2"/>
+      <details key="guidSource" value="OBSERVED"/>
+      <details key="observedFrom" value="Analysis Services, DISCOVER_SCHEMA_ROWSETS answer (recorded-ssas.xml); the same value in ADOMD.NET 19.114.12 AdomdSchemaGuid. [MS-SSAS] states no rowset GUIDs at all, so the source detail above covers the columns, not this."/>
       <details key="source" value="MS-SSAS-251031"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalName" lowerBound="1"
@@ -318,7 +326,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverPropertiesRow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DISCOVER_PROPERTIES rowset contains the following columns. This schema rowset is not sorted. The response has the following definition. &lt;xsd:element name=&quot;root&quot;> &lt;xsd:complexType> &lt;xsd:sequence minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;> &lt;xsd:element name=&quot;row&quot; type=&quot;row&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:complexType name=&quot;row&quot;> &lt;xsd:sequence> &lt;xsd:element sql:field=&quot;PropertyName&quot; name=&quot;PropertyName&quot; type=&quot;xsd:string&quot; /> &lt;xsd:element sql:field=&quot;PropertyDescription&quot; name=&quot;PropertyDescription&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; /> &lt;xsd:element sql:field=&quot;PropertyType&quot; name=&quot;Pro …"/>
+      <details key="documentation" value="The DISCOVER_PROPERTIES rowset contains the following columns. This schema rowset is not sorted."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="discover-properties-row"/>
@@ -327,6 +335,8 @@
     <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
       <details key="requestType" value="DISCOVER_PROPERTIES"/>
       <details key="guid" value="4B40ADFB-8B09-4758-97BB-636E8AE97BCF"/>
+      <details key="guidSource" value="OBSERVED"/>
+      <details key="observedFrom" value="Analysis Services, DISCOVER_SCHEMA_ROWSETS answer (recorded-ssas.xml); the same value in ADOMD.NET 19.114.12 AdomdSchemaGuid. [MS-SSAS] states no rowset GUIDs at all, so the source detail above covers the columns, not this."/>
       <details key="source" value="MS-SSAS-251031"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyName" lowerBound="1"
@@ -394,7 +404,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscoverSchemaRowsetsRow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The DISCOVER_SCHEMA_ROWSETS rowset contains the following columns. This schema rowset is not sorted. The response has the following definition. &lt;xsd:element name=&quot;root&quot;> &lt;xsd:complexType> &lt;xsd:sequence minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;> &lt;xsd:element name=&quot;row&quot; type=&quot;row&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> &lt;xsd:simpleType name=&quot;uuid&quot;> &lt;xsd:restriction base=&quot;xsd:string&quot;> &lt;xsd:pattern value=&quot;[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}&quot; /> &lt;/xsd:restriction> &lt;/xsd:simpleType> &lt;xsd:complexType name=&quot;row&quot;> &lt;xsd:sequence> &lt;xsd:element sql:field=&quot;Sch …"/>
+      <details key="documentation" value="The DISCOVER_SCHEMA_ROWSETS rowset contains the following columns. This schema rowset is not sorted."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="discover-schema-rowsets-row"/>
@@ -403,6 +413,8 @@
     <eAnnotations source="https://www.daanse.org/spec/xmla/rowset/1.0">
       <details key="requestType" value="DISCOVER_SCHEMA_ROWSETS"/>
       <details key="guid" value="EEA0302B-7922-4992-8991-0E605D0E5593"/>
+      <details key="guidSource" value="OBSERVED"/>
+      <details key="observedFrom" value="Analysis Services, DISCOVER_SCHEMA_ROWSETS answer (recorded-ssas.xml); the same value in ADOMD.NET 19.114.12 AdomdSchemaGuid. [MS-SSAS] states no rowset GUIDs at all, so the source detail above covers the columns, not this."/>
       <details key="source" value="MS-SSAS-251031"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schemaName" lowerBound="1"
@@ -529,7 +541,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerType" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This array specifies the types of data supported by the server. It can include one or more of the following types:MDP: multidimensional data provider.TDP: tabular data provider.DMP: data mining provider (implements the OLE for DB for Data Mining specification).&lt;311>"/>
+        <details key="documentation" value="This array specifies the types of data supported by the server. It can include one or more of the following types:MDP: multidimensional data provider.TDP: tabular data provider.DMP: data mining provider (implements the OLE for DB for Data Mining specification)."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -540,7 +552,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticationMode" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
         unsettable="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A string that specifies what type of security mode the data source uses. Values can be one of the following:Unauthenticated: No user ID or password has to be sent.Authenticated: User ID and password MUST be included in the information required to connect to the data source.Integrated: The data source uses the underlying security to determine authorization.&lt;312>"/>
+        <details key="documentation" value="A string that specifies what type of security mode the data source uses. Values can be one of the following:Unauthenticated: No user ID or password has to be sent.Authenticated: User ID and password MUST be included in the information required to connect to the data source.Integrated: The data source uses the underlying security to determine authorization."/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -724,7 +736,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TreeOpEnum">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The tree operations MDSCHEMA_MEMBERS accepts as its TREE_OP restriction, under OLE DB's MDTREEOP_* names.&#xA;&#xA;The values are a BITMASK and are not ordinals: a client sends 0x0C to ask for the parent and the member itself. Two independent sources give the same six, and they were 0..5 here until both were read: [MS-SSAS] states them as hex against MDSCHEMA_MEMBERS.TREE_OP (0x01 children, 0x02 same level, 0x04 parent, 0x08 itself, 0x10 descendants, 0x20 ancestors), and XML for Analysis 1.1 p. 31 gives the same numbers in decimal together with the symbolic names, saying 'The TREE_OP restriction is a bitmask, so bitwise combinations of its values are valid.'&#xA;&#xA;DMSCHEMA_MINING_MODEL_CONTENT has the same idea under a different prefix: TREE_OPERATION takes DMTREEOP_* with exactly these values."/>
+      <details key="documentation" value="The tree operations MDSCHEMA_MEMBERS accepts as its TREE_OP restriction, under OLE DB's MDTREEOP_* names.&#xA;&#xA;The values are a BITMASK and are not ordinals: a client sends 0x0C to ask for the parent and the member itself. Two independent sources give the same six, and they were 0.5 here until both were read: [MS-SSAS] states them as hex against MDSCHEMA_MEMBERS.TREE_OP (0x01 children, 0x02 same level, 0x04 parent, 0x08 itself, 0x10 descendants, 0x20 ancestors), and XML for Analysis 1.1 p. 31 gives the same numbers in decimal together with the symbolic names, saying 'The TREE_OP restriction is a bitmask, so bitwise combinations of its values are valid.'&#xA;&#xA;DMSCHEMA_MINING_MODEL_CONTENT has the same idea under a different prefix: TREE_OPERATION takes DMTREEOP_* with exactly these values."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="TreeOp"/>

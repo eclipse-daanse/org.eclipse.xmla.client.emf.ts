@@ -25,7 +25,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionBinding">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This complex type represents a binding to a calculation expression. &lt;xsd:complexType name=&quot;ExpressionBinding&quot;> &lt;xsd:complexContent> &lt;xsd:extension base=&quot;Binding&quot;> &lt;xsd:all> &lt;xsd:element name=&quot;Expression&quot; type=&quot;xsd:string&quot; /> &lt;/xsd:all> &lt;/xsd:extension> &lt;/xsd:complexContent> &lt;/xsd:complexType>"/>
+      <details key="documentation" value="This complex type represents a binding to a calculation expression."/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ExpressionBinding"/>

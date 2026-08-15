@@ -92,7 +92,11 @@ export class FetchTransport implements Transport {
 
   constructor(options: FetchTransportOptions = {}) {
     this.withCredentials = options.withCredentials ?? false;
-    this.fetchImpl = options.fetch ?? globalThis.fetch;
+    // Bound to globalThis, because it is stored on this object and then called as
+    // this.fetchImpl(...) - which would make `this` the transport. A browser's
+    // fetch checks its receiver and refuses: "'fetch' called on an object that
+    // does not implement interface Window."
+    this.fetchImpl = options.fetch ?? globalThis.fetch.bind(globalThis);
   }
 
   async send(request: XmlaHttpRequest): Promise<XmlaHttpResponse> {

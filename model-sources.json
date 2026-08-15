@@ -164,6 +164,22 @@
       ]
     },
     {
+      "name": "rowset-tabular-restrictions",
+      "file": "model/rowset.tabular/model/rowset-tabular-restrictions.ecore",
+      "nsURI": "https://www.daanse.org/spec/xmla/rowset/tabular/restrictions/1.0",
+      "dependsOn": [
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
+      ]
+    },
+    {
+      "name": "rowset-tabular",
+      "file": "model/rowset.tabular/model/rowset-tabular.ecore",
+      "nsURI": "urn:schemas-microsoft-com:xml-analysis:rowset:tabular",
+      "dependsOn": [
+        "urn:schemas-microsoft-com:xml-analysis:rowset:core"
+      ]
+    },
+    {
       "name": "soap",
       "file": "model/soap/model/soap.ecore",
       "nsURI": "http://schemas.xmlsoap.org/soap/envelope/",

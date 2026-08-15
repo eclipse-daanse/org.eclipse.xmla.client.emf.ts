@@ -154,10 +154,14 @@ describe('a restrictions form, rendered', () => {
 
 describe('every restriction the catalogue has', () => {
   it('has a widget registered for its type', () => {
-    // Measured rather than assumed: 75 of the 436 restriction features are not
+    // Measured rather than assumed: 75 of the 440 restriction features are not
     // String, over nine data types, and the registry's own editors are keyed on
     // Ecore's data types rather than on the XMLType ones the models use. One
     // restriction in six would otherwise be unfillable, silently.
+    //
+    // 440 since DBSCHEMA_TRUSTEE joined the model with its four. The tabular
+    // package adds none: its restrictions live in a model of their own, which
+    // the catalogue does not scan.
     const missing = new Set<string>();
     let total = 0;
     for (const requestType of catalog.requestTypes()) {
@@ -174,7 +178,7 @@ describe('every restriction the catalogue has', () => {
         }
       }
     }
-    expect(total).toBe(436);
+    expect(total).toBe(440);
     expect([...missing], 'types with no editor').toEqual([]);
   });
 

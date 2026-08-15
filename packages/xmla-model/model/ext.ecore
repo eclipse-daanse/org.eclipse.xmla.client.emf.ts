@@ -24,7 +24,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Authenticate">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The Authenticate element has the following definition. &lt;xsd:element name=&quot;Authenticate&quot;> &lt;xsd:complexType> &lt;xsd:sequence> &lt;xsd:element name=&quot;SspiHandshake&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;1&quot; nillable=&quot;false&quot; type=&quot;xsd:base64Binary&quot; /> &lt;/xsd:sequence> &lt;/xsd:complexType> &lt;/xsd:element> The following is an example of an Authenticate request. …"/>
+      <details key="documentation" value=""/>
     </eAnnotations>
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="Authenticate"/>
