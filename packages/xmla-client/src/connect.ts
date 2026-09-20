@@ -135,14 +135,13 @@ export function dataSourceOf(rows: readonly EObject[]): DataSource {
     );
   }
   const first = rows[0]!;
-  const info = columnOf(first, 'DataSourceInfo');
-  if (info === null || info.trim() === '') {
-    throw new Error(
-      'DISCOVER_DATASOURCES gave no value for DataSourceInfo. The column is what a client ' +
-        'sends back on every later request, so an empty one leaves the connection unable to ' +
-        'name itself.',
-    );
-  }
+  // An empty DataSourceInfo is the server saying it needs none, not a fault.
+  // Every conversation in the testkit shows it: ssms-connect, ssms-session,
+  // powerbi-import and powerbi-live all answer `<DataSourceInfo/>`, and none
+  // of those clients then sends the property on any request - 0 of 13 for
+  // SSMS, 0 of 44 for Power BI live. Refusing it here refused every server
+  // this project has ever recorded.
+  const info = columnOf(first, 'DataSourceInfo') ?? '';
   return {
     name: columnOf(first, 'DataSourceName') ?? '',
     info,
@@ -214,12 +213,15 @@ export async function open(client: XmlaClient): Promise<{ client: XmlaClient; in
   const properties = propertiesOf(propertyRows.rows);
 
   // Over HTTP this is the second round trip of every connection. It has to
-  // yield at least one row carrying a DataSourceInfo, and the value travels
-  // back on every later request.
+  // yield at least one row; the DataSourceInfo it carries travels back on
+  // every later request, and an empty one means there is nothing to carry.
   const dataSourceRows = await client.discover('DISCOVER_DATASOURCES');
   const dataSource = dataSourceOf(dataSourceRows.rows);
 
-  const connected = client.withConnectionProperties({ dataSourceInfo: dataSource.info });
+  const connected =
+    dataSource.info === ''
+      ? client
+      : client.withConnectionProperties({ dataSourceInfo: dataSource.info });
 
   // The liveness probe: one property, and the answer says which catalog the
   // server considers current. A server that answers this answers anything.
