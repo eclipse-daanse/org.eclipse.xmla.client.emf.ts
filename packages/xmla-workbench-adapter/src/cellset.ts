@@ -83,6 +83,25 @@ export class CellsetReader {
     this.mdDatasetClass = eClass;
   }
 
+  /**
+   * The MdDataset behind a response, unflattened.
+   *
+   * A consumer that walks the dataset itself - one porting off a client that
+   * handed back parsed XML - needs the tree rather than the cellset. Answers
+   * null for a response that carries a rowset instead, because there is no
+   * dataset to give.
+   */
+  readDataset(xml: string): EObject | null {
+    const cursor = XmlCursor.parse(xml);
+    if (!moveTo(cursor, 'root')) {
+      throw new Error('the response carries no <root>');
+    }
+    if (cursor.namespaceURI === XMLA_NAMESPACES.ROWSET) {
+      return null;
+    }
+    return this.reader.read(cursor, this.mdDatasetClass);
+  }
+
   read(xml: string): XmlaCellset {
     // The check happens on the model, in tuplesOf, not on the text. Searching
     // the text for NormTupleSet matches the inline schema, which declares it in

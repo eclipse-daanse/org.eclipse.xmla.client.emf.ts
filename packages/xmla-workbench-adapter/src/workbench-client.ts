@@ -125,6 +125,22 @@ export class WorkbenchXmlaClient {
     return this.cellsets.read(xml);
   }
 
+  /**
+   * One MDX statement, as the dataset the server answered.
+   *
+   * The counterpart to {@link execute} for a consumer that walks the tree
+   * itself rather than taking the flattened cellset. Null when the response
+   * was a rowset - a DMV or a DRILLTHROUGH - because there is no dataset then.
+   */
+  async executeDataset(
+    statement: string,
+    properties?: Record<string, string | number>,
+  ): Promise<EObject | null> {
+    const command = this.statementCommand(statement);
+    const xml = await this.client.execute(command, this.propertyList(properties));
+    return this.cellsets.readDataset(xml);
+  }
+
   /** A `<Statement>` command carrying the MDX. */
   private statementCommand(statement: string): EObject {
     const xmla = this.options.models.named('xmla');
