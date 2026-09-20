@@ -1,0 +1,6 @@
+{
+  "$comment": "Compiles the snippets from the package READMEs. A README that drifts from the API it documents is a broken build here, not a bug report from someone who copied it off npm.",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "noEmit": true, "rootDir": ".", "types": [] },
+  "include": ["examples.ts"]
+}

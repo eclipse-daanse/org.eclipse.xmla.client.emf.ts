@@ -22,6 +22,9 @@
     },
     {
       "path": "./packages/testkit"
+    },
+    {
+      "path": "./scripts/readme-examples"
     }
   ]
 }
