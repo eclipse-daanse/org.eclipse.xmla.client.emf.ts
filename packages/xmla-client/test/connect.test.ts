@@ -121,13 +121,24 @@ describe('opening a connection', () => {
     await expect(client(transport).open()).rejects.toThrow(/no rows/i);
   });
 
-  it('refuses a DataSourceInfo with nothing in it', async () => {
-    // Exactly what cost a real client its connection: the column was declared
-    // in the inline schema and empty in the row.
+  it('sends no DataSourceInfo at all when the server names none', async () => {
+    // What cost a real client its connection was sending the property empty,
+    // not the server leaving it empty. Every conversation in the testkit
+    // answers `<DataSourceInfo/>` - ssms-connect, ssms-session,
+    // powerbi-import, powerbi-live - and none of those clients then sends the
+    // property on any request: 0 of 13 for SSMS, 0 of 44 for Power BI live.
+    // So an empty column means omit it, and refusing it here refused every
+    // server this project has recorded.
     const empty = envelope('<row><DataSourceName>Daanse</DataSourceName><DataSourceInfo/></row>');
-    const transport = new Scripted([ok(PROPERTIES), ok(empty)]);
+    const transport = new Scripted([ok(PROPERTIES), ok(empty), ok(CURRENT_CATALOG), ok(envelope(''))]);
 
-    await expect(client(transport).open()).rejects.toThrow(/DataSourceInfo/);
+    const { client: connected, info } = await client(transport).open();
+    await connected.discover('DBSCHEMA_CATALOGS');
+
+    expect(info.dataSource.info).toBe('');
+    for (const request of transport.sent) {
+      expect(request.body).not.toContain('DataSourceInfo');
+    }
   });
 });
 

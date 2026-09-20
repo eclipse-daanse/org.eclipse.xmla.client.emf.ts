@@ -18,7 +18,7 @@ liest.
 | # | Anfrage | Wozu |
 |---|---|---|
 | 1 | `DISCOVER_PROPERTIES`, **ohne Einschränkung** | Die Fähigkeitsprobe. Alles Spätere — welches MDX erzeugt werden darf, ob eine Anmeldung kommt — liest daraus. |
-| 2 | `DISCOVER_DATASOURCES`, ohne Einschränkung | Muss **mindestens eine Zeile** liefern, und die muss ein nicht leeres `DataSourceInfo` tragen. |
+| 2 | `DISCOVER_DATASOURCES`, ohne Einschränkung | Muss **mindestens eine Zeile** liefern. Ist das `DataSourceInfo` darin leer, nennt der Server keins — dann schickt dieser Klient auch keins mit. |
 | 3 | — | Der Wert wird festgehalten und **ab hier bei jeder Anfrage mitgeschickt**. |
 | 4 | `DISCOVER_PROPERTIES`, eingeschränkt auf `PropertyName=Catalog` | Die Lebendprobe. Die Antwort sagt, welchen Katalog der Server für den aktuellen hält. |
 
@@ -37,6 +37,19 @@ sources, or it did not return a value for the DataSourceInfo property")` aus
 `AdomdConnection.ReadDataSourceInfo()` abgewiesen — vor jeder Sitzung, beim
 zweiten Rundgang der Verbindung. ADOMD 19 wirft dort nur bei null Zeilen oder
 fehlender Spalte und duldet einen leeren Wert; die ältere Fassung nicht.
+
+**Dieser Klient folgt ADOMD 19 und lässt den Wert leer sein.** Er hat es
+nachgerechnet: alle vier Gespräche im Testkit — `ssms-connect`, `ssms-session`,
+`powerbi-import`, `powerbi-live` — antworten `<DataSourceInfo/>`, und keiner
+dieser Klienten schickt die Eigenschaft danach auf irgendeiner Anfrage mit:
+0 von 13 bei SSMS, 0 von 44 bei Power BI live. Wer einen leeren Wert
+zurückweist, weist damit jeden Server ab, den dieses Projekt je aufgezeichnet
+hat.
+
+Der Unterschied, auf den es ankommt, ist ein anderer: **leer senden** ist nicht
+dasselbe wie **nicht senden**. Das erste hat dem echten Klienten oben die
+Verbindung gekostet. Dieser Klient lässt die Eigenschaft weg, wenn der Server
+keine nennt.
 
 ---
 
