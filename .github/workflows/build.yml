@@ -1,0 +1,34 @@
+# Build and test on every push and pull request.
+#
+# What is not here, and why: `check:sync` compares the copied models and
+# fixtures against a checkout of the Java repository, which a runner does not
+# have; `check:vendor` compares the vendored composer against a snapshot that
+# is not in the repository either. Both skip or fail for want of input, not for
+# a change, and a gate that cannot see what it gates is no gate.
+#
+# The TCK's live checks skip themselves without XMLA_TCK_TARGET, so `npm test`
+# is the same here as on a machine with no server.
+name: build
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - name: The TCK's own checks, listed
+        run: node packages/xmla-tck/bin/xmla-tck.mjs --list
