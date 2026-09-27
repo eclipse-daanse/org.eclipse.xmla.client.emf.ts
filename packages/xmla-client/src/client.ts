@@ -7,11 +7,11 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EcoreXmlReader, EventKind, Unknown } from '@daanse/emf-xml';
-import { failIfFault, SoapEnvelopeCodec, writeDiscover, writeExecute } from '@daanse/xmla-io';
-import type { RestrictionEntry } from '@daanse/xmla-io';
-import { RowsetCatalog, XMLA_NAMESPACES } from '@daanse/xmla-model';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { EcoreXmlReader, EventKind, Unknown } from '@eclipse-daanse/emf-xml';
+import { failIfFault, SoapEnvelopeCodec, writeDiscover, writeExecute } from '@eclipse-daanse/xmla-io';
+import type { RestrictionEntry } from '@eclipse-daanse/xmla-io';
+import { RowsetCatalog, XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EClass, EObject } from '@emfts/core';
 
 import { open } from './connect.js';

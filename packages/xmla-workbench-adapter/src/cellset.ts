@@ -7,10 +7,10 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EcoreXmlReader, EventKind, Unknown, wireNameOf, XmlCodecError, XmlCursor } from '@daanse/emf-xml';
-import { DynamicModelRegistry } from '@daanse/xmla-dynamic';
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { EcoreXmlReader, EventKind, Unknown, wireNameOf, XmlCodecError, XmlCursor } from '@eclipse-daanse/emf-xml';
+import { DynamicModelRegistry } from '@eclipse-daanse/xmla-dynamic';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
 
 /** The flattened shape mdx-workbench renders. */

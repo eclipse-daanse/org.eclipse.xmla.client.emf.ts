@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EcoreXmlWriter, wireNameOfType, XmlWriter } from '@daanse/emf-xml';
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
+import { EcoreXmlWriter, wireNameOfType, XmlWriter } from '@eclipse-daanse/emf-xml';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
 import type { EObject } from '@emfts/core';
 
 /**

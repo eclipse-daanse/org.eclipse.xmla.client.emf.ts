@@ -17,9 +17,9 @@ import {
   TableViewComposer,
   UimodelFactory,
   UimodelPackage,
-} from '@daanse/vendor-uimodel-composer';
-import { wireNameOf } from '@daanse/emf-xml';
-import type { WidgetComponent } from '@daanse/vendor-uimodel-composer';
+} from '@eclipse-daanse/vendor-uimodel-composer';
+import { wireNameOf } from '@eclipse-daanse/emf-xml';
+import type { WidgetComponent } from '@eclipse-daanse/vendor-uimodel-composer';
 import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
 import type { InjectionKey } from 'vue';
 

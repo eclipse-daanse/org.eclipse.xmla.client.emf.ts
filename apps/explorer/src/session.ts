@@ -7,12 +7,12 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { XmlaClient } from '@daanse/xmla-client';
-import type { Credentials, Transport } from '@daanse/xmla-client';
-import { RowsetResolver } from '@daanse/xmla-dynamic';
-import type { Origin } from '@daanse/xmla-dynamic';
-import { RowsetCatalog } from '@daanse/xmla-model';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { XmlaClient } from '@eclipse-daanse/xmla-client';
+import type { Credentials, Transport } from '@eclipse-daanse/xmla-client';
+import { RowsetResolver } from '@eclipse-daanse/xmla-dynamic';
+import type { Origin } from '@eclipse-daanse/xmla-dynamic';
+import { RowsetCatalog } from '@eclipse-daanse/xmla-model';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EObject } from '@emfts/core';
 
 import { formViewForEClass, tableViewForEClass } from './ui-model.js';

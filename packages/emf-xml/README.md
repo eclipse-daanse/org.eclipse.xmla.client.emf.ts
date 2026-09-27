@@ -1,4 +1,4 @@
-# @daanse/emf-xml
+# @eclipse-daanse/emf-xml
 
 Reads and writes XML for any Ecore model, driven by ExtendedMetaData. Knows nothing about XMLA.
 
@@ -11,7 +11,7 @@ than hand-written XML per rowset.
 ## Install
 
 ```bash
-npm install @daanse/emf-xml@next
+npm install @eclipse-daanse/emf-xml@next
 ```
 
 ## What it does
@@ -21,7 +21,7 @@ Reads and writes XML for any Ecore model. The mapping comes from
 per type — a model that carries the annotations can be read and written as it is.
 
 ```ts
-import { EcoreXmlReader, EcoreXmlWriter, XmlCursor, XmlWriter } from '@daanse/emf-xml';
+import { EcoreXmlReader, EcoreXmlWriter, XmlCursor, XmlWriter } from '@eclipse-daanse/emf-xml';
 
 const root = new EcoreXmlReader().read(XmlCursor.parse(xml), someEClass);
 

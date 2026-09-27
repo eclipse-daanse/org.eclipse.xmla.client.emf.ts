@@ -18,14 +18,14 @@
  * Keep each block next to the package it belongs to, and keep it identical to
  * what the README shows.
  */
-import { EcoreXmlReader, EcoreXmlWriter, XmlCursor, XmlWriter } from '@daanse/emf-xml';
-import { RowsetCatalog } from '@daanse/xmla-model';
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import { bootstrapInBrowser } from '@daanse/xmla-model/browser';
-import { failIfFault, SoapEnvelopeCodec, writeDiscover } from '@daanse/xmla-io';
-import { FetchTransport, XmlaClient } from '@daanse/xmla-client';
-import { RowsetResolver } from '@daanse/xmla-dynamic';
-import { toCellset, toParsedRowset, WorkbenchXmlaClient } from '@daanse/xmla-workbench-adapter';
+import { EcoreXmlReader, EcoreXmlWriter, XmlCursor, XmlWriter } from '@eclipse-daanse/emf-xml';
+import { RowsetCatalog } from '@eclipse-daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import { bootstrapInBrowser } from '@eclipse-daanse/xmla-model/browser';
+import { failIfFault, SoapEnvelopeCodec, writeDiscover } from '@eclipse-daanse/xmla-io';
+import { FetchTransport, XmlaClient } from '@eclipse-daanse/xmla-client';
+import { RowsetResolver } from '@eclipse-daanse/xmla-dynamic';
+import { toCellset, toParsedRowset, WorkbenchXmlaClient } from '@eclipse-daanse/xmla-workbench-adapter';
 import type { EClass, EObject } from '@emfts/core';
 
 declare const xml: string;

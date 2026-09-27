@@ -7,9 +7,9 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EventKind, XmlCursor } from '@daanse/emf-xml';
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { EventKind, XmlCursor } from '@eclipse-daanse/emf-xml';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EClass, EObject } from '@emfts/core';
 
 /**

@@ -7,12 +7,12 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EventKind, wireNameOf, XmlCursor } from '@daanse/emf-xml';
-import { RowsetResolver } from '@daanse/xmla-dynamic';
-import { RequestReader } from '@daanse/xmla-io';
-import type { RestrictionEntry } from '@daanse/xmla-io';
-import { conversations } from '@daanse/xmla-testkit';
-import type { Conversation, RecordedMessage } from '@daanse/xmla-testkit';
+import { EventKind, wireNameOf, XmlCursor } from '@eclipse-daanse/emf-xml';
+import { RowsetResolver } from '@eclipse-daanse/xmla-dynamic';
+import { RequestReader } from '@eclipse-daanse/xmla-io';
+import type { RestrictionEntry } from '@eclipse-daanse/xmla-io';
+import { conversations } from '@eclipse-daanse/xmla-testkit';
+import type { Conversation, RecordedMessage } from '@eclipse-daanse/xmla-testkit';
 import type { EObject } from '@emfts/core';
 
 import { notHere, short, text } from '../kit.js';

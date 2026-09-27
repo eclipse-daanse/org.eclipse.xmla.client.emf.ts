@@ -7,7 +7,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EventKind, XmlCursor } from '@daanse/emf-xml';
+import { EventKind, XmlCursor } from '@eclipse-daanse/emf-xml';
 
 /** A refusal the server sent, raised as one. */
 export class XmlaFaultError extends Error {

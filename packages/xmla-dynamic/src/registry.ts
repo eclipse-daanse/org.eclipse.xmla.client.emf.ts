@@ -7,7 +7,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
 import { EPackageRegistry } from '@emfts/core';
 import type { EClass, EPackage } from '@emfts/core';
 

@@ -11,7 +11,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import type { XmlaCellset } from '@daanse/xmla-workbench-adapter';
+import type { XmlaCellset } from '@eclipse-daanse/xmla-workbench-adapter';
 import { describe, expect, it } from 'vitest';
 
 import { attributeMismatch, cellMismatch, cellOrdinal, loadSuites, readSuite } from '../src/suites.js';

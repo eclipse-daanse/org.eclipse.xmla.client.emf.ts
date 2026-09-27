@@ -1,4 +1,4 @@
-# @daanse/xmla-dynamic
+# @eclipse-daanse/xmla-dynamic
 
 Builds Ecore models at runtime from what a server says about itself, so an unknown rowset is still queryable.
 
@@ -11,7 +11,7 @@ than hand-written XML per rowset.
 ## Install
 
 ```bash
-npm install @daanse/xmla-dynamic@next
+npm install @eclipse-daanse/xmla-dynamic@next
 ```
 
 ## What it does
@@ -20,7 +20,7 @@ Builds Ecore models at runtime from what a server says about itself, so a rowset
 this client has never seen is still queryable and renderable.
 
 ```ts
-import { RowsetResolver, parseInlineSchema, buildRowClass } from '@daanse/xmla-dynamic';
+import { RowsetResolver, parseInlineSchema, buildRowClass } from '@eclipse-daanse/xmla-dynamic';
 
 const resolver = new RowsetResolver(catalog, serverKey);
 

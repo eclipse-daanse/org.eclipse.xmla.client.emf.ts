@@ -254,7 +254,7 @@ model:
 
 ## Swapping mdx-workbench's client
 
-`@daanse/xmla-workbench-adapter` exposes `WorkbenchXmlaClient`, which mirrors
+`@eclipse-daanse/xmla-workbench-adapter` exposes `WorkbenchXmlaClient`, which mirrors
 `XmlaSoapClient` method for method - `connect`, `discover`, `execute`,
 `endSession`, `setCatalog`, `currentSessionId` - and answers the same plain
 shapes. The tests assert that surface rather than assume it lines up.
@@ -269,7 +269,7 @@ of `<root>` rather than by guessing from the statement text.
 
 ## Publishing
 
-The six public packages (`@daanse/emf-xml`, `xmla-model`, `xmla-io`,
+The six public packages (`@eclipse-daanse/emf-xml`, `xmla-model`, `xmla-io`,
 `xmla-dynamic`, `xmla-client`, `xmla-workbench-adapter`) are prereleases under
 the `next` tag. As in the other Daanse repositories, they are published by a
 workflow that runs after CI on `main`: `scripts/publish-next.mjs` publishes
@@ -280,7 +280,7 @@ says what would go.
 
 ## Publishing
 
-The six public packages (`@daanse/emf-xml`, `xmla-model`, `xmla-io`,
+The six public packages (`@eclipse-daanse/emf-xml`, `xmla-model`, `xmla-io`,
 `xmla-dynamic`, `xmla-client`, `xmla-workbench-adapter`) are prereleases under
 the `next` tag. As in the other Daanse repositories, they are published by a
 workflow that runs after CI on `main`: `scripts/publish-next.mjs` publishes

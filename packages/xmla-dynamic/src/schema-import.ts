@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { DAANSE_XMLA_URI, EventKind, XmlCodecError, XmlCursor } from '@daanse/emf-xml';
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
+import { DAANSE_XMLA_URI, EventKind, XmlCodecError, XmlCursor } from '@eclipse-daanse/emf-xml';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
 import {
   BasicEAnnotation,
   BasicEAttribute,

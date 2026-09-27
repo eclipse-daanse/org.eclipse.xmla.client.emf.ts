@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { FetchTransport, XmlaClient } from '@daanse/xmla-client';
-import type { Credentials } from '@daanse/xmla-client';
+import { FetchTransport, XmlaClient } from '@eclipse-daanse/xmla-client';
+import type { Credentials } from '@eclipse-daanse/xmla-client';
 
 import { fetchWithDeadline, notHere, short } from '../kit.js';
 import type { Check, Context } from '../kit.js';

@@ -11,7 +11,7 @@
 import type { EObject } from '@emfts/core';
 import { ref, shallowRef } from 'vue';
 
-import { UIModelComposer } from '@daanse/vendor-uimodel-composer';
+import { UIModelComposer } from '@eclipse-daanse/vendor-uimodel-composer';
 
 import RowsetTable from './RowsetTable.vue';
 import TableViewRenderer from './TableViewRenderer.vue';

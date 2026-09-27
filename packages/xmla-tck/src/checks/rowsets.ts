@@ -7,10 +7,10 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { wireNameOf } from '@daanse/emf-xml';
-import { XmlaFaultError } from '@daanse/xmla-io';
-import type { RestrictionEntry } from '@daanse/xmla-io';
-import { RowsetResolver } from '@daanse/xmla-dynamic';
+import { wireNameOf } from '@eclipse-daanse/emf-xml';
+import { XmlaFaultError } from '@eclipse-daanse/xmla-io';
+import type { RestrictionEntry } from '@eclipse-daanse/xmla-io';
+import { RowsetResolver } from '@eclipse-daanse/xmla-dynamic';
 import type { EObject } from '@emfts/core';
 
 import { notHere, short, text, verdict } from '../kit.js';

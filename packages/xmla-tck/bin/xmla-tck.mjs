@@ -26,7 +26,7 @@
  */
 import { writeFileSync } from 'node:fs';
 
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
 
 import { ALL_CHECKS, held, htmlReport, jsonReport, line, listing, resolveProfile, runTck, summaryLine } from '../dist/index.js';
 

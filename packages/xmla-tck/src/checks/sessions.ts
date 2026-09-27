@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import type { XmlaClient } from '@daanse/xmla-client';
-import { XmlaFaultError } from '@daanse/xmla-io';
+import type { XmlaClient } from '@eclipse-daanse/xmla-client';
+import { XmlaFaultError } from '@eclipse-daanse/xmla-io';
 
 import { short } from '../kit.js';
 import type { Check, Context } from '../kit.js';

@@ -7,10 +7,10 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { columnOf as columnOfRow, FetchTransport, XmlaClient } from '@daanse/xmla-client';
-import type { ConnectionInfo, DiscoverResult, Transport } from '@daanse/xmla-client';
-import { RowsetCatalog } from '@daanse/xmla-model';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { columnOf as columnOfRow, FetchTransport, XmlaClient } from '@eclipse-daanse/xmla-client';
+import type { ConnectionInfo, DiscoverResult, Transport } from '@eclipse-daanse/xmla-client';
+import { RowsetCatalog } from '@eclipse-daanse/xmla-model';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EObject } from '@emfts/core';
 
 import type { Profile } from './profile.js';

@@ -10,7 +10,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { EcoreXmlReader, EventKind, Unknown, XmlCursor, wireNameOf } from '@daanse/emf-xml';
+import { EcoreXmlReader, EventKind, Unknown, XmlCursor, wireNameOf } from '@eclipse-daanse/emf-xml';
 import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
 import { beforeAll, describe, expect, it } from 'vitest';
 

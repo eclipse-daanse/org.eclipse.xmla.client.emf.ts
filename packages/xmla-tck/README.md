@@ -1,4 +1,4 @@
-# @daanse/xmla-tck
+# @eclipse-daanse/xmla-tck
 
 The client against a live XMLA server, check by check, with the specification
 each check rests on written beside it.

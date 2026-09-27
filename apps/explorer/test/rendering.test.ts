@@ -8,12 +8,12 @@
  * SPDX-License-Identifier: EPL-2.0
  */
 // @vitest-environment happy-dom
-import { EcoreXmlReader, EventKind, Unknown, XmlCursor } from '@daanse/emf-xml';
-import { UIModelComposer } from '@daanse/vendor-uimodel-composer';
-import { RowsetCatalog, XMLA_NAMESPACES } from '@daanse/xmla-model';
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import { conversation } from '@daanse/xmla-testkit';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { EcoreXmlReader, EventKind, Unknown, XmlCursor } from '@eclipse-daanse/emf-xml';
+import { UIModelComposer } from '@eclipse-daanse/vendor-uimodel-composer';
+import { RowsetCatalog, XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import { conversation } from '@eclipse-daanse/xmla-testkit';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EClass, EObject } from '@emfts/core';
 import { EmftsRendererPlugin } from '@emfts/vue-registry';
 import { mount } from '@vue/test-utils';
@@ -288,7 +288,7 @@ describe('a rowset, rendered', () => {
   it('renders a class the server described just as readily as one from a model', async () => {
     // The claim the whole second path rests on, now on a page rather than in an
     // object graph.
-    const { DynamicModelRegistry } = await import('@daanse/xmla-dynamic');
+    const { DynamicModelRegistry } = await import('@eclipse-daanse/xmla-dynamic');
     const xml = responseFor('DBSCHEMA_CATALOGS');
     const cursor = XmlCursor.parse(xml);
     let kind = cursor.next();

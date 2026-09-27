@@ -1,4 +1,4 @@
-# @daanse/xmla-model
+# @eclipse-daanse/xmla-model
 
 The XMLA Ecore models, bootstrapped into a live registry, plus the rowset catalogue over them.
 
@@ -11,7 +11,7 @@ than hand-written XML per rowset.
 ## Install
 
 ```bash
-npm install @daanse/xmla-model@next
+npm install @eclipse-daanse/xmla-model@next
 ```
 
 ## What it does
@@ -21,14 +21,14 @@ rowset catalogue that describes which restrictions each rowset takes.
 
 ```ts
 // Node — reads the .ecore files from disk
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
 const models = bootstrapFromDisk();
 
 // Browser — the same models inlined as strings, no filesystem, no raw imports
-import { bootstrapInBrowser } from '@daanse/xmla-model/browser';
+import { bootstrapInBrowser } from '@eclipse-daanse/xmla-model/browser';
 const models = bootstrapInBrowser();
 
-import { RowsetCatalog } from '@daanse/xmla-model';
+import { RowsetCatalog } from '@eclipse-daanse/xmla-model';
 const catalog = new RowsetCatalog(models);
 ```
 

@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { FetchTransport } from '@daanse/xmla-client';
-import { bootstrapInBrowser } from '@daanse/xmla-model/browser';
+import { FetchTransport } from '@eclipse-daanse/xmla-client';
+import { bootstrapInBrowser } from '@eclipse-daanse/xmla-model/browser';
 import { EmftsRendererPlugin } from '@emfts/vue-registry';
 import { createApp } from 'vue';
 

@@ -10,8 +10,8 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { EventKind, XmlCursor } from '@daanse/emf-xml';
-import type { XmlaCell, XmlaCellset } from '@daanse/xmla-workbench-adapter';
+import { EventKind, XmlCursor } from '@eclipse-daanse/emf-xml';
+import type { XmlaCell, XmlaCellset } from '@eclipse-daanse/xmla-workbench-adapter';
 
 /**
  * The Daanse OLAP check suites, read as an oracle for this client.
