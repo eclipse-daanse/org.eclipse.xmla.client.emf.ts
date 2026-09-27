@@ -24,7 +24,7 @@
  * Provenance is on when NPM_CONFIG_PROVENANCE says so, which the workflow
  * sets; locally it is off, because there is no OIDC token to sign with.
  */
-import { execFileSync, spawnSync } from 'node:child_process';
+import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -52,8 +52,15 @@ for (const path of order) {
   candidates.push({ path, name: manifest.name, version: manifest.version, tag: manifest.publishConfig?.tag ?? 'next' });
 }
 
+/**
+ * Whether the registry has this version. Asked online, never from the cache:
+ * a version published a minute ago is exactly what the cache still says is
+ * missing, and publishing over it is refused anyway.
+ */
 function onRegistry(name, version) {
-  const result = spawnSync('npm', ['view', `${name}@${version}`, 'version', '--json'], { encoding: 'utf8' });
+  const result = spawnSync('npm', ['view', `${name}@${version}`, 'version', '--json', '--prefer-online'], {
+    encoding: 'utf8',
+  });
   if (result.status !== 0) {
     return false; // E404: not there, or the package does not exist at all
   }
@@ -74,10 +81,22 @@ for (const { name, version, tag } of candidates) {
     continue;
   }
   console.log(`  pub  ${name}@${version} --tag ${tag}`);
-  execFileSync('npm', ['publish', '--workspace', name, '--tag', tag, '--access', 'public', ...(otp === null ? [] : [`--otp=${otp}`])], {
-    cwd: repoRoot,
-    stdio: 'inherit',
-  });
+  const result = spawnSync(
+    'npm',
+    ['publish', '--workspace', name, '--tag', tag, '--access', 'public', ...(otp === null ? [] : [`--otp=${otp}`])],
+    { cwd: repoRoot, encoding: 'utf8' },
+  );
+  process.stdout.write(result.stdout ?? '');
+  if (result.status !== 0) {
+    // The registry's own word that it is there, ahead of what a replica says.
+    if (/cannot publish over the previously published versions/i.test(result.stderr ?? '')) {
+      console.log(`  --   ${name}@${version} is on the registry already (the registry said so on publish)`);
+      skipped += 1;
+      continue;
+    }
+    process.stderr.write(result.stderr ?? '');
+    process.exit(result.status ?? 1);
+  }
   published += 1;
 }
 
