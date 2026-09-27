@@ -1,0 +1,43 @@
+# Publish the public packages to npm under the `next` tag, once CI has passed
+# on main.
+#
+# The same shape as the other Daanse repositories' "Publish next": runs after
+# the CI workflow on main, or by hand. What is published is decided by the
+# versions in the package.json files - a version the registry already has is
+# skipped, so a push that changes no version publishes nothing. The token is
+# the organisation's NPMJS_TOKEN; provenance is on, so npm links each package
+# to the commit and the run that built it.
+name: Publish next
+
+on:
+  workflow_run:
+    workflows: ['CI']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && startsWith(github.repository, 'eclipse-daanse/'))
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm run build
+      - name: Publish what the registry does not have yet
+        run: node scripts/publish-next.mjs
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'
