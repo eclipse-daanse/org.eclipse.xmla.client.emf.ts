@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { wireNameOf } from '@daanse/emf-xml';
-import type { RowsetCatalog } from '@daanse/xmla-model';
+import { wireNameOf } from '@eclipse-daanse/emf-xml';
+import type { RowsetCatalog } from '@eclipse-daanse/xmla-model';
 import type { EClass, EStructuralFeature } from '@emfts/core';
 
 import { DynamicModelRegistry } from './registry.js';

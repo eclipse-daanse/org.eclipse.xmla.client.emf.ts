@@ -7,7 +7,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { wireNameOf } from '@daanse/emf-xml';
+import { wireNameOf } from '@eclipse-daanse/emf-xml';
 import type { EObject, EStructuralFeature } from '@emfts/core';
 
 /**

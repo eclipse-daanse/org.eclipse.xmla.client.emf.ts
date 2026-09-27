@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { capabilitiesOf, propertiesOf } from '../src/connect.js';

@@ -1,6 +1,6 @@
-import { XmlCursor, EventKind } from '@daanse/emf-xml';
-import { RowsetCatalog } from '@daanse/xmla-model';
-import { bootstrapInBrowser } from '@daanse/xmla-model/browser';
+import { XmlCursor, EventKind } from '@eclipse-daanse/emf-xml';
+import { RowsetCatalog } from '@eclipse-daanse/xmla-model';
+import { bootstrapInBrowser } from '@eclipse-daanse/xmla-model/browser';
 
 const models = bootstrapInBrowser();
 const catalog = new RowsetCatalog(models);

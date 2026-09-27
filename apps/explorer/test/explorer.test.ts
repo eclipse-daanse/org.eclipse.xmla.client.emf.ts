@@ -7,15 +7,15 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import { conversation, FixtureTransport } from '@daanse/xmla-testkit';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import { conversation, FixtureTransport } from '@eclipse-daanse/xmla-testkit';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EObject, EStructuralFeature } from '@emfts/core';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { ExplorerSession, toEntries } from '../src/session.js';
 import { formViewForEClass, tableViewForEClass } from '../src/ui-model.js';
-import { RowsetCatalog } from '@daanse/xmla-model';
+import { RowsetCatalog } from '@eclipse-daanse/xmla-model';
 
 /**
  * The acceptance the plan asks of the UI: a recorded transport, a session, rows

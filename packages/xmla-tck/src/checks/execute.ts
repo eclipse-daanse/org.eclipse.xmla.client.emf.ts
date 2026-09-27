@@ -9,10 +9,10 @@
  */
 import { readFileSync } from 'node:fs';
 
-import { FetchTransport } from '@daanse/xmla-client';
-import { XmlaFaultError } from '@daanse/xmla-io';
-import { WorkbenchXmlaClient } from '@daanse/xmla-workbench-adapter';
-import type { XmlaCellset } from '@daanse/xmla-workbench-adapter';
+import { FetchTransport } from '@eclipse-daanse/xmla-client';
+import { XmlaFaultError } from '@eclipse-daanse/xmla-io';
+import { WorkbenchXmlaClient } from '@eclipse-daanse/xmla-workbench-adapter';
+import type { XmlaCellset } from '@eclipse-daanse/xmla-workbench-adapter';
 
 import { fetchWithDeadline, notHere, short, text, verdict } from '../kit.js';
 import type { Check, Context, Detail } from '../kit.js';

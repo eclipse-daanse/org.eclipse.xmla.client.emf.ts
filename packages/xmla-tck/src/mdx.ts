@@ -7,9 +7,9 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { XmlaClient } from '@daanse/xmla-client';
-import { CellsetReader } from '@daanse/xmla-workbench-adapter';
-import type { XmlaCellset } from '@daanse/xmla-workbench-adapter';
+import { XmlaClient } from '@eclipse-daanse/xmla-client';
+import { CellsetReader } from '@eclipse-daanse/xmla-workbench-adapter';
+import type { XmlaCellset } from '@eclipse-daanse/xmla-workbench-adapter';
 import type { EClass, EObject, EStructuralFeature } from '@emfts/core';
 
 import type { Context } from './kit.js';

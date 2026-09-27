@@ -7,11 +7,11 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EcoreXmlReader, EventKind, Unknown, wireNameOf, XmlCodecError, XmlCursor } from '@daanse/emf-xml';
-import { RowsetCatalog, XMLA_NAMESPACES } from '@daanse/xmla-model';
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import { conversations } from '@daanse/xmla-testkit';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { EcoreXmlReader, EventKind, Unknown, wireNameOf, XmlCodecError, XmlCursor } from '@eclipse-daanse/emf-xml';
+import { RowsetCatalog, XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import { conversations } from '@eclipse-daanse/xmla-testkit';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import { EPackageRegistry } from '@emfts/core';
 import type { EClass, EObject } from '@emfts/core';
 import { beforeAll, describe, expect, it } from 'vitest';

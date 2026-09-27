@@ -11,17 +11,17 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { wireNameOf, XmlCursor } from '@daanse/emf-xml';
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { wireNameOf, XmlCursor } from '@eclipse-daanse/emf-xml';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EObject, EStructuralFeature } from '@emfts/core';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { RequestReader } from '../src/read-requests.js';
 import { SoapEnvelopeCodec } from '../src/envelope.js';
 import { writeDiscover, writeExecute } from '../src/requests.js';
-import { XmlWriter } from '@daanse/emf-xml';
+import { XmlWriter } from '@eclipse-daanse/emf-xml';
 
 /**
  * Every recorded request, read and compared against its manifest.

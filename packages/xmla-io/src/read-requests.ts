@@ -7,8 +7,8 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { EcoreXmlReader, EventKind, Unknown, XmlCodecError, XmlCursor } from '@daanse/emf-xml';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { EcoreXmlReader, EventKind, Unknown, XmlCodecError, XmlCursor } from '@eclipse-daanse/emf-xml';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import type { EClass, EObject } from '@emfts/core';
 
 import type { RestrictionEntry } from './requests.js';

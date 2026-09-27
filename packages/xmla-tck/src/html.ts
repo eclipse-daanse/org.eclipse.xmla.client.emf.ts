@@ -35,7 +35,7 @@ ${CSS}
 <body>
 <header>
   <h1>XMLA TCK report</h1>
-  <p class="meta">@daanse/xmla-tck · ${ids.length} checks · ${runs.length} server${runs.length === 1 ? '' : 's'} · generated ${escape(generated)}</p>
+  <p class="meta">@eclipse-daanse/xmla-tck · ${ids.length} checks · ${runs.length} server${runs.length === 1 ? '' : 's'} · generated ${escape(generated)}</p>
   <div class="summaries">
 ${runs.map(summaryCard).join('\n')}
   </div>
