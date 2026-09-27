@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<olapcheck:OlapCheckSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:olapcheck="https://www.daanse.org/spec/org.eclipse.daanse.olap.check" name="Daanse Tutorial - KPI Intro" description="Check suite for the Daanse Tutorial - KPI Intro">
+  <connectionChecks name="Connection Check Daanse Tutorial - KPI Intro" description="Connection check for Daanse Tutorial - KPI Intro">
+    <catalogChecks name="Daanse Tutorial - KPI Intro" description="Check that catalog 'Daanse Tutorial - KPI Intro' exists with its cubes" catalogName="Daanse Tutorial - KPI Intro">
+      <cubeChecks name="CubeCheck-Cube Kpi" description="Check that cube 'Cube Kpi' exists" cubeName="Cube Kpi">
+        <measureChecks name="MeasureCheck-Measure1-Sum" description="Check that measure 'Measure1-Sum' exists" measureName="Measure1-Sum"/>
+        <kpiChecks name="KPI Check for Kpi1" description="Check KPI 'Kpi1' with value only" kpiName="Kpi1">
+          <kpiAttributeChecks attributeType="VALUE" expectedValue="[Measures].[Measure1-Sum]"/>
+        </kpiChecks>
+        <kpiChecks name="KPI Check for Kpi2" description="Check KPI 'Kpi2' with parent reference" kpiName="Kpi2">
+          <kpiAttributeChecks attributeType="VALUE" expectedValue="[Measures].[Measure1-Sum]"/>
+        </kpiChecks>
+        <kpiChecks name="KPI Check for Kpi3" description="Check KPI 'Kpi3' with display folder" kpiName="Kpi3">
+          <kpiAttributeChecks attributeType="VALUE" expectedValue="[Measures].[Measure1-Sum]"/>
+          <kpiAttributeChecks attributeType="DISPLAY_FOLDER" expectedValue="theDisplayFolder\otherDisplayFolder"/>
+        </kpiChecks>
+      </cubeChecks>
+      <queryChecks name="Measure Query Check" description="Verify MDX query returns Measure data" query="SELECT FROM [Cube Kpi] WHERE ([Measures].[Measure1-Sum])" expectedColumnCount="0">
+        <cellChecks name="[Measures].[Measure1-Sum]" expectedValue="63.0"/>
+      </queryChecks>
+    </catalogChecks>
+  </connectionChecks>
+</olapcheck:OlapCheckSuite>
