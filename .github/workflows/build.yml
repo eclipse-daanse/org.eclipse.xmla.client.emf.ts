@@ -8,7 +8,7 @@
 #
 # The TCK's live checks skip themselves without XMLA_TCK_TARGET, so `npm test`
 # is the same here as on a machine with no server.
-name: build
+name: CI
 
 on:
   push:

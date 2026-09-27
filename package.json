@@ -24,7 +24,8 @@
     "probe:live": "node packages/xmla-tck/bin/xmla-tck.mjs csv-probe",
     "check:vendor": "node scripts/check-vendor.mjs",
     "probe:public": "node packages/xmla-tck/bin/xmla-tck.mjs flexmonster syncfusion emondrian",
-    "tck": "node packages/xmla-tck/bin/xmla-tck.mjs"
+    "tck": "node packages/xmla-tck/bin/xmla-tck.mjs",
+    "publish:next": "node scripts/publish-next.mjs"
   },
   "devDependencies": {
     "@vue/test-utils": "^2.4.11",

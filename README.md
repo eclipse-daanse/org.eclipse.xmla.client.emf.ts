@@ -267,6 +267,28 @@ of `<root>` rather than by guessing from the statement text.
 
 ## What is not done yet
 
+## Publishing
+
+The six public packages (`@daanse/emf-xml`, `xmla-model`, `xmla-io`,
+`xmla-dynamic`, `xmla-client`, `xmla-workbench-adapter`) are prereleases under
+the `next` tag. As in the other Daanse repositories, they are published by a
+workflow that runs after CI on `main`: `scripts/publish-next.mjs` publishes
+every public workspace whose version the registry does not have yet, in build
+order, with provenance. Bump the version in a package.json and the next push to
+`main` publishes it; nothing else does. `npm run publish:next -- --dry-run`
+says what would go.
+
+## Publishing
+
+The six public packages (`@daanse/emf-xml`, `xmla-model`, `xmla-io`,
+`xmla-dynamic`, `xmla-client`, `xmla-workbench-adapter`) are prereleases under
+the `next` tag. As in the other Daanse repositories, they are published by a
+workflow that runs after CI on `main`: `scripts/publish-next.mjs` publishes
+every public workspace whose version the registry does not have yet, in build
+order, with provenance. Bump the version in a package.json and the next push to
+`main` publishes it; nothing else does. `npm run publish:next -- --dry-run`
+says what would go.
+
 ## License
 
 EPL-2.0. See [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md).
