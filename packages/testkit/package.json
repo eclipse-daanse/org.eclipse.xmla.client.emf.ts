@@ -18,6 +18,6 @@
     }
   },
   "dependencies": {
-    "@eclipse-daanse/xmla-client": "0.0.1-next.1"
+    "@eclipse-daanse/xmla-client": "0.0.1-next.2"
   }
 }
