@@ -7,9 +7,9 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import type { Transport, XmlaHttpRequest, XmlaHttpResponse } from '@daanse/xmla-client';
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import type { XmlaModels } from '@daanse/xmla-model';
+import type { Transport, XmlaHttpRequest, XmlaHttpResponse } from '@eclipse-daanse/xmla-client';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { ALL_CHECKS } from '../src/checks/index.js';
@@ -265,7 +265,7 @@ describe('the report', () => {
     });
 
     const parsed = JSON.parse(jsonReport([run])) as { tck: string; runs: Array<{ summary: unknown; results: unknown[] }> };
-    expect(parsed.tck).toBe('@daanse/xmla-tck');
+    expect(parsed.tck).toBe('@eclipse-daanse/xmla-tck');
     expect(parsed.runs[0]!.summary).toEqual(summarise(run.results));
     expect(parsed.runs[0]!.results).toHaveLength(1);
   });

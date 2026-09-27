@@ -7,10 +7,10 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import { conversation, FixtureTransport } from '@daanse/xmla-testkit';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import { conversation, FixtureTransport } from '@eclipse-daanse/xmla-testkit';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { WorkbenchXmlaClient } from '../src/workbench-client.js';

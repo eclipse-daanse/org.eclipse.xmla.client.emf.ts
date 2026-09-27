@@ -7,10 +7,10 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { wireNameOf } from '@daanse/emf-xml';
-import type { DiscoverResult, XmlaClient } from '@daanse/xmla-client';
-import { CellsetReader } from '@daanse/xmla-workbench-adapter';
-import type { XmlaCellset } from '@daanse/xmla-workbench-adapter';
+import { wireNameOf } from '@eclipse-daanse/emf-xml';
+import type { DiscoverResult, XmlaClient } from '@eclipse-daanse/xmla-client';
+import { CellsetReader } from '@eclipse-daanse/xmla-workbench-adapter';
+import type { XmlaCellset } from '@eclipse-daanse/xmla-workbench-adapter';
 import type { EClass, EObject } from '@emfts/core';
 
 import { notHere, short, text, verdict } from '../kit.js';

@@ -10,7 +10,7 @@
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import type { Credentials } from '@daanse/xmla-client';
+import type { Credentials } from '@eclipse-daanse/xmla-client';
 
 /**
  * A server to run against, and what is known about it beforehand.

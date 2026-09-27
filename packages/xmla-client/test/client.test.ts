@@ -7,12 +7,12 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { wireNameOf } from '@daanse/emf-xml';
-import { XmlaFaultError } from '@daanse/xmla-io';
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
-import { conversation, FixtureTransport } from '@daanse/xmla-testkit';
-import type { XmlaModels } from '@daanse/xmla-model';
+import { wireNameOf } from '@eclipse-daanse/emf-xml';
+import { XmlaFaultError } from '@eclipse-daanse/xmla-io';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
+import { conversation, FixtureTransport } from '@eclipse-daanse/xmla-testkit';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import { XmlaClient } from '../src/client.js';

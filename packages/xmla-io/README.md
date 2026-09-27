@@ -1,4 +1,4 @@
-# @daanse/xmla-io
+# @eclipse-daanse/xmla-io
 
 The XMLA message layer: SOAP envelope, requests, faults, and the codec that dispatches a response.
 
@@ -11,7 +11,7 @@ than hand-written XML per rowset.
 ## Install
 
 ```bash
-npm install @daanse/xmla-io@next
+npm install @eclipse-daanse/xmla-io@next
 ```
 
 ## What it does
@@ -20,7 +20,7 @@ The XMLA message layer: the SOAP envelope, Discover and Execute requests, fault
 handling, and the codec that dispatches a response.
 
 ```ts
-import { SoapEnvelopeCodec, writeDiscover, failIfFault } from '@daanse/xmla-io';
+import { SoapEnvelopeCodec, writeDiscover, failIfFault } from '@eclipse-daanse/xmla-io';
 
 const body = codec.write(headers, (out) => {
   writeDiscover(out, {

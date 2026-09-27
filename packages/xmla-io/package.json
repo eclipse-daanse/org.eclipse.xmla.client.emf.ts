@@ -1,5 +1,5 @@
 {
-  "name": "@daanse/xmla-io",
+  "name": "@eclipse-daanse/xmla-io",
   "version": "0.0.1-next.1",
   "type": "module",
   "license": "EPL-2.0",
@@ -21,8 +21,8 @@
     "prepack": "tsc --build"
   },
   "dependencies": {
-    "@daanse/emf-xml": "0.0.1-next.1",
-    "@daanse/xmla-model": "0.0.1-next.1",
+    "@eclipse-daanse/emf-xml": "0.0.1-next.1",
+    "@eclipse-daanse/xmla-model": "0.0.1-next.1",
     "@emfts/core": "0.3.0-next.1"
   },
   "publishConfig": {

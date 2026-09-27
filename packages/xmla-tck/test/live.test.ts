@@ -7,7 +7,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-import { bootstrapFromDisk } from '@daanse/xmla-model/node';
+import { bootstrapFromDisk } from '@eclipse-daanse/xmla-model/node';
 import { describe, expect, it } from 'vitest';
 
 import { ALL_CHECKS } from '../src/checks/index.js';

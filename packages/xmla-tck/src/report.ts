@@ -110,5 +110,5 @@ export function listing(checks: readonly Check[]): string {
 }
 
 export function jsonReport(runs: readonly Run[]): string {
-  return JSON.stringify({ tck: '@daanse/xmla-tck', runs }, null, 2);
+  return JSON.stringify({ tck: '@eclipse-daanse/xmla-tck', runs }, null, 2);
 }

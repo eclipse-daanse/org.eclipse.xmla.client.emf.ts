@@ -1,4 +1,4 @@
-# @daanse/xmla-workbench-adapter
+# @eclipse-daanse/xmla-workbench-adapter
 
 Plain records and cellsets over the EObject client, so mdx-workbench can swap its SOAP client for one line.
 
@@ -11,7 +11,7 @@ than hand-written XML per rowset.
 ## Install
 
 ```bash
-npm install @daanse/xmla-workbench-adapter@next
+npm install @eclipse-daanse/xmla-workbench-adapter@next
 ```
 
 ## What it does
@@ -24,7 +24,7 @@ place that flattens them, so a consumer can change one import instead of being
 rewritten.
 
 ```ts
-import { WorkbenchXmlaClient, toCellset, toParsedRowset } from '@daanse/xmla-workbench-adapter';
+import { WorkbenchXmlaClient, toCellset, toParsedRowset } from '@eclipse-daanse/xmla-workbench-adapter';
 
 const workbench = new WorkbenchXmlaClient({ url, transport, models });
 const { catalogs } = await workbench.connect();

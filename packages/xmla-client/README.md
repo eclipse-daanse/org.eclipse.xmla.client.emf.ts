@@ -1,4 +1,4 @@
-# @daanse/xmla-client
+# @eclipse-daanse/xmla-client
 
 Talks to an XMLA server: transport, authentication, sessions, discover and execute.
 
@@ -11,7 +11,7 @@ than hand-written XML per rowset.
 ## Install
 
 ```bash
-npm install @daanse/xmla-client@next
+npm install @eclipse-daanse/xmla-client@next
 ```
 
 ## What it does
@@ -20,8 +20,8 @@ Talks to an XMLA endpoint: transport, authentication, sessions, Discover and
 Execute.
 
 ```ts
-import { XmlaClient, FetchTransport } from '@daanse/xmla-client';
-import { bootstrapInBrowser } from '@daanse/xmla-model/browser';
+import { XmlaClient, FetchTransport } from '@eclipse-daanse/xmla-client';
+import { bootstrapInBrowser } from '@eclipse-daanse/xmla-model/browser';
 
 const { client, info } = await new XmlaClient({
   url: 'https://server/xmla',

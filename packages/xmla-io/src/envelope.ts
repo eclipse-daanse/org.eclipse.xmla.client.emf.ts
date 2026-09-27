@@ -16,9 +16,9 @@ import {
   XmlCodecError,
   XmlCursor,
   XmlWriter,
-} from '@daanse/emf-xml';
-import { XMLA_NAMESPACES } from '@daanse/xmla-model';
-import type { XmlaModels } from '@daanse/xmla-model';
+} from '@eclipse-daanse/emf-xml';
+import { XMLA_NAMESPACES } from '@eclipse-daanse/xmla-model';
+import type { XmlaModels } from '@eclipse-daanse/xmla-model';
 import { EMD_ANNOTATION_URI } from '@emfts/core';
 import type { EClass, EObject, EPackage } from '@emfts/core';
 

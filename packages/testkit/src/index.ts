@@ -11,7 +11,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import type { Transport, XmlaHttpRequest, XmlaHttpResponse } from '@daanse/xmla-client';
+import type { Transport, XmlaHttpRequest, XmlaHttpResponse } from '@eclipse-daanse/xmla-client';
 
 /**
  * The recorded conversations, and a transport that answers from them.
