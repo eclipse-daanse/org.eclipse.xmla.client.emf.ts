@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<olapcheck:OlapCheckSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:olapcheck="https://www.daanse.org/spec/org.eclipse.daanse.olap.check" name="Daanse Tutorial - Hierarchy Has All" description="Check suite for the Daanse Tutorial - Hierarchy Has All">
+  <connectionChecks name="Connection Check Daanse Tutorial - Hierarchy Has All" description="Connection check for Daanse Tutorial - Hierarchy Has All tutorial">
+    <catalogChecks name="Daanse Tutorial - Hierarchy Has All check" description="Check that catalog 'Daanse Tutorial - Hierarchy Has All' exists with its cubes" catalogName="Daanse Tutorial - Hierarchy Has All">
+      <cubeChecks name="CubeCheck-HasAll Cube" description="Check that cube 'HasAll Cube' exists hierarchy with has all true" cubeName="HasAll Cube">
+        <dimensionChecks name="DimensionCheck for Dimension1" dimensionName="Dimension1">
+          <hierarchyChecks name="HierarchyCheck for Hierarchy - with HasAll" hierarchyName="Hierarchy - with HasAll">
+            <hierarchyAttributeChecks attributeType="HAS_ALL" expectedBoolean="true"/>
+          </hierarchyChecks>
+          <hierarchyChecks name="HierarchyCheck for Hierarchy - with HasAll and Names" hierarchyName="Hierarchy - with HasAll and Names">
+            <hierarchyAttributeChecks attributeType="HAS_ALL" expectedBoolean="true"/>
+            <hierarchyAttributeChecks attributeType="ALL_MEMBER_NAME" expectedValue="theAllMemberName"/>
+          </hierarchyChecks>
+          <hierarchyChecks name="HierarchyCheck for Hierarchy - Without HasAll" hierarchyName="Hierarchy - Without HasAll">
+            <levelChecks name="levelCheck for theLevel" levelName="theLevel"/>
+            <hierarchyAttributeChecks attributeType="HAS_ALL" expectedBoolean="false"/>
+          </hierarchyChecks>
+        </dimensionChecks>
+        <measureChecks name="MeasureCheck-theMeasure" description="Check that measure 'theMeasure' exists" measureName="theMeasure">
+          <measureAttributeChecks name="theMeasure name check" expectedValue="theMeasure"/>
+          <measureAttributeChecks name="theMeasure unique name check" attributeType="UNIQUE_NAME" expectedValue="[Measures].[theMeasure]"/>
+        </measureChecks>
+      </cubeChecks>
+      <queryChecks name="Measure Query Check Measure-Sum" description="Verify MDX query returns Measure data for theMeasure" query="SELECT [Measures].[theMeasure] ON COLUMNS FROM [HasAll Cube]">
+        <cellChecks name="[Measures].[theMeasure]" expectedNumericValue="42.0" tolerance="0.001">
+          <coordinates>0</coordinates>
+        </cellChecks>
+      </queryChecks>
+    </catalogChecks>
+  </connectionChecks>
+</olapcheck:OlapCheckSuite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<olapcheck:OlapCheckSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:olapcheck="https://www.daanse.org/spec/org.eclipse.daanse.olap.check" name="MinimalCubeSuite" description="Check suite for the minimal cube mapping tutorial">
+  <connectionChecks name="MinimalCubeConnectionCheck" description="Connection check for minimal cube tutorial">
+    <catalogChecks name="CatalogCheck-Daanse Tutorial - Cube Minimal" description="Check that catalog 'Daanse Tutorial - Cube Minimal' exists with its cubes" catalogName="Daanse Tutorial - Cube Minimal">
+      <cubeChecks name="CubeCheck-MinimalCube" description="Check that cube 'MinimalCube' exists with its measures" cubeName="MinimalCube">
+        <measureChecks name="MeasureCheck-Measure-Sum" description="Check that measure 'Measure-Sum' exists" measureName="Measure-Sum"/>
+      </cubeChecks>
+      <queryChecks name="MDX-MinimalCube-Sum-Total" description="SUM(VALUE) across both rows should be 63 (42 + 21)" query="SELECT [Measures].[Measure-Sum] ON COLUMNS FROM [MinimalCube]">
+        <cellChecks name="CellValue-MeasureSum-Total" expectedNumericValue="63.0" tolerance="0.001">
+          <coordinates>0</coordinates>
+        </cellChecks>
+        <axisChecks name="Axis-Columns" expectedPositionCount="1" expectedFirstMemberUniqueName="[Measures].[Measure-Sum]"/>
+      </queryChecks>
+    </catalogChecks>
+  </connectionChecks>
+</olapcheck:OlapCheckSuite>

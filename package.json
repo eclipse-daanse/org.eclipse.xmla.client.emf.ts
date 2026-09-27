@@ -21,9 +21,10 @@
     "sync:fixtures": "node scripts/sync-fixtures.mjs",
     "check:sync": "node scripts/sync-ecore.mjs --check && node scripts/sync-fixtures.mjs --check && node scripts/check-vendor.mjs",
     "probe": "node scripts/probe.mjs",
-    "probe:live": "node scripts/probe-live.mjs",
+    "probe:live": "node packages/xmla-tck/bin/xmla-tck.mjs csv-probe",
     "check:vendor": "node scripts/check-vendor.mjs",
-    "probe:public": "node scripts/probe-public.mjs"
+    "probe:public": "node packages/xmla-tck/bin/xmla-tck.mjs flexmonster syncfusion emondrian",
+    "tck": "node packages/xmla-tck/bin/xmla-tck.mjs"
   },
   "devDependencies": {
     "@vue/test-utils": "^2.4.11",
