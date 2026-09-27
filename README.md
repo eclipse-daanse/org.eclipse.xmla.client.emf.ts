@@ -278,6 +278,12 @@ order, with provenance. Bump the version in a package.json and the next push to
 `main` publishes it; nothing else does. `npm run publish:next -- --dry-run`
 says what would go.
 
+The workflow holds no token. Each package on npmjs.com names this repository
+and `publish-next.yml` as its trusted publisher, so the run's OIDC token is
+the login; renaming the workflow file breaks that until the entries follow.
+A publish by hand needs a login and the authenticator's code:
+`npm run publish:next -- --otp 123456`.
+
 ## Publishing
 
 The six public packages (`@eclipse-daanse/emf-xml`, `xmla-model`, `xmla-io`,
@@ -288,6 +294,12 @@ every public workspace whose version the registry does not have yet, in build
 order, with provenance. Bump the version in a package.json and the next push to
 `main` publishes it; nothing else does. `npm run publish:next -- --dry-run`
 says what would go.
+
+The workflow holds no token. Each package on npmjs.com names this repository
+and `publish-next.yml` as its trusted publisher, so the run's OIDC token is
+the login; renaming the workflow file breaks that until the entries follow.
+A publish by hand needs a login and the authenticator's code:
+`npm run publish:next -- --otp 123456`.
 
 ## License
 

@@ -4,9 +4,13 @@
 # The same shape as the other Daanse repositories' "Publish next": runs after
 # the CI workflow on main, or by hand. What is published is decided by the
 # versions in the package.json files - a version the registry already has is
-# skipped, so a push that changes no version publishes nothing. The token is
-# the organisation's NPMJS_TOKEN; provenance is on, so npm links each package
-# to the commit and the run that built it.
+# skipped, so a push that changes no version publishes nothing.
+#
+# No token. Each package on npmjs.com names this repository and this workflow
+# file as its trusted publisher, and npm accepts the run's OIDC token in place
+# of a login - which is why the file must keep its name, and why the job needs
+# `id-token: write`. Provenance comes with it. Trusted publishing needs npm
+# 11.5 or later, and Node 22 ships npm 10, hence the upgrade step.
 name: Publish next
 
 on:
@@ -34,10 +38,11 @@ jobs:
           node-version: 22
           cache: npm
           registry-url: https://registry.npmjs.org
+      - name: npm 11.5 or later, for trusted publishing
+        run: npm install -g npm@latest && npm --version
       - run: npm ci
       - run: npm run build
       - name: Publish what the registry does not have yet
         run: node scripts/publish-next.mjs
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
           NPM_CONFIG_PROVENANCE: 'true'

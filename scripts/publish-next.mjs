@@ -21,8 +21,9 @@
  *   node scripts/publish-next.mjs --otp 123456   by hand, with the authenticator's code
  *
  * In order of the build, so a package never lands before what it depends on.
- * Provenance is on when NPM_CONFIG_PROVENANCE says so, which the workflow
- * sets; locally it is off, because there is no OIDC token to sign with.
+ * In the workflow the login is the run's OIDC token - trusted publishing, no
+ * secret - and provenance comes with it. By hand it is the account's login
+ * and, with 2FA, the authenticator's code.
  */
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
