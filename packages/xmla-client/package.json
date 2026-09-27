@@ -1,6 +1,6 @@
 {
   "name": "@eclipse-daanse/xmla-client",
-  "version": "0.0.1-next.1",
+  "version": "0.0.1-next.2",
   "type": "module",
   "license": "EPL-2.0",
   "description": "Talks to an XMLA server: transport, authentication, sessions, discover and execute.",
