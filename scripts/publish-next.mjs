@@ -16,8 +16,9 @@
  * a version the registry already has is skipped, and the tag comes from the
  * package's own publishConfig - `next` for the prereleases these are.
  *
- *   node scripts/publish-next.mjs             publish what is missing
- *   node scripts/publish-next.mjs --dry-run   say what would be published
+ *   node scripts/publish-next.mjs                publish what is missing
+ *   node scripts/publish-next.mjs --dry-run      say what would be published
+ *   node scripts/publish-next.mjs --otp 123456   by hand, with the authenticator's code
  *
  * In order of the build, so a package never lands before what it depends on.
  * Provenance is on when NPM_CONFIG_PROVENANCE says so, which the workflow
@@ -30,6 +31,9 @@ import { join } from 'node:path';
 import { repoRoot } from './sync-lib.mjs';
 
 const dryRun = process.argv.includes('--dry-run');
+const otpAt = process.argv.indexOf('--otp');
+/** The one-time password an account with 2FA has to give; the workflow's token needs none. */
+const otp = otpAt < 0 ? null : (process.argv[otpAt + 1] ?? null);
 
 /** The build order, which is the dependency order. */
 const order = JSON.parse(readFileSync(join(repoRoot, 'tsconfig.json'), 'utf8')).references.map((ref) => ref.path);
@@ -70,7 +74,7 @@ for (const { name, version, tag } of candidates) {
     continue;
   }
   console.log(`  pub  ${name}@${version} --tag ${tag}`);
-  execFileSync('npm', ['publish', '--workspace', name, '--tag', tag, '--access', 'public'], {
+  execFileSync('npm', ['publish', '--workspace', name, '--tag', tag, '--access', 'public', ...(otp === null ? [] : [`--otp=${otp}`])], {
     cwd: repoRoot,
     stdio: 'inherit',
   });
