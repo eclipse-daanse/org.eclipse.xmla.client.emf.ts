@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<olapcheck:OlapCheckSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:olapcheck="https://www.daanse.org/spec/org.eclipse.daanse.olap.check" name="Daanse Tck - Hierarchy with levels with same names of values" description="Check suite for the Daanse Tck - Hierarchy with levels with same names of values">
+  <connectionChecks name="Connection Check Daanse Tck - Hierarchy with levels with same names of values" description="Connection check for Daanse Tck - Hierarchy with levels with same names of values">
+    <catalogChecks name="Daanse Tck - Hierarchy with levels with same names of values" description="Check that catalog 'Daanse Tck - Hierarchy with levels with same names of values" catalogName="Daanse Tck - Hierarchy with levels with same names of values">
+      <cubeChecks name="CubeCheck-Cube with levels with same names of values" description="Check that cube 'Cube with levels with same names of values" cubeName="Cube with levels with same names of values">
+        <dimensionChecks name="DimensionCheck for Town" dimensionName="Town">
+          <hierarchyChecks name="HierarchyCheck for TownHierarchy" hierarchyName="TownHierarchy">
+            <levelChecks name="levelCheck for Town" levelName="Town"/>
+            <hierarchyAttributeChecks attributeType="HAS_ALL" expectedBoolean="true"/>
+          </hierarchyChecks>
+          <hierarchyChecks name="HierarchyCheck for ObjectsHierarchy" hierarchyName="ObjectsHierarchy">
+            <levelChecks name="levelCheck for LevelObject" levelName="Objects"/>
+            <levelChecks name="levelCheck for LevelId" levelName="Id"/>
+            <hierarchyAttributeChecks attributeType="HAS_ALL" expectedBoolean="true"/>
+          </hierarchyChecks>
+        </dimensionChecks>
+        <dimensionChecks name="DimensionCheck for Town" dimensionName="Year">
+          <hierarchyChecks name="HierarchyCheck for ObjectsHierarchy" hierarchyName="YearHierarchy">
+            <levelChecks name="levelCheck for LevelYear" levelName="Year"/>
+            <hierarchyAttributeChecks attributeType="HAS_ALL" expectedBoolean="false"/>
+          </hierarchyChecks>
+        </dimensionChecks>
+        <measureChecks name="MeasureCheck-theMeasure" description="Check that measure 'theMeasure' exists" measureName="theMeasure">
+          <measureAttributeChecks expectedValue="theMeasure"/>
+          <measureAttributeChecks attributeType="UNIQUE_NAME" expectedValue="[Measures].[theMeasure]"/>
+        </measureChecks>
+      </cubeChecks>
+      <queryChecks name="Measure Query Check theMeasure" description="Verify MDX query returns Measure data for theMeasure" query="SELECT FROM [Cube with levels with same names of values] WHERE ([Measures].[theMeasure])" expectedColumnCount="0">
+        <cellChecks name="[Measures].[theMeasure]" expectedValue="836.0" expectedNumericValue="836.0"/>
+      </queryChecks>
+      <queryChecks name="DRILLTHROUGH Query Check" description="Verify MDX query returns DRILLTHROUGH" query="DRILLTHROUGH MAXROWS 1000 SELECT FROM [Cube with levels with same names of values] WHERE (([Measures].[theMeasure],[Town].[TownHierarchy].[Berlin]))" expectedRowCount="4" expectedColumnCount="8">
+        <cellChecks name="DRILLTHROUGH value1" expectedValue="2025.0" expectedNumericValue="2025.0">
+          <coordinates>0</coordinates>
+        </cellChecks>
+        <cellChecks name="DRILLTHROUGH value2" expectedValue="Berlin">
+          <coordinates>0</coordinates>
+          <coordinates>1</coordinates>
+        </cellChecks>
+        <cellChecks name="DRILLTHROUGH value3" expectedValue="1" checkFormattedValue="true">
+          <coordinates>0</coordinates>
+          <coordinates>2</coordinates>
+        </cellChecks>
+        <cellChecks name="DRILLTHROUGH value4" expectedValue="11" checkFormattedValue="true">
+          <coordinates>0</coordinates>
+          <coordinates>3</coordinates>
+        </cellChecks>
+        <cellChecks name="DRILLTHROUGH value5" expectedValue="square" checkFormattedValue="true">
+          <coordinates>0</coordinates>
+          <coordinates>4</coordinates>
+        </cellChecks>
+        <cellChecks name="DRILLTHROUGH value6" expectedValue="11" checkFormattedValue="true">
+          <coordinates>0</coordinates>
+          <coordinates>5</coordinates>
+        </cellChecks>
+        <cellChecks name="DRILLTHROUGH value7" expectedValue="1" checkFormattedValue="true">
+          <coordinates>0</coordinates>
+          <coordinates>6</coordinates>
+        </cellChecks>
+        <cellChecks name="DRILLTHROUGH value8" expectedValue="2" checkFormattedValue="true">
+          <coordinates>0</coordinates>
+          <coordinates>7</coordinates>
+        </cellChecks>
+      </queryChecks>
+    </catalogChecks>
+  </connectionChecks>
+</olapcheck:OlapCheckSuite>

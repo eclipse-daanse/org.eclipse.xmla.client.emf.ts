@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<olapcheck:OlapCheckSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:olapcheck="https://www.daanse.org/spec/org.eclipse.daanse.olap.check" name="Daanse Tutorial - Access Cube Grand Checks" description="Comprehensive checks for Access Cube Grand catalog - logistics and package delivery analysis">
+  <connectionChecks name="Cube Gran Check for role1" description="Connection check for Cube Gran tutorial with role1">
+    <connectionConfig catalogName="Daanse Tutorial - Access Cube Gran">
+      <roles>role1</roles>
+    </connectionConfig>
+    <catalogChecks name="Parcel Catalog Check" description="Demonstrates access control with cube grants and roles" catalogName="Daanse Tutorial - Access Cube Grant">
+      <cubeChecks name="Access Cube Grant Check" description="Verify Access Cube Gran cube structure with all dimensions and measures" cubeName="Cube1">
+        <dimensionChecks name="Dimension1 Dimension Check" dimensionName="Dimension1">
+          <hierarchyChecks name="Hierarchy1 Hierarchy Check" hierarchyName="Hierarchy1">
+            <levelChecks name="Level1 Level Check" description="Verify level Level1 exists" levelName="Level1"/>
+            <hierarchyAttributeChecks name="Hierarchy1 Type HasAll Check" attributeType="HAS_ALL" expectedBoolean="false"/>
+          </hierarchyChecks>
+          <dimensionAttributeChecks name="Dimension1 Visible Check" attributeType="VISIBLE" expectedBoolean="true"/>
+        </dimensionChecks>
+        <measureChecks name="Measure1 Measure Check" measureName="Measure1">
+          <measureAttributeChecks name="Measure1 Visible Check" attributeType="VISIBLE" expectedBoolean="true"/>
+        </measureChecks>
+        <cubeAttributeChecks name="Cube Visibility Check" attributeType="VISIBLE" expectedBoolean="true"/>
+      </cubeChecks>
+      <queryChecks name="Measure Query Check" description="Verify MDX query returns Measure data for role1" query="SELECT FROM [Cube1] WHERE ([Measures].[Measure1])" expectedColumnCount="0">
+        <cellChecks name="[Measures].[Measure1]" expectedValue="42.0" expectedNumericValue="42.0"/>
+      </queryChecks>
+    </catalogChecks>
+  </connectionChecks>
+</olapcheck:OlapCheckSuite>

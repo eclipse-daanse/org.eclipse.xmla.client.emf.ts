@@ -97,7 +97,7 @@ the models depends on either.
 
 `DISCOVER_RESOURCE_POOLS` is the one already met: the public Flexmonster server
 declares it, and it is what the dynamic path read live in
-`scripts/probe-public.mjs` before the model described it.
+the public probe (now check R11 of `packages/xmla-tck`) before the model described it.
 
 ### One `MDSCHEMA`
 

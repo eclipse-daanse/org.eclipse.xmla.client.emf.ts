@@ -1,0 +1,33 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../emf-xml"
+    },
+    {
+      "path": "../xmla-io"
+    },
+    {
+      "path": "../xmla-model"
+    },
+    {
+      "path": "../xmla-dynamic"
+    },
+    {
+      "path": "../xmla-client"
+    },
+    {
+      "path": "../xmla-workbench-adapter"
+    },
+    {
+      "path": "../testkit"
+    }
+  ]
+}

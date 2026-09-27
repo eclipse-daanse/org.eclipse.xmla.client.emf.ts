@@ -27,6 +27,7 @@ packages/
   xmla-dynamic             XSD to Ecore, the restrictions metamodel
   xmla-workbench-adapter   plain records and cellsets, for mdx-workbench
   testkit                  recorded conversations and a transport that replays them
+  xmla-tck                 the client against a live server, check by check, with the spec beside it
 apps/
   explorer                 Vue 3, the test UI
 ```
@@ -92,16 +93,49 @@ dataset:
 
 ```bash
 npm run probe        # XMLA on 8090, and a guarded endpoint on 8091
-npm run probe:live   # the client against it, over HTTP
+npm run probe:live   # the TCK against it, over HTTP
 ```
 
-Point the checks anywhere with `node scripts/probe-live.mjs <url>`.
+The checks are the **technology compatibility kit** in `packages/xmla-tck`:
+62 claims about a server, each with the section of [MS-SSAS] or of XMLA 1.1
+it rests on, in seven groups - transport, connection, rowsets, sessions,
+execute, suites, authentication - plus one check per distinct request the
+recorded clients sent, 105 of them, replayed against the server: 167 checks in
+all, and several hundred assertions inside them. Each holds, fails, or is not
+applicable to the server it found; a `must` that fails fails the run, a
+`should` is a warning. Point it anywhere:
 
-Thirteen checks: rows, a real session, the dynamic path, an MDX query computed
-from the database, and authentication - that the two rowsets a client probes with are served
-anonymously, that anything else is refused with a 401 **carrying its
+```bash
+npm run tck -- http://host/xmla        # any URL; XMLA_USER and XMLA_PASSWORD add Basic
+npm run tck -- csv-probe flexmonster   # profiles by name
+npm run tck -- --list                  # what is asked, and on whose authority
+npm run tck -- --json run.json ...     # keep the run
+npm run tck -- --html run.html ...     # the run as one page, check by server
+XMLA_TCK_TARGET=csv-probe npx vitest run packages/xmla-tck   # the same, as one test per check
+```
+
+Among them: rows, a real session, the dynamic path, an MDX query computed from
+the database, and authentication - that the two rowsets a client probes with
+are served anonymously, that anything else is refused with a 401 **carrying its
 challenge**, that Basic gets through and the wrong password does not, and that a
 session survives all of it.
+
+**The Daanse check suites as an oracle.** The distributable probe with every
+tutorial catalog (`probe-all-tutorials.zip`, XMLA on **8080**) ships a
+`check/checkSuite.xmi` beside each of its 97 catalogs: what the catalog holds
+and what its MDX queries must answer, written by whoever wrote the catalog and
+run by the server against itself at start-up. Pointed at that directory, the
+TCK asks the same things over XMLA and compares - every cube, dimension,
+hierarchy, level, measure and KPI against the `MDSCHEMA_*` rowsets, and every
+query's cells, counts and axes against an `Execute`:
+
+```bash
+npm run tck -- probe-all-tutorials --suites /path/to/probe-all-tutorials/catalog
+```
+
+Connections the suites mark as needing a role are left out; this client speaks
+anonymously, and those catalogs are hidden from it by design. The eight SQL
+queries are left out too, since XMLA has no way to send one.
 
 One thing neither probe answers: **`MDSCHEMA_MEMBERS` comes back empty**, while
 `MDSCHEMA_LEVELS` and `MDSCHEMA_HIERARCHIES` answer from the same catalogue over
@@ -113,28 +147,29 @@ worked around.
 ## And against servers nobody here built
 
 ```bash
-npm run probe:public
+npm run probe:public   # the TCK against flexmonster, syncfusion and emondrian
 ```
 
 The probe is driven by the same models the client uses, so agreement between
 them proves they agree - not that either is right. These are public demo
-endpoints run by other people:
+endpoints run by other people, and the TCK runs its `mandatory` sweep against
+them: the rowsets XMLA 1.1 requires and the ones an OLAP client needs, in
+sequence, and no more. They are somebody else's servers, and one being down
+does not fail the run.
 
 | | |
 |---|---|
-| Flexmonster | 70 rowsets declared, 133 properties, 7 cubes |
-| Syncfusion | 64 rowsets declared, 123 properties, 7 cubes |
+| Flexmonster (SSAS 13) | 134 of 134 held |
+| Syncfusion (SSAS 11) | two warnings: a GUID for `DISCOVER_XEVENT_TRACE_DEFINITION` the model does not carry, and member-property columns in `MDSCHEMA_MEMBERS` the static row class cannot read |
 | eMondrian | unreachable at the time of writing - the host itself does not answer |
+| Daanse probe, all tutorials | 118 of 139 held with the check suites, 456 of 469 assertions inside them; what did not hold is the server's, and listed in the package README |
 
-Read-only and deliberately small: a handful of Discover calls, in sequence. They
-are somebody else's servers, and one being down does not fail the run.
-
-Two things came out of it. Flexmonster declares **DISCOVER_RESOURCE_POOLS**,
-which no model here describes, and the dynamic path read it into 15 columns
-built from the response - the necessity of that path, on a server nobody
-recorded. And across both, every divergence strict mode found runs one way: the
-models carry columns an older server does not send, and nothing a server sends
-is missing from the models.
+Two things came out of it earlier and still hold. Flexmonster once declared
+**DISCOVER_RESOURCE_POOLS**, which no model then described, and the dynamic path
+read it into 15 columns built from the response - the necessity of that path, on
+a server nobody recorded. And across both, every divergence strict mode finds
+runs one way: the models carry columns and restrictions an older server does not
+send, and nothing a server sends is missing from the models.
 
 The csv probe is the project's own Java server, backed by the real ROLAP engine:
 an H2 database this process fills from `probe/data/sales.csv`, described by a
